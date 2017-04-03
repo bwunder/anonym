@@ -1,0 +1,21 @@
+{
+  "name": "sqlpal",
+  "version": "1.0.0",
+  "description": "a linux CLI for SQL Server vNext",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bill Wunder",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "colors": "^1.1.2",
+    "mssql": "^3.3.0",
+    "prettyjson": "^1.2.1",
+    "vantage": "^1.7.0",
+    "vantage-watch": "^1.0.2",
+    "vorpal-log": "^1.1.0",
+    "vorpal-repl": "^1.1.8"
+  }
+}
