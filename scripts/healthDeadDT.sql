@@ -9,13 +9,15 @@ WHERE xe.name = 'system_health'
 
 -- Parses the process list for a specific deadlock once provided with an event time for the deadlock from the above output
 
+/* app can't deal with the DT variable (yet?)
+
 ;WITH CTE_HealthSession (EventXML) AS
 (
 SELECT CAST(C.query('.').value('(/event/data/value)[1]', 'varchar(MAX)') AS XML) EventXML
 FROM #SystemHealthSessionData a
 CROSS APPLY a.XMLDATA.nodes('/RingBufferTarget/event') as T(C)
 WHERE C.query('.').value('(/event/@name)[1]', 'varchar(255)') = 'xml_deadlock_report'
-AND C.query('.').value('(/event/@timestamp)[1]', 'datetime') =  '2011-09-28 06:24:44.700' -- Replace with relevant timestamp
+AND C.query('.').value('(/event/@timestamp)[1]', 'datetime') =  '2011-09-28 06:24:44.700' Replace with relevant timestamp
 )
 SELECT DeadlockProcesses.value('(@id)[1]','varchar(50)') as id
 ,DeadlockProcesses.value('(@taskpriority)[1]','bigint') as taskpriority
@@ -52,3 +54,4 @@ CROSS APPLY DeadlockEvent.nodes('//deadlock/process-list/process') AS R(Deadlock
 
 -- Drop the temporary table
 DROP TABLE #SystemHealthSessionData
+*/

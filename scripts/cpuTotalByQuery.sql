@@ -1,5 +1,5 @@
 SELECT
-    highest_cpu_queries.plan_handle,
+    CONVERT(varchar(34), highest_cpu_queries.plan_handle, 2) as plan_handle,
     highest_cpu_queries.total_worker_time,
     q.dbid,
     q.objectid,

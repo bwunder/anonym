@@ -1,0 +1,82 @@
+{
+  "cache": {
+    "Batch": [],
+    "BatchHistory": {},
+    "Prefix": [
+      "SET ARITHABORT ON;",
+      "SET NOCOUNT ON;",
+      "SET QUOTED_IDENTIFIER OFF;"
+    ],
+    "Switch": {
+      "S": "172.17.0.1",
+      "d": "tempdb",
+      "r": "r",
+      "I": "I",
+      "s": "  "
+    }
+  },
+  "docker": {
+    "image": "microsoft/mssql-server-linux",
+    "hostPort": 1433,
+    "sqlPort": 1433,
+    "sqlVolume": "/var/opt/mssql"
+  },
+  "odbc": {
+    "path": "/opt/mssql-tools/bin",
+    "pool": {
+      "max": 10,
+      "min": 0,
+      "idleTimeoutMillis": 30000
+    }
+  },
+  "printDate": false,
+  "showInfoAtStartup": true,
+  "scriptPath": "scripts",
+  "sql": {
+    "acceptEULA": "Y",
+    "backup": {
+      "extension": ".bak",
+      "path": "/var/opt/mssql/data"
+    },
+    "data": {
+      "extension": ".mdf",
+      "path": "/var/opt/mssql/data"
+    },
+    "dump": {
+      "extension": ".bak",
+      "path": "/var/opt/mssql/log"
+    },
+    "log": {
+      "extension": ".bak",
+      "path": "/var/opt/mssql/log"
+    },
+    "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
+    "sa": {
+      "name": "sa",
+      "password": "<YourStrong!Passw0rd>"
+    }
+  },
+  "tailPath": "/usr/bin",
+  "vantage": {
+    "auth":{
+      "middleware": "basic",
+      "users": [
+        { "user": "jack", "pass": "cheese"},
+        { "user": "jill", "pass": "crackers"}
+      ],
+      "retry": 3,
+      "retryTime": 500,
+      "deny": 1,
+      "unlockTime": 3000
+    },
+    "firewall": {
+      "policy": "REJECT",
+      "rules": [
+        { "rule": "accept", "ip": "192.168.0.0", "subnet": 24 },
+        { "rule": "accept", "ip": "127.0.0.1", "subnet": 32 }
+      ]
+    },
+    "loglevel": 10,
+    "port": 8753
+  }
+}
