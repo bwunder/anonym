@@ -16,8 +16,8 @@ module.exports = {
     value_in_use, minimum, maximum, [description], is_dynamic, is_advanced
     FROM sys.configurations WITH (NOLOCK)
     ORDER BY name OPTION (RECOMPILE);`,
-  sqlVersion:`SELECT @@SERVERNAME AS [Server Name],
-    @@VERSION AS [SQL Server and OS Version Info];`,
+  sqlVersion:`SELECT @@SERVERNAME AS [@@SERVERNAME],
+    @@VERSION AS [@@VERSION];`,
   memoryAvailable: `SELECT total_physical_memory_kb/1024 AS [Physical Memory (MB)],
       available_physical_memory_kb/1024 AS [Available Memory (MB)],
       total_page_file_kb/1024 AS [Total Page File (MB)],

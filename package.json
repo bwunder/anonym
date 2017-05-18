@@ -1,15 +1,16 @@
 {
   "name": "sqlpal",
   "version": "1.0.0",
-  "description": "a linux CLI for SQL Server vNext",
+  "description": "Admin a locally contained SQL Server for Linux instance",
   "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Bill Wunder",
-  "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.4.7",
+    "bluebird": "^3.5.0",
     "colors": "^1.1.2",
     "mssql": "^4.0.1",
     "prettyjson": "^1.2.1",
@@ -17,5 +18,32 @@
     "vantage-watch": "^1.0.2",
     "vorpal-log": "^1.1.0",
     "vorpal-repl": "^1.1.8"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "node testCLI"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwunder/sqlpal.git"
+  },
+  "keywords": [
+    "SQL",
+    "Server",
+    "on",
+    "Linux",
+    "Docker",
+    "console",
+    "CLI",
+    "dockerhub.com",
+    "node.js",
+    "vorpal"
+  ],
+  "author": "Bill Wunder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bwunder/sqlpal/issues"
+  },
+  "homepage": "https://github.com/bwunder/sqlpal#readme"
 }

@@ -3,14 +3,24 @@
 const prettyjson =  require('prettyjson');
 const Promise = require('bluebird');
 // core
-const childProcess = Promise.promisifyAll(require('child_process'));
 const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
 // local
 const config = require('./config');
 
 module.exports = exports = tools = {
-  bandaid: `
+
+  archiveBatches: () => {
+
+    return fs.writeFileAsync(path.resolve(config.batchPath, tools.formatLocalDate() + '_Batch.hist'), config.BatchHistory, 'utf8')
+    .then(function(result) {
+      log.log(result);
+    })
+    .catch((e) => { log.error(e); });
+
+  },
+
+  bandAid: `
     ##################################################################
    ##########@@@@####@@@@###@@         @@@@######@@######@@############
   ##########@@##@@##@@##@@##@@  \\ O /  @@##@@###@@@@#####@@#############
@@ -20,23 +30,38 @@ module.exports = exports = tools = {
    ##########@@@@####@@\\@###@@@@@@     @@####@@######@@##@@@@@@########
     ####################\\#############################################
   `,
-  commandAid: (names) => {
-    return [`prompt interprets T-SQL plus three kinds of CLI instructions`,
-      `T-SQL lines accumulate into a Batch cache of query lines until terminated`,
-      `Use the grave (\`) to enquote literals when building ad hoc Batch at the prompt.`,
-      `  1. Terminators send the Batch to SQL Server using mssql NPM package`,
-      `       GO        Test then process the Batch via mssql.Request().query()`,
-      `       RUN       Test then process the Batch via mssql.Request().batch()`,
-      `       TEST      DB Engine query parse (SET NOEXEC ON) then resume the Batch`,
-      `  2. Admistrative Commands for the Docker contained SQL Server on Lnux instance`,
-      `  ${names.join(' ').toUpperCase()}`,
-      `       HELP      Shows usage overview for CLI commands (or try 'LIST -v')`,
-      `  3. Injectors overload the Batch with a previous query, script or Batch`,
-      `       ARCHIVE   Batches processed - previous sessions from file`,
-      `       HISTORY   Batches processed - current session from vantage`,
-      `       QUERY     Queries (from query module)`,
-      `       SCRIPT    Files (from ./scripts subfolder)`].join(`\n`);
+
+  commandAid: (commands) => {
+
+    let builtins=[], names=[];
+    commands.forEach( (command) => {
+      if (command._name) {
+// would be better to use names already hardcoded in to message?
+        if (['HELP', 'EXIT', 'WHO', 'VANTAGE', 'REPL', 'LOGLEVEL'].includes(command._name.toUpperCase())) {
+          builtins.push(command._name);
+        } else {
+          names.push(command._name);
+        }
+      }
+    });
+
+    return [`T-SQL Line reader builds the query Batch and responds to KEYWORD commands`,
+      `\n  1. Batch Terminators`.green + `  instigate mssql package driven database I/O `,
+      `       GO`.green + `        Test the Batch, if OK process via .query() & clear`,
+      `       RUN`.green + `       Test the Batch, if OK process via .batch() & clear`,
+      `       TEST`.green + `      process via .query() with SET NOEXEC ON then resume`,
+      `\n  2. Vorpal CLI`.cyan + `  the CLI of Vantage's distributed real-time CLI`,
+      (`      Vantage builtins:  ${builtins.join(' | ')}  `),
+      (`      SQL Instance Mgmt:` + ` ${names.join(' | ')}  `.cyan),
+      `\n  3. Batch Injectors`.magenta ,
+      `       ARCHIVE`.magenta + `   Batches processed - session './history' files`,
+      `       HISTORY`.magenta + `   Batches in history (saved at session close)`,
+      `       QUERY`.magenta + `     User defined queries as saved in queries.js`,
+      `       SCRIPT`.magenta + `    User defined scripts as saved in './scripts'`,
+      ``].join(`\n`);
+
   },
+
   compile: (cacheObject) => {
 
    let str=``;
@@ -54,7 +79,26 @@ module.exports = exports = tools = {
    }
    return str;
 
- },
+   },
+
+   formatLocalDate: () => {
+
+       var now = new Date(),
+           tzo = -now.getTimezoneOffset(),
+           dif = tzo >= 0 ? '+' : '-',
+           pad = function(num) {
+               var norm = Math.abs(Math.floor(num));
+               return (norm < 10 ? '0' : '') + norm;
+           };
+       return now.getFullYear()
+           + '-' + pad(now.getMonth()+1)
+           + '-' + pad(now.getDate())
+           + 'T' + pad(now.getHours())
+           + ':' + pad(now.getMinutes())
+           + ':' + pad(now.getSeconds())
+           + dif + pad(tzo / 60)
+           + ':' + pad(tzo % 60);
+   },
 
   getScript: (scriptFile) => {
 
@@ -88,21 +132,17 @@ module.exports = exports = tools = {
     switch (typeof gi) {
 
       case ('undefined'):
-
         go = 'undefined'.grey;
-
         break;
 
       case ('boolean'):
 
         go = !gi? gi.red: gi.green;
-
         break;
 
       case ('number'):
 
         go = gi.blue;
-
         break;
 
       case ('string'):
@@ -115,15 +155,15 @@ module.exports = exports = tools = {
         catch(e) {
           go = gi;
         }
-
         break;
 
       case ('object'):
 
         switch (true) {
-
+          case (Buffer.isBuffer(gi)):
+            go = prettyjson.render(gi.toString());
+            break;
           case (Array.isArray(gi)):
-
             if (gi.recordsets) {
               gi.recordsets.forEach(function(rs) {
                 go += prettyjson.render(rs);
@@ -133,36 +173,16 @@ module.exports = exports = tools = {
                 go += prettyjson.render(result);
               });
             }
-
             break;
-
-          case (Buffer.isBuffer(gi)):
-
-            try {
-              if (JSON.parse(gi.toString())) {
-                 go = prettyjson.render(JSON.parse(gi.toString()));
-              }
-            }
-            catch (e) {
-              go = prettyjson.render([gi.toString()]);
-            }
-
-            break;
-
           default:
-
             go = prettyjson.render(gi);
-
             break
-
         }
-
         break;
 
       default:
 
         go = `unexpected type ${typeof gi}`.inverse;
-
         break;
 
     }

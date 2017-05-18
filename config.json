@@ -1,4 +1,5 @@
 {
+  "batchPath": "history",
   "cache": {
     "Batch": [],
     "BatchHistory": {},
@@ -30,7 +31,6 @@
     }
   },
   "printDate": false,
-  "showInfoAtStartup": true,
   "scriptPath": "scripts",
   "sql": {
     "acceptEULA": "Y",
@@ -76,7 +76,7 @@
         { "rule": "accept", "ip": "127.0.0.1", "subnet": 32 }
       ]
     },
-    "loglevel": 10,
+    "loglevel": 20,
     "port": 8753
   }
 }
