@@ -16,20 +16,20 @@ module.exports = exports = tools = {
     .then(function(result) {
       log.log(result);
     })
-    .catch((e) => { log.error(e); });
+    .catch((e) => {
+      log.error(e.message);
+      log.debug(e.stack);
+    });
 
   },
 
-  bandAid: `
-    ##################################################################
-   ##########@@@@####@@@@###@@         @@@@######@@######@@############
-  ##########@@##@@##@@##@@##@@  \\ O /  @@##@@###@@@@#####@@#############
-  ###########@@#####@@##@@##@@    |    @@##@@##@@##@@####@@#############
-  #############@@###@@##@@##@@   / \\   @@@@####@@@@@@####@@#############
-  ##########@@##@@##@@##@@##@@         @@#####@@####@@###@@#############
-   ##########@@@@####@@\\@###@@@@@@     @@####@@######@@##@@@@@@########
-    ####################\\#############################################
-  `,
+  bandAid:[`\t ----....----...--       ----~~~~~~--~~~~~~--`,
+           `\t--..--..--..--..-- \\ @ / --~~--~~~----~~~~~--`,
+           `\t.--.....--..--..--   |   --~~--~~--~~--~~~~--`,
+           `\t...--...--..--..--  / \\  ----~~~~------~~~~--`,
+           `\t--..--..--..--..--       --~~~~~--~~~~--~~~--`,
+           `\t ----....--\\-...------   --~~~~--~~~~~~--~~------`,
+           `\t            \\`].join(`\n`),
 
   commandAid: (commands) => {
 
@@ -38,132 +38,111 @@ module.exports = exports = tools = {
       if (command._name) {
 // would be better to use names already hardcoded in to message?
         if (['HELP', 'EXIT', 'WHO', 'VANTAGE', 'REPL', 'LOGLEVEL'].includes(command._name.toUpperCase())) {
-          builtins.push(command._name);
+          builtins.push(`${command._name.toUpperCase()}\t\t${command._description}`);
         } else {
-          names.push(command._name);
+          names.push(`${command._name.toUpperCase()}`.cyan + `\t\t${command._description}`);
         }
       }
     });
 
-    return [`T-SQL Line reader builds the query Batch and responds to KEYWORD commands`,
-      `\n  1. Batch Terminators`.green + `  instigate mssql package driven database I/O `,
-      `       GO`.green + `        Test the Batch, if OK process via .query() & clear`,
-      `       RUN`.green + `       Test the Batch, if OK process via .batch() & clear`,
-      `       TEST`.green + `      process via .query() with SET NOEXEC ON then resume`,
-      `\n  2. Vorpal CLI`.cyan + `  the CLI of Vantage's distributed real-time CLI`,
-      (`      Vantage builtins:  ${builtins.join(' | ')}  `),
-      (`      SQL Instance Mgmt:` + ` ${names.join(' | ')}  `.cyan),
-      `\n  3. Batch Injectors`.magenta ,
-      `       ARCHIVE`.magenta + `   Batches processed - session './history' files`,
-      `       HISTORY`.magenta + `   Batches in history (saved at session close)`,
-      `       QUERY`.magenta + `     User defined queries as saved in queries.js`,
-      `       SCRIPT`.magenta + `    User defined scripts as saved in './scripts'`,
+    return [`Enter T-SQL into a locally cached Batch or one of these KEYWORD Commands at the prompt`,
+      `  Inject a Batch`.magenta + ' - ' + `load a script into cache from a local user collection`.gray,
+      `\tQUERY`.magenta + ` [key] `.yellow + ` \tNamed queries as found in 'queries.js' module`,
+      `\tSCRIPT`.magenta + ` [file-name] `.yellow + `\t'.sql' files in '${config.scriptPath}' folder`,
+      `  Terminate a Batch`.green + ' - ' + `submit the Batch in cache to SQL Server`.gray,
+      `\tGO`.green + `      \tTest then process Batch via mssql..query() - clear cache if OK`,
+      `\tRUN`.green + `     \tTest then process Batch via mssql..batch() - clear cache if OK`,
+      `\tTEST`.green + `    \tParse and compile Batch at server with SET NOEXEC ON and return`,
+      `  Vorpal CLI Commands`.cyan,
+      `     Vantage distributed realtime CLI built-ins`.gray,
+      `\t${builtins.join('\n\t')}`,
+      `     SQL Server for Linux Docker Image Controls`.gray,
+      `\t${names.join('\n\t')}`,
       ``].join(`\n`);
-
   },
 
   compile: (cacheObject) => {
 
-   let str=``;
-   if (!Array.isArray(cacheObject)) {
-     Object.keys(cacheObject).forEach((key) => {
-       if (!['i', 'q', 'Q'].includes(key)) {
-         str+=` -${key}`;
-         if (key!=cacheObject[key]) {
-           str+= typeof cacheObject[key]=='string'?  ` \'${cacheObject[key]}\'`:cacheObject[key];
-         }
-       }
-     });
-   } else {
-     str = cacheObject.join('\n').replace(/`/g, "'");
-   }
-   return str;
+    let str=``;
 
-   },
+    if (!Array.isArray(cacheObject)) {
+      Object.keys(cacheObject).forEach((key) => {
+        if (!['i', 'q', 'Q'].includes(key)) {
+          str+=` -${key}`;
+          if (key!=cacheObject[key]) {
+            str+= typeof cacheObject[key]=='string'?  ` \'${cacheObject[key]}\'`:cacheObject[key];
+          }
+        }
+      });
+    } else {
+      str = cacheObject.join('\n').replace(/`/g, "'");
+    }
+    return str;
 
-   formatLocalDate: () => {
+    },
 
-       var now = new Date(),
-           tzo = -now.getTimezoneOffset(),
-           dif = tzo >= 0 ? '+' : '-',
-           pad = function(num) {
-               var norm = Math.abs(Math.floor(num));
-               return (norm < 10 ? '0' : '') + norm;
-           };
-       return now.getFullYear()
-           + '-' + pad(now.getMonth()+1)
-           + '-' + pad(now.getDate())
-           + 'T' + pad(now.getHours())
-           + ':' + pad(now.getMinutes())
-           + ':' + pad(now.getSeconds())
-           + dif + pad(tzo / 60)
-           + ':' + pad(tzo % 60);
-   },
+  formatLocalDate: () => {
 
-  getScript: (scriptFile) => {
-
-   return fs.readFileAsync(path.resolve(config.scriptPath, scriptFile), 'utf8')
-   .then(function(fileScript) {
-     return fileScript;
-   })
-   .catch((e) => { log.error(e); });
-
+  var now = new Date(),
+     tzo = -now.getTimezoneOffset(),
+     dif = tzo >= 0 ? '+' : '-',
+     pad = function(num) {
+         var norm = Math.abs(Math.floor(num));
+         return (norm < 10 ? '0' : '') + norm;
+     };
+  return now.getFullYear()
+     + '-' + pad(now.getMonth()+1)
+     + '-' + pad(now.getDate())
+     + 'T' + pad(now.getHours())
+     + ':' + pad(now.getMinutes())
+     + ':' + pad(now.getSeconds())
+     + dif + pad(tzo / 60)
+     + ':' + pad(tzo % 60);
   },
 
-  isValidBatch: (Batch) => {
+  format: (gi) => {
 
-    let valid = true;
-    let script = tools.compile([`SET NOEXEC ON;`].concat(Batch));
+      let go='';
 
-    pool.request().query(script).then(() => {
-     // never executes, but does catch first sql server exception raised
-    })
-    .catch( (err) => {
-      valid=false;
-    });
-    return valid;
-
-  },
-
-  gigo: (gi) => {
-
-    let go='';
-
-    switch (typeof gi) {
+      switch (typeof gi) {
 
       case ('undefined'):
-        go = 'undefined'.grey;
-        break;
+       go = 'undefined'.grey;
+       break;
 
       case ('boolean'):
 
-        go = !gi? gi.red: gi.green;
-        break;
+       go = !gi? gi.red: gi.green;
+       break;
 
       case ('number'):
 
-        go = gi.blue;
-        break;
+       go = gi.blue;
+       break;
 
       case ('string'):
 
-        try {
-          if (JSON.parse(gi)) {
-            go = prettyjson.render(JSON.parse(gi));
-          }
-        }
-        catch(e) {
-          go = gi;
-        }
-        break;
+       try {
+         if (JSON.parse(gi)) {
+           go = prettyjson.render(JSON.parse(gi));
+         }
+       }
+       catch(e) {
+         go = gi;
+       }
+       break;
 
       case ('object'):
 
         switch (true) {
+
           case (Buffer.isBuffer(gi)):
             go = prettyjson.render(gi.toString());
+
             break;
+
           case (Array.isArray(gi)):
+
             if (gi.recordsets) {
               gi.recordsets.forEach(function(rs) {
                 go += prettyjson.render(rs);
@@ -173,9 +152,12 @@ module.exports = exports = tools = {
                 go += prettyjson.render(result);
               });
             }
+
             break;
+
           default:
             go = prettyjson.render(gi);
+
             break
         }
         break;
@@ -188,6 +170,32 @@ module.exports = exports = tools = {
     }
 
     return go + '\n';
+
+  },
+  getScript: (scriptFile) => {
+
+    return fs.readFileAsync(path.resolve(config.scriptPath, scriptFile), 'utf8')
+    .then(function(fileScript) {
+      return fileScript;
+    })
+    .catch((e) => {
+      log.error(e.message);
+      log.debug(e.stack)
+    });
+
+  },
+  isValidBatch: (Batch) => {
+
+    let valid = true;
+    let script = tools.compile([`SET NOEXEC ON;`].concat(Batch));
+
+    pool.request().query(script).then(() => {
+     // never executes, but does catch first sql server exception raised
+    })
+    .catch( (err) => {
+      valid=false;
+    });
+    return valid;
 
   }
 

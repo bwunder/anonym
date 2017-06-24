@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node testCLI"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
@@ -20,10 +21,6 @@
     "vorpal-repl": "^1.1.8"
   },
   "devDependencies": {},
-  "scripts": {
-    "start": "node index.js",
-    "test": "node testCLI"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bwunder/sqlpal.git"

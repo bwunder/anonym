@@ -1,6 +1,3 @@
-"-- use strict;"
-// all your favorites can be in here
-// many here from Wayne Berry's SQL Server 2014 Dynamic Information Queries (April 2017)
 module.exports = {
   clusterAlwaysOn: `SELECT cluster_name, quorum_type_desc, quorum_state_desc
     FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);`,
@@ -12,10 +9,24 @@ module.exports = {
       CONVERT(bigint, size/128.0) AS [Total Size in MB]
     FROM sys.master_files WITH (NOLOCK)
     ORDER BY DB_NAME([database_id]), [file_id] OPTION (RECOMPILE);`,
+  dmvs: `SELECT name, type, type_desc
+    FROM sys.system_objects
+    WHERE name LIKE 'dm_%'
+    ORDER BY name`,
   configurations:`SELECT name, value,
     value_in_use, minimum, maximum, [description], is_dynamic, is_advanced
     FROM sys.configurations WITH (NOLOCK)
     ORDER BY name OPTION (RECOMPILE);`,
+  procedures: `SELECT routine_catalog, routine_schema, routine_name
+    FROM information_schema.routines
+    WHERE routine_type = 'PROCEDURE'
+    AND routine_catalog = DB_NAME()`,
+  proc: `SELECT routine_catalog, routine_catalog, routine_name,
+    FROM information_schema.routines
+    WHERE routine_type = 'PROCEDURE'
+    AND routine_catalog = DB_NAME()
+    AND routine_schema = ${this.schema} 
+    AND routine_name = ${this.proc}`,
   sqlVersion:`SELECT @@SERVERNAME AS [@@SERVERNAME],
     @@VERSION AS [@@VERSION];`,
   memoryAvailable: `SELECT total_physical_memory_kb/1024 AS [Physical Memory (MB)],

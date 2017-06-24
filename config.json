@@ -43,11 +43,11 @@
       "path": "/var/opt/mssql/data"
     },
     "dump": {
-      "extension": ".bak",
+      "filter": "core",
       "path": "/var/opt/mssql/log"
     },
     "log": {
-      "extension": ".bak",
+      "extension": ".ldf",
       "path": "/var/opt/mssql/log"
     },
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",

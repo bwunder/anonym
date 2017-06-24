@@ -1,12 +1,9 @@
 const mssql = require('mssql');
 const Promise = require('bluebird');
-mssql.Promise = Promise;
+const querystring = require('querystring');
 const watch = require('vantage-watch');
 const Vantage = require('vantage');
 const vorpalLog = require('vorpal-log');
-
-const colors = require('colors');
-const prettyjson =  require('prettyjson');
 
 //// core
 const childProcess = Promise.promisifyAll(require('child_process'));
@@ -14,27 +11,249 @@ const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
 //// local
 const config = require(`./config.json`);
-const tools = require('./tools');
 const queries = require(`./queries`);
+const tools = require('./tools');
 
-//// cache
+// use arg[2] - e.g., node index.js 2381 - else use config.json
+const port = process.argv[2] && !Number.isNaN(process.argv[2])? process.argv[2]: config.vantage.port;
+
+//// init caches
 const Batch = config.cache.Batch;
 const BatchHistory = config.cache.BatchHistory;
 const Prefix = config.cache.Prefix;
 const Switch = config.cache.Switch;
-
-// vantage.exec('query sqlVersion');
-// vantage.exec('go');
+let line = '';
 
 Switch.U = config.sql.sa.name;
 Switch.P = config.sql.sa.password;
 
+// not sure it matters, but everything else is using bluebird...
+//mssql.Promise = Promise;
+
+mssql.on('error', err => {
+  log.warn('mssql driver error');
+  log.error(err.message);
+  log.debug(err.stack);
+});
+
 const vantage = new Vantage();
 
-const port = process.argv[2] && !Number.isNaN(process.argv[2])? process.argv[2]: config.vantage.port;
+// preserve the raw line for building the batch
+// !!! padding is already stripped here :(
+vantage.on('client_prompt_submit', (data) => {
+  log.debug(`line ${data}`);
+  line = data;
+});
 
-// nothing
-vantage.auth(config.vantage.middleware, config.vantage.auth.users);
+// nothing, seems they took the 'basic' middleware out of vantage?
+vantage.auth(config.vantage.auth.middleware, {
+  "users": config.vantage.auth.users,
+  "retry": config.vantage.auth.retry,
+  "retryTime": config.vantage.auth.retryTime,
+  "deny": config.vantage.auth.deny,
+  "unlockTime": config.vantage.auth.unlock
+});
+
+const interactiveSession = function(containerId) {
+
+  if (!containerId) containerId = config.docker.containerId;
+
+  if (containerId) {
+
+    // (re)create link files (-d detatched)
+    childProcess.execSync(`docker exec -d ${containerId} /bin/bash
+      docker exec -d ${containerId} ln -sf ${config.odbc.path}/sqlcmd /usr/bin
+      docker exec -d ${containerId} ln -sf ${config.odbc.path}/bcp /usr/bin
+      docker exec -d ${containerId} ln -sf -T ${config.sql.conf} /usr/bin/mssql-conf`);
+
+    log.info([`'bcp, 'mssql-conf' and 'sqlcmd' are available inside container.`,
+      `type a command with no args for more usage information`,
+      `'bcp' and 'sqlcmd' work using '-Usa -P "$SA_PASSWORD"'`,
+      `type 'exit' to close session inside container and resume sql prompt`].join('\n'));
+
+    // open interactive terminal
+    let child = childProcess.spawnSync(`docker`, [`exec`, `--interactive`, `--tty`, `${containerId}`, `/bin/bash`], {
+      stdio: ['inherit', 'inherit', 'inherit']
+    });
+
+  }
+
+}
+
+const isSQL = function() {
+  return new mssql.Request(vantage.pool).query(tools.compile([`SET NOEXEC ON;`].concat(Batch)))
+  .then( (nodata) => {
+    log.debug('Batch parsed and compiled at SQL Server without issue');
+    return true;
+  })
+  .catch( (err) => {
+    log.warn(`SQL Server failed to parse and compile the Batch`);
+//  dedup  log.error(err.message);
+    log.debug(err.stack);
+    return false;
+  });
+};
+
+const runImage = function() {
+  if (config.docker.imageId) {
+    log.info(`running image ${config.docker.imageId}`);
+    let run = `sudo docker run
+      -e "ACCEPT_EULA=${config.sql.acceptEULA}"
+      -e "SA_PASSWORD=${config.sql.sa.password}"
+      -p ${config.docker.hostPort}:${config.docker.sqlPort}
+      -v ${config.docker.sqlVolume}:${config.docker.sqlVolume}
+      -d ${config.docker.imageId}`;
+    log.debug(run);
+    childProcess.execSync(run);
+  }
+};
+
+const setImage = function(imageId) {
+  if (!imageId) { // find locally if not passed
+    imageId = childProcess.execSync(`docker images ${config.docker.image}:latest --format "{{.ID}}"`).toString().trim();
+  }
+  if (!imageId) { // download latest if not passed or found locally
+    childProcess.execSync(`docker pull ${config.docker.image}`);
+    imageId = childProcess.execSync(`docker images ${config.docker.image}:latest --format "{{.ID}}"`).toString().trim();
+  }
+  if (imageId) { // set config to  resolved image
+    config.docker.imageId = imageId;
+    log.debug(`image ${config.docker.imageId} ready`);
+  }
+};
+
+const setInstance = function() {
+
+  //!!!! the running SQL Server container  ???what if there are 2+ running???
+  let sqinstance = childProcess.execSync(`docker ps --filter "ancestor=${config.docker.image}" --format "{{.ID}}"`).toString().trim();
+  let sqlatest = childProcess.execSync(`docker ps --latest --filter "ancestor=${config.docker.image}" --format "{{.ID}}"`).toString().trim();
+  let sqid = sqinstance || sqlatest;
+  let sqimage = childProcess.execSync(`docker ps --latest --filter "id=${sqid}" --format "{{.Image}}"`).toString().trim();
+  let sqatus = childProcess.execSync(`docker ps --latest --filter "id=${sqid}" --format "{{.Status}}"`).toString();
+
+  // start with latest image
+  setImage();
+
+  if (config.docker.imageId) {
+
+    if (config.docker.imageId!=sqimage) {
+      log.warn(`other SQL Server images may be available on this server`);
+      log.log(childProcess.execSync(`docker images ${config.docker.image}`).toString());
+      config.docker.imageId = sqimage;
+    }
+// not right, could be a container from --latest that is not running
+    if (!sqid) {
+      // init new instance
+      if (!config.docker.imageId) {
+        runImage();
+        config.docker.containerId = childProcess.execSync(`docker ps --filter "ancestor=${config.docker.image}" --format "{{.ID}}"`).toString().trim();
+      }
+      log.debug('container starting...');
+      startContainer('start', sqid);
+    } else {
+      config.docker.containerId = sqid;
+      openPool();
+    }
+    log.log(`containerId ${config.docker.containerId} status: ${sqatus}`);
+
+  }
+
+};
+function getConnection(urlString) {
+    return new Promise(function(resolve) {
+        //Without new Promise, this throwing will throw an actual exception
+        var params = parse(urlString);
+        resolve(getAdapter(params).getConnection());
+    });
+}
+
+const startContainer = function(startType, containerId) { // start or restart
+  // 'start' or 'restart'
+  return new Promise(function(resolve) {
+    log.confirm(`${startType}ing SQL Server container ${containerId}`);
+    return childProcess.execAsync(`docker container ${startType} ${containerId}`)
+    .then( () => {
+      return childProcess.execAsync(`docker ps --filter "id=${containerId}" --format "{{.Image}}"`)
+    })
+    .then( (imageId) => {
+      setImage(imageId.toString().trim());
+      config.docker.containerId = containerId;
+      log.info(`instance ${config.docker.containerId} ${startType}ed
+        issue 'server --container connect' after SQL Server recovery is complete`);
+      // inheritance assures the child stops when this process stops
+      return childProcess.spawnAsync(`docker`, [`logs`, `--follow`, `${containerId}`, `--tail`, 0], {
+        stdio: [0, 'inherit', 'inherit']
+      });
+    })
+    .catch( (err) => {
+      log.warn(`SQL Server Container ${containerId} failed to start`);
+      log.error(err.message);
+      log.debug(err.stack);
+    });
+  });
+};
+
+const stopContainer = function() {
+  log.confirm('stopping SQL Server\'s container...')
+  vantage.pool.close();
+  childProcess.execAsync(`docker container stop ${config.docker.containerId}`)
+  .then( function() {
+    log.log(`container '${config.docker.containerId}' closed`);
+  })
+  .catch( (err) => {
+    log.debug(`failed while stopping container ${config.docker.containerId}`);
+    log.error(err.message);
+    log.debug(err.stack);
+  });
+};
+
+// !!! must come after vantage to attach pool  !!!
+const openPool = function(retryCount) {
+
+  log.log('opening Pool');
+  if (!retryCount) retryCount=0;
+  vantage.pool = new mssql.ConnectionPool({
+    user: config.sql.sa.name,
+    password: config.sql.sa.password,
+    server: config.cache.Switch.S,
+    database: config.cache.Switch.d,
+    pool: config.odbc.pool
+  }, (err) => {
+    if (err) {
+// retry 3 time but give it a 10 seconds()?) after 1st and 2nd trys
+      log.error(err.message);
+      log.debug(err.stack);
+      if (retryCount<2) {
+        retryCount++;
+        log.warn(`open connection pool retry #${retryCount}`);
+        setTimeout(() => { openPool(retryCount); }, 10000);
+      } else {
+        log.warn(`failed to open connection pool`);
+      }
+    } else {
+      new mssql.Request(vantage.pool).query(queries.sqlVersion)
+      .then( (results) => {
+        log.log(tools.format(results.recordsets));
+      })
+      .catch( (err) => {
+        log.warn(`sqlVersion query error`);
+        log.error(err.message);
+        log.debug(err.stack);
+      });
+    }
+  });
+
+  vantage.pool.on('close', () => {
+    tools.archiveBatches();
+  });
+
+  vantage.pool.on('error', err => {
+    log.warn('connection pool error');
+    log.error(err.message);
+    log.debug(err.stack);
+  });
+
+};
 
 vantage
   .use( vorpalLog, {printDate: config.printDate})
@@ -59,35 +278,30 @@ vantage.logger.setFilter(config.vantage.loglevel);
 vantage.firewall.policy(config.vantage.firewall.policy);
 
 config.vantage.firewall.rules.forEach( function(rule) {
+  // validate the rule ip - v4 or v6? https://jsfiddle.net/AJEzQ/
+  if ( /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$|^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/.test(rule.ip)){
+    // build wall
+    switch (true) {
+      case (/^accept$/i.test(rule.rule)):
+        vantage.firewall.accept(`${rule.ip}/${rule.subnet}`);
+        break;
 
-  switch (true) {
+      case (/^reject$/i.test(rule.rule)):
+        vantage.firewall.reject(`${rule.ip}/${rule.subnet}`);
+        break;
 
-    case (/^accept$/i.test(rule.rule)):
+      default:
+        log.warn(`ignoring firewall rule:\n\t${JSON.stringify(rule)}`)
+        break;
 
-      vantage.firewall.accept( `${rule.ip}/${rule.subnet}`);
-
-      break;
-
-    case (/^reject$/i.test(rule.rule)):
-
-      vantage.firewall.reject( `${rule.ip}/${rule.subnet}`);
-
-      break;
-
-    default:
-
-      log.warn(`ignoring firewall rule:\n\t${JSON.stringify(rule)}`)
-
-      break;
-
+    }
   }
-
 });
 
-vantage.command(`config`, `Review Configurations`)
+vantage.command(`config`, `Configuration`)
   .option(`-a, --app`, path.resolve(__dirname, 'config.json'))
   .option(`-m, --mssql`, path.resolve(config.docker.sqlVolume, 'mssql.conf'))
-  .option(`-s, --sqlserver [ 'option-name' ]`, `sys.configurations`)
+  .option(`-s, --sqlserver [ 'option-name' ]`, `sys.configurations (sp_configure)`)
   .action( (args, callback) => {
 
     log.debug(JSON.stringify(args));
@@ -98,11 +312,10 @@ vantage.command(`config`, `Review Configurations`)
 
         return fs.readFileAsync(path.resolve(config.docker.sqlVolume, 'mssql.conf'))
         .then((fileBuffer) => {
-          log.log(tools.gigo(fileBuffer.toString()));
+          log.log(tools.format(fileBuffer.toString()));
           log.info([`This file reflects SQL Server start-up configation options.`,
-            `Do not edit this file. Use the mssql-conf utility instead. To use,`,
-            `open an interactive shell in the container (e.g., 'SERVER -s').`,
-            `Type 'MSSQL-CONF' at shell prompt to see mssql-conf usage overview.`].join('\n'));
+            `Do not edit this file. Open an interactive bash prompt inside the `,
+            `container ('SERVER -s') then use the mssql-conf utility instead. ('MSSQL-CONF -h')`].join('\n'));
         })
         .catch((err) => {
           log.error(err.message);
@@ -113,11 +326,11 @@ vantage.command(`config`, `Review Configurations`)
 
       case (args.options.sqlserver):
 
-        vantage.pool.request().query(queries.getConfigurations)
+        new mssql.Request(vantage.pool).query(queries.configurations)
         .then( (results) => {
           log.debug(results);
 
-          log.log(tools.gigo(results.recordsets));
+          log.log(tools.format(results.recordsets));
           log.info(`To see one configuration, include enough of the first character`,
             `of name to uniquely identitfy the setting (in quotes if any spaces)`);
 
@@ -131,14 +344,13 @@ vantage.command(`config`, `Review Configurations`)
 
       case (typeof args.options.sqlserver=='string'):
 
-        vantage.pool.request().query(`EXEC sp_configure '${args.options.sqlserver}'`).then( results => {
+        new mssql.Request(vantage.pool).query(`EXEC sp_configure '${args.options.sqlserver}'`).then( results => {
 
           results.recordset[0].name
-          log.log(tools.gigo(results.recordset));
+          log.log(tools.format(results.recordset));
           log.info([`T-SQL to change:`,
-            `\tEXEC sp_configure '${results.recordset[0].name}', <new-value>;`,
+            `\tEXEC sp_configure '${results.recordset[0].name}' <new-value>;`,
             `\tRECONFIGURE [WITH OVERRIDE];`].join('\n'));
-
         });
 
         break;
@@ -149,7 +361,7 @@ vantage.command(`config`, `Review Configurations`)
 
         return fs.readFileAsync(path.resolve(__dirname, 'config.json'))
         .then((fileBuffer) => {
-          log.log(tools.gigo(JSON.parse(fileBuffer.toString())));
+          log.log(tools.format(JSON.parse(fileBuffer.toString())));
           log.info(`To change, edit file '${path.resolve(process.cwd(), 'config.json')}`);
 
         })
@@ -167,13 +379,11 @@ vantage.command(`config`, `Review Configurations`)
 });
 
 vantage.command(`server`)
-  .description(`Manage the Docker Contained Data Server Instance`)
-  .option(`-c, --container [ ALL | CONNECT | RESTART | START | STOP ]`, `Instance of SQL Server Image`)
+  .description(`Manage the SQL Server Instance`)
+  .option(`-c, --container [ ALL | CONNECT | FULL | RESTART | START | STOP ]`, `SQL Server Instance`)
   .option(`-d, --docker [ START | STOP ]`, `Container Engine`)
-  .option(`-i, --image [ All | RUN ]`, `SQL Server for Linux Image`)
-  .option(`-n, --network`, `Docker Network Bridge`)
-  .option(`-p, --pull`, `Check/Get Latest Image from dockerhub.com`)
-  .option(`-s, --shell`, `bash shell inside the container (mssql-conf)`)
+  .option(`-i, --image [ All | FULL | PULL | RUN ]`, `SQL Server for Linux Image (from dockerhub)`)
+  .option(`-s, --shell`, `bash prompt inside container (mssql-conf & mssql-tools)`)
   .action( (args, callback) => {
 
     try {
@@ -185,74 +395,49 @@ vantage.command(`server`)
 
         case (args.options.container):
 
-          let sqid = `--filter "ancestor=${config.docker.image}" --format "{{.ID}}"`;
-          config.docker.containerId = childProcess.execSync(`docker ps ${sqid}`).toString().trim();
-          if (!config.docker.containerId) {
-            // maybe should list containers and wait at prompt for right one?
-            config.docker.containerId = childProcess.execSync(`docker ps -n1 ${sqid}`).toString().trim();
-          }
-          log.log(`containerId ${config.docker.containerId}`);
+          setInstance();
 
           break;
 
         case (typeof args.options.container=='string'):
-
+// doesn't scale to 2+ containers per image
+          let running = childProcess.execSync(`docker ps --filter "id=${config.docker.containerId}" --format "{{.ID}}"`).toString().trim();
           switch(args.options.container.toLowerCase()) {
             case ('all'):
-              log.log(tools.gigo(childProcess.execSync(`docker ps --all --filter "ancestor=${config.docker.image}"`)));
-              break;
+              log.log(tools.format(childProcess.execSync(`docker ps --all --filter "ancestor=${config.docker.image}"`)));
+              break
             case ('connect'):
-              vantage.pool = new mssql.ConnectionPool({
-                user: config.sql.sa.name,
-                password: config.sql.sa.password,
-                server: config.cache.Switch.S,
-                database: config.cache.Switch.d,
-                pool: config.odbc.pool
-               }, (err) => {
-                if (err) {
-                  log.debug(`error creating connection pool`);
-                  log.error(err.message);
-                  log.debug(err.stack);
-                }
-              });
-              vantage.pool.on('close', () => {
-                tools.archiveBatches();
-              });
-              vantage.pool.on('error', err => {
-                log.debug('connection pool error');
-                log.error(err.message);
-                log.debug(err.stack);
-                process.exit(1);
-              });
-              mssql.on('error', err => {
-                log.debug('mssql driver error');
-                log.error(err.message);
-                log.debug(err.stack);
-              });
+              openPool();
               break;
+            case ('full'):
+              log.log(tools.format(childProcess.execSync(`docker ps --all --filter "id=${config.docker.imageId}"`)));
+              break
             case ('restart'):
+              if (!running) {
+                log.warn('restart only valid when the SQL Server is running');
+                break;
+              } else {
+                startContainer(args.options.container, config.docker.containerId);
+              }
+              break;
             case ('start'):
-              childProcess.execAsync(`docker container ${args.options.container} ${config.docker.containerId}`)
-              .then( () => {
-                log.info(`${args.options.container} instance ${config.docker.containerId} ${args.options.container}`);
-              })
-              .catch( (err) => {
-                log.error(err.message);
-                log.debug(err.stack);
-              })
-              vantage.exec('server --container connect');
+
+log.log(`running ${running} configured ${config.docker.containerId}`)
+              if (running==config.docker.containerId) {
+                log.warn('start only valid when SQL Server is stopped');
+                break;
+              } else {
+                // check if already running - only start if stopped, only restart if running
+                startContainer(args.options.container, config.docker.containerId);
+              }
               break;
             case ('stop'):
-              log.debug(vantage.pool);
-              childProcess.exec(`docker container ${args.options.container} ${config.docker.containerId}`, (err) => {
-                if (err) {
-                  log.debug(`stop container returned error: '${config.docker.containerId}'`);
-                  log.error(err.message);
-                  log.debug(err.stack);
-                } else {
-                  log.log(`container '${config.docker.containerId}' closed`);
-                }
-              });
+              if (!running) {
+                log.warn('stop only valid when the SQL Server is running');
+                break;
+              } else {
+                stopContainer();
+              }
               break;
             default:
               log.warn(`${args.options.container}?`);
@@ -263,7 +448,7 @@ vantage.command(`server`)
 
         case (args.options.docker):
 
-          log.log(tools.gigo(childProcess.execSync(`sudo service docker status`)));
+          log.log(tools.format(childProcess.execSync(`sudo service docker status`)));
 
           break;
 
@@ -273,10 +458,9 @@ vantage.command(`server`)
 
             childProcess.exec(`sudo service docker ${args.options.docker}`, function() {
 
-              if ('start'==args.options.docker.toLowerCase()) {
-                vantage.exec('server --container start');
-                vantage.exec('server --container connect');
-              }
+              // if ('start'==args.options.docker.toLowerCase()) {
+              //   vantage.exec('server --container start');
+              // }
 
               log.info(`Docker ${args.options.docker}`)
 
@@ -292,10 +476,8 @@ vantage.command(`server`)
 
         case (args.options.image):
 
-          config.docker.imageId = childProcess.execSync(`docker images ${config.docker.image}:latest --format "{{.ID}}"`).toString().trim();
-          if (!config.docker.imageId) {
-            vantage.exec('server -p');
-          }
+          setImage();
+
           log.log(`imageId ${config.docker.imageId}`);
 
           break;
@@ -304,22 +486,14 @@ vantage.command(`server`)
 
           switch (args.options.image.toLowerCase()) {
             case ('all'):
-              log.log(tools.gigo(childProcess.execSync(`docker images -a ${config.docker.image}`)));
+              log.log(tools.format(childProcess.execSync(`docker images -a ${config.docker.image}`)));
+              break;
+            case ('pull'):
+              config.docker.imageId='';
+              setImage();
               break;
             case ('run'):
-              if (config.docker.imageId) {
-                let run = [`sudo docker run`,
-                       `-e "ACCEPT_EULA=${config.sql.acceptEULA}"`,
-                       `-e "SA_PASSWORD=${config.sql.sa.password}"`,
-                       `-p ${config.docker.hostPort}:${config.docker.sqlPort}`,
-                       `-v ${config.docker.sqlVolume}:${config.docker.sqlVolume}`,
-                       `-d ${config.docker.imageId}`].join(' ');
-                log.debug(run);
-                childProcess.exec(run);
-                log.info('container starting');
-              } else {
-                log.error('Target image to start not identified');
-              }
+              runImage();
               break;
             default:
               log.warn(`$(args.options.image)?`)
@@ -328,64 +502,19 @@ vantage.command(`server`)
 
           break;
 
-        case (args.options.network):
-
-          childProcess.exec(`docker network inspect bridge`, (result) => {
-            log.log(tools.gigo(result));
-          });
-
-          break;
-
-        case (args.options.pull):
-
-          childProcess.exec(`sudo docker pull ${config.docker.image}`, function(results) {
-
-            let newImageId = vantage.exec('server -i');
-
-            if (config.docker.imageId==newImageId ) {
-              log.info('using latest image');
-            } else {
-
-              log.info(`a new image is available,
-                Check for updates to the mssql-tools (sqlcmd, bcp) on this sqlpal host.
-                For detailed installation information refer to the SQL Server forl Linux documentation.`);
-            }
-          });
-
-          break;
-
         case (args.options.shell):
-
-          if (!config.docker.containerId) {
-
-            log.warn('Undetermined Container-Id');
-
-          } else {
-
-            log.info([`Commands 'bcp, 'mssql-conf' and 'sqlcmd' are available at this prompt`,
-              `type 'mssql-conf', 'sqlcmd' or 'bcp' with no args for usage information`,
-              `/~ sqlcmd -Usa -P '$SA_PASSWORD' ... uses password from container\'s environment`,
-              `type 'exit' to end interactive bash in the container`].join('\n'));
-
-            // (re)set links (-d disconnected)
-            childProcess.execSync(`docker exec -d ${config.docker.containerId} /bin/bash`);
-            childProcess.execSync(`docker exec -d ${config.docker.containerId} ln -sf ${config.odbc.path}/sqlcmd /usr/bin`);
-            childProcess.execSync(`docker exec -d ${config.docker.containerId} ln -sf ${config.odbc.path}/bcp /usr/bin`);
-            childProcess.execSync(`docker exec -d ${config.docker.containerId} ln -sf -T ${config.sql.conf} /usr/bin/mssql-conf`);
-            // open interactive
-            let child = childProcess.spawnSync(`docker`, [`exec`, `-it`, `${config.docker.containerId}`, `/bin/bash`], {
-              stdio: ['inherit', 'inherit', 'inherit']
-            });
-
-          }
+log.log(args);
+          interactiveSession()
 
           break;
 
         default:
 
-          childProcess.execSync(`docker info`, (result) => {
-            log.log(tools.gigo(result));
-          });
+          // log.log(tools.format(childProcess.execSync(`docker info`)));
+          childProcess.execAsync(`docker info`)
+          .then( (results) => {
+            log.log(tools.format(results));
+          })
 
           break;
 
@@ -403,15 +532,13 @@ vantage.command(`server`)
 
   });
 
-vantage.command(`list`, `Listings of Administrative Collections`)
-  .alias('ls')
+vantage.command(`list`, `Collections`)
   .option(`-b, --backups`, `SQL Server Database backups files`)
-  .option(`-c, --coredumps`, `SQL Server Stack Dump files`)
+  .option(`-c, --dumps`, `SQL Server Core Stack Dump files`)
   .option(`-d, --data`, `SQL Server Database Data files`)
   .option(`-l, --log`, `SQL Server Database Log files`)
-  .option(`-r, --reader`, `CLI T-SQL Line Reader keywords`)
-  .option(`-s, --session`, `Session command line history`)
-  .option(`-v, --vorpal`, `vorpal CLI commands`)
+  .option(`-r, --reader`, `Vorpal CLI Line Reader keywords`)
+  .option(`-v, --vorpal`, `Vorpal CLI commands`)
   .action( (args, callback) => {
 
     try {
@@ -427,7 +554,7 @@ vantage.command(`list`, `Listings of Administrative Collections`)
             log.info(`Backup Path: ${path.resolve(__dirname, config.sql.backup.path)}`);
             files.forEach( function(file) {
               if (path.extname(file)==config.sql.backup.extension) {
-                log.log(tools.gigo(file));
+                log.log(tools.format(file));
               }
             });
           })
@@ -438,14 +565,14 @@ vantage.command(`list`, `Listings of Administrative Collections`)
 
           break;
 
-        case (args.options.coredumps):
+        case (args.options.dumps):
 
           return fs.readdirAsync(path.resolve(__dirname, config.sql.dump.path))
           .then((files) => {
             log.info(`Dump Path: ${path.resolve(__dirname, config.sql.dump.path)}`);
             files.forEach( function(file) {
-              if (file.startsWith('core')) {
-                log.log(tools.gigo(file));
+              if (file.startsWith(config.sql.dump.filter)) {
+                log.log(tools.format(file));
               }
             });
           })
@@ -463,7 +590,7 @@ vantage.command(`list`, `Listings of Administrative Collections`)
             log.info(`Data Path: ${path.resolve(__dirname, config.sql.data.path)}`);
             files.forEach( function(file) {
               if (path.extname(file)=='.mdf') {
-                log.log(tools.gigo(file));
+                log.log(tools.format(file));
               }
             });
           })
@@ -481,7 +608,7 @@ vantage.command(`list`, `Listings of Administrative Collections`)
             log.info(`Log Path: ${path.resolve(__dirname, config.sql.log.path)}`);
             files.forEach( function(file) {
               if (path.extname(file)=='.ldf') {
-                log.log(tools.gigo(file));
+                log.log(tools.format(file));
               }
             });
           })
@@ -505,12 +632,6 @@ vantage.command(`list`, `Listings of Administrative Collections`)
 
           break;
 
-        case (args.options.session):
-
-          log.log(tools.gigo(vantage.session._hist.join('\n')));
-
-          break;
-
         case (args.options.vorpal):
 
           let cmds = vantage.commands;
@@ -522,7 +643,7 @@ vantage.command(`list`, `Listings of Administrative Collections`)
                 results[`  ${cmds[i].options[opt].flags}`] = `${cmds[i].options[opt].description}`;
               }
             }
-            log.log(tools.gigo(results));
+            log.log(tools.format(results));
           });
 
           break;
@@ -551,8 +672,8 @@ vantage.command(`list`, `Listings of Administrative Collections`)
 
 vantage.command(`cache`, `Cache objects`)
   .alias(`?`)
-  .option(`-b, --batch [ clear ]`, `T-SQL Batch Cache (default)`)
-  .option(`-c, --compile [ sqlcmd | bcp | query | batch ]`, `Compile cached command`)
+  .option(`-b, --batch [ clear ]`, `T-SQL Batch Cache`)
+  .option(`-c, --compile < sqlcmd | bcp | query | batch >`, `Compile cache into db `)
   .option(`-k, --key [ BatchHistory-key ]`, `T-SQL Batch History`)
   .option(`-p, --prefix`, `SET Statement(s) prefix`)
   .option(`-s, --switch  [ key ]`, `Database Connection Options`)
@@ -582,22 +703,10 @@ vantage.command(`cache`, `Cache objects`)
                 `\n[ -i  data-file | -o  new-file ]\n"`;
               break;
             case (/^query$/i.test(args.options.compile)):
-              result=tools.compile([`vantage.pool.Request{`,
-                `  user: ${Switch.U}`,
-                `  password: ${Switch.P}`,
-                `  server: ${Switch.S}`,
-                `  database: ${Switch.d}`,
-                `  pool: ${config.odbc.pool} })`,
-                `.query("${tools.compile(Batch)}");`]);
+              result=tools.compile([`new mssql.Request(vantage.pool).query("${tools.compile(Batch)}");`]);
               break;
             case (/^batch$/i.test(args.options.compile)):
-              result=tools.compile([`vantage.pool.Request{`,
-                `  user: ${Switch.U}`,
-                `  password: ${Switch.P}`,
-                `  server: ${Switch.S}`,
-                `  database: ${Switch.d}`,
-                `  pool: ${config.odbc.pool} })`,
-                `.batch("${tools.compile(Batch)}");`]);
+              result=tools.compile([`new mssql.Request(vantage.pool).batch("${tools.compile(Batch)}");`]);
               break;
             default:
               result='';
@@ -657,7 +766,7 @@ vantage.command(`cache`, `Cache objects`)
       }
 
       log.debug('cache operation complete');
-      log.log(tools.gigo(result));
+      log.log(tools.format(result));
 
       callback();
 
@@ -670,18 +779,15 @@ vantage.command(`cache`, `Cache objects`)
 
   });
 
-
-vantage.command(`bcp [ table-name ]`, `Bulk Copy Data file`)
-  .option(`-i, --input [ data-file ]`, `submit script file, return results and close connection`)
+vantage.command(`bcp [ table-name ]`, `Bulk Copy Data`)
+  .option(`-i, --input [ data-file | T-SQL | TABLE | VIEW ]`, `source of data`)
   .option(`-o, --output [ data-file ]`, `result output file (default stdout)`)
   .action( (args, callback) => {
 
     try {
 
       log.debug(JSON.stringify(args));
-
-      log.debug('nothing in the bcp command factory yet...');
-
+      log.debug(`try bcp at terminal bash prompt or interactive bash prompt 'server -s'`);
 
       callback();
 
@@ -695,12 +801,12 @@ vantage.command(`bcp [ table-name ]`, `Bulk Copy Data file`)
 
   });
 
-vantage.command(`sqlcmd`, `Process a Batch, query or script with sqlcmd (warning: call is blocking)`)
-  .option(`-e, --executesql`, `Process Batch in isolation from Prefix settings`)
-  .option(`-i, --input [ script-file ]`, `submit a script-file and render in sqlpal`)
-  .option(`-Q, --Query`, `Process the Batch with configured Prefix and render in sqlpal`)
-  .option(`-q, --query`, `Process the Batch, render, then wait in sqlcmd session for input`)
-  .option(`-o, --output [ data-file ]`, `direct result to a file on sqlpal host`)
+vantage.command(`sqlcmd`, `Process the Batch with sqlcmd`)
+  .option(`-e, --execsql`, `Process Batch in isolation from Prefix (sp_executesql)`)
+  .option(`-i, --input <script-file>`, `process T-SQL in the fully qualified 'script-file'`)
+  .option(`-Q, --Query`, `Process the Prefixed Batch, return results and render in sqlpal`)
+  .option(`-q, --query`, `Process the Batch, render and wait for input in the sqlcmd session`)
+  .option(`-o, --output [ data-file ]`, `write result to a file on this sqlpal host`)
   .action( (args, callback) => {
 
     try {
@@ -717,7 +823,7 @@ vantage.command(`sqlcmd`, `Process a Batch, query or script with sqlcmd (warning
 
       switch(true) {
 
-        case (args.options.executesql) :
+        case (args.options.execsql) :
 
           spawnArgs.push(`-Q`)
           spawnArgs.push(`${tools.compile(Prefix)} exec sp_executesq('${tools.compile(Batch)}')`);
@@ -750,7 +856,7 @@ vantage.command(`sqlcmd`, `Process a Batch, query or script with sqlcmd (warning
             spawnArgs.push(`${tools.compile(Prefix)} ${tools.compile(Batch)}`);
           }
 
-          log.warn(`SQLCMD mode - type 'exit' to close (see config -s 'remote query timeout')`);
+          log.warn(`type 'exit' to close sqlcmd and resume sqlpal`);
 
           child = childProcess.spawnSync(path.resolve(config.odbc.path, 'sqlcmd'), spawnArgs, {
             stdio: ['inherit', 'inherit', 'inherit']
@@ -775,7 +881,7 @@ vantage.command(`sqlcmd`, `Process a Batch, query or script with sqlcmd (warning
 
         child.on('close', (code) => {
           if (!code==0) {
-            log.warn(tools.gigo(`sqlcmd exited with code ${code}`));
+            log.warn(tools.format(`sqlcmd exited with code ${code}`));
           }
         });
 
@@ -806,6 +912,8 @@ vantage.command(`sqlog [ext]`, `SQL Server errorlog (default: active log)`)
   .option(`-l, --list`, `available log files at ${config.sql.log.path}`)
   .option(`-t, --tail [[+]K]`, `last 'K' lines or from '+K' (default: last 10)`)
   .action( (args, callback) => {
+
+// docker container logs ${containerId}
 
     try {
 
@@ -847,7 +955,7 @@ vantage.command(`sqlog [ext]`, `SQL Server errorlog (default: active log)`)
       log.debug(shellscript);
       log.warn(`Persistent SQL Server volume on '${process.env["HOST"]}'`);
       log.info(`If no persisted volume, use 'SERVER -s'; see ${config.sql.log.path} once in shell`);
-      log.log(tools.gigo([childProcess.execSync(`sudo ${shellscript}`).toString()]));
+      log.log(tools.format([childProcess.execSync(`sudo ${shellscript}`).toString()]));
 
 
       callback();
@@ -865,73 +973,47 @@ vantage.command(`sqlog [ext]`, `SQL Server errorlog (default: active log)`)
 vantage.catch('[tsql...]')
   .action( (args, callback) => {
 
-    // arg have already lost quotes, but grave works
-
-      let goTime = new Date;
-      let newline = args.tsql.join(' ');
-      log.debug(JSON.stringify(args));
+      log.debug(`line ${line}`);
+      log.debug(`args.tsql ${args.tsql}`);
       switch (true) {
 
-        case (/^GO$/i.test(newline)) :
-          vantage.pool.request().query(tools.compile([`SET NOEXEC ON;`].concat(Batch)))
-          .then(
-            (err)=> {
-              vantage.pool.request().query(tools.compile(Batch)).then( (results) => {
-                if (results.rowsAffected==0) {
-                  log.log(tools.gigo(results));
-                } else {
-                  results.recordsets.forEach(function(rs) {
-                    log.log(tools.gigo(rs));
-                    BatchHistory[goTime] = Batch;
-                    Batch.splice(0);
-                  });
-                }
-              });
-          })
-          .catch( (err) => {
-            log.debug(`failed to parse query at 'GO'`);
-            log.warn(err.message);
-            log.debug(err.stack);
-          });
+        case (/^GO$/i.test(line)) :
 
-          break;
+          if (isSQL()) {
 
-        case (/^HISTORY$/i.test(args[0])) :
-
-          if (BatchHistory[newline.split(' ')[1]]) {
-
-            vantage.pool.request().query(tools.compile(BatchHistory[newline.split(' ')[1]])).then( results => {
-
-              results.recordsets.forEach(function(rs) {
-                log.log(tools.gigo(rs));
-              });
-
+            new mssql.Request(vantage.pool).query(tools.compile(Batch))
+            .then( (results) => {
+              log.log(tools.format(results));
+              BatchHistory[new Date] = Batch;
+              Batch.splice(0);
+            })
+            .catch( (err) => {
+              log.error(err.message);
+              log.debug(err.stack);
             });
 
-          } else {
-            log.warn(`Batch ${newline.split(' ')[1]} not found in BatchHistory`)
           }
 
           break;
 
-        case (/^QUERY$/i.test(newline)) :
+        case (/^QUERY$/i.test(line)) :
 
-          log.log(tools.gigo(Object.keys(queries).join('\n')));
+          log.log(tools.format(Object.keys(queries).join('\n')));
 
           break;
 
-        case (/^QUERY\s\w+$/i.test(newline)) :
-
-          let key = newline.split(' ')[1];
+        case (/^QUERY$/i.test(args.tsql[0])) :
+          let key = args.tsql[1];
+          log.debug(`key ${key}`);
           if (queries[key]) {
-            let script = queries[key]
+            let query = queries[key]
             Batch.splice(0);
-            Batch.push(`-- ${newline}`);
-            if (typeof script=='string') {
-              script.split('\n').forEach( function(line) {
+            Batch.push(`-- ${line}`);
+            if (typeof query=='string') {
+              query.split('\n').forEach( function(line) {
                 Batch.push(line);
               });
-              vantage.exec('?');
+              log.debug(tools.format(Batch));
             }
           } else {
             log.warn(`unknown query ${key}`);
@@ -939,35 +1021,27 @@ vantage.catch('[tsql...]')
 
           break;
 
-        case (/^RUN$/i.test(newline)) :
+        case (/^RUN$/i.test(line)) :
 
-          vantage.pool.request().query(tools.compile([`SET NOEXEC ON;`].concat(Batch)))
-          .then(
-            (err)=> {
-              vantage.pool.request().batch(tools.compile(Batch)).then( (results) => {
-                if (results.rowsAffected==0) {
-                  log.log(tools.gigo(results));
-                } else {
-                  results.recordsets.forEach(function(rs) {
-                    log.log(tools.gigo(rs));
-                    BatchHistory[goTime] = Batch;
-                    Batch.splice(0);
-                  });
-                }
-              });
-            })
-            .catch( (err) => {
-              log.warn(err.message);
-              log.debug(err.stack);
+          if (isSQL()) {
+
+            new mssql.Request(vantage.pool).batch(tools.compile(Batch)).then( (results) => {
+              log.log(tools.format(results));
+              BatchHistory[new Date] = Batch;
+              Batch.splice(0);
             });
 
-            break;
+          }
 
-        case (/^SCRIPT$/i.test(newline)) :
+          break;
+
+        case (/^SCRIPT$/i.test(line)) :
 
           return fs.readdirAsync(path.resolve(__dirname, config.scriptPath))
           .then((scripts) => {
-            log.log(tools.gigo(scripts.join('\n')));
+
+            log.log(tools.format(scripts.join('\n')));
+
           })
           .catch((err) => {
             log.error(err.message);
@@ -976,19 +1050,19 @@ vantage.catch('[tsql...]')
 
           break;
 
-        case (/^SCRIPT\s\w+\.sql$/i.test(newline)) :
+        case (/^SCRIPT$/i.test(args.tsql[0])) :
 
-          return fs.readFileAsync(path.resolve(__dirname, config.scriptPath, newline.split(' ')[1]), 'utf8')
+          return fs.readFileAsync(path.resolve(__dirname, config.scriptPath, line.split(' ')[1]), 'utf8')
           .then((script) => {
 
             if (typeof script=='string') {
               Batch.splice(0);
-              Batch.push(`-- ${newline}`);
+              Batch.push(`-- ${line}`);
               script.split('\n').forEach( function(qline) {
                 Batch.push(qline);
               });
-              vantage.exec('?');
             }
+
           })
           .catch((err) => {
             log.error(err.message);
@@ -997,22 +1071,17 @@ vantage.catch('[tsql...]')
 
           break;
 
-        case (/^TEST$/i.test(newline)) :
+        case (/^TEST$/i.test(line)) :
 
-          vantage.pool.request().query(tools.compile([`SET NOEXEC ON;`].concat(Batch)))
-          .then( () => {
-            log.log('OK');
-          })
-          .catch( (err) => {
-            log.warn(err.message);
-            log.debug(err.stack);
-          });
+          if (isSQL()) {
+            log.debug(tools.format(Batch));
+          };
 
           break;
 
         default:
 
-          Batch.push(newline);
+          Batch.push(line);
 
           break;
       }
