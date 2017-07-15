@@ -1,15 +1,11 @@
-//// NPM
-const colors = require('colors');
-
 //// local
 const config = require('./config.json');
-const commands = require('./commands');
-const tools = require('./tools');
+const vantage = require('./commands');
+const lib = require('./lib');
 
-log = commands.logger;
+var log = vantage.logger;
 
 log.debug(tools.format(config.docker));
-log.log(colors.rainbow(tools.bandAid));
-log.info(tools.commandAid(commands.commands));
+log.log(lib.bandAid);
 
-commands.exec('server --container');
+vantage.exec('instance');

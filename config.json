@@ -35,11 +35,11 @@
   "sql": {
     "acceptEULA": "Y",
     "backup": {
-      "extension": ".bak",
+      "filter": ".bak",
       "path": "/var/opt/mssql/data"
     },
     "data": {
-      "extension": ".mdf",
+      "filter": ".mdf",
       "path": "/var/opt/mssql/data"
     },
     "dump": {
@@ -47,7 +47,7 @@
       "path": "/var/opt/mssql/log"
     },
     "log": {
-      "extension": ".ldf",
+      "filter": ".ldf",
       "path": "/var/opt/mssql/log"
     },
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
@@ -55,6 +55,13 @@
       "name": "sa",
       "password": "<YourStrong!Passw0rd>"
     }
+  },
+  "sqlpad": {
+    "dir": "sqlpaddata",
+    "ip": "127.0.0.1",
+    "port": 8755,
+    "passphrase": "good14Me",
+    "admin": "bwunder@yahoo.com"
   },
   "tailPath": "/usr/bin",
   "vantage": {
