@@ -1,23 +1,17 @@
 {
-  "batchPath": "history",
-  "cache": {
-    "Batch": [],
-    "BatchHistory": {},
-    "Prefix": [
-      "SET ARITHABORT ON;",
-      "SET NOCOUNT ON;",
-      "SET QUOTED_IDENTIFIER OFF;"
-    ],
-    "Switch": {
-      "S": "172.17.0.1",
-      "d": "tempdb",
-      "r": "r",
-      "I": "I",
-      "s": "  "
+  "attention": "this base image is overloaded with any user changes persisted to nedb",
+  "bcp": {
+    "switch": {
+      "d": "staging",
+      "S": "172.17.0.1"
     }
   },
+  "cache": {
+    "batch": [],
+    "batchHistory": {}
+  },
   "docker": {
-    "image": "microsoft/mssql-server-linux",
+    "repo": "microsoft/mssql-server-linux",
     "hostPort": 1433,
     "sqlPort": 1433,
     "sqlVolume": "/var/opt/mssql"
@@ -28,11 +22,13 @@
       "max": 10,
       "min": 0,
       "idleTimeoutMillis": 30000
+    },
+    "retry": {
+      "count": 2,
+      "wait": 10000
     }
   },
-  "printDate": false,
-  "scriptPath": "scripts",
-  "sql": {
+  "mssql": {
     "acceptEULA": "Y",
     "backup": {
       "filter": ".bak",
@@ -48,7 +44,7 @@
     },
     "log": {
       "filter": ".ldf",
-      "path": "/var/opt/mssql/log"
+      "path": "/var/opt/mssql/data"
     },
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "sa": {
@@ -56,34 +52,91 @@
       "password": "<YourStrong!Passw0rd>"
     }
   },
+  "pem": {
+    "days": 1,
+    "selfSigned": true
+  },
+  "sqlcmd": {
+    "prefix": [
+      "SET ARITHABORT ON;",
+      "SET NOCOUNT ON;",
+      "SET QUOTED_IDENTIFIER OFF;"
+    ],
+    "switch": {
+      "S": "172.17.0.1",
+      "d": "tempdb",
+      "r": "r",
+      "I": "I",
+      "s": "  "
+    }
+  },
   "sqlpad": {
     "dir": "sqlpaddata",
     "ip": "127.0.0.1",
-    "port": 8755,
-    "passphrase": "good14Me",
-    "admin": "bwunder@yahoo.com"
+    "port": 8754,
+    "https-port": 8755,
+    "baseUrl": "",
+    "passphrase": "yet-aN0ther_pA$$werd",
+    "cert-passphrase": "",
+    "key-path": "private/privateKey.pem",
+    "cert-path": "private/cert.pem",
+    "admin": "bwunder@yahoo.com",
+    "google-client-id": "",
+    "google-client-secret": "",
+    "disable-userpass-auth": false,
+    "allow-csv-download": true,
+    "editor-word-wrap": false,
+    "query-result-max-rows": 50000,
+    "slack-webhook": "",
+    "show-schema-copy-button": false,
+    "table-chart-links-require-auth": true,
+    "public-url": "",
+    "smtp-from": "",
+    "smtp-host": "",
+    "smtp-port": "",
+    "smtp-secure": true,
+    "smtp-user": "",
+    "smtp-password": "",
+    "whitelisted-domains": ""
   },
-  "tailPath": "/usr/bin",
   "vantage": {
-    "auth":{
-      "middleware": "basic",
-      "users": [
-        { "user": "jack", "pass": "cheese"},
-        { "user": "jill", "pass": "crackers"}
-      ],
+    "auth": {
+      "deny": 1,
       "retry": 3,
       "retryTime": 500,
-      "deny": 1,
-      "unlockTime": 3000
+      "unlockTime": 3000,
+      "users": [
+        {
+          "user": "jack",
+          "pass": "cheese"
+        },
+        {
+          "user": "jill",
+          "pass": "crackers"
+        }
+      ]
+    },
+    "vorpalCLI": {
+      "batchPath": "history",
+      "printDate": false,
+      "scriptPath": "scripts",
+      "tailPath": "/usr/bin"
     },
     "firewall": {
       "policy": "REJECT",
       "rules": [
-        { "rule": "accept", "ip": "192.168.0.0", "subnet": 24 },
-        { "rule": "accept", "ip": "127.0.0.1", "subnet": 32 }
+        { "rule": "accept",
+          "ip": "192.168.0.0",
+          "subnet": 24
+        },
+        { "rule": "accept",
+          "ip": "127.0.0.1",
+          "subnet": 32
+        }
       ]
     },
     "loglevel": 20,
+    "middleware": "basic",
     "port": 8753
   }
 }

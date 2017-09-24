@@ -2,6 +2,15 @@
 logs
 *.log
 
+# Keys
+private
+
+# history
+history
+
+# nedb
+sqlpaddata
+
 # Runtime data
 pids
 *.pid

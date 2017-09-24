@@ -2,21 +2,24 @@
   "name": "sqlpal",
   "version": "1.0.0",
   "description": "Admin a locally contained SQL Server for Linux instance",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start": "node index.js",
-    "test": "node testCLI"
+    "start": "node server.js"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
     "codemirror": "^5.27.4",
     "colors": "^1.1.2",
     "mssql": "^4.0.1",
+    "nedb": "^1.8.0",
+    "pem": "^1.10.0",
     "prettyjson": "^1.2.1",
-    "sqlpad": "^2.2.0",
+    "socket.io": "^2.0.3",
+    "socket.io-as-promised": "^1.0.0",
+    "sqlpad": "^2.3.0",
     "vantage": "^1.7.0",
     "vantage-watch": "^1.0.2",
     "vorpal-log": "^1.1.0",
