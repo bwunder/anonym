@@ -35,14 +35,16 @@ module.exports = exports = sqldb = {
     }
 
   },
-  isSQL: () => {
+  isSQL: (tSQL) => {
 
-    if (config.cache.batch.length>0) {
-      lib.log('debug', `(query)`+lib.compile([`SET NOEXEC ON;`].concat(config.cache.Batch)));
-      return new mssql.Request(pool).query(lib.compile([`SET NOEXEC ON;`].concat(config.cache.Batch)))
+    function askSQLServer(trySQL) {
+      lib.log('debug', `is this tSQL? \n/**********\n` + `${trySQL}`.gray +`\n*********/\n`);
+      let checkSQL=`SET NOEXEC ON; ${trySQL}`;
+      return new mssql.Request(pool).query(trySQL)
       .then( (nodata) => {   // { recordsets: [], recordset: undefined, output: {}, rowsAffected: [] }
-        lib.log('debug', `SQL Server believes the batch to be valid T-SQL,
-          db object references, however, have `.italic + `not`.bold.underline.red + ` been verified`.italic);
+        lib.log('debug', `SQL Server ${config.docker.containerId} parsed & compiled the script,
+          unfortunately, `+ `no`.bold.red + ` db object references are verified.`
+        );
         return true;
       })
       .catch( (err) => {
@@ -53,43 +55,55 @@ module.exports = exports = sqldb = {
       });
     }
 
+    switch (typeof tSQL) {
+      case ('undefined'):
+        return true;
+        break;
+      case ('string'):
+        return askSQLServer(tSQL);
+        break;
+      default:
+        return false;
+        break;
+    }
+
   },
   openPool: (retryCounter=0) => {
 
     lib.log('debug', `${process.env.npm_package_name} connection pool config:`);
     lib.log('debug', lib.format(sqldb.config));
 
-    lib.log('debug', 'pool b4 new pool');
-    lib.log('debug', pool);
-
     pool = new mssql.ConnectionPool(sqldb.config, (err) => {
       if (err) {
-        lib.log('warn', `${process.env.npm_package_name} connection pool probe returned an error`);
+        lib.log('warn', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} probe returned an error`);
         lib.log('error', err.message);
         lib.log('debug', err.stack);
       } else {
-        lib.log('log', `${process.env.npm_package_name} connection pool is opened`.inverse);
+        lib.log('log', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} ready`.inverse);
       }
     });
 
     pool.on('error', (err) => {
-      lib.log('warn', `${process.env.npm_package_name} connection pool error event`);
+      lib.log('warn', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} error event`);
       lib.log('error', err.message);
       lib.log('debug', err.stack);
     });
 
     pool.on('close', () => {
       lib.archiveBatchHistory();
-      lib.log('debug', `${process.env.npm_package_name} connection pool close event`);
+      lib.log('debug', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} close event`);
     });
 
   },
-  batch: () => {
+  batch: (tSQL) => {
 
-    return sqldb.isSQL()
+    if (!tSQL) {
+      tSQL=lib.compile(config.cache.batch);
+    }
+    return sqldb.isSQL(tSQL)
     .then( () => {
 
-      return new mssql.Request(this.pool).batch(lib.compile(config.cache.batch))
+      return new mssql.Request(this.pool).batch(tSQL)
       .then( (results) => {
         lib.log('log', lib.format(results));
         lib.archiveBatch();
@@ -114,14 +128,17 @@ module.exports = exports = sqldb = {
     }
 
   },
-  query: () => {
+  query: (tSQL) => {
 
-    lib.log(`sqldb.isSQL: ${sqldb.isSQL}`);
-    return sqldb.isSQL()
+    if (!tSQL) {
+      tSQL=lib.compile(config.cache.batch);
+    }
+    lib.log(`query: ${tSQL}`);
+    return sqldb.isSQL(tSQL)
     .then( (isSQL) => {
       lib.log(`isSQL: ${isSQL}`);
       if (isSQL) {
-        return new mssql.Request(pool).query(lib.compile(config.cache.batch))
+        return new mssql.Request(pool).query(tSQL)
       }
     })
     .then( (results) => {

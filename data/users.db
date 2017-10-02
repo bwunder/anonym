@@ -1,0 +1,2 @@
+{"_id":"9sLzw9r19im9Ny0A","email":"bwunder@yahoo.com","role":"admin","passhash":"$2a$10$JC3Z55P4stFbK9zvm1Re4OYAp2DnuRkE5DfzYeAJv4AllHotr/FH2","createdDate":{"$$date":1506252270062},"modifiedDate":{"$$date":1506252652234},"signupDate":{"$$date":1506252652234}}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}

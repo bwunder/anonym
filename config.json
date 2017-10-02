@@ -1,5 +1,5 @@
 {
-  "attention": "this base image is overloaded with any user changes persisted to nedb",
+  "attention": "base image is overloaded with dynamic values at runtime",
   "bcp": {
     "switch": {
       "d": "staging",
@@ -71,7 +71,7 @@
     }
   },
   "sqlpad": {
-    "dir": "sqlpaddata",
+    "dir": "data",
     "ip": "127.0.0.1",
     "port": 8754,
     "https-port": 8755,
@@ -135,7 +135,7 @@
         }
       ]
     },
-    "loglevel": 20,
+    "loglevel": 10,
     "middleware": "basic",
     "port": 8753
   }

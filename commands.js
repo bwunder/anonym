@@ -22,6 +22,7 @@ var line = '';
 pem.createCertificate(config.pem, function(err, keys){
 
   // feed these ssl creds to sqlpad
+console.log('key-path', config.sqlpad[`key-path`]);
   fs.writeFileSync(config.sqlpad[`key-path`], keys.serviceKey);
   fs.writeFileSync(config.sqlpad[`cert-path`], keys.certificate);
 
@@ -75,7 +76,7 @@ pem.createCertificate(config.pem, function(err, keys){
   });
 
   vantage.command(`config`, `Inspect and adjust component configurations.`)
-  .option(`-a, --app`, `${path.resolve(__dirname, 'config.json')}`)
+  .option(`-a, --app  [runtime]`, `${path.resolve(__dirname, 'config.json')}`)
   .option(`-f, --firewall`, `vantage simple IP firewall`)
   .option(`-m, --mssql`, path.resolve(config.docker.sqlVolume, 'mssql.conf'))
   .option(`-s, --sqlserver ['option-name']`, `sys.configurations`)
@@ -85,10 +86,14 @@ pem.createCertificate(config.pem, function(err, keys){
 
     switch(true) {
 
+      case (args.options.app==='runtime'):
+
+        lib.log('log', lib.format(config));
+        break;
+
       case (args.options.mssql===true):
 
         lib.interactiveSession(config.docker.containerId);
-
         break;
 
       case (args.options.firewall===true):
@@ -117,24 +122,29 @@ pem.createCertificate(config.pem, function(err, keys){
 
             }
 
-          }  // other end of the redicuolusly long if
+          }  // other end of if with 1000 character regex
 
         });
-
         break;
 
       case (args.options.sqlserver===true):
 
-        log.debug(`found args.options.sqlserver!`);
-        queryStore.getBatch(`configurations`);
-        log.log(lib.compile(.0))
-
+        queryStore.getScript(`configurations`, (script) => {
+          sqldb.query(script)
+          .then( (results) => {
+            lib.log(lib.format(results));
+          })
+          .catch( (err) => {
+            lib.log('warn', `error reading sys.configurations`);
+            lib.log('error', err.message);
+            lib.log('debug', err.stack);
+          });
+        });
         break;
 
       case (typeof args.options.sqlserver==='string'):
 
         sqldb.query(`EXEC sp_configure '${args.options.sqlserver}'`);
-
         break;
 
       case (args.options.app):
@@ -142,7 +152,6 @@ pem.createCertificate(config.pem, function(err, keys){
       default:
 
         lib.fileToJSON('config.json');
-
         break;
 
     }
@@ -159,9 +168,9 @@ pem.createCertificate(config.pem, function(err, keys){
 
     log.debug(`engine ${lib.format(args)}`);
     let action = Object.keys(args.options)[0] || `status`;
-    // sudo password entry flakey if async or callback
+    // password entry is flakey if async
     // could do a quick sudo query first then tailgate that challenge
-    childProcess.spawnSync(`sudo`);
+//    childProcess.spawnSync(`sudo`);
     log.debug(`(spawnSync) sudo service docker ${action}`);
     childProcess.spawnSync(`sudo`, [ `service`, `docker`, action ], {
       stdio: [null, 1, 2]
@@ -191,14 +200,14 @@ pem.createCertificate(config.pem, function(err, keys){
 
         case (args.options.all):
 
-          log.debug(`docker image ls ${config.docker.repo}`);
+          log.debug(`(execSync) docker image ls ${config.docker.repo}`);
           log.log(lib.format(childProcess.execSync(`docker image ls ${config.docker.repo}`)));
 
           break;
 
         case (args.options.full):
 
-          log.debug(`docker images ls ${config.docker.repo} | grep ${config.docker.imageId}`)
+          log.debug(`(execSync) docker images ls ${config.docker.repo} | grep ${config.docker.imageId}`)
           log.log(lib.format(childProcess.execSync(`docker image ls ${config.docker.repo} | grep ${config.docker.imageId}`)));
 
           break;
@@ -704,6 +713,9 @@ pem.createCertificate(config.pem, function(err, keys){
 
       switch (true) {
 
+        case (!args.tsql) :
+          break;
+
         case (/^debug$/i.test(args.tsql[0])) :
           // for better or worse, this will clean-up any bogus previous or file value
           // setting loglevel to 30, 40 or 50 will suppress the linereader
@@ -730,10 +742,10 @@ pem.createCertificate(config.pem, function(err, keys){
           break;
 
         case (/^QUERY$/i.test(line)) :
-          // list collection of query tempalte strings
+          // list the collection
           log.log(queryStore.names());
           break;
-        // otherwise
+        // otherwise overload the query into the batch
         case (/^QUERY$/i.test(args.tsql[0])) :
           log.debug(`query "${args.tsql[1]}"`);
           queryStore.getBatch(args.tsql[1]);

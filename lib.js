@@ -10,6 +10,8 @@ const path = require('path');
 // local
 const config = require('./config');
 
+let sqlpad;
+
 module.exports = exports = lib = {
 
   archiveBatch: () => {
@@ -55,7 +57,7 @@ module.exports = exports = lib = {
       `Input not recognized as one of these `+`KEYWORDS`.rainbow+` is buffered to an array of T-SQL lines`,
       `as a cached query Batch that is compiled to T-SQL upon termination and cleared from cache once executed`,
       `\t--HELP`.rainbow + `\t\tThis usage message (more complete than HELP command from the Vantage CLI below)`,
-      `\tVERBOSE`.rainbow + ` [ON|OFF] `.yellow + `\tsqlpal verbose logging mode`,
+      `\tDEBUG`.rainbow + ` [ON|OFF] `.yellow + `\tsqlpal verbose logging mode (set vantage builtin logLevel=10)`,
       `  Injector Commands `.magenta + ' - ' + `overwrite the Batch with saved user queries`.gray,
       `\tQUERY`.magenta + ` [key] `.yellow + ` \tNamed queries as found in 'queries.js' module file`,
       `\tSCRIPT`.magenta + ` [file-name] `.yellow + `\t'.sql' files in '${config.scriptPath}' folder`,
@@ -115,7 +117,7 @@ module.exports = exports = lib = {
     return fs.readFileAsync(path.resolve(fromFile))
     .then((fileBuffer) => {
       lib.log('log', lib.format(JSON.parse(fileBuffer.toString())));
-      lib.log('info', `Use sqlpad or a text editor to modify file '${path.resolve(fromFile)}`);
+      lib.log('info', `Use text editor to modify file '${path.resolve(fromFile)} then restart sqlpal for now...`);
     })
     .catch((err) => {
       lib.log('error', err.message)
@@ -210,18 +212,13 @@ module.exports = exports = lib = {
         docker exec -d ${containerId} ln -sf ${config.odbc.path}/sqlcmd /usr/bin
         docker exec -d ${containerId} ln -sf ${config.odbc.path}/bcp /usr/bin
         docker exec -d ${containerId} ln -sf -T ${config.mssql.conf} /usr/bin/mssql-conf`);
-
-      lib.log('info', [`'bcp, 'mssql-conf', 'sqlcmd' command-line interfaces as well as`,
-        `the installed SQL Server files are available within the container.`,
-        `'bcp' and 'sqlcmd' can connect using '-S. -Usa -P "$SA_PASSWORD"' in this session`,
-        `type any of those commands with no args for more usage information on that command`,
-        `type 'exit' to close interactive container session and resume sqlpal linereader`].join('\n'));
-
+      lib.log('info', [`Opening interactive session in SQL Server container ${containerId}...`,
+        `'bcp, 'mssql-conf', 'sqlcmd' command-lines, and SQL Server's 'env' variables are available.`,
+        `type 'exit' to close interactive session and resume sqlpal prompt`].join('\n'));
       lib.log('debug', `(spawnSync) docker exec --interactive --tty ${containerId} /bin/bash`);
-      let child = childProcess.spawnSync(`docker`, [`exec`, `--interactive`, `--tty`, `${containerId}`, `/bin/bash`], {
+      childProcess.spawnSync(`docker`, [`exec`, `--interactive`, `--tty`, `${containerId}`, `/bin/bash`], {
         stdio: ['inherit', 'inherit', 'inherit']
       });
-      lib.log('debug', child);
 
     }
 
@@ -291,40 +288,58 @@ module.exports = exports = lib = {
     }
 
   },
-  runImage: () => {
+  runImage: (imageId = config.docker.imageId) => {
 
-    if (config.docker.imageId) {
-      lib.log('info', `running image ${config.docker.imageId}`);
-      let run = [`sudo docker run`,
+    // not if container already running or port or volume already in use
+    lib.log('debug', `(execSync) docker ps --all --filter "ancestor=${imageId}" (cfg ${config.docker.imageId})`);
+    let existing = childProcess.execSync(`docker ps --all --filter "ancestor=${imageId}" `).toString();
+    if (!existing) {
+      let args = [
+        `sudo docker run`,
         `-e "ACCEPT_EULA=${config.mssql.acceptEULA}"`,
         `-e "SA_PASSWORD=${config.mssql.sa.password}"`,
         `-p ${config.docker.hostPort}:${config.docker.sqlPort}`,
         `-v ${config.docker.sqlVolume}:${config.docker.sqlVolume}`,
         `-d ${config.docker.imageId}`].join(' ');
-      lib.log('debug', `(ExecSync) ${run}`);
-      childProcess.execSync(run);
+
+      lib.log('debug', `(execSync) ${args}`);
+      let run = childProcess.execSync(args);
+
+      run.on('error',  (data) => {
+        lib.log('warn', `error starting container ${imageId}`);
+        lib.log('error', err.message);
+        lib.log('debug', err.stack);
+        run.kill();
+      });
+
+    } else {
+      lib.log('log', existing);
     }
 
   },
   setImage: (imageId) => {
 
+    let pullInterval = 600;
     let pullDt = new Date;
-    lib.log('debug', `setImage - last pull was ${pullDt - (lib.lastPullDt||pullDt)}ms ago`);
-    if ((typeof lib.lastPullDt==='undefined') ||                // never
-        (lib.lastPullDt===0) ||                                 // just now
-        (pullDt - (lib.lastPullDt||pullDt) > 60 * 60 * 1000)) { // an hour ago
+    lib.log('debug', `setImage - minutes since last pull ${(Math.round(pullDt - (config.docker.lastPullDt||pullDt))/1000)/60+1}`);
+    if ((typeof config.docker.lastPullDt==='undefined') || (Math.round(pullDt - (config.docker.lastPullDt||pullDt))/1000/60)>pullInterval) {
       lib.log('debug', `(spawnSync) docker pull ${config.docker.repo}`);
       childProcess.spawnSync(`docker`, [`pull`, `${config.docker.repo}`], {
         stdio: [0, (config.vantage.logLevel!=20)? null: 1, 2]
       });
-      lib.lastPullDt = pullDt;
+      config.docker.lastPullDt = pullDt;
+      // default to latest
+      if (!imageId) {
+        imageId = childProcess.execSync(`docker images ${config.docker.repo}:latest --format "{{.ID}}"`).toString();
+        lib.log('debug', `(execSync) docker images ${config.docker.repo}:latest  --format "{{.ID}}" = ${imageId}`);
+      }
     }
-    lib.log('debug', childProcess.execSync(`docker images ${config.docker.repo}:latest`).toString());
-    imageId = childProcess.execSync(`docker images ${config.docker.repo}:latest --format "{{.ID}}"`).toString().trim();
-    config.docker.imageId = imageId;
-    lib.log('log', lib.format(JSON.parse(childProcess.execSync(`docker image inspect --format="{{json .Config.Labels}}" ${config.docker.imageId}`))));
+    config.docker.imageId = imageId || config.docker.imageId;
+    if (config.docker.imageId) {
+      lib.log('log', childProcess.execSync(`docker image inspect --format="{{json .Config.Labels}}" ${config.docker.imageId}`));
+    }
 
-   },
+  },
   setInstance: (containerId) => {
 
     try { // handled error informs but 'ps -e|grep dockerd' may be better for automating the works?
@@ -362,7 +377,7 @@ module.exports = exports = lib = {
           lib.log('debug', `container ${config.docker.containerId} ready`);
         }
         sqldb.openPool();
-
+        // make this a method - also used in runImage
         lib.log('debug', `(execSync) docker ps --filter "id=${sqid}"`);
         lib.log('log', childProcess.execSync(`docker ps --filter "id=${sqid}"`).toString());
 
@@ -373,6 +388,63 @@ module.exports = exports = lib = {
       lib.log('error', err.message);
       lib.log('debug', err.stack);
     }
+
+  },
+  setSqlpad: () => {
+
+    let retry=1;
+
+    // ??could use array and allow multiple in config.sqlpad??
+    if (config.sqlpad.sqlpad) {
+      config.sqlpad.sqlpad.kill();
+    }
+    const sqlpadArgs = [];
+    if (config.logLevel===10) {
+      config.sqlpad.debug=true;
+      config.logLevel===10;
+    };
+
+    Object.keys(config.sqlpad).forEach( (key) => {
+      if (config.sqlpad[key]) {
+        sqlpadArgs.push( key.length==1? `-${key}`: `--${key}` );
+        sqlpadArgs.push( config.sqlpad[key]);
+      }
+    });
+
+    sqlpad = childProcess.spawn('sqlpad', sqlpadArgs);
+
+    // ?? ocassionally (rapid restart cycles) sqlpal's queries poisons the .spawn ??
+    // ENOENT: no such file or directory, rename 'data/queries.db~' -> 'data/queries.db' at Error (native)
+    // a retry always resolves, perhaps a lock in a slow to close async spawn?
+    sqlpad.on('error',  (data) => {
+      if (!retry && err.code===`ENOENT`) {
+        retry--;
+        lib.log('debug', `[sqlpad]`.cyan.italic + ` retry`);
+        setSqlpad();
+      } else {
+        lib.log('warn', `[sqlpad]`.cyan.italic + `unable to start sqlpad server`);
+        lib.log('error', err);
+      }
+    });
+
+    sqlpad.stdout.on('data', (data) => {
+      if (/Welcome/.test(data) || (/Launching/.test(data))) {
+        lib.log( 'log', `${data}`.yellow );
+      } else {
+        lib.log( 'debug', `[sqlpad] `.cyan.italic + `${data}`.gray);
+      }
+    });
+
+    sqlpad.stderr.on('data', (data) => {
+      lib.log('log', `[sqlpad] `.cyan.italic + `error `.magenta.bgWhite + `${data}`.red);
+    });
+
+    sqlpad.on('exit', (code) => {
+      lib.log('log', config.log);
+      lib.log('warn', `[sqlpad] `.cyan.italic + `server exited with code ${code}`);
+    });
+
+    config.sqlpad.sqlpad=sqlpad;
 
   },
   startContainer: (startType, containerId) => { // start or restart

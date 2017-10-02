@@ -5,14 +5,24 @@ const Promise = require('bluebird');
 const config = require(`./config.json`);
 const lib = require(`./lib.js`);
 
-const queries = new nedb({ filename: 'sqlpaddata/queries.db', autoload: true });
+const queries = new nedb({ filename: `${config.sqlpad.dir}/queries.db`, autoload: true });
 
 // oneoff load queries.js template strings into sqlpal's nedb queries collection
-// const queriesjs = require('./queries.js');
-// Object.keys(queriesjs).forEach((name) => {
-//   log.log(`name ${name}\n${queriesjs[name]}`)
-//   queryStore.insert(name, queriesjs[name]);
-// })
+queries.count({}).exec(function(err, nbr) {
+  if (err) {
+    lib.log('error', err);
+  } else {
+    if (!nbr) {
+      lib.log('log', 'One Time Copy of sqlpal/queries.js into nedb queries collection');
+      const queriesjs = require('./queries.js');
+      Object.keys(queriesjs).forEach((name) => {
+        lib.log('log', `name ${name}\n${queriesjs[name]}`)
+        queryStore.insert(name, queriesjs[name]);
+      })
+    }
+  }
+});
+
 
 //  queries schema(?)
 //{[
@@ -32,18 +42,18 @@ const queries = new nedb({ filename: 'sqlpaddata/queries.db', autoload: true });
 //    modifiedBy: Joi.string().required(),
 //    lastAccessDate: Joi.date().default(new Date(), 'time of last access')
 //  }, ... ]}
-
 module.exports = exports = queryStore = {
 
   get: (queryName, projection={}) => {
-
-    lib.log('debug', `query store - get ${queryName} projection ${projection}`);
-    queries.findOne({name: queryName}, projection).exec(function(err, doc) {
-      if (err) {
-        lib.log('error', err);
+    lib.log('debug', `query store - get ${queryName} projection ${JSON.stringify(projection)}`);
+    queries.findOne({name: queryName},  {_id: 0, queryText: 1}).exec(function(err, doc) {
+      if (err) throw err;
+      if (!doc) {
+        lib.log('warn', `query not found`);
       } else {
-        lib.log('log', doc);
+        lib.log('debug', doc);
       }
+      return doc.queryText;
     });
 
   },
@@ -68,6 +78,23 @@ module.exports = exports = queryStore = {
     });
 
   }),
+  getScript: (queryName, callback) => {
+
+    lib.log('debug', `fetching script '${queryName}' from nedb query store`);
+    queries.findOne({name: queryName}, {_id: 0, queryText: 1}).exec( function(err, doc) {
+      if (err) {
+        lib.log('error', err);
+      } else {
+        if (!doc) {
+          throw(`query not found`);
+        } else {
+          lib.log('debug', doc.queryText);
+          callback(doc.queryText);
+        }
+      }
+    });
+
+  },
   insert: (queryName, query) => {
 
     queries.insert(
@@ -80,7 +107,7 @@ module.exports = exports = queryStore = {
   },
   list: (query={}, projection={_id: 0, name: 1, queryText: 1 }, sort) => {
 
-    lib.log('debug', `query store - list  query ${query} projection ${projection}`);
+    lib.log('debug', `query store - list  query ${query} projection ${projection.toString()}`);
     queries.find(query, projection).sort(sort).exec(function(err, docs) {
       docs.forEach((doc) => {
         lib.log('log', `${doc.name}`.bold + ` ${"\n" + doc.queryText + "\n"}`);
@@ -90,7 +117,7 @@ module.exports = exports = queryStore = {
   },
   names: (query={}, projection={_id: 0, name: 1 }, sort) => {
 
-    lib.log('debug', `query store - names  query ${query} projection ${projection}`);
+    lib.log('debug', `query store - names  query ${query} projection ${projection.toString()}`);
     queries.find(query, projection).sort(sort).exec(function(err, docs) {
       docs.forEach((doc) => {
         lib.log('log', `${doc.name}  `.bold);
