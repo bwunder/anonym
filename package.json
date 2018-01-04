@@ -1,25 +1,28 @@
 {
   "name": "sqlpal",
-  "version": "1.0.0",
-  "description": "Admin a locally contained SQL Server for Linux instance",
+  "version": "0.0.1",
+  "description": "Host Console for SQL Server on Linux Docker Container",
   "main": "server.js",
   "directories": {
-    "doc": "docs"
+    "data": "data",
+    "doc": "docs",
+    "private": "private",
+    "scripts": "scripts"
   },
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "codemirror": "^5.27.4",
     "colors": "^1.1.2",
+    "dockerode": "^2.5.1",
     "mssql": "^4.0.1",
     "nedb": "^1.8.0",
     "pem": "^1.10.0",
-    "prettyjson": "^1.2.1",
+    "pretty-data": "^0.40.0",
     "socket.io": "^2.0.3",
     "socket.io-as-promised": "^1.0.0",
-    "sqlpad": "^2.3.0",
+    "sqlpad": "^2.4.2",
     "vantage": "^1.7.0",
     "vantage-watch": "^1.0.2",
     "vorpal-log": "^1.1.0",
@@ -36,11 +39,8 @@
     "on",
     "Linux",
     "Docker",
-    "console",
     "CLI",
-    "dockerhub.com",
-    "node.js",
-    "vorpal"
+    "SQLPad"
   ],
   "author": "Bill Wunder",
   "license": "MIT",

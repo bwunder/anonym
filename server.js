@@ -1,27 +1,41 @@
-const cli = require(`./commands.js`);
-const lib = require(`./lib.js`);
+const config = require(`./config.json`)
+const api = require(`./api.js`)
+const cli = require(`./commands.js`)
 
-lib.setSqlpad();
+process.on('unhandledRejection', (error) => {
+  api.log('warn', 'process unhandledRejection')
+  api.log('error', error)
+})
 
 process.on('error', (err) => {
-  lib.log('warn', 'process error handler');
-  lib.log('error', err);
-  process.emit('exit');
-});
+  api.log('warn', 'process error')
+  api.log('error', err.message)
+  api.log('debug', err.stack)
+  process.emit('exit')
+})
 
 process.on('exit', (code) => {
 
-  // clean-up spawned procs
-  if (config.sqlpad.sqlpad) {
-    config.sqlpad.sqlpad.kill();
+  try {
+    if (config.sqlpad[`sqlpad`]) {
+      api.log('log', `[exit] sqlpad server at port ${config.vantage.port} ending`.cyan.bgGray)
+      config.sqlpad.sqlpad.kill()
+      config.sqlpad.sqlpad=undefined
+    }
+    if (config.tail) {
+      api.log('log', `[exit] tail following SQL Server ${config.tail} ending`.blue.bgGrey)
+      config.tail.kill()
+      config.tail=undefined
+    }
+    api.log('log', `sqlpal at port ${config.vantage.port} ending with code: ${code}`)
   }
-  if (config.tail) {
-    config.tail.kill();
+  catch (err) {
+    console.error(err)
   }
 
-  // persist session activity to archive
-  // config.batchHistory
-  // cli.history
-  // update config.json?
+})
 
-});
+api.loadCatalog()
+if (config.sqlpad.enabled) {
+  api.startSQLPad()
+}

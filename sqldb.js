@@ -1,155 +1,151 @@
 //NPM
-const mssql = require('mssql');
-const Promise = require('bluebird');
-mssql.Promise = Promise;
+const mssql = require('mssql')
 // local
-const config = require(`./config.json`);
-const lib = require('./lib.js');
+const config = require(`./config.json`)
+const api = require('./api.js')
+const Pool= mssql.ConnectionPool
+const store = require('./store.js')
 
+let pool=undefined
+let instanceId=undefined
 
-mssql.on('error', err => {
-
-  lib.log('warn', `${process.env.npm_package_name} mssql driver error`);
-  lib.log('error', err.message);
-  lib.log('debug', err.stack);
-
+mssql.on('error', (err) => {
+  api.log('warn', `(mssql event) error`)
+  api.log('error', err.message)
+  api.log('debug', err.stack)
 });
-
-var pool={};
 
 module.exports = exports = sqldb = {
 
-  config: {
-
-    user: config.sqlcmd.switch.U || config.mssql.sa.name,
-    password: !config.sqlcmd.switch.U? config.mssql.sa.password: config.sqlcmd.switch.P,
-    server: config.sqlcmd.switch.S,
-    database: config.sqlcmd.switch.d,
-    pool: config.odbc.pool
-
-  },
-  closePool: (pool) => {
+  closePool: () => {
 
     if (pool) {
-      pool.close();
+      pool.close()
+      instanceId=undefined
+      api.log('debug', `(sqldb.closePool), SQL Server ${api.getInstance()}`)
     }
 
   },
   isSQL: (tSQL) => {
 
-    function askSQLServer(trySQL) {
-      lib.log('debug', `is this tSQL? \n/**********\n` + `${trySQL}`.gray +`\n*********/\n`);
-      let checkSQL=`SET NOEXEC ON; ${trySQL}`;
-      return new mssql.Request(pool).query(trySQL)
+    return new Promise(function(resolve, reject) {
+      if (/NOEXEC/i.test(tSQL)) {
+        reject(new Error(`query contains 'NOEXEC' keyword: unable to evaluate`))
+      }
+      return new mssql.Request(pool).query(`SET NOEXEC ON; ${tSQL}`)
       .then( (nodata) => {   // { recordsets: [], recordset: undefined, output: {}, rowsAffected: [] }
-        lib.log('debug', `SQL Server ${config.docker.containerId} parsed & compiled the script,
-          unfortunately, `+ `no`.bold.red + ` db object references are verified.`
-        );
-        return true;
+        api.log('debug', `(sqldb.isSQL) valid`.green)
+        resolve(true)
       })
       .catch( (err) => {
-        lib.log('warn', `Invalid T-SQL. Batch remains in ${process.env.npm_package_name} cache...`);
-        lib.log('error', err.message);
-        lib.log('debug', err.stack);
-        return false;
-      });
-    }
-
-    switch (typeof tSQL) {
-      case ('undefined'):
-        return true;
-        break;
-      case ('string'):
-        return askSQLServer(tSQL);
-        break;
-      default:
-        return false;
-        break;
-    }
+        api.log('log', `${err.message}`.yellow)
+        resolve(false)
+      })
+    })
 
   },
-  openPool: (retryCounter=0) => {
+  openPool: () => {
 
-    lib.log('debug', `${process.env.npm_package_name} connection pool config:`);
-    lib.log('debug', lib.format(sqldb.config));
+    if (api.sqlCatalog.Instance) {
+      pool = new Pool(config.mssql.pool, (err) => {
+        if (err) {
+          api.log('error', `(openPool) error, SQL Server ${api.sqlCatalog.Instance} probe returned an error`)
+          api.log('error', err)
+        }
+      })
+      //event speculating, never seen any of 'em so far
+      pool.on('error', (err) => {
+        api.log('error', `[pool.error event]`.blue+` SQL Server ${api.sqlCatalog.Instance}`.gray)
+        api.log('error', err)
 
-    pool = new mssql.ConnectionPool(sqldb.config, (err) => {
-      if (err) {
-        lib.log('warn', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} probe returned an error`);
-        lib.log('error', err.message);
-        lib.log('debug', err.stack);
-      } else {
-        lib.log('log', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} ready`.inverse);
-      }
-    });
-
-    pool.on('error', (err) => {
-      lib.log('warn', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} error event`);
-      lib.log('error', err.message);
-      lib.log('debug', err.stack);
-    });
-
-    pool.on('close', () => {
-      lib.archiveBatchHistory();
-      lib.log('debug', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} close event`);
-    });
+      });
+      pool.on('connect', (data) => {
+        api.log('log', `[pool.connect event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
+        api.log('log',  data)
+      })
+      pool.on('data', (data) => {
+        api.log('log', `[pool.data event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
+        api.log('log',  data)
+      })
+      pool.on('disconnect', (data) => {
+        api.log('log', `[pool.disconnect event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
+        api.log('log',  data)
+      })
+      pool.on('close', () => {
+        api.log('log', `[pool.close event]`.blue+` SQL Server ${api.sqlCatalog.Instance}`.gray)
+      })
+    }
 
   },
   batch: (tSQL) => {
 
-    if (!tSQL) {
-      tSQL=lib.compile(config.cache.batch);
-    }
-    return sqldb.isSQL(tSQL)
-    .then( () => {
+    // if (!pool && api.getInstance()) sqldb.openPool()
+    if (!tSQL) tSQL=api.compile(config.batch)
 
-      return new mssql.Request(this.pool).batch(tSQL)
-      .then( (results) => {
-        lib.log('log', lib.format(results));
-        lib.archiveBatch();
-        return true
-      });
-
+    sqldb.isSQL(tSQL)
+    .then( (is) => {
+      if (is) {
+        api.log('debug', `(sqldb.query) ${tSQL}`)
+        return new mssql.Request(pool).batch(tSQL)
+      }
+    })
+    .then( (result) => {
+      if (result) api.log('log', api.format(result))
+      store.batches.put({batch: config.batch, result})
+      config.batch.splice(0)
     })
     .catch( (err) => {
-      lib.log('warn', `${process.env.npm_package_name} batch failed to execute`);
-      lib.log('error', err.message);
-      lib.log('debug', err.stack);
-    });
+      api.log('warn', `(sqldb.batch) query failed at SQL Server`)
+      api.log('error', err.message)
+      store.batches.put({batch: config.batch, error: err})
+    })
 
   },
   connect: () => {
 
-    if (pool) {
-      pool.connect();
-      lib.log('debug', `${process.env.npm_package_name} connection pool for SQL Server ${config.docker.containerId} now accepting connections`);
+    if (pool || !pool._connecting) {
+      pool.connect()
+      api.log('log', `(sqldb.connect), pool re-connect ${api.getInstance()}`)
     } else {
-      lib.log('error', `no pool found for ${process.env.npm_package_name} connection pool to SQL Server ${config.docker.containerId}`);
+      sqldb.openPool()
     }
 
   },
   query: (tSQL) => {
 
-    if (!tSQL) {
-      tSQL=lib.compile(config.cache.batch);
-    }
-    lib.log(`query: ${tSQL}`);
-    return sqldb.isSQL(tSQL)
-    .then( (isSQL) => {
-      lib.log(`isSQL: ${isSQL}`);
-      if (isSQL) {
+    // if (!pool && api.getInstance()) sqldb.openPool()
+    if (!tSQL) tSQL=api.compile(config.batch)
+
+    sqldb.isSQL(tSQL)
+    .then( (is) => {
+      if (is) {
+        api.log('debug', `(sqldb.query) ${tSQL}`)
         return new mssql.Request(pool).query(tSQL)
       }
     })
-    .then( (results) => {
-      if (results) lib.log('log', lib.format(results));
-      lib.archiveBatch();
+    .then( (result) => {
+      if (result) api.log('log', api.format(result))
+      store.batches.put({query: config.batch, result})
+      config.batch.splice(0)
     })
     .catch( (err) => {
-      lib.log('warn', '${process.env.npm_package_name} query failed to execute');
-      lib.log('error', err.message);
-      lib.log('debug', err.stack);
-    });
+      store.batches.put({query: config.batch, result})
+      api.log('warn', `(sqldb.query) query failed at SQL Server`)
+      api.log('error', err.message)
+    })
+
+  },
+  state: () => {
+
+    return !pool?  undefined: !pool._connected? (!pool._connecting? 'closed': 'connecting') : 'connected'
+
+  },
+  target: () => {
+
+    // get from pool
+    if (pool && sqldb.isSQL('')) {
+      api.log('confirm', `connection pool is open, target ${instanceId}`)
+    }
 
   }
 

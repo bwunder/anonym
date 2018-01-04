@@ -1,0 +1,11 @@
+{"action":{"command":"instance -i","error":{}},"event":"client_command_error","_id":"06H5pPrLaopc0Sl7","createdAt":{"$$date":1514641305416},"updatedAt":{"$$date":1514641305416}}
+{"action":{"command":"instance -i","error":{}},"event":"client_command_error","_id":"AVGubzdpY3dJQEF7","createdAt":{"$$date":1514641956163},"updatedAt":{"$$date":1514641956163}}
+{"command":{"command":"select 3","error":{}},"event":"client_command_error","_id":"BhwQvXjw7sYdOpBx","createdAt":{"$$date":1512324070188},"updatedAt":{"$$date":1512324070188}}
+{"action":{"command":"instance -i","error":{}},"event":"client_command_error","_id":"GAnJFNg2j7VG4SSg","createdAt":{"$$date":1514641240216},"updatedAt":{"$$date":1514641240216}}
+{"action":{"command":"instance -i 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","error":{}},"event":"client_command_error","_id":"QbFR6c9MHyzq4jEB","createdAt":{"$$date":1514850137446},"updatedAt":{"$$date":1514850137446}}
+{"action":{"command":"instance -c open","error":{}},"event":"client_command_error","_id":"chhVSfexVuZGX6wx","createdAt":{"$$date":1514852282227},"updatedAt":{"$$date":1514852282227}}
+{"command":{"command":"delect 42","error":{}},"event":"client_command_error","_id":"e1ylQbYgZhsPZIyb","createdAt":{"$$date":1512324120406},"updatedAt":{"$$date":1512324120406}}
+{"command":{"command":"select 42","error":{}},"event":"client_command_error","_id":"eYtF7VZ3xDmT5rMK","createdAt":{"$$date":1512323327125},"updatedAt":{"$$date":1512323327125}}
+{"action":{"command":"instance -i","error":{}},"event":"client_command_error","_id":"rU8O7bpxegkSLaHI","createdAt":{"$$date":1514562005498},"updatedAt":{"$$date":1514562005498}}
+{"action":{"command":"sgrgrr","error":{}},"event":"client_command_error","_id":"sEEHapW8k0LwBS2l","createdAt":{"$$date":1512324705829},"updatedAt":{"$$date":1512324705829}}
+{"command":{"command":"select 3","error":{}},"event":"client_command_error","_id":"vB315gT4IJtZOyxM","createdAt":{"$$date":1512323460147},"updatedAt":{"$$date":1512323460147}}

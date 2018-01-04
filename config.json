@@ -1,28 +1,23 @@
 {
-  "attention": "base image is overloaded with dynamic values at runtime",
+  "batch": [],
   "bcp": {
     "switch": {
-      "d": "staging",
-      "S": "172.17.0.1"
+      "d": "staging"
     }
   },
-  "cache": {
-    "batch": [],
-    "batchHistory": {}
-  },
+  "log": {},
   "docker": {
-    "repo": "microsoft/mssql-server-linux",
     "hostPort": 1433,
+    "repo": "microsoft/mssql-server-linux",
+    "socket": "/var/run/docker.sock",
     "sqlPort": 1433,
-    "sqlVolume": "/var/opt/mssql"
+    "sqlVolume": "/var/opt/mssql",
+    "timeout": 100
   },
+  "editor": "atom-beta",
+  "storeFolder": "data",
   "odbc": {
-    "path": "/opt/mssql-tools/bin",
-    "pool": {
-      "max": 10,
-      "min": 0,
-      "idleTimeoutMillis": 30000
-    },
+    "binPath": "/opt/mssql-tools/bin",
     "retry": {
       "count": 2,
       "wait": 10000
@@ -34,6 +29,8 @@
       "filter": ".bak",
       "path": "/var/opt/mssql/data"
     },
+    "binPath": "/opt/mssql/bin",
+    "confPath": "/var/opt/mssql",
     "data": {
       "filter": ".mdf",
       "path": "/var/opt/mssql/data"
@@ -42,14 +39,28 @@
       "filter": "core",
       "path": "/var/opt/mssql/log"
     },
+    "errorlog": {
+      "filter": "errorlog",
+      "path": "/var/opt/mssql/log"
+    },
     "log": {
       "filter": ".ldf",
       "path": "/var/opt/mssql/data"
     },
-    "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
-    "sa": {
-      "name": "sa",
-      "password": "<YourStrong!Passw0rd>"
+    "pool":  {
+      "user": "sa",
+      "password": "<YourStrong!Passw0rd>",
+      "server": "172.17.0.1",
+      "database": "master",
+      "connectionTimeout": 15000,
+      "requestTimeout": 15000,
+      "stream": false,
+      "parseJSON": true,
+      "pool": {
+        "max": 10,
+        "min": 0,
+        "idleTimeoutMillis": 30000
+      }
     }
   },
   "pem": {
@@ -63,15 +74,15 @@
       "SET QUOTED_IDENTIFIER OFF;"
     ],
     "switch": {
-      "S": "172.17.0.1",
       "d": "tempdb",
       "r": "r",
-      "I": "I",
-      "s": "  "
+      "I": "I"
     }
   },
   "sqlpad": {
-    "dir": "data",
+    "enabled": true,
+    "debug": false,
+    "dir": "sqlpaddata",
     "ip": "127.0.0.1",
     "port": 8754,
     "https-port": 8755,
@@ -120,7 +131,7 @@
       "batchPath": "history",
       "printDate": false,
       "scriptPath": "scripts",
-      "tailPath": "/usr/bin"
+      "binPath": "/usr/bin"
     },
     "firewall": {
       "policy": "REJECT",
@@ -135,7 +146,7 @@
         }
       ]
     },
-    "loglevel": 10,
+    "loglevel": 20,
     "middleware": "basic",
     "port": 8753
   }
