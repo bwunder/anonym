@@ -13,20 +13,17 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "bluebird": "^3.5.0",
     "colors": "^1.1.2",
     "dockerode": "^2.5.1",
+    "get-port": "^3.2.0",
     "mssql": "^4.0.1",
     "nedb": "^1.8.0",
     "pem": "^1.10.0",
     "pretty-data": "^0.40.0",
-    "socket.io": "^2.0.3",
-    "socket.io-as-promised": "^1.0.0",
     "sqlpad": "^2.4.2",
     "vantage": "^1.7.0",
-    "vantage-watch": "^1.0.2",
-    "vorpal-log": "^1.1.0",
-    "vorpal-repl": "^1.1.8"
+    "vorpal": "^1.12.0",
+    "vorpal-log": "^1.1.0"
   },
   "devDependencies": {},
   "repository": {

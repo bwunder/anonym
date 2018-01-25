@@ -1,13 +1,16 @@
-//NPM
+////NPM
 const mssql = require('mssql')
-// local
+////core
+const path= require('path')
+////local
 const config = require(`./config.json`)
 const api = require('./api.js')
-const Pool= mssql.ConnectionPool
 const store = require('./store.js')
 
-let pool=undefined
-let instanceId=undefined
+const Pool= mssql.ConnectionPool
+let pool
+let instanceId=api.sqlCatalog.Instance
+let db=config.mssql.pool.database
 
 mssql.on('error', (err) => {
   api.log('warn', `(mssql event) error`)
@@ -17,121 +20,137 @@ mssql.on('error', (err) => {
 
 module.exports = exports = sqldb = {
 
-  closePool: () => {
+  closePool: async () => {
 
-    if (pool) {
-      pool.close()
-      instanceId=undefined
-      api.log('debug', `(sqldb.closePool), SQL Server ${api.getInstance()}`)
-    }
+    return Promise.resolve(pool.close())
+    .then( () => {
+      api.log('log', `(closePool) ${api.sqlCatalog.Instance}`)
+    })
 
   },
-  isSQL: (tSQL) => {
+  isSQL: async (tSQL) => {
 
     return new Promise(function(resolve, reject) {
       if (/NOEXEC/i.test(tSQL)) {
-        reject(new Error(`query contains 'NOEXEC' keyword: unable to evaluate`))
+        // allowing NOEXEC could 'inappropriately' let tSQL execute
+        api.log('warn', `unable to evaluate batch: includes 'NOEXEC' keyword`.red)
+        resolve(false)
       }
       return new mssql.Request(pool).query(`SET NOEXEC ON; ${tSQL}`)
-      .then( (nodata) => {   // { recordsets: [], recordset: undefined, output: {}, rowsAffected: [] }
-        api.log('debug', `(sqldb.isSQL) valid`.green)
+      .then( (nodata) => {  // { recordsets: [], recordset: undefined, output: {}, rowsAffected: [] }
+        api.log('debug', `(isSQL) valid`.green)
         resolve(true)
       })
       .catch( (err) => {
-        api.log('log', `${err.message}`.yellow)
+        api.log('warn', `(isSQL) ${err.message}`.yellow)
         resolve(false)
       })
     })
 
   },
-  openPool: () => {
+  openPool: async (dbName=config.mssql.pool.database, port) => {
 
-    if (api.sqlCatalog.Instance) {
-      pool = new Pool(config.mssql.pool, (err) => {
-        if (err) {
-          api.log('error', `(openPool) error, SQL Server ${api.sqlCatalog.Instance} probe returned an error`)
-          api.log('error', err)
+    return new Promise(async (resolve, reject) => {
+      try {
+        let top=await api.getProcesses()
+        // might still not be clean enough??
+        if (api.sqlCatalog.Instance &&
+            api.getContainerInfo().State==='running' &&
+            top.Processes.join().includes(`/opt/mssql/bin/sqlservr`)) {
+          if (pool) sqldb.closePool()
+          config.mssql.pool.port=api.getContainerInfo().Ports[0].PublicPort
+          if (!config.mssql.pool.port) throw (new Error('SQL Server Port Not Found'))
+          config.mssql.pool.database=dbName
+          instanceId=api.sqlCatalog.Instance
+          pool = new Pool(config.mssql.pool, (err) => {
+            if (err) {
+              api.log('warn', `(openPool) probe fault ${instanceId}\n`+`\t[${err.code}]: ${err.message}`.red)
+              reject(err)
+            }
+          })
+          pool.on('error', (err) => {
+            api.log('error', `[pool error]`.blue+ `${err.originalError.code}: ${err.originalError.message}`)
+            api.log('error', new Error(err.message).stack)
+          });
+          //event speculating, not seen any of 'em so far
+          pool.on('connect', (data) => {
+            api.log('log', `[pool connect]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
+            api.log('log',  data)
+          })
+          pool.on('data', (data) => {
+            api.log('log', `[pool data]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
+            api.log('log',  data)
+          })
+          pool.on('disconnect', () => {
+            api.log('log', `[pool disconnect]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
+          })
+          pool.on('close', () => {
+            api.log('log', `[pool close]`.blue+` SQL Server ${instanceId}`.gray)
+          })
+          resolve(`using ${dbName}`)
         }
-      })
-      //event speculating, never seen any of 'em so far
-      pool.on('error', (err) => {
-        api.log('error', `[pool.error event]`.blue+` SQL Server ${api.sqlCatalog.Instance}`.gray)
-        api.log('error', err)
-
-      });
-      pool.on('connect', (data) => {
-        api.log('log', `[pool.connect event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
-        api.log('log',  data)
-      })
-      pool.on('data', (data) => {
-        api.log('log', `[pool.data event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
-        api.log('log',  data)
-      })
-      pool.on('disconnect', (data) => {
-        api.log('log', `[pool.disconnect event]`.blue+` SQL Server ${api.sqlCatalog.Instance}\n\tdata:`.gray)
-        api.log('log',  data)
-      })
-      pool.on('close', () => {
-        api.log('log', `[pool.close event]`.blue+` SQL Server ${api.sqlCatalog.Instance}`.gray)
-      })
-    }
+      }
+      catch (err) {
+        reject(err)
+      }
+    })
 
   },
-  batch: (tSQL) => {
+  batch: async (tSQL) => {
 
-    // if (!pool && api.getInstance()) sqldb.openPool()
-    if (!tSQL) tSQL=api.compile(config.batch)
-
-    sqldb.isSQL(tSQL)
-    .then( (is) => {
-      if (is) {
-        api.log('debug', `(sqldb.query) ${tSQL}`)
+    return new Promise( async (resolve, reject) => {
+      if (!tSQL) tSQL=api.compile(config.batch)
+      if (await sqldb.isSQL(tSQL))  {
         return new mssql.Request(pool).batch(tSQL)
+        .then( (result) => {
+          store.batches.put({batch: config.batch, result})
+          config.batch.splice(0)
+          return resolve(result)
+        })
+        .catch( (err) => {
+          reject(err)
+        })
+      } else {
+        reject('(sqldb.batch) Target Instance cannot compile the Batch')
       }
     })
-    .then( (result) => {
-      if (result) api.log('log', api.format(result))
-      store.batches.put({batch: config.batch, result})
-      config.batch.splice(0)
-    })
-    .catch( (err) => {
-      api.log('warn', `(sqldb.batch) query failed at SQL Server`)
-      api.log('error', err.message)
-      store.batches.put({batch: config.batch, error: err})
+
+  },
+  connect: async () => {
+
+    return new Promise( async (resolve, reject) => {
+      try {
+        if (pool) {
+          await pool.connect()
+          resolve(api.log('log', `(sqldb.connect) pool re-connect ${api.sqlCatalog.Instance}`))
+        } else {
+          await sqldb.openPool()
+          resolve(api.log('log', `(sqldb.connect) pool connect ${api.sqlCatalog.Instance}`))
+        }
+      }
+      catch(err) {
+        reject(err)
+      }
     })
 
   },
-  connect: () => {
+  query: async (tSQL) => {
 
-    if (pool || !pool._connecting) {
-      pool.connect()
-      api.log('log', `(sqldb.connect), pool re-connect ${api.getInstance()}`)
-    } else {
-      sqldb.openPool()
-    }
-
-  },
-  query: (tSQL) => {
-
-    // if (!pool && api.getInstance()) sqldb.openPool()
-    if (!tSQL) tSQL=api.compile(config.batch)
-
-    sqldb.isSQL(tSQL)
-    .then( (is) => {
-      if (is) {
-        api.log('debug', `(sqldb.query) ${tSQL}`)
+    return new Promise( async (resolve, reject) => {
+      if (!tSQL) tSQL=api.compile(config.batch)
+      if (await sqldb.isSQL(tSQL))  {
         return new mssql.Request(pool).query(tSQL)
+        .then( (result) => {
+          store.batches.put({batch: config.batch, result})
+          config.batch.splice(0)
+          return resolve(result)
+        })
+        .catch( (err) => {
+          reject(err)
+        })
+      } else {
+        reject('(sqldb.query) Target Instance cannot compile the Batch')
       }
-    })
-    .then( (result) => {
-      if (result) api.log('log', api.format(result))
-      store.batches.put({query: config.batch, result})
-      config.batch.splice(0)
-    })
-    .catch( (err) => {
-      store.batches.put({query: config.batch, result})
-      api.log('warn', `(sqldb.query) query failed at SQL Server`)
-      api.log('error', err.message)
     })
 
   },
@@ -142,9 +161,9 @@ module.exports = exports = sqldb = {
   },
   target: () => {
 
-    // get from pool
     if (pool && sqldb.isSQL('')) {
-      api.log('confirm', `connection pool is open, target ${instanceId}`)
+      // api.log('confirm', `connection pool is open, target ${instanceId}`)
+      return instanceId
     }
 
   }

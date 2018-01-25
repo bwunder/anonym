@@ -1,6 +1,8 @@
+////NPM
 const nedb = require('nedb')
-//const Promise = require('bluebird');
+////core
 const path = require('path')
+////local
 const config = require(`./config.json`)
 const api = require(`./api.js`)
 
@@ -42,6 +44,19 @@ const commands = new nedb({
       }
     }
   })
+
+  const configs = new nedb({
+    filename: path.resolve(config.storeFolder, 'configs.db'),
+    timestampData: true,
+    autoload: true,
+    onload: (err) =>{
+        if (err) {
+          api.log('warn', `(store.commands) error loading ${config.storeFolder}/commands.db`)
+          api.log('error', err.message)
+          api.log('debug', err.stack)
+        }
+      }
+    })
 
 // readline
 const lines = new nedb({
@@ -187,6 +202,25 @@ module.exports = exports = store = {
     }
 
   },
+  configs: {
+
+    getLast: function(query={}) {
+
+      return new Promise( (resolve, reject) => {
+        commands.find(query).sort({createdAt: -1}).limit(1).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+    },
+    put: (config) => {
+
+      configs.insert({config})
+
+    }
+
+  },
   lines: {
 
     get: function(query={}) {
@@ -234,7 +268,7 @@ module.exports = exports = store = {
 
     },
     getBatch: (queryName) => {
-
+///!!! no return?
       new Promise(function(resolve, reject) {
         api.log('debug', `(store.queries.getBatch) loading query text '${queryName}' from query store into cache`)
         templates.findOne({name: queryName}, {_id: 0, template: 1}).exec( function(err, doc) {
@@ -290,13 +324,23 @@ module.exports = exports = store = {
       })
 
     },
-    names: () => {
+    names: async () => {
 
-      templates.find({}, {_id: 0, name: 1 }).sort().exec(function(err, docs) {
-        docs.forEach((doc) => {
-        if (typeof doc=='undefined') api.log('log', doc)
-          api.log('log', `(store.queries.names) ${doc.name}  `.bold)
-        })
+      return new Promise(function(resolve, reject) {
+        try{
+          templates.find({}, {_id: 0, name: 1 }).sort().exec(function(err, docs) {
+            let list=[]
+            if (err) throw err
+            docs.forEach((doc) => {
+            if (typeof doc=='undefined') api.log('log', doc)
+              list.push(doc.name)
+            })
+            resolve(list)
+          })
+        }
+        catch (err) {
+          reject(err)
+        }
       })
 
     },

@@ -1,33 +1,26 @@
 # sqlpal
-Hack-able Node.js Console for the Docker Contained Microsoft SQL Server for Linux
+Javascript Console for Microsoft SQL Server for Linux Docker Containers
 
-A stand alone administrative connection (SAAC, conceptually similar to a DAC) for a
-locally hosted Docker image instance (container) for the 'official' SQL Server for
-Linux Docker Image from https://www.dockerhub.com.
+A stand alone administrative SQL Server connection (SAAC) to an 'official' locally
+hosted SQL Server for Linux Instance from https://www.dockerhub.com.
 
-No Windows OS client dependency. User interactions during set-up, configuration, monitoring,
-administration or troubleshooting can be done at the command prompt. Command line queries can return JSON via Tedious.js or tabular results through SQLCMD, but if you have a V8 powered browser, that can work too, with nicely formatted tabular query results on a web page or the results can be charted when appropriate.
+No remote client dependencies. Useful for interacting with the SQL Server Query
+Engine during not only development, but for set-up, configuration, monitoring,
+administration or troubleshooting as well.
 
-Protected LAN access to the SQL Server Instance.
+Provides a focused tool set and aids to help the knowledgable SQL Server person
+quickly and easily navigate SQL Server for Linux Containers in a Linux environment.  
 
-    non-public https ports
-    Local subnet Vantage "simple" IPv4 firewall,
-    SSL sqlpad web and remote Vantage command prompt access,
-    Javascript encryption, hashing and signing
-    Client hosted query store
+Blinking cursor & Browser options:
 
+    Command line
 
-    (./docs/cheatsheet.html) for some cribs when not connected to the Internet.
-    (./docs/post.ods) may become an app tutorial some day. just garbage at the moment
-    (./history/) is a JSON record of Batches sent to SQL Server from the sqlpal command-line.
-    (./scripts/) is a folder for user defined T-SQL scripts available at the sqlpal command-line.
-    (./data/) contains a pre-populated nedb for the embedded sqlpad server and a queries object.
-    (commands.js) the CLI app
-    (config.json)
-    (lib.js)
-    (LICENSE)
-    (package.json)
-    (queries.js) is a JSON collection of named javascript template strings   
-    (README.md) is this file
+        * Monitor and manage the Local SQL Server for Linux Docker infratructure
+        * Run ad hoc queries, script files or pick one from the client query store
+        * Query via Tedious.js (e.g., Javascript Toasted Data Streams) to render JSON
+        * Query via the SQL Server for Linux ODBC port and SQLCMD to get tabular results
 
-Chromium or Google Chrome browser required for sqlpad
+    Chromium (or Chrome) Browser
+
+        * [SQLPad](https://www.npmjs.com/package/sqlpad)  
+        * 

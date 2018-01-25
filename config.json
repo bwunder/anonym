@@ -7,14 +7,16 @@
   },
   "log": {},
   "docker": {
-    "hostPort": 1433,
+    "bindMount": false,
+    "hostVolume": "/var/opt/mssql",
     "repo": "microsoft/mssql-server-linux",
+    "pullTag": "2017-latest",
     "socket": "/var/run/docker.sock",
     "sqlPort": 1433,
-    "sqlVolume": "/var/opt/mssql",
+    "sqlPath": "/var/opt/mssql",
     "timeout": 100
   },
-  "editor": "atom-beta",
+  "editor": "emacs",
   "storeFolder": "data",
   "odbc": {
     "binPath": "/opt/mssql-tools/bin",
@@ -110,44 +112,14 @@
     "smtp-password": "",
     "whitelisted-domains": ""
   },
-  "vantage": {
-    "auth": {
-      "deny": 1,
-      "retry": 3,
-      "retryTime": 500,
-      "unlockTime": 3000,
-      "users": [
-        {
-          "user": "jack",
-          "pass": "cheese"
-        },
-        {
-          "user": "jill",
-          "pass": "crackers"
-        }
-      ]
-    },
-    "vorpalCLI": {
+  "vorpal": {
+    "cli": {
       "batchPath": "history",
       "printDate": false,
       "scriptPath": "scripts",
       "binPath": "/usr/bin"
     },
-    "firewall": {
-      "policy": "REJECT",
-      "rules": [
-        { "rule": "accept",
-          "ip": "192.168.0.0",
-          "subnet": 24
-        },
-        { "rule": "accept",
-          "ip": "127.0.0.1",
-          "subnet": 32
-        }
-      ]
-    },
     "loglevel": 20,
-    "middleware": "basic",
     "port": 8753
   }
 }
