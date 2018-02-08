@@ -18,7 +18,6 @@ process.on('error', (err) => {
 process.on('exit', (code) => {
 
   // try {
-    store.configs.put(config)
     if (config.sqlpad[`sqlpad`]) {
       api.log('log', `[exit] sqlpad server at port ${config.vorpal.port}`.cyan.bgGray)
       config.sqlpad.sqlpad.kill()
@@ -33,6 +32,6 @@ process.on('exit', (code) => {
 // add config.target key to explicitly set a start-up SQL Server
 // o'wise use found if only one or complain about the confusion
 api.loadCatalog(config.target)
-if (config.sqlpad.enabled) {
+if (config.sqlpad.enabledAtStartup) {
   api.startSQLPad()
 }

@@ -23,4 +23,6 @@ Blinking cursor & Browser options:
     Chromium (or Chrome) Browser
 
         * [SQLPad](https://www.npmjs.com/package/sqlpad)  
-        * 
+            * Graphical Query tool
+            * Charts
+            * Connect directly to Container IP port 1433 or through Host port map

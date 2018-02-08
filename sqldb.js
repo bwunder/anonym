@@ -43,6 +43,9 @@ module.exports = exports = sqldb = {
       })
       .catch( (err) => {
         api.log('warn', `(isSQL) ${err.message}`.yellow)
+        if (config.vorpal.loglevel=10) {
+          api.log('warn', api.format(err).yellow)
+        }
         resolve(false)
       })
     })
@@ -57,7 +60,7 @@ module.exports = exports = sqldb = {
         if (api.sqlCatalog.Instance &&
             api.getContainerInfo().State==='running' &&
             top.Processes.join().includes(`/opt/mssql/bin/sqlservr`)) {
-          if (pool) sqldb.closePool()
+          if (pool) await sqldb.closePool()
           config.mssql.pool.port=api.getContainerInfo().Ports[0].PublicPort
           if (!config.mssql.pool.port) throw (new Error('SQL Server Port Not Found'))
           config.mssql.pool.database=dbName

@@ -141,9 +141,9 @@ module.exports = exports = store = {
       })
 
     },
-    list: (timestamp=new Date()) => {
+    list: (startTime=new Date(), endTime) => {
 
-      batches.find({ createdAt : { $lte: timestamp } }, {_id: 0, batch: 1}).exec(function(err, docs) {
+      batches.find({ createdAt : { $lte: startTime } }, {_id: 0, batch: 1}).exec(function(err, docs) {
         if (err) throw err
         if (!docs) {
           api.log('warn', `(store.batches.list) no batches found before ${timestamp}`)
@@ -204,22 +204,40 @@ module.exports = exports = store = {
   },
   configs: {
 
-    getLast: function(query={}) {
+    get: function(containerId) {
 
       return new Promise( (resolve, reject) => {
-        commands.find(query).sort({createdAt: -1}).limit(1).exec(function(err, doc) {
+        configs.findOne({_id: containerId}).exec(function(err, doc) {
           if (err) return reject(err)
           return resolve(doc)
         })
       })
 
     },
-    put: (config) => {
+    getLastContainerId: async () => {
 
-      configs.insert({config})
+      return new Promise( (resolve, reject) => {
+        configs.findOne({}).sort({updatedAt: -1}).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(!doc? api.sqlCatalog.Instance: doc._id)
+        })
+      })
+
+    },
+    put: () => {
+
+      let mssql = config.mssql
+      let containerId=api.sqlCatalog.Instance
+      configs.insert({config: mssql, _id: containerId})
+
+    },
+    update: (upsert=true) => {
+
+      let mssql = config.mssql
+      let containerId=api.sqlCatalog.Instance
+      configs.update({_id: containerId}, {_id: containerId, mssql: config.mssql}, { upsert: upsert })
 
     }
-
   },
   lines: {
 

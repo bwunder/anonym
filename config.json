@@ -7,12 +7,14 @@
   },
   "log": {},
   "docker": {
-    "bindMount": false,
+    "backupPath": "backups/",
+    "backupVolume": "sqlBackups",
+    "bindMountMssql": false,
     "hostVolume": "/var/opt/mssql",
+    "hostSQLPort": 1433,
     "repo": "microsoft/mssql-server-linux",
     "pullTag": "2017-latest",
     "socket": "/var/run/docker.sock",
-    "sqlPort": 1433,
     "sqlPath": "/var/opt/mssql",
     "timeout": 100
   },
@@ -29,7 +31,8 @@
     "acceptEULA": "Y",
     "backup": {
       "filter": ".bak",
-      "path": "/var/opt/mssql/data"
+      "path": "/var/opt/mssql/backup",
+      "volume": "sqlBackups"
     },
     "binPath": "/opt/mssql/bin",
     "confPath": "/var/opt/mssql",
@@ -82,7 +85,7 @@
     }
   },
   "sqlpad": {
-    "enabled": true,
+    "enabledAtStartup": false,
     "debug": false,
     "dir": "sqlpaddata",
     "ip": "127.0.0.1",

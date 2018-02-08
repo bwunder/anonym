@@ -81,50 +81,51 @@ module.exports = exports = api = {
     let admin=[], builtin=[], cli=[], docker=[], load=[], inject=[], terminate=[]
     cmds.forEach( (cmd) => {
       switch(true) {
-        case(['HELP', 'EXIT', 'WHO', 'VORPAL', 'REPL', 'LOGLEVEL'].includes(cmd._name.toUpperCase())):
-          builtin.push(`${cmd._name.toUpperCase().red}\t\t${cmd._description}`)
+        case(['HELP', 'EXIT', 'LOGLEVEL'].includes(cmd._name.toUpperCase())):
+          builtin.push(`${cmd._name}\t\t${cmd._description}`)
           break
         case(['QUERY', 'SCRIPT'].includes(cmd._name.toUpperCase())):
-          inject.push(`${cmd._name.toUpperCase().magenta}\t\t${cmd._description}`)
+          inject.push(`${cmd._name.magenta}\t\t${cmd._description}`)
           break
-        case(['GO', 'RUN', 'TEST', 'SQLCMD'].includes(cmd._name.toUpperCase())):
-          terminate.push(`${cmd._name.toUpperCase().green}\t\t${cmd._description}`)
+        case(['GO', 'RUN', 'SQLCMD', 'TEST'].includes(cmd._name.toUpperCase())):
+          terminate.push(`${cmd._name.green}\t\t${cmd._description}`)
           break
         case(['BCP', 'BULK'].includes(cmd._name.toUpperCase())):
-          load.push(`${cmd._name.toUpperCase().yellow}\t\t${cmd._description}`)
+          load.push(`${cmd._name.yellow}\t\t${cmd._description}`)
           break
         case(['ENGINE', 'IMAGE', `INSTANCE`].includes(cmd._name.toUpperCase())):
-          docker.push(`${cmd._name.toUpperCase().blue}\t\t${cmd._description}`)
+          docker.push(`${cmd._name.blue}\t\t${cmd._description}`)
           break
-        case(['CACHE', 'ABOUT'].includes(cmd._name.toUpperCase())):
-          cli.push(`${cmd._name.toUpperCase()}\t\t${cmd._description}`)
+        case(['CACHE', 'ABOUT', 'USE'].includes(cmd._name.toUpperCase())):
+          cli.push(`${cmd._name.red}\t\t${cmd._description}`)
           break
         default:
           if (cmd._name) {
-            admin.push(`${cmd._name.toUpperCase().cyan}\t\t${cmd._description}`)
+            admin.push(`${cmd._name.cyan}\t\t${cmd._description}`)
           }
           break
 
       }
     })
     return [
-      `Entered lines not beginning with a `+`COMMAND`.rainbow+` - in caps below but caps not req'd - are buffered into a T-SQL batch.`,
-      `  When a `+`terminating command`.italic +` starts next line, the tSQL batch executes. Successful execution archives buffered T-SQL.`,
-      `\t--HELP`.rainbow + `\t\tThis text ('HELP' and 'ABOUT -c' commands below provide different listings of the CLI commands)`,
-      `  `+`sqlpal`.rainbow.underline+` CLI Administration`.gray.underline+`- Client side components and settings `.gray,
+      `Entered lines of text not beginning with a `+`command`.rainbow+` are accumulated into T-SQL Batch.`,
+      `Multi-line text pasted at the prompt is similarly accumulated into the Batch as formatted`,
+      `When a `+`terminating command`.italic +` is immediately followed by the ENTER key the tSQL batch is submitted to a Target SQL Server.`,
+      `\t--help`.rainbow + `\t\tThis text ('help' and 'about -c' commands below provide different listings of the CLI commands)`,
+      `  CLI `.underline+` SQL Server ClI tools`.gray,
       `\t${cli.join('\n\t')}`,
-      `  `+`Bulk Load Commands`.gray.underline+`- Move external Data into the target SQL Server`.gray,
+      `  `+`Import/Export`.gray.underline+` Move external Data into the target SQL Server`.gray,
       `\t${load.join('\n\t')}`,
-      `  `+`Batch Cache Injection Commands`.gray.underline+`- Overwrite the Batch Cache buffer with a previously stored query`.gray,
+      `  `+`Batch_Injectors`.gray.underline+` Overwrite the Batch Cache buffer with a previously stored query`.gray,
       `\t${inject.join('\n\t')}`,
-      `  `+`Batch Cache Termination Commands`.gray.underline+` Compile Batch Cache buffer to T-SQL & submit to Target SQL Server\'s Query Engine`.gray,
+      `  `+`Batch_Terminators`.gray.underline+` Compile Batch Cache buffer to T-SQL & submit to Target SQL Server\'s Query Engine`.gray,
       `\t${terminate.join('\n\t')}`,
-      `\tuse 'cache --new' (or w/cache alias '? -n') to empty the Batch Cache without submitting to SQL Server`.gray,
-      `  `+`Docker Administration Commands`.gray.underline+``,
+      `\t\tuse 'cache --new' (alias '? -n') to clear Cached Batch`.gray,
+      `  `+`Docker`.gray.underline+``,
       `\t${docker.join('\n\t')}`,
-      `  `+`SQL Server for Linux Adminstration Commands`.gray.underline+``,
+      `  `+`DBA`.gray.underline+``,
       `\t${admin.join('\n\t')}`,
-      `  `+`Vorpal Built-ins`.gray.underline,
+      `  `+`Vorpal_Built-ins`.gray.underline,
       `\t${builtin.join('\n\t')}`,
       `\n\tType `.gray+`--help`.italic.inverse+` for Application Usage Info or `.gray+`help`.italic.inverse+` for CLI command listing\n
        Use `.gray+`help <CLI-command>`.italic.inverse+` or `.gray+`<CLI-command> --help`.italic.inverse+` for that CLI command\'s Usage Info\n
@@ -151,6 +152,15 @@ module.exports = exports = api = {
     return str
 
   },
+
+  dockerAid: `image    --pull`.padEnd(40).italic.inverse+` will get '${config.docker.repo}:latest' from dockerhub
+    `+`image    --run    [image-id]`.padEnd(40).italic.inverse +` starts new SQL Instance from an image (listed above)
+    `+`instance --target [container-id]`.padEnd(40).italic.inverse+` will target CLI at a SQL Container (listed above)
+    `+`cache    --map`.padEnd(40).italic.inverse+` is a Verbose Catalog of Listed Images and Containers\n
+    `+`or go to `+`https://127.0.0.1:${config.sqlpad['https-port']}`.underline+`- in a browser with V8 - for a friendly SQLPad query session\n
+    \t`+`--help`.italic.inverse+` for Application Info or `+`help`.italic.inverse+` for CLI command list and\n
+    \t`+`help <CLI-command>`.italic.inverse+` or `+`<CLI-command> --help`.italic.inverse+` for that CLI command\'s Usage Info`,
+
   editFile: async (textFile) => {
 
     return new Promise(function(resolve, reject) {
@@ -373,9 +383,10 @@ module.exports = exports = api = {
     return Promise.resolve(docker.listContainers({"last": number}))
     .then( (containers) => {
       let latest=[]
+      // have done nothing to assure these last! assumes fifo based on nothing
       for (containerInfo of containers) {
         if (containerInfo.Labels["com.microsoft.product"]==="Microsoft SQL Server") {
-          latest.push(containerInfo)
+          latest.push({Id: containerInfo.Id, $$DATE: containerInfo.Created})
         }
       }
       return latest
@@ -450,6 +461,7 @@ module.exports = exports = api = {
   loadCatalog: async (instanceId) => {
 
     if (await api.isDocker()) {
+      instanceId= instanceId || await store.configs.getLastContainerId()
       api.sqlCatalog.Images = new Map()
       api.sqlCatalog.ContainerInfos = new Map()
       api.sqlCatalog.Instance = undefined
@@ -482,18 +494,13 @@ module.exports = exports = api = {
         if (api.sqlCatalog.ContainerInfos.has(instanceId)) {
           api.catalogInstance(instanceId)
         }
-        if (api.sqlCatalog.Instance) {
+        if (api.sqlCatalog.Instance && (sqldb.state!='connected' || sqldb.target()!=api.sqlCatalog.Instance)) {
           await sqldb.openPool()
+          store.configs.update(config)
           api.log('log', `(loadCatalog) CLI connect Target ${api.sqlCatalog.Instance}`.gray)
         } else {
-          api.log('warn', `(loadCatalog) SQL Server Target not set:\n
-          `.red+`image    --pull`.padEnd(40).italic.inverse+` to get '${config.docker.repo}:latest' from dockerhub
-          `+`image    --run    [image-id]`.padEnd(40).italic.inverse +` to create & run a new Instance from a local image
-          `+`instance --target [container-id]`.padEnd(40).italic.inverse+` to target CLI at a Hosted SQL Container
-          `+`cache    --map         (alias: '? -m')`.padEnd(40).italic.inverse+` to see Hosted SQL for Linux on Docker Catalog
-          `+`config   --app edit`.padEnd(40).italic.inverse +` to configure `+`sqlpal`.rainbow+`\n
-          \t`+`--help`.italic.inverse+` for Application Usage Info or `+`help`.italic.inverse+` for CLI command listing and\n
-          \t`+`help <CLI-command>`.italic.inverse+` or `+`<CLI-command> --help`.italic.inverse+` for that CLI command\'s Usage Info\n`)
+          api.log('warn', `(loadCatalog) SQL Server Target not set:`)
+          api.log('log', api.dockerAid)
         }
       })
     }
@@ -532,6 +539,22 @@ module.exports = exports = api = {
           break
       }
     }
+
+  },
+  mapPorts: () => {
+
+    let map=new Map()
+    if (api.sqlCatalog.ContainerInfos.size>0) {
+      for (let info of api.sqlCatalog.ContainerInfos) {
+        map.set(info[0], {
+          Network: `${info[1].NetworkSettings.Networks.bridge.IPAddress}:${info[1].Ports[0].PrivatePort}`,
+          Host: `${info[1].NetworkSettings.Networks.bridge.Gateway}:${info[1].Ports[0].PublicPort}`
+        })
+      }
+    } else {
+      api.log('warn', `(listPorts) No Containers in Catalog`)
+    }
+    return map
 
   },
   mssqlConf: (containerId, confArgs) => {
@@ -588,30 +611,28 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
   },
   pullImage: async () => {
 
-    new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       docker.pull(`${config.docker.repo}:${config.docker.pullTag}`, function(err, stream) {
         if (err) {
           store.pulls.put(err)
           reject(err)
         }
         docker.modem.followProgress(stream, onFinished)
-
         function onFinished(err, output) {
           if (err) {
             store.pulls.put(err)
             reject(err)
           }
-          store.pulls.put(output)
-          resolve(output)
+          output=output|'no output'
+          resolve(store.pulls.put(output))
         }
-
       })
     })
 
   },
   restartContainer: async (id=api.sqlCatalog.Instance) => {
 
-    new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       try {
         api.log('confirm', `(restartContainer) ${id===sqldb.target()?'target':'container'}: ${id}`)
         let target = (sqldb.target())
@@ -662,54 +683,64 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
 
   },
   runImage: async (imageId) => {
-
+// mountpoint wants to be under docker to get read-write control
+// ./sqlBackups could be a symbolic link in app folder to this mountpoint in docker bowels
+// creating a docker volume with  device spec puts mountpoint here
+// bwunder@linux-niun:~/sqlpal> docker volume create sqlBackups
+// bwunder@linux-niun:~/sqlpal> ln -s /var/lib/docker/volumes/sqlBackups/_data sqlBackups
+// bwunder@linux-niun:~/sqlpal> docker inspect sqlBackups
+// .Mountpoint is then set to ContainerInfo.Mounts[0].Source on container create
+// bound container path is set to ContainerInfo.Mounts[0].Source on container create
     return new Promise( async function(resolve, reject) {
       try {
-        getPort(config.docker.sqlPort)
-        .then( (hostPort) => {
-          return docker.createContainer({
-            Image: imageId,
-            Env: [
-              `ACCEPT_EULA=${config.mssql.acceptEULA}`,
-              `MSSQL_SA_PASSWORD=${config.mssql.pool.password}`
-            ],
-            HostConfig: {PortBindings: {"1433/tcp": [{HostPort: `${hostPort}`}]}}
+        if (!imageId) {
+          resolve('')
+        } else {
+          return getPort(config.docker.sqlPort)
+          .then( (hostPort) => {
+            let Mounts= [
+              {
+                Target:   config.mssql.backup.path,    // /var/opt/mssql/backup
+                Source:   config.mssql.backup.volume,  // sqlBackups
+                Type:     "volume",
+                ReadOnly: false
+              }
+            ]
+            if (config.docker.bindMountMssql) {
+              Mounts.push({
+
+              })
+            }
+
+            return docker.createContainer({
+              Image: imageId,
+              Env: [
+                `ACCEPT_EULA=${config.mssql.acceptEULA}`,
+                `MSSQL_SA_PASSWORD=${config.mssql.pool.password}`
+              ],
+              HostConfig: {
+                Mounts: [
+                  {
+                    Target:   config.mssql.backup.path,    // /var/opt/mssql/backup
+                    Source:   config.mssql.backup.volume,  // sqlBackups
+                    Type:     "volume",
+                    ReadOnly: false
+                  }
+                ],
+                PortBindings: {
+                  "1433/tcp": [
+                    {
+                      HostPort: hostPort.toString()
+                    }
+                  ]
+                }
+              },
+            })
           })
-        })
-        .then( (container) => {
-          resolve(container.start())
-        })
-      }
-      catch (err) {
-        reject(err)
-      }
-    })
-  },
-  runImageold: async (imageId) => {
-
-    return new Promise( async function(resolve, reject) {
-      try {
-        api.log('confirm', `(runImage) imageId ${imageId}`)
-        let port=getPort(config.docker.sqlPort)
-        let args = [ `docker`, `run`,
-          `-e`, `"ACCEPT_EULA=${config.mssql.acceptEULA}"`,
-          `-e`, `"MSSQL_SA_PASSWORD=${config.mssql.pool.password}"`,
-          `-p`, `${port}:${config.docker.sqlPort}`,
-          `-d`, api.sqlCatalog.Images.get(imageId).RepoTags[0]
-        ]
-        if (config.docker.bindMount) {
-          args.push(`-v`)
-          args.push(`${config.docker.hostVolume}:${config.docker.sqlPath}`)
+          .then( (container) => {
+            resolve(container.start())
+          })
         }
-        args.push(`-d`)
-        args.push(imageId)
-
-        childProcess.spawn(`sudo`, args, {
-          stdio: 'inherit',
-          shell: false
-        }, (err) => {
-          if (err) reject(err)
-        })
       }
       catch (err) {
         reject(err)
@@ -758,7 +789,6 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
   sqlCatalog: {},
   startContainer: async (id=api.sqlCatalog.Instance) => {
 
-    // this is really startTarget
     // startContainer proper should never tail or openPool, just restart and then reload
     api.log('confirm', `(startContainer) ${id}`)
     return Promise.resolve(docker.getContainer(id))
@@ -770,7 +800,10 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
       }
     })
     .then( (container) => {
-      api.tailLog(container)
+      //EXEC sys.xp_readerrorlog 0, 1, N'Recovery is Complete';
+      if (id===api.sqlCatalog.Instance) {
+        api.tailLog(container)
+      }
     })
     .then( () => {
       api.loadCatalog()
@@ -851,8 +884,7 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
         api.log('log', `[sqlpad] `.cyan.italic + `error `.magenta.bgWhite + `${data}`.red)
       })
       sqlpad.on('exit', (code) => {
-        api.log('log', config.log)
-        api.log('warn', `[sqlpad] `.cyan.italic + `server exited with code ${code}`)
+        api.log('warn', `[sqlpad] `.cyan.italic + `server has exited`)
       })
       config.sqlpad.sqlpad=sqlpad
     })
@@ -892,6 +924,7 @@ api.log('confirm', `container ${containerId} confArgs ${confArgs}`)
               resolve(logStream.end('...log follow has ended'))
             });
             setTimeout(function() {
+              // xp
               resolve(stream.destroy())
             }, 3000)
         })
