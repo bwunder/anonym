@@ -1,4 +1,5 @@
 ////NPM
+const chalk = require('chalk')
 const mssql = require('mssql')
 ////core
 const path= require('path')
@@ -7,10 +8,8 @@ const config = require(`./config.json`)
 const api = require('./api.js')
 const store = require('./store.js')
 
-const Pool= mssql.ConnectionPool
-let pool
-let instanceId=api.sqlCatalog.Instance
-let db=config.mssql.pool.database
+// the pool stays in here, the config gets mapped
+var pool
 
 mssql.on('error', (err) => {
   api.log('warn', `(mssql event) error`)
@@ -18,80 +17,90 @@ mssql.on('error', (err) => {
   api.log('debug', err.stack)
 });
 
+function errorhandler(err) {
+  if (err.class) {
+    if (err.class<16) {
+      api.log('warn', `(query) Msg ${err.number}, Level ${err.class} , State ${err.state}, Line ${err.lineNumber}\n${err.message}`)
+    } else {
+      api.log('error', `(query) Msg ${err.number}, Level ${err.class} , State ${err.state}, Line ${err.lineNumber}\n${err.message}`)
+    }
+  } else {
+    api.log('error', err)
+  }
+  if (config.vorpal.loglevel===10) {
+    api.log('error', api.format(err))
+  }
+}
+
 module.exports = exports = sqldb = {
 
-  closePool: async () => {
+  closePool: async (containerId=api.sqlCatalog.Instance) => {
 
     return Promise.resolve(pool.close())
     .then( () => {
-      api.log('log', `(closePool) ${api.sqlCatalog.Instance}`)
+      api.log('log', `(closePool) ${containerId}`)
     })
 
   },
-  isSQL: async (tSQL) => {
+  isSQL: async (tSQL, containerId=api.sqlCatalog.Instance) => {
 
-    return new Promise(function(resolve, reject) {
-      if (/NOEXEC/i.test(tSQL)) {
-        // allowing NOEXEC could 'inappropriately' let tSQL execute
-        api.log('warn', `unable to evaluate batch: includes 'NOEXEC' keyword`.red)
-        resolve(false)
-      }
-      return new mssql.Request(pool).query(`SET NOEXEC ON; ${tSQL}`)
-      .then( (nodata) => {  // { recordsets: [], recordset: undefined, output: {}, rowsAffected: [] }
-        api.log('debug', `(isSQL) valid`.green)
-        resolve(true)
-      })
-      .catch( (err) => {
-        api.log('warn', `(isSQL) ${err.message}`.yellow)
-        if (config.vorpal.loglevel=10) {
-          api.log('warn', api.format(err).yellow)
+    return new Promise( async function(resolve, reject) {
+      let reply=true
+      try {
+        let request=new mssql.Request(pool)
+        if (/SET NOEXEC/i.test(tSQL)) {
+          api.log('warn', `tSQL evaluation Rejected. 'NOEXEC' keyword may cause unintended query execution.`)
+          return resolve(false)
         }
-        resolve(false)
-      })
+        for (let batch of tSQL.split(/\nGO\n/i)) {
+            await request.batch(`SET NOEXEC ON; ${batch}`)
+        }
+      }
+      catch(err) {
+        errorhandler(err)
+        reply=false
+      }
+      finally {
+        return resolve(reply)
+      }
     })
 
   },
-  openPool: async (dbName=config.mssql.pool.database, port) => {
+  openPool: async (containerId=api.sqlCatalog.Instance) => {
 
     return new Promise(async (resolve, reject) => {
       try {
-        let top=await api.getProcesses()
-        // might still not be clean enough??
-        if (api.sqlCatalog.Instance &&
-            api.getContainerInfo().State==='running' &&
-            top.Processes.join().includes(`/opt/mssql/bin/sqlservr`)) {
-          if (pool) await sqldb.closePool()
-          config.mssql.pool.port=api.getContainerInfo().Ports[0].PublicPort
-          if (!config.mssql.pool.port) throw (new Error('SQL Server Port Not Found'))
-          config.mssql.pool.database=dbName
-          instanceId=api.sqlCatalog.Instance
-          pool = new Pool(config.mssql.pool, (err) => {
-            if (err) {
-              api.log('warn', `(openPool) probe fault ${instanceId}\n`+`\t[${err.code}]: ${err.message}`.red)
-              reject(err)
+        let e = new Error() // expecting caller in stack by declaring here
+        let info = api.getInstanceInfo(containerId)
+        if (pool) mssql.close()
+        if (!info) throw(e(`No Catalog entry for Container '${containerId}'`))
+        if (info.State!='running') throw(e(`Container not running '${containerId}'`))
+        config.mssql.pool.port=info.Ports[0].PublicPort
+        return api.getProcesses()
+        .then( async (top) => {
+          if (top.Processes.length===0 || !top.Processes.join().includes(path.join(config.mssql.binPath, `sqlservr`))) {
+            reject(e(`SQL Server process not detected, Container '${containerId}'`))
+          }
+          try {
+            if (!api.sqlCatalog.Pools[containerId]) {
+              api.internPool(containerId, config.mssql.pool)
             }
-          })
-          pool.on('error', (err) => {
-            api.log('error', `[pool error]`.blue+ `${err.originalError.code}: ${err.originalError.message}`)
-            api.log('error', new Error(err.message).stack)
-          });
-          //event speculating, not seen any of 'em so far
-          pool.on('connect', (data) => {
-            api.log('log', `[pool connect]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
-            api.log('log',  data)
-          })
-          pool.on('data', (data) => {
-            api.log('log', `[pool data]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
-            api.log('log',  data)
-          })
-          pool.on('disconnect', () => {
-            api.log('log', `[pool disconnect]`.blue+` SQL Server ${instanceId}\n\tdata:`.gray)
-          })
-          pool.on('close', () => {
-            api.log('log', `[pool close]`.blue+` SQL Server ${instanceId}`.gray)
-          })
-          resolve(`using ${dbName}`)
-        }
+            pool = await mssql.connect(api.sqlCatalog.Pools.get(containerId))
+            pool.on('error', (err) => {
+              api.log('error', chalk`{blue.italic pool error}`+ `${err.originalError.code}: ${err.originalError.message}`)
+              api.log('error', e.stack)
+            })
+            let result = await sqldb.query('select db_name() as [database]')
+            if (config.mssql.pool.database!=result.recordset[0].database) {
+              throw(e(`Failed to open Database '${dbName}', using ${result.recordset[0].database}`))
+            }
+            resolve(api.log('log', `using ${config.mssql.pool.database}`))
+          }
+          catch(connectionError) {
+            api.log('error', `(openPool) connection failed ${api.format(config.mssql.pool)}`)
+            api.log('error', connectionError)
+          }
+        })
       }
       catch (err) {
         reject(err)
@@ -99,75 +108,55 @@ module.exports = exports = sqldb = {
     })
 
   },
-  batch: async (tSQL) => {
+  batch: async (tSQL, containerId=api.sqlCatalog.Instance) => {
 
-    return new Promise( async (resolve, reject) => {
-      if (!tSQL) tSQL=api.compile(config.batch)
-      if (await sqldb.isSQL(tSQL))  {
-        return new mssql.Request(pool).batch(tSQL)
-        .then( (result) => {
-          store.batches.put({batch: config.batch, result})
-          config.batch.splice(0)
-          return resolve(result)
-        })
-        .catch( (err) => {
-          reject(err)
-        })
-      } else {
-        reject('(sqldb.batch) Target Instance cannot compile the Batch')
-      }
+    return new Promise( async function(resolve, reject) {
+      let batches= !tSQL? api.compile().split(/\nGO\n/i): tSQL.split(/\nGO\n/i)
+      let results=[]
+      let request=new mssql.Request(pool)
+      request.multiple=true
+        for (let batch in batches) {
+          try {
+            // TODO should/can I stream these out as they run? does accumulating have more potential to swell the mem alloc?
+            results.push(await request.batch(batches[batch]))
+          }
+          catch(err) {
+            errorhandler(err)
+            return reject(err)
+          }
+        }
+      api.batch.splice(0)
+      return resolve(results)
     })
 
   },
-  connect: async () => {
+  query: async (tSQL, containerId=api.sqlCatalog.Instance) => {
 
-    return new Promise( async (resolve, reject) => {
-      try {
-        if (pool) {
-          await pool.connect()
-          resolve(api.log('log', `(sqldb.connect) pool re-connect ${api.sqlCatalog.Instance}`))
-        } else {
-          await sqldb.openPool()
-          resolve(api.log('log', `(sqldb.connect) pool connect ${api.sqlCatalog.Instance}`))
+    return new Promise( async function(resolve, reject) {
+      let results=[]
+      let request=new mssql.Request(pool)
+      if (!tSQL) tSQL=api.compile()
+      if (/\nGO\n/i.test(tSQL)) {
+        return resolve(api.log('warn', chalk`(query) UPPERCASE {italic 'GO'} is not t-SQL, sqlpal only submits lowercase {italic 'go'}.
+          Try {italic 'run'} or {italic 'sqlcmd'} commands to pre-process scripts containing UPPERCASE {italic 'GO'} batch separator(s)` ))
+      } else {
+        try {
+          results = await request.query(tSQL)
+        }
+        catch(err) {
+          errorhandler(err)
         }
       }
-      catch(err) {
-        reject(err)
-      }
+      store.batches.put(tSQL, results.rowsAffected)
+      api.batch.splice(0)
+      return resolve(results)
     })
 
   },
-  query: async (tSQL) => {
+  state: (containerId=api.sqlCatalog.Instance) => {
 
-    return new Promise( async (resolve, reject) => {
-      if (!tSQL) tSQL=api.compile(config.batch)
-      if (await sqldb.isSQL(tSQL))  {
-        return new mssql.Request(pool).query(tSQL)
-        .then( (result) => {
-          store.batches.put({batch: config.batch, result})
-          config.batch.splice(0)
-          return resolve(result)
-        })
-        .catch( (err) => {
-          reject(err)
-        })
-      } else {
-        reject('(sqldb.query) Target Instance cannot compile the Batch')
-      }
-    })
-
-  },
-  state: () => {
-
-    return !pool?  undefined: !pool._connected? (!pool._connecting? 'closed': 'connecting') : 'connected'
-
-  },
-  target: () => {
-
-    if (pool && sqldb.isSQL('')) {
-      // api.log('confirm', `connection pool is open, target ${instanceId}`)
-      return instanceId
-    }
+    let pool=api.sqlCatalog.Pools.get(containerId)
+    return !pool? 'undefined': !pool._connected? (!pool._connecting? 'closed': 'connecting') : 'connected'
 
   }
 

@@ -1,5 +1,5 @@
---WITH SchedulerMonitorCte
---AS (
+WITH SchedulerMonitorCte
+AS (
         -- select & run this query for a list of records in the queue
     SELECT ROW_NUMBER() OVER (ORDER BY Buffer.Record.value( '@time', 'BIGINT' )
                                      , Buffer.Record.value( '@id', 'INT' ) ) AS [RowNumber]
@@ -19,7 +19,6 @@
            FROM sys.dm_os_ring_buffers
            WHERE ring_buffer_type = 'RING_BUFFER_SCHEDULER_MONITOR') AS Data
     CROSS APPLY EventXML.nodes('//Record') AS Buffer(Record)
-/*
    )
 SELECT first.[Type]
      , summary.[Count]
@@ -40,4 +39,3 @@ ON first.RowNumber = summary.[FirstRow]
 JOIN SchedulerMonitorCte AS last
 ON last.RowNumber = summary.[LastRow]
 CROSS JOIN sys.dm_os_sys_info AS info;
-*/

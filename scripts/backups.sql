@@ -6,8 +6,8 @@ CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], bs.has_back
 DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) AS [Backup Elapsed Time (sec)],
 bs.backup_finish_date AS [Backup Finish Date], bmf.physical_device_name AS [Backup Location], bmf.physical_block_size
 FROM msdb.dbo.backupset AS bs WITH (NOLOCK)
-INNER JOIN msdb.dbo.backupmediafamily AS bmf WITH (NOLOCK)
+LEFT JOIN msdb.dbo.backupmediafamily AS bmf WITH (NOLOCK)
 ON bs.media_set_id = bmf.media_set_id
 WHERE bs.database_name = DB_NAME(DB_ID())
 AND bs.[type] = 'D' -- Change to L if you want Log backups
-ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
+ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE)

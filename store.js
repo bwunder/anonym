@@ -6,6 +6,9 @@ const path = require('path')
 const config = require(`./config.json`)
 const api = require(`./api.js`)
 
+// memory-only is implicit of no filename, but to be explicit:
+const batch = new nedb({inMemoryOnly: true})
+
 const batches = new nedb({
   filename: path.resolve(config.storeFolder, 'batches.db'),
   timestampData: true,
@@ -13,19 +16,6 @@ const batches = new nedb({
   onload: (err) => {
       if (err) {
         api.log('warn', `(store.batches) error loading ${config.storeFolder}/batches.db`)
-        api.log('error', err.message)
-        api.log('debug', err.stack)
-      }
-    }
-  })
-
-const clients = new nedb({
-  filename: path.resolve(config.storeFolder, 'clients.db'),
-  timestampData: true,
-  autoload: true,
-  onload: (err) =>{
-      if (err) {
-        api.log('warn', `(syore.clients) error loading ${config.storeFolder}/clients.db`)
         api.log('error', err.message)
         api.log('debug', err.stack)
       }
@@ -45,18 +35,31 @@ const commands = new nedb({
     }
   })
 
-  const configs = new nedb({
-    filename: path.resolve(config.storeFolder, 'configs.db'),
-    timestampData: true,
-    autoload: true,
-    onload: (err) =>{
-        if (err) {
-          api.log('warn', `(store.commands) error loading ${config.storeFolder}/commands.db`)
-          api.log('error', err.message)
-          api.log('debug', err.stack)
-        }
+const configs = new nedb({
+  filename: path.resolve(config.storeFolder, 'configs.db'),
+  timestampData: true,
+  autoload: true,
+  onload: (err) =>{
+      if (err) {
+        api.log('warn', `(store.commands) error loading ${config.storeFolder}/commands.db`)
+        api.log('error', err.message)
+        api.log('debug', err.stack)
       }
-    })
+    }
+  })
+
+const errors = new nedb({
+  filename: path.resolve(config.storeFolder, 'errors.db'),
+  timestampData: true,
+  autoload: true,
+  onload: (err) =>{
+      if (err) {
+        api.log('warn', `(store.errors) error loading ${config.storeFolder}/errors.db`)
+        api.log('error', err.message)
+        api.log('debug', err.stack)
+      }
+    }
+  })
 
 // readline
 const lines = new nedb({
@@ -95,23 +98,22 @@ const lines = new nedb({
     },
     afterSerialization: (data) => {
       // encrypt stream into pulls.db file here - but this looks like it fires for every character (bit?) of unknown stream
-//      api.log('debug', `(pull.afterSerialization) data:\n ${data}`)
+      // api.log('debug', `(pull.afterSerialization) data:\n ${data}`)
       return data
     },
     beforeDeserialization: (data) => {
-//      api.log('debug', `(pull.beforeDeserialization) data:\n ${data}`)
+      // api.log('debug', `(pull.beforeDeserialization) data:\n ${data}`)
       return data
     },
-    corruptAlertThreshold: 0, //0.00-1.00 pct allowed, default is .10
+    corruptAlertThreshold: 0, //0.00-1.00 (pct) allowed, default is .10
     compareStrings: `localCompare` // localCompare is default
   });
 
   // mostly static collection of oft used queries
-//!!! add javascript replacement parameters someday
   const templates = new nedb({
     filename: path.resolve(config.storeFolder, 'templates.db'),
     inMemoryOnly: false, // false is default
-    timestampData: true, // false is default adds createAt updatatedAt fields
+    timestampData: true, // false is default {{data by key...}, createAt:date, updatedAt:date}
     autoload: true, // false is default -- no need to call loadDatabase if true
     onload: (err) =>{
       if (err) {
@@ -125,48 +127,67 @@ const lines = new nedb({
 
 module.exports = exports = store = {
 
+  // batch: { // an associative array of lines {index: line}
+  //
+  //   get: (index) => {
+  //
+  //     batch[index]
+  //
+  //   },
+  //   getSQL: () => { // return an array of lines
+  //
+  //     return str
+  //
+  //   },
+  //   insert: (script) => {
+  //
+  //   },
+  //   put: (line) => {
+  //     batch[Object.keys(batch).length+1]=line
+  //   },
+  //   delete: () => {
+  //     batch
+  //   }
+  //
+  // },
   batches: {
 
     get: (timestamp=new Date()) => {
 
-      batches.findOne({ createdAt : { $lte: timestamp } }, {_id: 0, batch: 1}).exec(function(err, doc) {
-        if (err) throw err
-        if (!doc) {
-          api.log('warn', `(store.batches.get) no batches before ${timestamp}`)
-        } else {
-          api.log('debug', `(store.batches.get)`)
-          api.log('debug', doc)
-        }
-        return doc
+      return new Promise( (resolve, reject) => {
+        batches.findOne({ createdAt : { $lte: timestamp } }, {_id: 0, batch: 1}).exec(function(err, doc) {
+          if (err) reject(err)
+          if (!doc) {
+            api.log('warn', `(store.batches.get) no batches before ${timestamp}`)
+          } else {
+            api.log('debug', `(store.batches.get)`)
+            api.log('debug', doc)
+          }
+          return resolve(doc)
+        })
       })
 
     },
-    list: (startTime=new Date(), endTime) => {
+    list: (query={}, projection={}, sort={createdAt: -1}, limit=0) => {
 
-      batches.find({ createdAt : { $lte: startTime } }, {_id: 0, batch: 1}).exec(function(err, docs) {
-        if (err) throw err
-        if (!docs) {
-          api.log('warn', `(store.batches.list) no batches found before ${timestamp}`)
-        } else {
-          docs.forEach( (doc) => {
-            api.log('debug', `(store.batches.list)`)
-            api.log('debug', doc)
-          })
-        }
-        return docs
-      });
+      return new Promise( (resolve, reject) => {
+        batches.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
 
     },
-    put: (batch) => {
+    put: (batch, rowsAffected) => {
 
-      batches.insert({ batch: batch })
+      batches.insert({batch, rowsAffected})
 
     }
 
   },
-  clients: {
+  errors: {
 
-    get: function(query={}) {
+    getLast: function(query={}) {
 
       return new Promise( (resolve, reject) => {
         commands.find(query, {_id: 0, batch: 1}).sort({createdAt: -1}).limit(1).exec(function(err, doc) {
@@ -176,9 +197,19 @@ module.exports = exports = store = {
       })
 
     },
-    put: (action, event) => {
+    list: function(query={}, projection={}, sort={createdAt: -1}, limit=0) {
 
-      commands.insert({action, event})
+      return new Promise( (resolve, reject) => {
+        errors.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+    },
+    put: (error) => {
+
+      errors.insert({error})
 
     }
 
@@ -195,9 +226,19 @@ module.exports = exports = store = {
       })
 
     },
-    put: (command, event) => {
+    list: function(query={}, projection={}, sort={createdAt: -1}, limit=0) {
 
-      commands.insert({command, event})
+      return new Promise( (resolve, reject) => {
+        commands.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+    },
+    put: (command) => {
+
+      commands.insert({command})
 
     }
 
@@ -214,7 +255,7 @@ module.exports = exports = store = {
       })
 
     },
-    getLastContainerId: async () => {
+    getLastInstanceId: async () => {
 
       return new Promise( (resolve, reject) => {
         configs.findOne({}).sort({updatedAt: -1}).exec(function(err, doc) {
@@ -224,11 +265,19 @@ module.exports = exports = store = {
       })
 
     },
+    list: function(query={}, projection={}, sort={updatedAt: -1}, limit=0) {
+
+      return new Promise( (resolve, reject) => {
+        configs.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+    },
     put: () => {
 
-      let mssql = config.mssql
-      let containerId=api.sqlCatalog.Instance
-      configs.insert({config: mssql, _id: containerId})
+      configs.insert({config: config.mssql, _id: api.sqlCatalog.Instance})
 
     },
     update: (upsert=true) => {
@@ -261,9 +310,19 @@ module.exports = exports = store = {
       })
 
     },
-    put: (line, event) => {
+    list: function(query={}, projection={}, sort={updatedAt: -1}, limit=0) {
 
-      lines.insert({line, event})
+      return new Promise( (resolve, reject) => {
+        lines.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+    },
+    put: (line) => {
+
+      lines.insert({line})
 
     }
 
@@ -286,7 +345,7 @@ module.exports = exports = store = {
 
     },
     getBatch: (queryName) => {
-///!!! no return?
+
       new Promise(function(resolve, reject) {
         api.log('debug', `(store.queries.getBatch) loading query text '${queryName}' from query store into cache`)
         templates.findOne({name: queryName}, {_id: 0, template: 1}).exec( function(err, doc) {
@@ -298,11 +357,8 @@ module.exports = exports = store = {
             } else {
               api.log('debug', `(store.queries.getBatch)`)
               api.log('debug', doc)
-              config.batch.splice(0)
-              doc.template.split('\n').forEach( function(line) {
-                config.batch.push(line)
-              })
-              resolve(api.log('debug', config.batch))
+              api.batch = [`-- ${queryName}`].concat(doc.template.split('\n'))
+              resolve(api.log('debug', api.batch))
             }
           }
         })
@@ -319,8 +375,8 @@ module.exports = exports = store = {
             api.log('log', '(store.queries.import) queries.js template strings into templates.db')
             const queriesjs = require('./queries.js')
             Object.keys(queriesjs).forEach((name) => {
-              api.log('log', `(store.queries.getBatch) upsert name ${ name }\n${ queriesjs[name] }`)
-              templates.update( { name: name }, { $set: { template: queriesjs[name] } }, { upsert: true })
+              api.log('log', `(store.queries.getBatch) upsert query ${ name }\n${ queriesjs[name] }\n`)
+              templates.update( { name: name }, { $set: { text: queriesjs[name] } }, { upsert: true })
             })
           }
         }
@@ -329,20 +385,21 @@ module.exports = exports = store = {
     },
     put: (queryName, query) => {
 
-      templates.insert({ name: queryName, text: query })
+      templates.update( { name: queryName }, { $set: { text: query } }, { upsert: true })
+      //templates.insert({ name: queryName, text: query })
 
     },
-    list: (query={}, projection={_id: 0, name: 1, text: 1 }, sort) => {
+    list: function(query={}, projection={_id: 0, name: 1, text: 1 }, sort={updatedAt: -1}, limit=0) {
 
-      api.log('debug', `(store.queries.list)  query ${query} projection ${projection.toString()}`)
-      templates.find(query, projection).sort(sort).exec(function(err, docs) {
-        docs.forEach((doc) => {
-          api.log('log', `(store.queries.list) ${doc.name}`.bold + ` ${"\n" + doc.text + "\n"}`)
+      return new Promise( (resolve, reject) => {
+        templates.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
         })
       })
 
     },
-    names: async () => {
+    names: () => {
 
       return new Promise(function(resolve, reject) {
         try{
@@ -421,9 +478,20 @@ module.exports = exports = store = {
       })
 
     },
+    list: function(query={}, projection={}, sort={updatedAt: -1}, limit=0) {
+
+      return new Promise( (resolve, reject) => {
+        pulls.find(query, projection).sort(sort).limit(limit).exec(function(err, doc) {
+          if (err) return reject(err)
+          return resolve(doc)
+        })
+      })
+
+
+    },
     put: (output) => {
 
-      pulls.insert({ output: output })
+      pulls.insert({output})
 
     }
 

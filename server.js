@@ -1,37 +1,53 @@
+const chalk = require(`chalk`)
 const config = require(`./config.json`)
 const api = require(`./api.js`)
+//fails at first api.log reference at startup w/out the cli include
+// ??? vorpal-log dependency ???
 const cli = require(`./commands.js`)
+const store = require(`./store.js`)
 
-process.on('unhandledRejection', (error) => {
-  api.log('warn', 'process unhandledRejection')
-  api.log('error', error)
+process.on('unhandledRejection', (err) => {
+  store.errors.put(new Error(err.message))
+  api.log('error', new Error(err.message))
+  store.errors.put(err)
+  api.log('error', err)
 })
 
 process.on('error', (err) => {
+  store.errors.put(err)
   api.log('warn', 'process error')
   api.log('error', err.message)
-  api.log('log', new Error().stack)
   api.log('debug', err.stack)
-  process.emit('exit')
+  api.log('log', new Error().stack)
+  //process.emit('exit')
 })
 
 process.on('exit', (code) => {
-
-  // try {
-    if (config.sqlpad[`sqlpad`]) {
-      api.log('log', `[exit] sqlpad server at port ${config.vorpal.port}`.cyan.bgGray)
-      config.sqlpad.sqlpad.kill()
+  if (config.sqlpad[`sqlpad`]) {
+    api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse stop} sqlpad server`)
+    config.sqlpad.sqlpad.kill(1)
+  }
+  if (config.tail) {
+    api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse kill} process following SQL Server errorlog}`)
+    config.tail.kill(1)
+  }
+  if (api.sqlCatalog.Pools && api.sqlCatalog.Pools.size > 0) {
+    for (let pool in api.sqlCatalog.Pools) {
+      api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse close} connection pool ${pool[0]}`)
+      // slim chance but could spin on a running query I reckon???
+      pool[1].close()
     }
-    if (config.tail) {
-      api.log('log', `[exit] errorlog tail ending :SQL Server  ${config.tail}`.blue.bgGrey)
-      config.tail.kill()
-    }
-    api.log('log', `[exit] sqlpal at port ${config.vorpal.port} ending with code: ${code}`)
-
+  }
+  api.log('log', chalk`{italic (exit)} sqlpal exit code ${code}`)
 })
-// add config.target key to explicitly set a start-up SQL Server
-// o'wise use found if only one or complain about the confusion
-api.loadCatalog(config.target)
-if (config.sqlpad.enabledAtStartup) {
-  api.startSQLPad()
-}
+
+// hardwire a start-up SQL Server - o'wise uses last
+api.intern(config.target)
+.then( () => {
+  // SQLPad in here becomes child process, not using global (-g),
+  // can it be obliviously started - or stopped - on demand even when global is also installed  ???
+  // if true, could be a security hole in some environs to depend on any  
+  if (config.sqlpad.enabledAtStartup) {
+    api.startSQLPad()
+  }
+})

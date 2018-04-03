@@ -1,11 +1,9 @@
 {
-  "batch": [],
   "bcp": {
     "switch": {
       "d": "staging"
     }
   },
-  "log": {},
   "docker": {
     "backupPath": "backups/",
     "backupVolume": "sqlBackups",
@@ -29,13 +27,14 @@
   },
   "mssql": {
     "acceptEULA": "Y",
+    "PID": "Developer",
     "backup": {
       "filter": ".bak",
       "path": "/var/opt/mssql/backup",
       "volume": "sqlBackups"
     },
     "binPath": "/opt/mssql/bin",
-    "confPath": "/var/opt/mssql",
+    "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "data": {
       "filter": ".mdf",
       "path": "/var/opt/mssql/data"
@@ -55,7 +54,7 @@
     "pool":  {
       "user": "sa",
       "password": "<YourStrong!Passw0rd>",
-      "server": "172.17.0.1",
+      "server": "localhost",
       "database": "master",
       "connectionTimeout": 15000,
       "requestTimeout": 15000,
@@ -74,21 +73,21 @@
   },
   "sqlcmd": {
     "prefix": [
-      "SET ARITHABORT ON;",
-      "SET NOCOUNT ON;",
-      "SET QUOTED_IDENTIFIER OFF;"
+      "SET STATISTICS IO ON;",
+      "SET STATISTICS TIME ON;"
     ],
     "switch": {
       "d": "tempdb",
       "r": "r",
-      "I": "I"
+      "I": "I",
+      "h": -1
     }
   },
   "sqlpad": {
     "enabledAtStartup": false,
+    "localHostOnly": false,
     "debug": false,
     "dir": "sqlpaddata",
-    "ip": "127.0.0.1",
     "port": 8754,
     "https-port": 8755,
     "baseUrl": "",

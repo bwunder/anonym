@@ -1,672 +1,122 @@
-{"command":{"event":"server_command_error"},"_id":"01JNdhCl8pXJGQgW","createdAt":{"$$date":1517096983908},"updatedAt":{"$$date":1517096983908}}
-{"command":{"event":"server_command_error"},"_id":"022qg3Ci1FbMepw3","createdAt":{"$$date":1517498810254},"updatedAt":{"$$date":1517498810254}}
-{"command":{"event":"server_command_error"},"_id":"04ApDAo9N07mbYgI","createdAt":{"$$date":1517256729067},"updatedAt":{"$$date":1517256729067}}
-{"command":{"event":"server_command_error"},"_id":"05NHVkO4fgzC1shQ","createdAt":{"$$date":1517248657546},"updatedAt":{"$$date":1517248657546}}
-{"command":{"event":"server_command_error"},"_id":"0NQuclH78mg9ItDk","createdAt":{"$$date":1517249206507},"updatedAt":{"$$date":1517249206507}}
-{"command":{"event":"server_command_error"},"_id":"0TF5KApz8su4b993","createdAt":{"$$date":1517242433603},"updatedAt":{"$$date":1517242433603}}
-{"command":{"event":"server_command_error"},"_id":"0Vayrr2o0WDQ6Q1e","createdAt":{"$$date":1516847294987},"updatedAt":{"$$date":1516847294987}}
-{"command":{"event":"server_command_error"},"_id":"0h295YclvO7weNbn","createdAt":{"$$date":1517187565675},"updatedAt":{"$$date":1517187565675}}
-{"command":{"event":"server_command_error"},"_id":"0hwt8wrJB03zSh1B","createdAt":{"$$date":1516902335426},"updatedAt":{"$$date":1516902335426}}
-{"command":{"event":"server_command_error"},"_id":"0lkRzHOcQ4MLdBFB","createdAt":{"$$date":1518028804577},"updatedAt":{"$$date":1518028804577}}
-{"command":{"event":"server_command_error"},"_id":"0sW5CB4ImVbbr6m8","createdAt":{"$$date":1517582510541},"updatedAt":{"$$date":1517582510541}}
-{"command":{"event":"server_command_error"},"_id":"0w8ahocjrmCYlGiA","createdAt":{"$$date":1517708394108},"updatedAt":{"$$date":1517708394108}}
-{"command":{"event":"server_command_error"},"_id":"13BLd6pX40QUMA7C","createdAt":{"$$date":1517255687114},"updatedAt":{"$$date":1517255687114}}
-{"command":{"event":"server_command_error"},"_id":"19SRtH3QAtH9qxdT","createdAt":{"$$date":1517148586742},"updatedAt":{"$$date":1517148586742}}
-{"command":{"event":"server_command_error"},"_id":"1D8gp94MTh8ZCjEN","createdAt":{"$$date":1517106144962},"updatedAt":{"$$date":1517106144962}}
-{"command":{"event":"server_command_error"},"_id":"1H1ezkHTL9lEd3qf","createdAt":{"$$date":1517248295173},"updatedAt":{"$$date":1517248295173}}
-{"command":{"event":"server_command_error"},"_id":"1Hs2LLE2IKSy4hfN","createdAt":{"$$date":1517074478247},"updatedAt":{"$$date":1517074478247}}
-{"command":{"event":"server_command_error"},"_id":"1KdwgF9ht9nOJ0AE","createdAt":{"$$date":1516890753492},"updatedAt":{"$$date":1516890753492}}
-{"command":{"event":"server_command_error"},"_id":"1VI0iWaCVvrmjmBF","createdAt":{"$$date":1516738554164},"updatedAt":{"$$date":1516738554164}}
-{"command":{"event":"server_command_error"},"_id":"1aDaHMUJKwngMOkV","createdAt":{"$$date":1517091736974},"updatedAt":{"$$date":1517091736974}}
-{"command":{"event":"server_command_error"},"_id":"1bYAtpE50mRe37mA","createdAt":{"$$date":1517430242042},"updatedAt":{"$$date":1517430242042}}
-{"command":{"event":"server_command_error"},"_id":"1uywZhYsidIMFXnA","createdAt":{"$$date":1517498303873},"updatedAt":{"$$date":1517498303873}}
-{"command":{"event":"server_command_error"},"_id":"2BsIIpUVf2cj0c0o","createdAt":{"$$date":1517239394415},"updatedAt":{"$$date":1517239394415}}
-{"command":{"event":"server_command_error"},"_id":"2IAb2agacHiykL7D","createdAt":{"$$date":1517449989452},"updatedAt":{"$$date":1517449989452}}
-{"command":{"event":"server_command_error"},"_id":"2Ns5EeAyMV9ESuKo","createdAt":{"$$date":1517232150981},"updatedAt":{"$$date":1517232150981}}
-{"command":{"event":"server_command_error"},"_id":"2QIyY9PaoK06bgyy","createdAt":{"$$date":1517165449932},"updatedAt":{"$$date":1517165449932}}
-{"command":{"event":"server_command_error"},"_id":"2QJZArHsCCu9YwKf","createdAt":{"$$date":1517173513980},"updatedAt":{"$$date":1517173513980}}
-{"command":{"event":"server_command_error"},"_id":"2SzGCxTxIYAC9dnS","createdAt":{"$$date":1517255906221},"updatedAt":{"$$date":1517255906221}}
-{"command":{"event":"server_command_error"},"_id":"2YFgSH4hzoEV4xjD","createdAt":{"$$date":1517166189829},"updatedAt":{"$$date":1517166189829}}
-{"command":{"event":"server_command_error"},"_id":"2mbwAWwenGMlc7gF","createdAt":{"$$date":1517169566362},"updatedAt":{"$$date":1517169566362}}
-{"command":{"event":"server_command_error"},"_id":"2oX3Gmrti0B5dqGJ","createdAt":{"$$date":1517442014131},"updatedAt":{"$$date":1517442014131}}
-{"command":{"event":"server_command_error"},"_id":"3N8RKGJU4eutGAdJ","createdAt":{"$$date":1517237591359},"updatedAt":{"$$date":1517237591359}}
-{"command":{"event":"server_command_error"},"_id":"3s5FOcmPLQavPXec","createdAt":{"$$date":1517166713377},"updatedAt":{"$$date":1517166713377}}
-{"command":{"event":"server_command_error"},"_id":"3xOUVvla2KlIPPvL","createdAt":{"$$date":1516848108442},"updatedAt":{"$$date":1516848108442}}
-{"command":{"event":"server_command_error"},"_id":"3zrobEy9vcSiciF8","createdAt":{"$$date":1517240563059},"updatedAt":{"$$date":1517240563059}}
-{"command":{"event":"server_command_error"},"_id":"4E4uQJXrsbBkRI3R","createdAt":{"$$date":1517187750282},"updatedAt":{"$$date":1517187750282}}
-{"command":{"event":"server_command_error"},"_id":"4FBFT42ehvfOCnL7","createdAt":{"$$date":1517252536247},"updatedAt":{"$$date":1517252536247}}
-{"command":{"event":"server_command_error"},"_id":"4G6h9RrKKJQOpXeN","createdAt":{"$$date":1517249043259},"updatedAt":{"$$date":1517249043259}}
-{"command":{"event":"server_command_error"},"_id":"4QuTnCmYI10vFsdv","createdAt":{"$$date":1517242309769},"updatedAt":{"$$date":1517242309769}}
-{"command":{"event":"server_command_error"},"_id":"4ZCdNbtjbzWxKw4n","createdAt":{"$$date":1517242391322},"updatedAt":{"$$date":1517242391322}}
-{"command":{"event":"server_command_error"},"_id":"4e3zMyCvfEgm5mZN","createdAt":{"$$date":1517187383439},"updatedAt":{"$$date":1517187383439}}
-{"command":{"event":"server_command_error"},"_id":"4paZJn8H8rs62hTh","createdAt":{"$$date":1517091807158},"updatedAt":{"$$date":1517091807158}}
-{"command":{"event":"server_command_error"},"_id":"4schzimvMcrJXBpJ","createdAt":{"$$date":1517237697267},"updatedAt":{"$$date":1517237697267}}
-{"command":{"event":"server_command_error"},"_id":"4uljauiSSJqmLAal","createdAt":{"$$date":1517248327719},"updatedAt":{"$$date":1517248327719}}
-{"action":{"command":"instance --remove 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","error":true},"event":"client_command_error","_id":"54jUCiwDmDVzy3M4","createdAt":{"$$date":1517088708356},"updatedAt":{"$$date":1517088708356}}
-{"command":{"event":"server_command_error"},"_id":"56DOuzzqYrnykW6T","createdAt":{"$$date":1517498705834},"updatedAt":{"$$date":1517498705834}}
-{"command":{"event":"server_command_error"},"_id":"5J5JiKf0G4lXAcdl","createdAt":{"$$date":1516888598714},"updatedAt":{"$$date":1516888598714}}
-{"command":{"event":"server_command_error"},"_id":"5L42F6G11NhbwqEf","createdAt":{"$$date":1517240099734},"updatedAt":{"$$date":1517240099734}}
-{"command":{"event":"server_command_error"},"_id":"5OfKMjoDQodl9Tgk","createdAt":{"$$date":1517508695935},"updatedAt":{"$$date":1517508695935}}
-{"command":{"event":"server_command_error"},"_id":"5R8blmNNEWrSN6VQ","createdAt":{"$$date":1517240961168},"updatedAt":{"$$date":1517240961168}}
-{"command":{"event":"server_command_error"},"_id":"5XcewsABPWo2HPYj","createdAt":{"$$date":1517508746508},"updatedAt":{"$$date":1517508746508}}
-{"command":{"event":"server_command_error"},"_id":"5Xzi1MUggsqrHVH9","createdAt":{"$$date":1517169592023},"updatedAt":{"$$date":1517169592023}}
-{"command":{"event":"server_command_error"},"_id":"5bIXDttXYMZrHl3w","createdAt":{"$$date":1517186878047},"updatedAt":{"$$date":1517186878047}}
-{"command":{"event":"server_command_error"},"_id":"5n0FoAyYyGN8nnZ1","createdAt":{"$$date":1517232135487},"updatedAt":{"$$date":1517232135487}}
-{"command":{"event":"server_command_error"},"_id":"63Jyh7VhsRd1RRg5","createdAt":{"$$date":1517451172248},"updatedAt":{"$$date":1517451172248}}
-{"command":{"event":"server_command_error"},"_id":"68lLGFFgQG06u9Wk","createdAt":{"$$date":1517248129208},"updatedAt":{"$$date":1517248129208}}
-{"command":{"event":"server_command_error"},"_id":"6CeV7HeCwEzm3vRN","createdAt":{"$$date":1517546276647},"updatedAt":{"$$date":1517546276647}}
-{"command":{"event":"server_command_error"},"_id":"6H92bH58TWaepIU3","createdAt":{"$$date":1516902332714},"updatedAt":{"$$date":1516902332714}}
-{"command":{"event":"server_command_error"},"_id":"6LZUd9itXNLUIj3a","createdAt":{"$$date":1517187368548},"updatedAt":{"$$date":1517187368548}}
-{"command":{"event":"server_command_error"},"_id":"6P2kkfCsA7tg6wuo","createdAt":{"$$date":1517188348983},"updatedAt":{"$$date":1517188348983}}
-{"command":{"event":"server_command_error"},"_id":"6ZXUuLEy6q45zqqU","createdAt":{"$$date":1517248197395},"updatedAt":{"$$date":1517248197395}}
-{"command":{"event":"server_command_error"},"_id":"6cNpjeiusLpUEdDz","createdAt":{"$$date":1516886594509},"updatedAt":{"$$date":1516886594509}}
-{"command":{"event":"server_command_error"},"_id":"6oRAtFWTy07N7UfZ","createdAt":{"$$date":1516738591815},"updatedAt":{"$$date":1516738591815}}
-{"command":{"event":"server_command_error"},"_id":"6rFVXONnE1XpglUH","createdAt":{"$$date":1517441941995},"updatedAt":{"$$date":1517441941995}}
-{"command":{"event":"server_command_error"},"_id":"73WuWRFj1HYWIBd0","createdAt":{"$$date":1517232178782},"updatedAt":{"$$date":1517232178782}}
-{"command":{"event":"server_command_error"},"_id":"774Kx1Qli3YiWWrh","createdAt":{"$$date":1517240555519},"updatedAt":{"$$date":1517240555519}}
-{"command":{"event":"server_command_error"},"_id":"77K6lDWQEGuujbVt","createdAt":{"$$date":1516976641100},"updatedAt":{"$$date":1516976641100}}
-{"command":{"event":"server_command_error"},"_id":"7AKkGT9JZy5xHVsl","createdAt":{"$$date":1517241672979},"updatedAt":{"$$date":1517241672979}}
-{"command":{"event":"server_command_error"},"_id":"7FJM70RcG6O8RNR8","createdAt":{"$$date":1517199476425},"updatedAt":{"$$date":1517199476425}}
-{"command":{"event":"server_command_error"},"_id":"7H3d8uPwJRVoIvk9","createdAt":{"$$date":1516738619884},"updatedAt":{"$$date":1516738619884}}
-{"command":{"event":"server_command_error"},"_id":"7QUx7ND7yjHtpQul","createdAt":{"$$date":1517255986054},"updatedAt":{"$$date":1517255986054}}
-{"command":{"event":"server_command_error"},"_id":"7Ry1XAYfg2b5gGOO","createdAt":{"$$date":1517161859056},"updatedAt":{"$$date":1517161859056}}
-{"command":{"event":"server_command_error"},"_id":"7SStFY1SZ8VZ55hX","createdAt":{"$$date":1517248960638},"updatedAt":{"$$date":1517248960638}}
-{"command":{"event":"server_command_error"},"_id":"7aWga6yzxBQdRovS","createdAt":{"$$date":1517248324497},"updatedAt":{"$$date":1517248324497}}
-{"command":{"event":"server_command_error"},"_id":"7sfYciLs2ASnsP5Q","createdAt":{"$$date":1517626637869},"updatedAt":{"$$date":1517626637869}}
-{"command":{"event":"server_command_error"},"_id":"7svs14G3rbvUSVFQ","createdAt":{"$$date":1517508571907},"updatedAt":{"$$date":1517508571907}}
-{"command":{"event":"server_command_error"},"_id":"85OxHUzAadqUCn21","createdAt":{"$$date":1517200053851},"updatedAt":{"$$date":1517200053851}}
-{"command":{"event":"server_command_error"},"_id":"86lJ3yc2cXgghFRz","createdAt":{"$$date":1516847036336},"updatedAt":{"$$date":1516847036336}}
-{"command":{"event":"server_command_error"},"_id":"8LA1RANUYVse0iNI","createdAt":{"$$date":1517252551343},"updatedAt":{"$$date":1517252551343}}
-{"command":{"event":"server_command_error"},"_id":"8PjHiqGYfDlStu1N","createdAt":{"$$date":1517146359553},"updatedAt":{"$$date":1517146359553}}
-{"command":{"event":"server_command_error"},"_id":"8QcWOvopZCEcpiS0","createdAt":{"$$date":1517249160958},"updatedAt":{"$$date":1517249160958}}
-{"command":{"event":"server_command_error"},"_id":"8YmdApSZsb5pyKfY","createdAt":{"$$date":1517187581743},"updatedAt":{"$$date":1517187581743}}
-{"command":{"event":"server_command_error"},"_id":"8o31TuMUE9CpoREe","createdAt":{"$$date":1517239035692},"updatedAt":{"$$date":1517239035692}}
-{"command":{"event":"server_command_error"},"_id":"8sJJaYLD2GCENum2","createdAt":{"$$date":1516890586237},"updatedAt":{"$$date":1516890586237}}
-{"command":{"event":"server_command_error"},"_id":"8u4m6fwJZO7QsM4S","createdAt":{"$$date":1517536581138},"updatedAt":{"$$date":1517536581138}}
-{"command":{"event":"server_command_error"},"_id":"911T9opTwqTW5xJy","createdAt":{"$$date":1516741649205},"updatedAt":{"$$date":1516741649205}}
-{"command":{"event":"server_command_error"},"_id":"93UfBDbPx2I0tJCs","createdAt":{"$$date":1516848376431},"updatedAt":{"$$date":1516848376431}}
-{"command":{"event":"server_command_error"},"_id":"9FTqqSmF90TE81Nl","createdAt":{"$$date":1517578295528},"updatedAt":{"$$date":1517578295528}}
-{"command":{"event":"server_command_error"},"_id":"9RQk4eB7bWw99Olc","createdAt":{"$$date":1517248274238},"updatedAt":{"$$date":1517248274238}}
-{"command":{"event":"server_command_error"},"_id":"9UpUX92NTlUFkGaJ","createdAt":{"$$date":1517091750080},"updatedAt":{"$$date":1517091750080}}
-{"command":{"event":"server_command_error"},"_id":"9VJ2LHnYjYxl2XCP","createdAt":{"$$date":1517252615500},"updatedAt":{"$$date":1517252615500}}
-{"command":{"event":"server_command_error"},"_id":"9eWbFKeEexdAAn02","createdAt":{"$$date":1517241683388},"updatedAt":{"$$date":1517241683388}}
-{"command":{"event":"server_command_error"},"_id":"9gI0FTZm2KtjvWOp","createdAt":{"$$date":1517318273028},"updatedAt":{"$$date":1517318273028}}
-{"command":{"event":"server_command_error"},"_id":"9nMLWHrvh59EBicT","createdAt":{"$$date":1517249301348},"updatedAt":{"$$date":1517249301348}}
-{"command":{"event":"server_command_error"},"_id":"9qCG9FEyA2JZXzs9","createdAt":{"$$date":1517148565653},"updatedAt":{"$$date":1517148565653}}
-{"command":{"event":"server_command_error"},"_id":"9rp5B25MbnlzkxYu","createdAt":{"$$date":1516893669169},"updatedAt":{"$$date":1516893669169}}
-{"command":{"event":"server_command_error"},"_id":"A1U7u4Pyz3v8zV2z","createdAt":{"$$date":1517249022500},"updatedAt":{"$$date":1517249022500}}
-{"command":{"event":"server_command_error"},"_id":"A2POe8Tq1fDg8LDv","createdAt":{"$$date":1517242532119},"updatedAt":{"$$date":1517242532119}}
-{"command":{"event":"server_command_error"},"_id":"A654UZys1zC479JA","createdAt":{"$$date":1516847043142},"updatedAt":{"$$date":1516847043142}}
-{"command":{"event":"server_command_error"},"_id":"APfJ51C91ct0T5xi","createdAt":{"$$date":1517278704274},"updatedAt":{"$$date":1517278704274}}
-{"command":{"event":"server_command_error"},"_id":"AmwQv46v3ZSOaHIX","createdAt":{"$$date":1518028801913},"updatedAt":{"$$date":1518028801913}}
-{"command":{"event":"server_command_error"},"_id":"ArOb0SVi87p9UeT3","createdAt":{"$$date":1517256641016},"updatedAt":{"$$date":1517256641016}}
-{"command":{"event":"server_command_error"},"_id":"AtkKZ4O80VD8QJlk","createdAt":{"$$date":1516888588526},"updatedAt":{"$$date":1516888588526}}
-{"command":{"event":"server_command_error"},"_id":"B8iIM2qm0dgDBKWF","createdAt":{"$$date":1517248706046},"updatedAt":{"$$date":1517248706046}}
-{"command":{"event":"server_command_error"},"_id":"BCIcpY03wZew5duV","createdAt":{"$$date":1516889707684},"updatedAt":{"$$date":1516889707684}}
-{"command":{"event":"server_command_error"},"_id":"BEIoKcK2A8khRYA0","createdAt":{"$$date":1517199440204},"updatedAt":{"$$date":1517199440204}}
-{"command":{"event":"server_command_error"},"_id":"BRZz6CVM7bjcnywB","createdAt":{"$$date":1517255951884},"updatedAt":{"$$date":1517255951884}}
-{"command":{"event":"server_command_error"},"_id":"BYy37NKCeFGL58VM","createdAt":{"$$date":1517239444579},"updatedAt":{"$$date":1517239444579}}
-{"command":{"event":"server_command_error"},"_id":"Babx9TCXJdxUZETZ","createdAt":{"$$date":1517252538163},"updatedAt":{"$$date":1517252538163}}
-{"command":{"event":"server_command_error"},"_id":"BjPvUoiRk0RsOHX0","createdAt":{"$$date":1517579584432},"updatedAt":{"$$date":1517579584432}}
-{"command":{"event":"server_command_error"},"_id":"BpCttEJNkpM3MXkR","createdAt":{"$$date":1517187620848},"updatedAt":{"$$date":1517187620848}}
-{"command":{"event":"server_command_error"},"_id":"Briv6dtByVPwVt2c","createdAt":{"$$date":1517169398805},"updatedAt":{"$$date":1517169398805}}
-{"command":{"event":"server_command_error"},"_id":"BtpHVTFQ44A4Gts6","createdAt":{"$$date":1517187743809},"updatedAt":{"$$date":1517187743809}}
-{"command":{"event":"server_command_error"},"_id":"C06mdNRg24rNkVnS","createdAt":{"$$date":1517169580870},"updatedAt":{"$$date":1517169580870}}
-{"command":{"event":"server_command_error"},"_id":"C0AcydCjHAIWDXMM","createdAt":{"$$date":1517241161511},"updatedAt":{"$$date":1517241161511}}
-{"command":{"event":"server_command_error"},"_id":"C3piAJxVcI2DLKwy","createdAt":{"$$date":1516890230244},"updatedAt":{"$$date":1516890230244}}
-{"command":{"event":"server_command_error"},"_id":"C5qwlCDCeCtqPieq","createdAt":{"$$date":1516902316425},"updatedAt":{"$$date":1516902316425}}
-{"command":{"event":"server_command_error"},"_id":"CGFVoj2dL1WOTws7","createdAt":{"$$date":1517252561684},"updatedAt":{"$$date":1517252561684}}
-{"command":{"event":"server_command_error"},"_id":"CNgUIZUiCa0wM1Jv","createdAt":{"$$date":1516847223557},"updatedAt":{"$$date":1516847223557}}
-{"command":{"event":"server_command_error"},"_id":"CQo0a5zB72mBCG6F","createdAt":{"$$date":1516890579083},"updatedAt":{"$$date":1516890579083}}
-{"command":{"event":"server_command_error"},"_id":"CX5zeZ9L7rVkTfa8","createdAt":{"$$date":1517166063755},"updatedAt":{"$$date":1517166063755}}
-{"command":{"event":"server_command_error"},"_id":"Cbpec2fYYzmP6MJv","createdAt":{"$$date":1516902299478},"updatedAt":{"$$date":1516902299478}}
-{"command":{"event":"server_command_error"},"_id":"CcfyJVndCyUvNZtl","createdAt":{"$$date":1517546164099},"updatedAt":{"$$date":1517546164099}}
-{"command":{"event":"server_command_error"},"_id":"CeGY2fgow5akHzlQ","createdAt":{"$$date":1517186868831},"updatedAt":{"$$date":1517186868831}}
-{"command":{"event":"server_command_error"},"_id":"Cgj5UpR1wMdHsDch","createdAt":{"$$date":1517187725830},"updatedAt":{"$$date":1517187725830}}
-{"command":{"event":"server_command_error"},"_id":"ChOZ6XvN4ouHkQR4","createdAt":{"$$date":1517167673438},"updatedAt":{"$$date":1517167673438}}
-{"command":{"event":"server_command_error"},"_id":"D49ZCaOpZrCqUHjH","createdAt":{"$$date":1517450935960},"updatedAt":{"$$date":1517450935960}}
-{"command":{"event":"server_command_error"},"_id":"DCQIVlWwNjMULRwj","createdAt":{"$$date":1517492449609},"updatedAt":{"$$date":1517492449609}}
-{"command":{"event":"server_command_error"},"_id":"DGxzEKyjBisK9QE8","createdAt":{"$$date":1517167730116},"updatedAt":{"$$date":1517167730116}}
-{"command":{"event":"server_command_error"},"_id":"DLwd0CW8kUIpby69","createdAt":{"$$date":1517242506773},"updatedAt":{"$$date":1517242506773}}
-{"command":{"event":"server_command_error"},"_id":"DeewJbhDU4OYOgRH","createdAt":{"$$date":1517337360646},"updatedAt":{"$$date":1517337360646}}
-{"command":{"event":"server_command_error"},"_id":"DiInzX9HEHjePvZt","createdAt":{"$$date":1517242189274},"updatedAt":{"$$date":1517242189274}}
-{"command":{"event":"server_command_error"},"_id":"DsO7Qj7sgceAb31T","createdAt":{"$$date":1516847320098},"updatedAt":{"$$date":1516847320098}}
-{"command":{"event":"server_command_error"},"_id":"E8vjdI3aam7DacuW","createdAt":{"$$date":1517582589905},"updatedAt":{"$$date":1517582589905}}
-{"command":{"event":"server_command_error"},"_id":"EA6pbfmH4RomqzgW","createdAt":{"$$date":1517248721178},"updatedAt":{"$$date":1517248721178}}
-{"command":{"event":"server_command_error"},"_id":"EAYVfbj3xkYHqd74","createdAt":{"$$date":1516738566711},"updatedAt":{"$$date":1516738566711}}
-{"command":{"event":"server_command_error"},"_id":"EBwQsn1WR9scsfFT","createdAt":{"$$date":1517340446267},"updatedAt":{"$$date":1517340446267}}
-{"command":{"event":"server_command_error"},"_id":"EI7DkH9yPrMLNs7n","createdAt":{"$$date":1517451179689},"updatedAt":{"$$date":1517451179689}}
-{"command":{"event":"server_command_error"},"_id":"ERgn9ZjxqVjKqm8S","createdAt":{"$$date":1517451253306},"updatedAt":{"$$date":1517451253306}}
-{"command":{"event":"server_command_error"},"_id":"EUUVxvOmuKqXzts9","createdAt":{"$$date":1516888593960},"updatedAt":{"$$date":1516888593960}}
-{"command":{"event":"server_command_error"},"_id":"EjOu59F5cbd10RBb","createdAt":{"$$date":1517167042669},"updatedAt":{"$$date":1517167042669}}
-{"command":{"event":"server_command_error"},"_id":"EkEVyISChrSRxPxJ","createdAt":{"$$date":1517545586470},"updatedAt":{"$$date":1517545586470}}
-{"command":{"event":"server_command_error"},"_id":"EnqWQNwsXx5lFPGx","createdAt":{"$$date":1516891008410},"updatedAt":{"$$date":1516891008410}}
-{"command":{"event":"server_command_error"},"_id":"Ess9cjCco7iCDtAD","createdAt":{"$$date":1517169549316},"updatedAt":{"$$date":1517169549316}}
-{"command":{"event":"server_command_error"},"_id":"EyUxtsoQnCVLKqd6","createdAt":{"$$date":1517167236773},"updatedAt":{"$$date":1517167236773}}
-{"command":{"event":"server_command_error"},"_id":"FC1sHynh71TLgeHc","createdAt":{"$$date":1517255950039},"updatedAt":{"$$date":1517255950039}}
-{"command":{"event":"server_command_error"},"_id":"FDH4yGRFPlgYhksw","createdAt":{"$$date":1517173002164},"updatedAt":{"$$date":1517173002164}}
-{"command":{"event":"server_command_error"},"_id":"FQH3G586my9f4LRN","createdAt":{"$$date":1516847328926},"updatedAt":{"$$date":1516847328926}}
-{"command":{"event":"server_command_error"},"_id":"FdUzeCq6ZyT4ZmYD","createdAt":{"$$date":1516848019417},"updatedAt":{"$$date":1516848019417}}
-{"command":{"event":"server_command_error"},"_id":"FgJHH1MXG3TQBCAf","createdAt":{"$$date":1517252815091},"updatedAt":{"$$date":1517252815091}}
-{"action":{"command":"about -n","error":true},"event":"client_command_error","_id":"FhOFtzDXG8KJsEg3","createdAt":{"$$date":1517500709172},"updatedAt":{"$$date":1517500709172}}
-{"command":{"event":"server_command_error"},"_id":"FhXocr4gopDiGP4e","createdAt":{"$$date":1517241479225},"updatedAt":{"$$date":1517241479225}}
-{"command":{"event":"server_command_error"},"_id":"FtWN2wLuRME8e8Ij","createdAt":{"$$date":1517148293673},"updatedAt":{"$$date":1517148293673}}
-{"command":{"event":"server_command_error"},"_id":"FteJmI6vbeWdytLq","createdAt":{"$$date":1517241678671},"updatedAt":{"$$date":1517241678671}}
-{"command":{"event":"server_command_error"},"_id":"G3cGZnXCEFqaRYy8","createdAt":{"$$date":1517172532722},"updatedAt":{"$$date":1517172532722}}
-{"command":{"event":"server_command_error"},"_id":"GBHijPnh5NjKPHja","createdAt":{"$$date":1517242389004},"updatedAt":{"$$date":1517242389004}}
-{"command":{"event":"server_command_error"},"_id":"GCO50BARo5tLvoGU","createdAt":{"$$date":1518028721068},"updatedAt":{"$$date":1518028721068}}
-{"command":{"event":"server_command_error"},"_id":"GJT4iIygVnIl3cww","createdAt":{"$$date":1517252673932},"updatedAt":{"$$date":1517252673932}}
-{"command":{"event":"server_command_error"},"_id":"GKhia08TT3X2918Y","createdAt":{"$$date":1517239388372},"updatedAt":{"$$date":1517239388372}}
-{"action":{"command":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","error":true},"event":"client_command_error","_id":"GUeIYtiQiY6nYv73","createdAt":{"$$date":1517199103831},"updatedAt":{"$$date":1517199103831}}
-{"command":{"event":"server_command_error"},"_id":"GcquhX7GKK875HXb","createdAt":{"$$date":1517199800520},"updatedAt":{"$$date":1517199800520}}
-{"command":{"event":"server_command_error"},"_id":"GjD9y5zD4ZCF2M67","createdAt":{"$$date":1517255931568},"updatedAt":{"$$date":1517255931568}}
-{"command":{"event":"server_command_error"},"_id":"Gmbk26Nkv8PmbEEn","createdAt":{"$$date":1516890568185},"updatedAt":{"$$date":1516890568185}}
-{"command":{"event":"server_command_error"},"_id":"GucscWkzyY28cBHM","createdAt":{"$$date":1517187392524},"updatedAt":{"$$date":1517187392524}}
-{"command":{"event":"server_command_error"},"_id":"HA6XIoIcwmeuWnG9","createdAt":{"$$date":1517708443129},"updatedAt":{"$$date":1517708443129}}
-{"command":{"event":"server_command_error"},"_id":"HDHJYNWMOlApyAAZ","createdAt":{"$$date":1516747492944},"updatedAt":{"$$date":1516747492944}}
-{"command":{"event":"server_command_error"},"_id":"HKbQm55SUwXwWmzi","createdAt":{"$$date":1517249409385},"updatedAt":{"$$date":1517249409385}}
-{"command":{"event":"server_command_error"},"_id":"HLfYngPUkJ37NTmR","createdAt":{"$$date":1517240146694},"updatedAt":{"$$date":1517240146694}}
-{"command":{"event":"server_command_error"},"_id":"HRbBX0FpE4J7A2wY","createdAt":{"$$date":1517498257731},"updatedAt":{"$$date":1517498257731}}
-{"command":{"event":"server_command_error"},"_id":"HUiYlWSOY6NKH71e","createdAt":{"$$date":1517256702482},"updatedAt":{"$$date":1517256702482}}
-{"command":{"event":"server_command_error"},"_id":"HWgJGQ0ScGTkDiX2","createdAt":{"$$date":1516769472865},"updatedAt":{"$$date":1516769472865}}
-{"command":{"event":"server_command_error"},"_id":"HoVnraBt1AwdPSGe","createdAt":{"$$date":1517238976085},"updatedAt":{"$$date":1517238976085}}
-{"command":{"event":"server_command_error"},"_id":"HxxUAwzRAj5ojINU","createdAt":{"$$date":1516848532172},"updatedAt":{"$$date":1516848532172}}
-{"command":{"event":"server_command_error"},"_id":"Hxz0ibWSY8lsWuF7","createdAt":{"$$date":1517239419539},"updatedAt":{"$$date":1517239419539}}
-{"command":{"event":"server_command_error"},"_id":"I6tk0qpm1bs9hVAY","createdAt":{"$$date":1517579100076},"updatedAt":{"$$date":1517579100076}}
-{"command":{"event":"server_command_error"},"_id":"IEq7NWJbdIjUgIIR","createdAt":{"$$date":1517451546829},"updatedAt":{"$$date":1517451546829}}
-{"command":{"event":"server_command_error"},"_id":"IOswjofyEG5EBfFz","createdAt":{"$$date":1517579732915},"updatedAt":{"$$date":1517579732915}}
-{"command":{"event":"server_command_error"},"_id":"IUoe5Ddv8WO8LD1x","createdAt":{"$$date":1517248318482},"updatedAt":{"$$date":1517248318482}}
-{"command":{"event":"server_command_error"},"_id":"IWm3EGbAqMnCAe2S","createdAt":{"$$date":1517450988477},"updatedAt":{"$$date":1517450988477}}
-{"command":{"event":"server_command_error"},"_id":"IYipsa6lgUOZUKZ8","createdAt":{"$$date":1517187689408},"updatedAt":{"$$date":1517187689408}}
-{"command":{"event":"server_command_error"},"_id":"IlUPmgGBr9Opy6sV","createdAt":{"$$date":1517429407341},"updatedAt":{"$$date":1517429407341}}
-{"command":{"event":"server_command_error"},"_id":"InxKqpIMEEIlxwpF","createdAt":{"$$date":1517199028376},"updatedAt":{"$$date":1517199028376}}
-{"command":{"event":"server_command_error"},"_id":"IskvJT191Q3zD7YC","createdAt":{"$$date":1517248279242},"updatedAt":{"$$date":1517248279242}}
-{"command":{"event":"server_command_error"},"_id":"ItIqna4ru0VdsTGw","createdAt":{"$$date":1517240317701},"updatedAt":{"$$date":1517240317701}}
-{"command":{"event":"server_command_error"},"_id":"IwYqk2HJPfVvF0ji","createdAt":{"$$date":1517498292865},"updatedAt":{"$$date":1517498292865}}
-{"command":{"event":"server_command_error"},"_id":"J9DAbK6eBFm731LM","createdAt":{"$$date":1517337358849},"updatedAt":{"$$date":1517337358849}}
-{"command":{"event":"server_command_error"},"_id":"JCTrFVzeZ571nl2K","createdAt":{"$$date":1517758185462},"updatedAt":{"$$date":1517758185462}}
-{"command":{"event":"server_command_error"},"_id":"JEdvirl0mWpY7mLh","createdAt":{"$$date":1517498699635},"updatedAt":{"$$date":1517498699635}}
-{"command":{"event":"server_command_error"},"_id":"JHkrWgYhMP1aVpcj","createdAt":{"$$date":1518028779654},"updatedAt":{"$$date":1518028779654}}
-{"command":{"event":"server_command_error"},"_id":"JKNyfYYvMVeqKOqt","createdAt":{"$$date":1517580046158},"updatedAt":{"$$date":1517580046158}}
-{"command":{"event":"server_command_error"},"_id":"JLiYHJVb8xE3F5gn","createdAt":{"$$date":1517242880609},"updatedAt":{"$$date":1517242880609}}
-{"command":{"event":"server_command_error"},"_id":"JNibNfv6M5t7f4Jt","createdAt":{"$$date":1517429498358},"updatedAt":{"$$date":1517429498358}}
-{"command":{"event":"server_command_error"},"_id":"JRqMza6adXvSOfOd","createdAt":{"$$date":1516821464126},"updatedAt":{"$$date":1516821464126}}
-{"command":{"event":"server_command_error"},"_id":"JVnVmtWIsBbrRDhU","createdAt":{"$$date":1517249271725},"updatedAt":{"$$date":1517249271725}}
-{"command":{"event":"server_command_error"},"_id":"JeEwEqtPDWwiqNUa","createdAt":{"$$date":1517237609141},"updatedAt":{"$$date":1517237609141}}
-{"command":{"event":"server_command_error"},"_id":"Jfaur7GFAnJGxfWZ","createdAt":{"$$date":1517498021548},"updatedAt":{"$$date":1517498021548}}
-{"command":{"event":"server_command_error"},"_id":"JgMGsf0ZVUCqHMcT","createdAt":{"$$date":1517508654515},"updatedAt":{"$$date":1517508654515}}
-{"command":{"event":"server_command_error"},"_id":"JhMiKlab0uNMpEyy","createdAt":{"$$date":1517167065652},"updatedAt":{"$$date":1517167065652}}
-{"command":{"event":"server_command_error"},"_id":"Jj3tkaODJABJSCAj","createdAt":{"$$date":1517240093182},"updatedAt":{"$$date":1517240093182}}
-{"command":{"event":"server_command_error"},"_id":"K3Xw9K0WSQg1XxR9","createdAt":{"$$date":1517146113968},"updatedAt":{"$$date":1517146113968}}
-{"command":{"event":"server_command_error"},"_id":"K4SJTLeiPgbSLQyG","createdAt":{"$$date":1517241927962},"updatedAt":{"$$date":1517241927962}}
-{"command":{"event":"server_command_error"},"_id":"K9JhlZYnoO7GfaGf","createdAt":{"$$date":1517242508448},"updatedAt":{"$$date":1517242508448}}
-{"command":{"event":"server_command_error"},"_id":"KG5fV0O5PSMp7R1j","createdAt":{"$$date":1517248144097},"updatedAt":{"$$date":1517248144097}}
-{"command":{"event":"server_command_error"},"_id":"KHFnGgGX9iLhN4Am","createdAt":{"$$date":1517248301552},"updatedAt":{"$$date":1517248301552}}
-{"command":{"event":"server_command_error"},"_id":"KKjdgiLNZ7ND3iid","createdAt":{"$$date":1517242436659},"updatedAt":{"$$date":1517242436659}}
-{"command":{"event":"server_command_error"},"_id":"KNDy6iclyATFnYK3","createdAt":{"$$date":1517096601302},"updatedAt":{"$$date":1517096601302}}
-{"command":{"event":"server_command_error"},"_id":"KNa2CzvWmC2kR6fK","createdAt":{"$$date":1516888620139},"updatedAt":{"$$date":1516888620139}}
-{"command":{"event":"server_command_error"},"_id":"KTi6PYP4EX29yuMM","createdAt":{"$$date":1517199081065},"updatedAt":{"$$date":1517199081065}}
-{"command":{"event":"server_command_error"},"_id":"KVok8wp9D4F0hesC","createdAt":{"$$date":1516975806698},"updatedAt":{"$$date":1516975806698}}
-{"command":{"event":"server_command_error"},"_id":"Kh2dJ3QKYfkfX9qb","createdAt":{"$$date":1517096970758},"updatedAt":{"$$date":1517096970758}}
-{"command":{"event":"server_command_error"},"_id":"Kv7OnB8p7etbh4RZ","createdAt":{"$$date":1518028723287},"updatedAt":{"$$date":1518028723287}}
-{"command":{"event":"server_command_error"},"_id":"KwEXnmEwo3BkUjYB","createdAt":{"$$date":1517238933077},"updatedAt":{"$$date":1517238933077}}
-{"command":{"event":"server_command_error"},"_id":"L1Up9QvouKtwBMks","createdAt":{"$$date":1517241419963},"updatedAt":{"$$date":1517241419963}}
-{"command":{"event":"server_command_error"},"_id":"L6RqNwfDIMYMQbUj","createdAt":{"$$date":1517240315411},"updatedAt":{"$$date":1517240315411}}
-{"command":{"event":"server_command_error"},"_id":"LAnvd9kGCqUi6trG","createdAt":{"$$date":1517240089914},"updatedAt":{"$$date":1517240089914}}
-{"command":{"event":"server_command_error"},"_id":"LGw1lzppKrIijjxM","createdAt":{"$$date":1517252557706},"updatedAt":{"$$date":1517252557706}}
-{"command":{"event":"server_command_error"},"_id":"LHmk4gevLIBq77oU","createdAt":{"$$date":1517252665742},"updatedAt":{"$$date":1517252665742}}
-{"command":{"event":"server_command_error"},"_id":"LQryowliux7GuIni","createdAt":{"$$date":1517241685958},"updatedAt":{"$$date":1517241685958}}
-{"command":{"event":"server_command_error"},"_id":"LQztT4EPkE6udwZI","createdAt":{"$$date":1517241674128},"updatedAt":{"$$date":1517241674128}}
-{"command":{"event":"server_command_error"},"_id":"LSVYb3opxGRWjbQo","createdAt":{"$$date":1517166376311},"updatedAt":{"$$date":1517166376311}}
-{"command":{"event":"server_command_error"},"_id":"LU6rnLhuK8poIyDZ","createdAt":{"$$date":1517509344638},"updatedAt":{"$$date":1517509344638}}
-{"command":{"event":"server_command_error"},"_id":"Lo1XSpLAr4tA439z","createdAt":{"$$date":1517252549924},"updatedAt":{"$$date":1517252549924}}
-{"command":{"event":"server_command_error"},"_id":"LtvoSLJZ5fk0Zgz0","createdAt":{"$$date":1517187727674},"updatedAt":{"$$date":1517187727674}}
-{"command":{"event":"server_command_error"},"_id":"LuJ0CB6OCaiRd3wZ","createdAt":{"$$date":1517086543315},"updatedAt":{"$$date":1517086543315}}
-{"command":{"event":"server_command_error"},"_id":"M6PcVPvT07UZSUjQ","createdAt":{"$$date":1517252668525},"updatedAt":{"$$date":1517252668525}}
-{"command":{"event":"server_command_error"},"_id":"M6e66gG7FHbcgwKl","createdAt":{"$$date":1516744102320},"updatedAt":{"$$date":1516744102320}}
-{"command":{"event":"server_command_error"},"_id":"M9lIOIuYyLJ4iLBe","createdAt":{"$$date":1517249024969},"updatedAt":{"$$date":1517249024969}}
-{"command":{"event":"server_command_error"},"_id":"MEcME2FHAAhiBDjl","createdAt":{"$$date":1517429421331},"updatedAt":{"$$date":1517429421331}}
-{"command":{"event":"server_command_error"},"_id":"MMRSh5uL1u6eZOxW","createdAt":{"$$date":1517169437826},"updatedAt":{"$$date":1517169437826}}
-{"command":{"event":"server_command_error"},"_id":"MQ2VhzOm1Optm6VU","createdAt":{"$$date":1516847467953},"updatedAt":{"$$date":1516847467953}}
-{"command":{"event":"server_command_error"},"_id":"MQFwgKqR57u2GhUV","createdAt":{"$$date":1516848285226},"updatedAt":{"$$date":1516848285226}}
-{"command":{"event":"server_command_error"},"_id":"MhbnOVvGIIto0n7S","createdAt":{"$$date":1516753779700},"updatedAt":{"$$date":1516753779700}}
-{"command":{"event":"server_command_error"},"_id":"Mj8sLGWZW8hvd3nE","createdAt":{"$$date":1517182437786},"updatedAt":{"$$date":1517182437786}}
-{"command":{"event":"server_command_error"},"_id":"Mpt21QaM7KlYqp3o","createdAt":{"$$date":1517546803453},"updatedAt":{"$$date":1517546803453}}
-{"command":{"event":"server_command_error"},"_id":"MpxjbWbfBPLeHRsq","createdAt":{"$$date":1517086539026},"updatedAt":{"$$date":1517086539026}}
-{"command":{"event":"server_command_error"},"_id":"N11fWjF6Gd4WuaWE","createdAt":{"$$date":1517252609400},"updatedAt":{"$$date":1517252609400}}
-{"command":{"event":"server_command_error"},"_id":"N1eUctvrGy3GdEVs","createdAt":{"$$date":1517240948420},"updatedAt":{"$$date":1517240948420}}
-{"command":{"event":"server_command_error"},"_id":"N7ReylDBxTnCXH9p","createdAt":{"$$date":1516890498526},"updatedAt":{"$$date":1516890498526}}
-{"command":{"event":"server_command_error"},"_id":"NFBGELV5djuvjXNW","createdAt":{"$$date":1517172984587},"updatedAt":{"$$date":1517172984587}}
-{"command":{"event":"server_command_error"},"_id":"NPimvBL5Tkic7hxz","createdAt":{"$$date":1516848514903},"updatedAt":{"$$date":1516848514903}}
-{"command":{"event":"server_command_error"},"_id":"NUyaoDxhqzYfDdDc","createdAt":{"$$date":1517508394824},"updatedAt":{"$$date":1517508394824}}
-{"command":{"event":"server_command_error"},"_id":"NV4iuZNXhCA2MO3a","createdAt":{"$$date":1517097644393},"updatedAt":{"$$date":1517097644393}}
-{"command":{"event":"server_command_error"},"_id":"NVvD7qVqKOdqawGz","createdAt":{"$$date":1517428972134},"updatedAt":{"$$date":1517428972134}}
-{"command":{"event":"server_command_error"},"_id":"NcmGAZET2kmYJVSz","createdAt":{"$$date":1517340067742},"updatedAt":{"$$date":1517340067742}}
-{"command":{"event":"server_command_error"},"_id":"NdT1JG5ktBudDosY","createdAt":{"$$date":1517232048621},"updatedAt":{"$$date":1517232048621}}
-{"command":{"event":"server_command_error"},"_id":"Ndiq86UyhhKpDxx8","createdAt":{"$$date":1517579843263},"updatedAt":{"$$date":1517579843263}}
-{"command":{"event":"server_command_error"},"_id":"NfwkEZb9tQj8lIwO","createdAt":{"$$date":1517579636855},"updatedAt":{"$$date":1517579636855}}
-{"command":{"event":"server_command_error"},"_id":"OQo42WxA9ZZfoF8V","createdAt":{"$$date":1517500363949},"updatedAt":{"$$date":1517500363949}}
-{"command":{"event":"server_command_error"},"_id":"Ou78P2o5T2FTmEY0","createdAt":{"$$date":1517238083518},"updatedAt":{"$$date":1517238083518}}
-{"command":{"event":"server_command_error"},"_id":"OuEkWgwHeuHLpgiF","createdAt":{"$$date":1517146373907},"updatedAt":{"$$date":1517146373907}}
-{"command":{"event":"server_command_error"},"_id":"PJRRt0djn3r5YQBQ","createdAt":{"$$date":1517148360669},"updatedAt":{"$$date":1517148360669}}
-{"command":{"event":"server_command_error"},"_id":"PTeNJNT9jWNbPs53","createdAt":{"$$date":1517509323472},"updatedAt":{"$$date":1517509323472}}
-{"command":{"event":"server_command_error"},"_id":"PlS2VA1Iv0QsybT1","createdAt":{"$$date":1517252619758},"updatedAt":{"$$date":1517252619758}}
-{"command":{"event":"server_command_error"},"_id":"Ppxhh9sxTsdyMAaA","createdAt":{"$$date":1517237612899},"updatedAt":{"$$date":1517237612899}}
-{"command":{"event":"server_command_error"},"_id":"Pvu0N7YEd25dWGQf","createdAt":{"$$date":1517255984718},"updatedAt":{"$$date":1517255984718}}
-{"command":{"event":"server_command_error"},"_id":"Q0P50SeKv83MIx9R","createdAt":{"$$date":1517515694109},"updatedAt":{"$$date":1517515694109}}
-{"command":{"event":"server_command_error"},"_id":"Q3k0mC8hJqp389wM","createdAt":{"$$date":1517238081065},"updatedAt":{"$$date":1517238081065}}
-{"command":{"event":"server_command_error"},"_id":"Q4VI7yM98YjpV2s1","createdAt":{"$$date":1517186864088},"updatedAt":{"$$date":1517186864088}}
-{"command":{"event":"server_command_error"},"_id":"Q6xgwMRQCTKorQCQ","createdAt":{"$$date":1517256327726},"updatedAt":{"$$date":1517256327726}}
-{"command":{"event":"server_command_error"},"_id":"QC5CDhjl8NWu1RrS","createdAt":{"$$date":1517098159695},"updatedAt":{"$$date":1517098159695}}
-{"command":{"event":"server_command_error"},"_id":"QPi0VFvofQKeyl91","createdAt":{"$$date":1517255971177},"updatedAt":{"$$date":1517255971177}}
-{"command":{"event":"server_command_error"},"_id":"QRDpO8gzOiSQL8aF","createdAt":{"$$date":1517506847828},"updatedAt":{"$$date":1517506847828}}
-{"command":{"event":"server_command_error"},"_id":"Qa07zCkZSYE3Zdfa","createdAt":{"$$date":1517235064504},"updatedAt":{"$$date":1517235064504}}
-{"command":{"event":"server_command_error"},"_id":"QlEaYIftVmGQgd0f","createdAt":{"$$date":1517088878011},"updatedAt":{"$$date":1517088878011}}
-{"command":{"event":"server_command_error"},"_id":"R9MgdiPZoKfFPqpr","createdAt":{"$$date":1517239136678},"updatedAt":{"$$date":1517239136678}}
-{"command":{"event":"server_command_error"},"_id":"RGCLd2brRlBjWBvt","createdAt":{"$$date":1517515748436},"updatedAt":{"$$date":1517515748436}}
-{"command":{"event":"server_command_error"},"_id":"RK1fZoy5OKZ4lnc5","createdAt":{"$$date":1517242102573},"updatedAt":{"$$date":1517242102573}}
-{"command":{"event":"server_command_error"},"_id":"RL2Il464etvgmmuD","createdAt":{"$$date":1517169742430},"updatedAt":{"$$date":1517169742430}}
-{"command":{"event":"server_command_error"},"_id":"RPGGyJT02018mHY4","createdAt":{"$$date":1517708420095},"updatedAt":{"$$date":1517708420095}}
-{"command":{"event":"server_command_error"},"_id":"RSk5bcZj9LY2zj8c","createdAt":{"$$date":1517172991345},"updatedAt":{"$$date":1517172991345}}
-{"command":{"event":"server_command_error"},"_id":"RccQMUDqw7lsSqxH","createdAt":{"$$date":1517442295839},"updatedAt":{"$$date":1517442295839}}
-{"command":{"event":"server_command_error"},"_id":"Rh4TkeDKYqIcRu5i","createdAt":{"$$date":1517255972516},"updatedAt":{"$$date":1517255972516}}
-{"command":{"event":"server_command_error"},"_id":"RiQS2cBsM9kIX4GS","createdAt":{"$$date":1517091850861},"updatedAt":{"$$date":1517091850861}}
-{"command":{"event":"server_command_error"},"_id":"RyewwWnRonY3B8Ty","createdAt":{"$$date":1517167699428},"updatedAt":{"$$date":1517167699428}}
-{"command":{"event":"server_command_error"},"_id":"SIvj1o4pF7JVEEEN","createdAt":{"$$date":1516923557665},"updatedAt":{"$$date":1516923557665}}
-{"action":{"command":"sqlpad","error":true},"event":"client_command_error","_id":"SOdzvm496FqOLyLW","createdAt":{"$$date":1517451016927},"updatedAt":{"$$date":1517451016927}}
-{"command":{"event":"server_command_error"},"_id":"SOeemCJ6TDbzDy7L","createdAt":{"$$date":1517167064654},"updatedAt":{"$$date":1517167064654}}
-{"command":{"event":"server_command_error"},"_id":"SYzJuWQaLy90qcBF","createdAt":{"$$date":1517256540699},"updatedAt":{"$$date":1517256540699}}
-{"command":{"event":"server_command_error"},"_id":"SgjvmtLUUgCmJwyQ","createdAt":{"$$date":1517098187311},"updatedAt":{"$$date":1517098187311}}
-{"command":{"event":"server_command_error"},"_id":"So65Sd3zsg40WM53","createdAt":{"$$date":1517249172697},"updatedAt":{"$$date":1517249172697}}
-{"command":{"event":"server_command_error"},"_id":"SpZ2A6C6qNbNFsp0","createdAt":{"$$date":1516919896467},"updatedAt":{"$$date":1516919896467}}
-{"command":{"event":"server_command_error"},"_id":"SsNVV5eS37j3xuKx","createdAt":{"$$date":1517248151795},"updatedAt":{"$$date":1517248151795}}
-{"command":{"event":"server_command_error"},"_id":"SuLq0tvLhRmxKmNs","createdAt":{"$$date":1517239146174},"updatedAt":{"$$date":1517239146174}}
-{"command":{"event":"server_command_error"},"_id":"SuaPMy8OkN1IMUN0","createdAt":{"$$date":1517490585250},"updatedAt":{"$$date":1517490585250}}
-{"command":{"event":"server_command_error"},"_id":"TCA2XZqLjzbqDkSn","createdAt":{"$$date":1517435953298},"updatedAt":{"$$date":1517435953298}}
-{"command":{"event":"server_command_error"},"_id":"TGaGrIaMLfNuejMW","createdAt":{"$$date":1517248874256},"updatedAt":{"$$date":1517248874256}}
-{"command":{"event":"server_command_error"},"_id":"TNAtCPL4MP1m8xdK","createdAt":{"$$date":1517256489107},"updatedAt":{"$$date":1517256489107}}
-{"command":{"event":"server_command_error"},"_id":"TNgzH3jMq5BKrO25","createdAt":{"$$date":1517669937428},"updatedAt":{"$$date":1517669937428}}
-{"command":{"event":"server_command_error"},"_id":"TS4no8SGvWwzJbv3","createdAt":{"$$date":1517148407476},"updatedAt":{"$$date":1517148407476}}
-{"command":{"event":"server_command_error"},"_id":"TbxzBYCZH2HnNVXC","createdAt":{"$$date":1517238928377},"updatedAt":{"$$date":1517238928377}}
-{"command":{"event":"server_command_error"},"_id":"TfHi6DVSyYcWdE4z","createdAt":{"$$date":1517763176703},"updatedAt":{"$$date":1517763176703}}
-{"command":{"event":"server_command_error"},"_id":"TifaOiU8cDKW1PdU","createdAt":{"$$date":1517249323500},"updatedAt":{"$$date":1517249323500}}
-{"command":{"event":"server_command_error"},"_id":"U1d7gvEcoZQ0KZKa","createdAt":{"$$date":1516741653581},"updatedAt":{"$$date":1516741653581}}
-{"command":{"event":"server_command_error"},"_id":"U4Wq3oceb2VCZzHN","createdAt":{"$$date":1517508541361},"updatedAt":{"$$date":1517508541361}}
-{"command":{"event":"server_command_error"},"_id":"U5RsaAeJgkPqyPZo","createdAt":{"$$date":1517238094233},"updatedAt":{"$$date":1517238094233}}
-{"command":{"event":"server_command_error"},"_id":"U6N2jbssb1f0h4It","createdAt":{"$$date":1516747645493},"updatedAt":{"$$date":1516747645493}}
-{"command":{"event":"server_command_error"},"_id":"UBVtxXoHw6eWjDaa","createdAt":{"$$date":1517092587965},"updatedAt":{"$$date":1517092587965}}
-{"command":{"event":"server_command_error"},"_id":"UNEeoA6J5ifQeswF","createdAt":{"$$date":1517161872458},"updatedAt":{"$$date":1517161872458}}
-{"command":{"event":"server_command_error"},"_id":"USZAYuDaQCddiZ2B","createdAt":{"$$date":1517242066957},"updatedAt":{"$$date":1517242066957}}
-{"command":{"event":"server_command_error"},"_id":"UbvVkXntk65yuRei","createdAt":{"$$date":1517708497441},"updatedAt":{"$$date":1517708497441}}
-{"command":{"event":"server_command_error"},"_id":"UgUFoc4TAfpRh7Cz","createdAt":{"$$date":1517256720596},"updatedAt":{"$$date":1517256720596}}
-{"command":{"event":"server_command_error"},"_id":"UjoIT4oZkRhX2icm","createdAt":{"$$date":1517497739200},"updatedAt":{"$$date":1517497739200}}
-{"command":{"event":"server_command_error"},"_id":"UqleRX1ssFf0jQrB","createdAt":{"$$date":1517249420202},"updatedAt":{"$$date":1517249420202}}
-{"command":{"event":"server_command_error"},"_id":"UubMr7ERaN9l0Naq","createdAt":{"$$date":1516919869493},"updatedAt":{"$$date":1516919869493}}
-{"command":{"event":"server_command_error"},"_id":"V0V56lgkJeDFXoBI","createdAt":{"$$date":1517242358343},"updatedAt":{"$$date":1517242358343}}
-{"command":{"event":"server_command_error"},"_id":"V2vUOA8Z0S3UbbTs","createdAt":{"$$date":1517092093996},"updatedAt":{"$$date":1517092093996}}
-{"command":{"event":"server_command_error"},"_id":"V3m87AGKNlYYG3Fn","createdAt":{"$$date":1516848240852},"updatedAt":{"$$date":1516848240852}}
-{"command":{"event":"server_command_error"},"_id":"V6FR2bnrvnR2e01Q","createdAt":{"$$date":1517187571907},"updatedAt":{"$$date":1517187571907}}
-{"command":{"event":"server_command_error"},"_id":"V754iqLbVr6DQQfC","createdAt":{"$$date":1517242360528},"updatedAt":{"$$date":1517242360528}}
-{"command":{"event":"server_command_error"},"_id":"V7DojtyhmHwYfReC","createdAt":{"$$date":1517582753820},"updatedAt":{"$$date":1517582753820}}
-{"command":{"event":"server_command_error"},"_id":"V9hhDYp8BjjDU3Ow","createdAt":{"$$date":1516741622933},"updatedAt":{"$$date":1516741622933}}
-{"command":{"event":"server_command_error"},"_id":"VC6GNsfDBXMhRTB4","createdAt":{"$$date":1517256332462},"updatedAt":{"$$date":1517256332462}}
-{"command":{"event":"server_command_error"},"_id":"VHcQyefvtOrcooZX","createdAt":{"$$date":1516829516466},"updatedAt":{"$$date":1516829516466}}
-{"command":{"event":"server_command_error"},"_id":"VXBEdRoeAcUaAR02","createdAt":{"$$date":1516902207468},"updatedAt":{"$$date":1516902207468}}
-{"command":{"event":"server_command_error"},"_id":"VYks3rPuzZqSDxxJ","createdAt":{"$$date":1517169337994},"updatedAt":{"$$date":1517169337994}}
-{"command":{"event":"server_command_error"},"_id":"VadZazlvosr7vDrQ","createdAt":{"$$date":1517238902602},"updatedAt":{"$$date":1517238902602}}
-{"command":{"event":"server_command_error"},"_id":"VfVt0ZVnrzTePDlA","createdAt":{"$$date":1517174126676},"updatedAt":{"$$date":1517174126676}}
-{"command":{"event":"server_command_error"},"_id":"VhTSGsKnmXUBAOtH","createdAt":{"$$date":1517249297081},"updatedAt":{"$$date":1517249297081}}
-{"command":{"event":"server_command_error"},"_id":"Vw8ez0PmFObp8lnf","createdAt":{"$$date":1516847973668},"updatedAt":{"$$date":1516847973668}}
-{"command":{"event":"server_command_error"},"_id":"VyZxo4ZVuVP6GGid","createdAt":{"$$date":1517242583705},"updatedAt":{"$$date":1517242583705}}
-{"command":{"event":"server_command_error"},"_id":"W8mCanZ4wqrYBjWh","createdAt":{"$$date":1517252607070},"updatedAt":{"$$date":1517252607070}}
-{"command":{"event":"server_command_error"},"_id":"W9Za764ZjdSLT7g8","createdAt":{"$$date":1517450948719},"updatedAt":{"$$date":1517450948719}}
-{"command":{"event":"server_command_error"},"_id":"WITSwEZIl1GrUdHy","createdAt":{"$$date":1517237968632},"updatedAt":{"$$date":1517237968632}}
-{"command":{"event":"server_command_error"},"_id":"WLKzwJT4AKyFfab1","createdAt":{"$$date":1517241474168},"updatedAt":{"$$date":1517241474168}}
-{"command":{"event":"server_command_error"},"_id":"WQf9X0Yxtx0lFEum","createdAt":{"$$date":1517497716669},"updatedAt":{"$$date":1517497716669}}
-{"command":{"event":"server_command_error"},"_id":"WR69Ll0KqvSNaVw0","createdAt":{"$$date":1517545862624},"updatedAt":{"$$date":1517545862624}}
-{"command":{"event":"server_command_error"},"_id":"WYtUD9bMM84waCF2","createdAt":{"$$date":1517248685672},"updatedAt":{"$$date":1517248685672}}
-{"command":{"event":"server_command_error"},"_id":"WeqZHh4FrmrJDrBB","createdAt":{"$$date":1517187377139},"updatedAt":{"$$date":1517187377139}}
-{"command":{"event":"server_command_error"},"_id":"Wlsuk7ifGY8PgQg7","createdAt":{"$$date":1517173692632},"updatedAt":{"$$date":1517173692632}}
-{"command":{"event":"server_command_error"},"_id":"WmlSf9wAnXKOwQWD","createdAt":{"$$date":1517252757262},"updatedAt":{"$$date":1517252757262}}
-{"command":{"event":"server_command_error"},"_id":"WywSAnCeNL37lyXG","createdAt":{"$$date":1517248688757},"updatedAt":{"$$date":1517248688757}}
-{"command":{"event":"server_command_error"},"_id":"WzfGUxzmcbeLluxE","createdAt":{"$$date":1517098184769},"updatedAt":{"$$date":1517098184769}}
-{"command":{"event":"server_command_error"},"_id":"X6c3yoop4OeUpEZx","createdAt":{"$$date":1517583216877},"updatedAt":{"$$date":1517583216877}}
-{"command":{"event":"server_command_error"},"_id":"XExmldGbbW4IrEZj","createdAt":{"$$date":1517241051876},"updatedAt":{"$$date":1517241051876}}
-{"command":{"event":"server_command_error"},"_id":"XExuUJfHFVo68J8S","createdAt":{"$$date":1517241668489},"updatedAt":{"$$date":1517241668489}}
-{"command":{"event":"server_command_error"},"_id":"XH4eTCiBjtdk24T4","createdAt":{"$$date":1517199153303},"updatedAt":{"$$date":1517199153303}}
-{"command":{"event":"server_command_error"},"_id":"XN17zjFF2a2r20kV","createdAt":{"$$date":1517545820190},"updatedAt":{"$$date":1517545820190}}
-{"command":{"event":"server_command_error"},"_id":"XNlcHMDiZKTjGnjf","createdAt":{"$$date":1517239067519},"updatedAt":{"$$date":1517239067519}}
-{"command":{"event":"server_command_error"},"_id":"XTDFRF1Z7IkinRR4","createdAt":{"$$date":1517232047550},"updatedAt":{"$$date":1517232047550}}
-{"command":{"event":"server_command_error"},"_id":"XXzs8rb4C9dSgA2v","createdAt":{"$$date":1516747685779},"updatedAt":{"$$date":1516747685779}}
-{"command":{"event":"server_command_error"},"_id":"XYfcwQZAzujq2Ggs","createdAt":{"$$date":1517546724208},"updatedAt":{"$$date":1517546724208}}
-{"command":{"event":"server_command_error"},"_id":"XhYxvF4gdrLKZrwb","createdAt":{"$$date":1517187045710},"updatedAt":{"$$date":1517187045710}}
-{"command":{"event":"server_command_error"},"_id":"XmSoWMIyAElhcj2G","createdAt":{"$$date":1517173700523},"updatedAt":{"$$date":1517173700523}}
-{"command":{"event":"server_command_error"},"_id":"Xpcey5H562BiMGJa","createdAt":{"$$date":1517237704562},"updatedAt":{"$$date":1517237704562}}
-{"command":{"event":"server_command_error"},"_id":"XypLRJs4F3B4lnV1","createdAt":{"$$date":1517098191567},"updatedAt":{"$$date":1517098191567}}
-{"command":{"event":"server_command_error"},"_id":"XzffiGilEUqYbA0Z","createdAt":{"$$date":1516902291075},"updatedAt":{"$$date":1516902291075}}
-{"command":{"event":"server_command_error"},"_id":"Y0PqKGKZd83wtgjj","createdAt":{"$$date":1517248343010},"updatedAt":{"$$date":1517248343010}}
-{"command":{"event":"server_command_error"},"_id":"Y64Utj8MnVF2PQWQ","createdAt":{"$$date":1517669656474},"updatedAt":{"$$date":1517669656474}}
-{"command":{"event":"server_command_error"},"_id":"Y8ueO8s9nwo1hVWY","createdAt":{"$$date":1517088756091},"updatedAt":{"$$date":1517088756091}}
-{"command":{"event":"server_command_error"},"_id":"YAQtIEzUD0DCXTFt","createdAt":{"$$date":1517241107317},"updatedAt":{"$$date":1517241107317}}
-{"command":{"event":"server_command_error"},"_id":"YAy2O1QS3hFfE40R","createdAt":{"$$date":1517239463359},"updatedAt":{"$$date":1517239463359}}
-{"command":{"event":"server_command_error"},"_id":"YJke2b1Cz4Jtr1Pn","createdAt":{"$$date":1517545842560},"updatedAt":{"$$date":1517545842560}}
-{"command":{"event":"server_command_error"},"_id":"YT6D0WQKrSAGshLs","createdAt":{"$$date":1517256718780},"updatedAt":{"$$date":1517256718780}}
-{"command":{"event":"server_command_error"},"_id":"YWquvNeUCt3lzXnB","createdAt":{"$$date":1517278704274},"updatedAt":{"$$date":1517278704274}}
-{"command":{"event":"server_command_error"},"_id":"YaJYFCujv9LYbdW8","createdAt":{"$$date":1517187594958},"updatedAt":{"$$date":1517187594958}}
-{"command":{"event":"server_command_error"},"_id":"YcZDLFepNjvSfHta","createdAt":{"$$date":1517237660011},"updatedAt":{"$$date":1517237660011}}
-{"command":{"event":"server_command_error"},"_id":"YeRWfpE5FohGIlMb","createdAt":{"$$date":1516889782534},"updatedAt":{"$$date":1516889782534}}
-{"command":{"event":"server_command_error"},"_id":"YmVUBYeTNcp3WrLJ","createdAt":{"$$date":1517249388204},"updatedAt":{"$$date":1517249388204}}
-{"command":{"event":"server_command_error"},"_id":"Ys8wa7wGIIGRkgzR","createdAt":{"$$date":1517248001000},"updatedAt":{"$$date":1517248001000}}
-{"command":{"event":"server_command_error"},"_id":"ZBsOoQDo4uJtyC8Z","createdAt":{"$$date":1517240143423},"updatedAt":{"$$date":1517240143423}}
-{"command":{"event":"server_command_error"},"_id":"ZGl1TjPi2EPyZJyH","createdAt":{"$$date":1517451643970},"updatedAt":{"$$date":1517451643970}}
-{"command":{"event":"server_command_error"},"_id":"ZKtGzd6x3By8DAns","createdAt":{"$$date":1517238304015},"updatedAt":{"$$date":1517238304015}}
-{"command":{"event":"server_command_error"},"_id":"ZPm1qLeMo7o8h2h1","createdAt":{"$$date":1517670010821},"updatedAt":{"$$date":1517670010821}}
-{"command":{"event":"server_command_error"},"_id":"ZRUKGom8NUnRMfVL","createdAt":{"$$date":1517276298656},"updatedAt":{"$$date":1517276298656}}
-{"command":{"event":"server_command_error"},"_id":"ZsHN8LzOaytck7jT","createdAt":{"$$date":1517765929477},"updatedAt":{"$$date":1517765929477}}
-{"command":{"event":"server_command_error"},"_id":"ZxdgG5ZN54fbuBYj","createdAt":{"$$date":1517248335635},"updatedAt":{"$$date":1517248335635}}
-{"command":{"event":"server_command_error"},"_id":"ZzuSWplW2O4EmACi","createdAt":{"$$date":1517497716668},"updatedAt":{"$$date":1517497716668}}
-{"command":{"event":"server_command_error"},"_id":"a9UdDMr8rJiFHJv6","createdAt":{"$$date":1517249217937},"updatedAt":{"$$date":1517249217937}}
-{"command":{"event":"server_command_error"},"_id":"aDwzz45rbjStCHi0","createdAt":{"$$date":1516890399174},"updatedAt":{"$$date":1516890399174}}
-{"command":{"event":"server_command_error"},"_id":"aErrn0Uo0T0JncqM","createdAt":{"$$date":1516891038358},"updatedAt":{"$$date":1516891038358}}
-{"command":{"event":"server_command_error"},"_id":"aGUBcrwEHQNija1R","createdAt":{"$$date":1517498753553},"updatedAt":{"$$date":1517498753553}}
-{"command":{"event":"server_command_error"},"_id":"aLU0HRwKPYSFOSm2","createdAt":{"$$date":1517242951096},"updatedAt":{"$$date":1517242951096}}
-{"command":{"event":"server_command_error"},"_id":"aiEFEqSXMeqUVlmx","createdAt":{"$$date":1517450523864},"updatedAt":{"$$date":1517450523864}}
-{"command":{"event":"server_command_error"},"_id":"alr8m6cxcKBa6jdj","createdAt":{"$$date":1516847220288},"updatedAt":{"$$date":1516847220288}}
-{"command":{"event":"server_command_error"},"_id":"atIAjEukXIxY7w9G","createdAt":{"$$date":1517248659054},"updatedAt":{"$$date":1517248659054}}
-{"command":{"event":"server_command_error"},"_id":"avA75d9n6bM2bwhH","createdAt":{"$$date":1517450003958},"updatedAt":{"$$date":1517450003958}}
-{"command":{"event":"server_command_error"},"_id":"az6dGRTzV9gKsRnp","createdAt":{"$$date":1517239329449},"updatedAt":{"$$date":1517239329449}}
-{"command":{"event":"server_command_error"},"_id":"b11NVhpiyNNngYom","createdAt":{"$$date":1517166359748},"updatedAt":{"$$date":1517166359748}}
-{"command":{"event":"server_command_error"},"_id":"b4CJ4MwFdEqf37y4","createdAt":{"$$date":1517232127527},"updatedAt":{"$$date":1517232127527}}
-{"command":{"event":"server_command_error"},"_id":"b4Zvz2rNskalbaXJ","createdAt":{"$$date":1517500302812},"updatedAt":{"$$date":1517500302812}}
-{"command":{"event":"server_command_error"},"_id":"b7NmLyHBRvWmVftz","createdAt":{"$$date":1517241433960},"updatedAt":{"$$date":1517241433960}}
-{"command":{"event":"server_command_error"},"_id":"bG1hrRl6wCvFA17w","createdAt":{"$$date":1517256420512},"updatedAt":{"$$date":1517256420512}}
-{"command":{"event":"server_command_error"},"_id":"bOceMmmvmwfXno8b","createdAt":{"$$date":1516738613721},"updatedAt":{"$$date":1516738613721}}
-{"command":{"event":"server_command_error"},"_id":"bRsEh7IjYGqBlo3t","createdAt":{"$$date":1517187659212},"updatedAt":{"$$date":1517187659212}}
-{"command":{"event":"server_command_error"},"_id":"boOHBQGi1Hjbn9e9","createdAt":{"$$date":1517579876458},"updatedAt":{"$$date":1517579876458}}
-{"command":{"event":"server_command_error"},"_id":"bxoXYzURYGg4GvuZ","createdAt":{"$$date":1517249331801},"updatedAt":{"$$date":1517249331801}}
-{"command":{"event":"server_command_error"},"_id":"bxoeRAPMd5C9YLTn","createdAt":{"$$date":1517169643903},"updatedAt":{"$$date":1517169643903}}
-{"command":{"event":"server_command_error"},"_id":"c0jpwJBxVm43FbTb","createdAt":{"$$date":1517536599855},"updatedAt":{"$$date":1517536599855}}
-{"command":{"event":"server_command_error"},"_id":"c6sMQnon4Dwnf7dq","createdAt":{"$$date":1517238311543},"updatedAt":{"$$date":1517238311543}}
-{"command":{"event":"server_command_error"},"_id":"c7DV6J1MJHwWocUN","createdAt":{"$$date":1516738718537},"updatedAt":{"$$date":1516738718537}}
-{"command":{"event":"server_command_error"},"_id":"c7EsyKlg6KJEDZN1","createdAt":{"$$date":1517240145289},"updatedAt":{"$$date":1517240145289}}
-{"command":{"event":"server_command_error"},"_id":"cIa9zxFuxCIjfd5U","createdAt":{"$$date":1517429205217},"updatedAt":{"$$date":1517429205217}}
-{"command":{"event":"server_command_error"},"_id":"cStD38SuO4jkXOiv","createdAt":{"$$date":1517449944927},"updatedAt":{"$$date":1517449944927}}
-{"command":{"event":"server_command_error"},"_id":"cTTAaylnXKvIj81h","createdAt":{"$$date":1517242312191},"updatedAt":{"$$date":1517242312191}}
-{"command":{"event":"server_command_error"},"_id":"cUieWStTt35wCIMX","createdAt":{"$$date":1517248704668},"updatedAt":{"$$date":1517248704668}}
-{"command":{"event":"server_command_error"},"_id":"cVvspavxes0jdMn7","createdAt":{"$$date":1517442192373},"updatedAt":{"$$date":1517442192373}}
-{"command":{"event":"server_command_error"},"_id":"cbBIE9fmcwV7jkth","createdAt":{"$$date":1517228535771},"updatedAt":{"$$date":1517228535771}}
-{"command":{"event":"server_command_error"},"_id":"ceWPp3VfLn9933lJ","createdAt":{"$$date":1516738608006},"updatedAt":{"$$date":1516738608006}}
-{"command":{"event":"server_command_error"},"_id":"cgioFuQXE1zF0E7n","createdAt":{"$$date":1517708470540},"updatedAt":{"$$date":1517708470540}}
-{"command":{"event":"server_command_error"},"_id":"ciVG0PiF0tAoLOcs","createdAt":{"$$date":1517582596790},"updatedAt":{"$$date":1517582596790}}
-{"command":{"event":"server_command_error"},"_id":"ckhrUXIqPB8xC0bz","createdAt":{"$$date":1517165503526},"updatedAt":{"$$date":1517165503526}}
-{"command":{"event":"server_command_error"},"_id":"crtACMMWKYnz1Kx1","createdAt":{"$$date":1517256437325},"updatedAt":{"$$date":1517256437325}}
-{"command":{"event":"server_command_error"},"_id":"csGRUTKBtevJr1Ya","createdAt":{"$$date":1517187079268},"updatedAt":{"$$date":1517187079268}}
-{"command":{"event":"server_command_error"},"_id":"csauAAmpPFLRSsrJ","createdAt":{"$$date":1518028654220},"updatedAt":{"$$date":1518028654220}}
-{"command":{"event":"server_command_error"},"_id":"cwaSwzxibeLv0NKc","createdAt":{"$$date":1517506662188},"updatedAt":{"$$date":1517506662188}}
-{"command":{"event":"server_command_error"},"_id":"czcrOyJnr7eAuDJ6","createdAt":{"$$date":1517187110878},"updatedAt":{"$$date":1517187110878}}
-{"command":{"event":"server_command_error"},"_id":"d6UYzcAr9RcXVOGD","createdAt":{"$$date":1517167029368},"updatedAt":{"$$date":1517167029368}}
-{"command":{"event":"server_command_error"},"_id":"dERDJRonjwdn6AQv","createdAt":{"$$date":1517092542924},"updatedAt":{"$$date":1517092542924}}
-{"command":{"event":"server_command_error"},"_id":"dGj9VHAKp2vNsbUM","createdAt":{"$$date":1516889879609},"updatedAt":{"$$date":1516889879609}}
-{"action":{"command":"about -n","error":true},"event":"client_command_error","_id":"dHkvo8iHSCvBnuFN","createdAt":{"$$date":1517500823861},"updatedAt":{"$$date":1517500823861}}
-{"command":{"event":"server_command_error"},"_id":"dOBNlEFJcYQ3b4KD","createdAt":{"$$date":1517579175607},"updatedAt":{"$$date":1517579175607}}
-{"command":{"event":"server_command_error"},"_id":"dRxm5WRF5HpliMfE","createdAt":{"$$date":1517172981639},"updatedAt":{"$$date":1517172981639}}
-{"command":{"event":"server_command_error"},"_id":"dTSNeeosvIrlMsyQ","createdAt":{"$$date":1517451161885},"updatedAt":{"$$date":1517451161885}}
-{"command":{"event":"server_command_error"},"_id":"dd8PwpLWYNjhjJ3X","createdAt":{"$$date":1517169347688},"updatedAt":{"$$date":1517169347688}}
-{"command":{"event":"server_command_error"},"_id":"diOjSRlN7ronaijp","createdAt":{"$$date":1517091787040},"updatedAt":{"$$date":1517091787040}}
-{"command":{"event":"server_command_error"},"_id":"diuCmEtgZMRQtmvB","createdAt":{"$$date":1517249327323},"updatedAt":{"$$date":1517249327323}}
-{"command":{"event":"server_command_error"},"_id":"djVRSENF5P15Yvbq","createdAt":{"$$date":1517238915227},"updatedAt":{"$$date":1517238915227}}
-{"command":{"event":"server_command_error"},"_id":"dlV8eQjAluopHU3j","createdAt":{"$$date":1517248002877},"updatedAt":{"$$date":1517248002877}}
-{"command":{"event":"server_command_error"},"_id":"drKmFaeBaTr6vsXB","createdAt":{"$$date":1516847076697},"updatedAt":{"$$date":1516847076697}}
-{"command":{"event":"server_command_error"},"_id":"dwxC1EBHXRR9V9FZ","createdAt":{"$$date":1517096969369},"updatedAt":{"$$date":1517096969369}}
-{"command":{"event":"server_command_error"},"_id":"dz39nHoxB3eWu7rS","createdAt":{"$$date":1517239487809},"updatedAt":{"$$date":1517239487809}}
-{"command":{"event":"server_command_error"},"_id":"e1br0EUPmIFv9Zgg","createdAt":{"$$date":1517166257215},"updatedAt":{"$$date":1517166257215}}
-{"command":{"event":"server_command_error"},"_id":"eAdjzDgJFivIHDVE","createdAt":{"$$date":1517166274453},"updatedAt":{"$$date":1517166274453}}
-{"command":{"event":"server_command_error"},"_id":"eBhqucn0Czxz4c23","createdAt":{"$$date":1517239501908},"updatedAt":{"$$date":1517239501908}}
-{"command":{"event":"server_command_error"},"_id":"eCXFZoEAeKLvI9jX","createdAt":{"$$date":1517546079983},"updatedAt":{"$$date":1517546079983}}
-{"command":{"event":"server_command_error"},"_id":"eH7JrsjMT0AyFrDA","createdAt":{"$$date":1517546278352},"updatedAt":{"$$date":1517546278352}}
-{"command":{"event":"server_command_error"},"_id":"eQgq4gllsZRoUzQ1","createdAt":{"$$date":1517239567689},"updatedAt":{"$$date":1517239567689}}
-{"command":{"event":"server_command_error"},"_id":"eUD9NnyLHvzSj36x","createdAt":{"$$date":1516919877213},"updatedAt":{"$$date":1516919877213}}
-{"command":{"event":"server_command_error"},"_id":"eVVkcoeedJUIBhuD","createdAt":{"$$date":1517617732790},"updatedAt":{"$$date":1517617732790}}
-{"command":{"event":"server_command_error"},"_id":"egVnQeeOJBy7UYWz","createdAt":{"$$date":1516923572965},"updatedAt":{"$$date":1516923572965}}
-{"command":{"event":"server_command_error"},"_id":"ejuPK8VrVQjMLLqU","createdAt":{"$$date":1517252841172},"updatedAt":{"$$date":1517252841172}}
-{"command":{"event":"server_command_error"},"_id":"eyExo4BwD2OU154L","createdAt":{"$$date":1517248978052},"updatedAt":{"$$date":1517248978052}}
-{"command":{"event":"server_command_error"},"_id":"f1pLBgebZFfD0M7k","createdAt":{"$$date":1517256618180},"updatedAt":{"$$date":1517256618180}}
-{"command":{"event":"server_command_error"},"_id":"f35jG94UMaeOS57E","createdAt":{"$$date":1517450440035},"updatedAt":{"$$date":1517450440035}}
-{"command":{"event":"server_command_error"},"_id":"fEf7M8TbUemLN7NL","createdAt":{"$$date":1517173217473},"updatedAt":{"$$date":1517173217473}}
-{"command":{"event":"server_command_error"},"_id":"fFdkAyN5deVuxSUQ","createdAt":{"$$date":1518028679780},"updatedAt":{"$$date":1518028679780}}
-{"command":{"event":"server_command_error"},"_id":"fQW2duEjJhX3RzFy","createdAt":{"$$date":1517166848759},"updatedAt":{"$$date":1517166848759}}
-{"command":{"event":"server_command_error"},"_id":"fQrVhpNVFZGpHCvT","createdAt":{"$$date":1517669938859},"updatedAt":{"$$date":1517669938859}}
-{"command":{"event":"server_command_error"},"_id":"fTlC1YL4u1qdQp9g","createdAt":{"$$date":1517764687576},"updatedAt":{"$$date":1517764687576}}
-{"command":{"event":"server_command_error"},"_id":"fWfRPkA90yz438L3","createdAt":{"$$date":1517092499553},"updatedAt":{"$$date":1517092499553}}
-{"command":{"event":"server_command_error"},"_id":"fZVwh4ByNZZf82Nw","createdAt":{"$$date":1517097559753},"updatedAt":{"$$date":1517097559753}}
-{"command":{"event":"server_command_error"},"_id":"fbpZ0HPq7CHd6Ja3","createdAt":{"$$date":1517169381435},"updatedAt":{"$$date":1517169381435}}
-{"command":{"event":"server_command_error"},"_id":"fgnUGox9t5plw8BW","createdAt":{"$$date":1517255962413},"updatedAt":{"$$date":1517255962413}}
-{"command":{"event":"server_command_error"},"_id":"fhWr0uDZIY3ZFmH1","createdAt":{"$$date":1517546148068},"updatedAt":{"$$date":1517546148068}}
-{"command":{"event":"server_command_error"},"_id":"fkQwNVRlcvEG0Aja","createdAt":{"$$date":1517165470358},"updatedAt":{"$$date":1517165470358}}
-{"command":{"event":"server_command_error"},"_id":"ftPumrNZciXkNPzi","createdAt":{"$$date":1517450548754},"updatedAt":{"$$date":1517450548754}}
-{"command":{"event":"server_command_error"},"_id":"g9iAP8BR8ZX0byqb","createdAt":{"$$date":1517242364302},"updatedAt":{"$$date":1517242364302}}
-{"command":{"event":"server_command_error"},"_id":"gE0kqeP4rDO4aDBw","createdAt":{"$$date":1517241173291},"updatedAt":{"$$date":1517241173291}}
-{"command":{"event":"server_command_error"},"_id":"gFRW5raVA1NsOT7f","createdAt":{"$$date":1517236390346},"updatedAt":{"$$date":1517236390346}}
-{"command":{"event":"server_command_error"},"_id":"gKfxyqvY9rfRUgXL","createdAt":{"$$date":1517545844148},"updatedAt":{"$$date":1517545844148}}
-{"command":{"event":"server_command_error"},"_id":"gKy2dodzL0ahZXAz","createdAt":{"$$date":1517092078233},"updatedAt":{"$$date":1517092078233}}
-{"command":{"event":"server_command_error"},"_id":"gMvEEPzYEfWj2KXy","createdAt":{"$$date":1516890115318},"updatedAt":{"$$date":1516890115318}}
-{"command":{"event":"server_command_error"},"_id":"gVCoaciVkOkdSENI","createdAt":{"$$date":1517278607028},"updatedAt":{"$$date":1517278607028}}
-{"command":{"event":"server_command_error"},"_id":"gc8AaASUZtRWKMAj","createdAt":{"$$date":1517242896894},"updatedAt":{"$$date":1517242896894}}
-{"command":{"event":"server_command_error"},"_id":"giESsJm5bZSIdJ7B","createdAt":{"$$date":1517166412526},"updatedAt":{"$$date":1517166412526}}
-{"command":{"event":"server_command_error"},"_id":"gjnopUFjMQfCKCeD","createdAt":{"$$date":1516890219409},"updatedAt":{"$$date":1516890219409}}
-{"command":{"event":"server_command_error"},"_id":"guEzDEcaq58B7M7K","createdAt":{"$$date":1517256615298},"updatedAt":{"$$date":1517256615298}}
-{"command":{"event":"server_command_error"},"_id":"gz0gzZDEKaVJrzsf","createdAt":{"$$date":1517428790132},"updatedAt":{"$$date":1517428790132}}
-{"command":{"event":"server_command_error"},"_id":"h3k2hEBosn7ccb5q","createdAt":{"$$date":1517509136474},"updatedAt":{"$$date":1517509136474}}
-{"command":{"event":"server_command_error"},"_id":"hDCWdERd9fJfAgjA","createdAt":{"$$date":1516919923613},"updatedAt":{"$$date":1516919923613}}
-{"command":{"event":"server_command_error"},"_id":"hNVvm9c9QeBE4tie","createdAt":{"$$date":1516890488440},"updatedAt":{"$$date":1516890488440}}
-{"command":{"event":"server_command_error"},"_id":"hOuZgeWLbjgUym7W","createdAt":{"$$date":1516902288651},"updatedAt":{"$$date":1516902288651}}
-{"command":{"event":"server_command_error"},"_id":"hRyOFYJIcQhRijfQ","createdAt":{"$$date":1517173018650},"updatedAt":{"$$date":1517173018650}}
-{"command":{"event":"server_command_error"},"_id":"hWvTdBHPgzT3Ylhk","createdAt":{"$$date":1517249381739},"updatedAt":{"$$date":1517249381739}}
-{"command":{"event":"server_command_error"},"_id":"hWwtvC9j6DBKnTVk","createdAt":{"$$date":1517249374600},"updatedAt":{"$$date":1517249374600}}
-{"command":{"event":"server_command_error"},"_id":"hacY4s6i6eQFLC8V","createdAt":{"$$date":1517545810760},"updatedAt":{"$$date":1517545810760}}
-{"command":{"event":"server_command_error"},"_id":"hlVVOZRALLboG3Wn","createdAt":{"$$date":1517669922400},"updatedAt":{"$$date":1517669922400}}
-{"command":{"event":"server_command_error"},"_id":"hnR50Uq4Q5cqLd3X","createdAt":{"$$date":1517182413494},"updatedAt":{"$$date":1517182413494}}
-{"command":{"event":"server_command_error"},"_id":"hnpodnSL0QL7kUKb","createdAt":{"$$date":1517165271138},"updatedAt":{"$$date":1517165271138}}
-{"command":{"event":"server_command_error"},"_id":"hr0KT3TJeLgc5c2P","createdAt":{"$$date":1517169565071},"updatedAt":{"$$date":1517169565071}}
-{"command":{"event":"server_command_error"},"_id":"ht4VRLz0PmYW6rz9","createdAt":{"$$date":1517756969840},"updatedAt":{"$$date":1517756969840}}
-{"command":{"event":"server_command_error"},"_id":"ht5aZLzmvexkyu0v","createdAt":{"$$date":1517241047699},"updatedAt":{"$$date":1517241047699}}
-{"command":{"event":"server_command_error"},"_id":"hxPjhpVieV88hzS5","createdAt":{"$$date":1517249250492},"updatedAt":{"$$date":1517249250492}}
-{"command":{"event":"server_command_error"},"_id":"iDMHBAKw4fKNzdq8","createdAt":{"$$date":1517248255275},"updatedAt":{"$$date":1517248255275}}
-{"command":{"event":"server_command_error"},"_id":"iFBBUFMMfUuw7lUX","createdAt":{"$$date":1517167212098},"updatedAt":{"$$date":1517167212098}}
-{"command":{"event":"server_command_error"},"_id":"iNaVEYkWvbDlcLIP","createdAt":{"$$date":1517239303826},"updatedAt":{"$$date":1517239303826}}
-{"command":{"event":"server_command_error"},"_id":"iUsRf2DswSEB5iAD","createdAt":{"$$date":1516890399174},"updatedAt":{"$$date":1516890399174}}
-{"command":{"event":"server_command_error"},"_id":"icGdUjEdGM6mSkuF","createdAt":{"$$date":1517096982808},"updatedAt":{"$$date":1517096982808}}
-{"command":{"event":"server_command_error"},"_id":"ijGzrunBvVOFYBwp","createdAt":{"$$date":1517249030839},"updatedAt":{"$$date":1517249030839}}
-{"command":{"event":"server_command_error"},"_id":"ivTGV41BBXs2FWV8","createdAt":{"$$date":1517199957747},"updatedAt":{"$$date":1517199957747}}
-{"command":{"event":"server_command_error"},"_id":"j1salflLRosuu2aZ","createdAt":{"$$date":1517240561525},"updatedAt":{"$$date":1517240561525}}
-{"command":{"event":"server_command_error"},"_id":"j2FeL0cOoncsovq7","createdAt":{"$$date":1517096576680},"updatedAt":{"$$date":1517096576680}}
-{"command":{"event":"server_command_error"},"_id":"j2JAX5gRPxFspfVz","createdAt":{"$$date":1517239134686},"updatedAt":{"$$date":1517239134686}}
-{"command":{"event":"server_command_error"},"_id":"j3XTfL5p9NwQ15qu","createdAt":{"$$date":1517238091703},"updatedAt":{"$$date":1517238091703}}
-{"command":{"event":"server_command_error"},"_id":"j6mZK0FCQ4N5xVTU","createdAt":{"$$date":1517281683559},"updatedAt":{"$$date":1517281683559}}
-{"command":{"event":"server_command_error"},"_id":"jAoG0giOpOQfaGkX","createdAt":{"$$date":1517239301729},"updatedAt":{"$$date":1517239301729}}
-{"command":{"event":"server_command_error"},"_id":"jCHk74IBqZ6XBFll","createdAt":{"$$date":1517239426840},"updatedAt":{"$$date":1517239426840}}
-{"command":{"event":"server_command_error"},"_id":"jIgdJnU0C0fFhKHg","createdAt":{"$$date":1516835752604},"updatedAt":{"$$date":1516835752604}}
-{"command":{"event":"server_command_error"},"_id":"jNvWcWqMrS9Ys1jY","createdAt":{"$$date":1517582658930},"updatedAt":{"$$date":1517582658930}}
-{"command":{"event":"server_command_error"},"_id":"jZ2w0sRFxwEaKDSM","createdAt":{"$$date":1516747479907},"updatedAt":{"$$date":1516747479907}}
-{"command":{"event":"server_command_error"},"_id":"jZJzCercFRIVp4uM","createdAt":{"$$date":1517492248912},"updatedAt":{"$$date":1517492248912}}
-{"command":{"event":"server_command_error"},"_id":"jlmuZDRwgxewoo5a","createdAt":{"$$date":1517429478190},"updatedAt":{"$$date":1517429478190}}
-{"command":{"event":"server_command_error"},"_id":"jomaDB35jC896xPh","createdAt":{"$$date":1517240140176},"updatedAt":{"$$date":1517240140176}}
-{"command":{"event":"server_command_error"},"_id":"jpoknveTY2JhY6ae","createdAt":{"$$date":1516889941070},"updatedAt":{"$$date":1516889941070}}
-{"command":{"event":"server_command_error"},"_id":"jqa7MvUpCUp9UDmI","createdAt":{"$$date":1517148271124},"updatedAt":{"$$date":1517148271124}}
-{"command":{"event":"server_command_error"},"_id":"k0J0qyBcugTXyiY9","createdAt":{"$$date":1516747990298},"updatedAt":{"$$date":1516747990298}}
-{"command":{"event":"server_command_error"},"_id":"k59RWwf2y4C3GK1k","createdAt":{"$$date":1517318261684},"updatedAt":{"$$date":1517318261684}}
-{"command":{"event":"server_command_error"},"_id":"k85nmYxvFr2rbWDC","createdAt":{"$$date":1517492243431},"updatedAt":{"$$date":1517492243431}}
-{"command":{"event":"server_command_error"},"_id":"kBa5UQ43YL0siink","createdAt":{"$$date":1517199449671},"updatedAt":{"$$date":1517199449671}}
-{"command":{"event":"server_command_error"},"_id":"kC52Bv4ERKSAseTd","createdAt":{"$$date":1517762836193},"updatedAt":{"$$date":1517762836193}}
-{"command":{"event":"server_command_error"},"_id":"kKHUOn68Y3u0mTcA","createdAt":{"$$date":1517173520068},"updatedAt":{"$$date":1517173520068}}
-{"command":{"event":"server_command_error"},"_id":"kPSUjnbCdjNhsgi1","createdAt":{"$$date":1517450001690},"updatedAt":{"$$date":1517450001690}}
-{"command":{"event":"server_command_error"},"_id":"kQ3busv9nTLzPXmp","createdAt":{"$$date":1517249317665},"updatedAt":{"$$date":1517249317665}}
-{"command":{"event":"server_command_error"},"_id":"kcGfET9xHfYicYmt","createdAt":{"$$date":1517181463647},"updatedAt":{"$$date":1517181463647}}
-{"command":{"event":"server_command_error"},"_id":"kciL7jCwhbZSXaos","createdAt":{"$$date":1517448161507},"updatedAt":{"$$date":1517448161507}}
-{"command":{"event":"server_command_error"},"_id":"kuRkStEudzmMRV4q","createdAt":{"$$date":1517670769743},"updatedAt":{"$$date":1517670769743}}
-{"command":{"event":"server_command_error"},"_id":"kwdmwmzjNdHaPg9w","createdAt":{"$$date":1516768386020},"updatedAt":{"$$date":1516768386020}}
-{"command":{"event":"server_command_error"},"_id":"kxQazcoQfrZiOAF3","createdAt":{"$$date":1517252618324},"updatedAt":{"$$date":1517252618324}}
-{"command":{"event":"server_command_error"},"_id":"l5qrja0cl4rlUAQo","createdAt":{"$$date":1516747912045},"updatedAt":{"$$date":1516747912045}}
-{"command":{"event":"server_command_error"},"_id":"l9X7LwwUbjjU90ar","createdAt":{"$$date":1517450559284},"updatedAt":{"$$date":1517450559284}}
-{"command":{"event":"server_command_error"},"_id":"lAkCnER1XcGCt511","createdAt":{"$$date":1517443243210},"updatedAt":{"$$date":1517443243210}}
-{"command":{"event":"server_command_error"},"_id":"lBvMpKjIWAPIocro","createdAt":{"$$date":1517088250653},"updatedAt":{"$$date":1517088250653}}
-{"command":{"event":"server_command_error"},"_id":"lGob2CEVZcw9g4Yd","createdAt":{"$$date":1517239565190},"updatedAt":{"$$date":1517239565190}}
-{"command":{"event":"server_command_error"},"_id":"lKJtHyJpbfc9kpPF","createdAt":{"$$date":1516891023622},"updatedAt":{"$$date":1516891023622}}
-{"command":{"event":"server_command_error"},"_id":"lKU9tXDNX5hW2QtA","createdAt":{"$$date":1517278312896},"updatedAt":{"$$date":1517278312896}}
-{"command":{"event":"server_command_error"},"_id":"lL8LKiwXmcVLQeyi","createdAt":{"$$date":1517199141140},"updatedAt":{"$$date":1517199141140}}
-{"command":{"event":"server_command_error"},"_id":"lLZd1DuPZ7RNM10h","createdAt":{"$$date":1516890911220},"updatedAt":{"$$date":1516890911220}}
-{"command":{"event":"server_command_error"},"_id":"lNtWnaDP3TLz7avF","createdAt":{"$$date":1517256409198},"updatedAt":{"$$date":1517256409198}}
-{"command":{"event":"server_command_error"},"_id":"lRpO65R9tiXxle1L","createdAt":{"$$date":1517241466346},"updatedAt":{"$$date":1517241466346}}
-{"command":{"event":"server_command_error"},"_id":"lSDWuXLxHVj6i05X","createdAt":{"$$date":1517450969905},"updatedAt":{"$$date":1517450969905}}
-{"command":{"event":"server_command_error"},"_id":"lSzjQs4cFbvnYQ04","createdAt":{"$$date":1517241035806},"updatedAt":{"$$date":1517241035806}}
-{"command":{"event":"server_command_error"},"_id":"lfo1Jm3kh1JLreVf","createdAt":{"$$date":1517252691045},"updatedAt":{"$$date":1517252691045}}
-{"command":{"event":"server_command_error"},"_id":"lvNVINQbho5dvNJc","createdAt":{"$$date":1517187779821},"updatedAt":{"$$date":1517187779821}}
-{"command":{"event":"server_command_error"},"_id":"lydgLT4sxrB4Uo3P","createdAt":{"$$date":1517232172742},"updatedAt":{"$$date":1517232172742}}
-{"command":{"event":"server_command_error"},"_id":"m3nK6iWxnNRUBYVM","createdAt":{"$$date":1516747931102},"updatedAt":{"$$date":1516747931102}}
-{"command":{"event":"server_command_error"},"_id":"m4isEXRz2xj0esEh","createdAt":{"$$date":1516848011587},"updatedAt":{"$$date":1516848011587}}
-{"command":{"event":"server_command_error"},"_id":"m66FugrdgHhIFkb0","createdAt":{"$$date":1516890722598},"updatedAt":{"$$date":1516890722598}}
-{"command":{"event":"server_command_error"},"_id":"m7zl2KG2WoIgJ9yC","createdAt":{"$$date":1516747865054},"updatedAt":{"$$date":1516747865054}}
-{"command":{"event":"server_command_error"},"_id":"mPTbTiEmtJU40z8U","createdAt":{"$$date":1518028778006},"updatedAt":{"$$date":1518028778006}}
-{"command":{"event":"server_command_error"},"_id":"mQqGSG7llF95GHLA","createdAt":{"$$date":1517240101383},"updatedAt":{"$$date":1517240101383}}
-{"command":{"event":"server_command_error"},"_id":"mc3URQraZsU8NbZ0","createdAt":{"$$date":1517148334429},"updatedAt":{"$$date":1517148334429}}
-{"command":{"event":"server_command_error"},"_id":"mukT8pf8L7dHVG1S","createdAt":{"$$date":1517500866718},"updatedAt":{"$$date":1517500866718}}
-{"command":{"event":"server_command_error"},"_id":"mwytRmPZIWIWAein","createdAt":{"$$date":1516902297470},"updatedAt":{"$$date":1516902297470}}
-{"command":{"event":"server_command_error"},"_id":"mxMqbK1ERWozNGph","createdAt":{"$$date":1517497768579},"updatedAt":{"$$date":1517497768579}}
-{"command":{"event":"server_command_error"},"_id":"n9qGTzI6dVVQ2U0F","createdAt":{"$$date":1517252560499},"updatedAt":{"$$date":1517252560499}}
-{"command":{"event":"server_command_error"},"_id":"nGm3EjwSN8rfnzH9","createdAt":{"$$date":1516889997245},"updatedAt":{"$$date":1516889997245}}
-{"command":{"event":"server_command_error"},"_id":"nIqSePYy5idgEX4f","createdAt":{"$$date":1517280962345},"updatedAt":{"$$date":1517280962345}}
-{"command":{"event":"server_command_error"},"_id":"nOB6D0Kfaqvubh6K","createdAt":{"$$date":1517239218254},"updatedAt":{"$$date":1517239218254}}
-{"command":{"event":"server_command_error"},"_id":"nPNHPKz4CjFoheJT","createdAt":{"$$date":1516768507379},"updatedAt":{"$$date":1516768507379}}
-{"command":{"event":"server_command_error"},"_id":"nRrhvPj47ieUETX6","createdAt":{"$$date":1517497946509},"updatedAt":{"$$date":1517497946509}}
-{"command":{"event":"server_command_error"},"_id":"nUynrVRUK5Re86HA","createdAt":{"$$date":1517515779258},"updatedAt":{"$$date":1517515779258}}
-{"command":{"event":"server_command_error"},"_id":"nXNNkoBuEoPWHOAA","createdAt":{"$$date":1516919972957},"updatedAt":{"$$date":1516919972957}}
-{"command":{"event":"server_command_error"},"_id":"naIZ6xu6mgn5ZZyW","createdAt":{"$$date":1517280955489},"updatedAt":{"$$date":1517280955489}}
-{"command":{"event":"server_command_error"},"_id":"nc9sz0rGrN19C1ER","createdAt":{"$$date":1517582775639},"updatedAt":{"$$date":1517582775639}}
-{"command":{"event":"server_command_error"},"_id":"nr7WeU1Or0q6WuVb","createdAt":{"$$date":1517173686173},"updatedAt":{"$$date":1517173686173}}
-{"command":{"event":"server_command_error"},"_id":"ntCCSEf0IN7hwy3s","createdAt":{"$$date":1517148429098},"updatedAt":{"$$date":1517148429098}}
-{"command":{"event":"server_command_error"},"_id":"nwOB9e0CLYaZ8NX2","createdAt":{"$$date":1517077502122},"updatedAt":{"$$date":1517077502122}}
-{"command":{"event":"server_command_error"},"_id":"o4da8dkTZaAE1yQt","createdAt":{"$$date":1517237684289},"updatedAt":{"$$date":1517237684289}}
-{"command":{"event":"server_command_error"},"_id":"o9s9rKmx4Kks26WY","createdAt":{"$$date":1517499123323},"updatedAt":{"$$date":1517499123323}}
-{"command":{"event":"server_command_error"},"_id":"oM1erw4jtaE8S5UX","createdAt":{"$$date":1517451239922},"updatedAt":{"$$date":1517451239922}}
-{"command":{"event":"server_command_error"},"_id":"oRTgCjgxBIMI5vYx","createdAt":{"$$date":1517242064175},"updatedAt":{"$$date":1517242064175}}
-{"command":{"event":"server_command_error"},"_id":"oScoOvJqhcBK2DI7","createdAt":{"$$date":1517166711216},"updatedAt":{"$$date":1517166711216}}
-{"command":{"event":"server_command_error"},"_id":"oTq5oArUl4J41abf","createdAt":{"$$date":1517508318169},"updatedAt":{"$$date":1517508318169}}
-{"command":{"event":"server_command_error"},"_id":"oYLW8ItBPXlKvbFD","createdAt":{"$$date":1516847059941},"updatedAt":{"$$date":1516847059941}}
-{"command":{"event":"server_command_error"},"_id":"oayf05BWn2F8iNuZ","createdAt":{"$$date":1517249401066},"updatedAt":{"$$date":1517249401066}}
-{"command":{"event":"server_command_error"},"_id":"ofya7z77HMVRfnBM","createdAt":{"$$date":1516893680250},"updatedAt":{"$$date":1516893680250}}
-{"command":{"event":"server_command_error"},"_id":"on9kLS7H1p2JpIIg","createdAt":{"$$date":1517166720762},"updatedAt":{"$$date":1517166720762}}
-{"command":{"event":"server_command_error"},"_id":"oriX1Ev7iuZcC8Xq","createdAt":{"$$date":1517088236975},"updatedAt":{"$$date":1517088236975}}
-{"command":{"event":"server_command_error"},"_id":"p2bGI0iGVAoBAiEE","createdAt":{"$$date":1517498748572},"updatedAt":{"$$date":1517498748572}}
-{"command":{"event":"server_command_error"},"_id":"p3scBgahEJu0uVE4","createdAt":{"$$date":1517239517583},"updatedAt":{"$$date":1517239517583}}
-{"command":{"event":"server_command_error"},"_id":"pNwykquz6OHZjSWh","createdAt":{"$$date":1517670013471},"updatedAt":{"$$date":1517670013471}}
-{"command":{"event":"server_command_error"},"_id":"pPv9UekvSLrRWgLk","createdAt":{"$$date":1517096635169},"updatedAt":{"$$date":1517096635169}}
-{"command":{"event":"server_command_error"},"_id":"pQdebMPftbK2YL4O","createdAt":{"$$date":1516889599032},"updatedAt":{"$$date":1516889599032}}
-{"command":{"event":"server_command_error"},"_id":"pZRxZ1pQ7aiMZx2A","createdAt":{"$$date":1517232177165},"updatedAt":{"$$date":1517232177165}}
-{"command":{"event":"server_command_error"},"_id":"pgjkYMqy8tsbSakW","createdAt":{"$$date":1517546269777},"updatedAt":{"$$date":1517546269777}}
-{"command":{"event":"server_command_error"},"_id":"pxmQbCVC6jbbXx7a","createdAt":{"$$date":1517450972904},"updatedAt":{"$$date":1517450972904}}
-{"command":{"event":"server_command_error"},"_id":"q0Th3dVTbimkzo1s","createdAt":{"$$date":1516890431131},"updatedAt":{"$$date":1516890431131}}
-{"command":{"event":"server_command_error"},"_id":"q3Gmte8iIvJUSDHl","createdAt":{"$$date":1517239050414},"updatedAt":{"$$date":1517239050414}}
-{"command":{"event":"server_command_error"},"_id":"q3Y32OyssGoFiK28","createdAt":{"$$date":1517255964073},"updatedAt":{"$$date":1517255964073}}
-{"command":{"event":"server_command_error"},"_id":"q4dfCn1Iu74zq9V0","createdAt":{"$$date":1517249395005},"updatedAt":{"$$date":1517249395005}}
-{"command":{"event":"server_command_error"},"_id":"q4qdaVvlHFqQDbPa","createdAt":{"$$date":1517429362661},"updatedAt":{"$$date":1517429362661}}
-{"command":{"event":"server_command_error"},"_id":"qCu7dkfmcNLgtjE8","createdAt":{"$$date":1517239534494},"updatedAt":{"$$date":1517239534494}}
-{"command":{"event":"server_command_error"},"_id":"qEFZzFC4sI3n70C5","createdAt":{"$$date":1517448204100},"updatedAt":{"$$date":1517448204100}}
-{"command":{"event":"server_command_error"},"_id":"qILMx6LpolwkkoPT","createdAt":{"$$date":1517241110349},"updatedAt":{"$$date":1517241110349}}
-{"command":{"event":"server_command_error"},"_id":"qLsHkzjXjVUMpS6E","createdAt":{"$$date":1517256343856},"updatedAt":{"$$date":1517256343856}}
-{"command":{"event":"server_command_error"},"_id":"qN7M9VFjj9b6iTRX","createdAt":{"$$date":1517687317761},"updatedAt":{"$$date":1517687317761}}
-{"command":{"event":"server_command_error"},"_id":"qYGk6i6h9eUawHRQ","createdAt":{"$$date":1517199744310},"updatedAt":{"$$date":1517199744310}}
-{"command":{"event":"server_command_error"},"_id":"qk3LYTIikHGJNVeV","createdAt":{"$$date":1517096961373},"updatedAt":{"$$date":1517096961373}}
-{"command":{"event":"server_command_error"},"_id":"ql42s235t7CpItmY","createdAt":{"$$date":1517169645333},"updatedAt":{"$$date":1517169645333}}
-{"command":{"event":"server_command_error"},"_id":"qvg3DKXONuwSVtfC","createdAt":{"$$date":1517256474137},"updatedAt":{"$$date":1517256474137}}
-{"command":{"event":"server_command_error"},"_id":"qzKoxe7Qud0YYits","createdAt":{"$$date":1516973698027},"updatedAt":{"$$date":1516973698027}}
-{"command":{"event":"server_command_error"},"_id":"r2fvp7FzeBwPozC9","createdAt":{"$$date":1517442280991},"updatedAt":{"$$date":1517442280991}}
-{"command":{"event":"server_command_error"},"_id":"rYodsWXpuei7yOQe","createdAt":{"$$date":1517546629566},"updatedAt":{"$$date":1517546629566}}
-{"command":{"event":"server_command_error"},"_id":"reolYEQ49K1er8ro","createdAt":{"$$date":1517165486285},"updatedAt":{"$$date":1517165486285}}
-{"command":{"event":"server_command_error"},"_id":"rmgaYgUpLbMP7KsP","createdAt":{"$$date":1517755586645},"updatedAt":{"$$date":1517755586645}}
-{"command":{"event":"server_command_error"},"_id":"rovM3Hk0ZgRnUTXl","createdAt":{"$$date":1516919978952},"updatedAt":{"$$date":1516919978952}}
-{"command":{"event":"server_command_error"},"_id":"s4JtHGj1YXA1X5NL","createdAt":{"$$date":1517166844658},"updatedAt":{"$$date":1517166844658}}
-{"command":{"event":"server_command_error"},"_id":"s5Tder1N37KimeM3","createdAt":{"$$date":1517248727908},"updatedAt":{"$$date":1517248727908}}
-{"command":{"event":"server_command_error"},"_id":"s7rfzIj1anVfasKt","createdAt":{"$$date":1517256490508},"updatedAt":{"$$date":1517256490508}}
-{"command":{"event":"server_command_error"},"_id":"s8N2Abt6fsKQUFtt","createdAt":{"$$date":1516848250361},"updatedAt":{"$$date":1516848250361}}
-{"command":{"event":"server_command_error"},"_id":"sIcF3nVoNlj0hKfO","createdAt":{"$$date":1517239191057},"updatedAt":{"$$date":1517239191057}}
-{"command":{"event":"server_command_error"},"_id":"sauBWfQRF2BDT7TQ","createdAt":{"$$date":1517256623484},"updatedAt":{"$$date":1517256623484}}
-{"command":{"event":"server_command_error"},"_id":"slvn7qPvOOaJFEPu","createdAt":{"$$date":1517428738959},"updatedAt":{"$$date":1517428738959}}
-{"command":{"event":"server_command_error"},"_id":"t6EpZKBJdGYupyre","createdAt":{"$$date":1517241432698},"updatedAt":{"$$date":1517241432698}}
-{"command":{"event":"server_command_error"},"_id":"t6q78JmLJgx71tgT","createdAt":{"$$date":1517708477554},"updatedAt":{"$$date":1517708477554}}
-{"command":{"event":"server_command_error"},"_id":"tAMG7AaaZ7z4prGS","createdAt":{"$$date":1516738711548},"updatedAt":{"$$date":1516738711548}}
-{"command":{"event":"server_command_error"},"_id":"tATYRnaYAMlKhHpd","createdAt":{"$$date":1516738721267},"updatedAt":{"$$date":1516738721267}}
-{"command":{"event":"server_command_error"},"_id":"tFALCCwczxrdBQF6","createdAt":{"$$date":1517248872903},"updatedAt":{"$$date":1517248872903}}
-{"command":{"event":"server_command_error"},"_id":"tFYTj2ZWqR6ccJSv","createdAt":{"$$date":1517327656049},"updatedAt":{"$$date":1517327656049}}
-{"command":{"event":"server_command_error"},"_id":"tGaoLJP784tPOB8C","createdAt":{"$$date":1517238251422},"updatedAt":{"$$date":1517238251422}}
-{"command":{"event":"server_command_error"},"_id":"tVwEhHsh6pVSdjrb","createdAt":{"$$date":1517278607027},"updatedAt":{"$$date":1517278607027}}
-{"command":{"event":"server_command_error"},"_id":"tc3jHIl9bARhoAgN","createdAt":{"$$date":1517239034258},"updatedAt":{"$$date":1517239034258}}
-{"command":{"event":"server_command_error"},"_id":"u23dRyW75dYj1urD","createdAt":{"$$date":1517091765755},"updatedAt":{"$$date":1517091765755}}
-{"command":{"event":"server_command_error"},"_id":"u7c8xwiGmh45KKdZ","createdAt":{"$$date":1517338133535},"updatedAt":{"$$date":1517338133535}}
-{"command":{"event":"server_command_error"},"_id":"u89iRX8gNBfcJik6","createdAt":{"$$date":1516848500437},"updatedAt":{"$$date":1516848500437}}
-{"command":{"event":"server_command_error"},"_id":"uL4XNtVq1n17PpTt","createdAt":{"$$date":1517199673800},"updatedAt":{"$$date":1517199673800}}
-{"command":{"event":"server_command_error"},"_id":"uUbh7568wLpT2wZc","createdAt":{"$$date":1516835753987},"updatedAt":{"$$date":1516835753987}}
-{"command":{"event":"server_command_error"},"_id":"uXSwMqwFdAse9tD7","createdAt":{"$$date":1517187783022},"updatedAt":{"$$date":1517187783022}}
-{"command":{"event":"server_command_error"},"_id":"uXkC7AJ8FV1VmKan","createdAt":{"$$date":1517252871950},"updatedAt":{"$$date":1517252871950}}
-{"command":{"event":"server_command_error"},"_id":"ueJHGVdV746vjFso","createdAt":{"$$date":1517249405415},"updatedAt":{"$$date":1517249405415}}
-{"command":{"event":"server_command_error"},"_id":"umL2mrviTAHSlZCz","createdAt":{"$$date":1517248062902},"updatedAt":{"$$date":1517248062902}}
-{"command":{"event":"server_command_error"},"_id":"uoS29c9OLdPA5kPW","createdAt":{"$$date":1517239063606},"updatedAt":{"$$date":1517239063606}}
-{"command":{"event":"server_command_error"},"_id":"up00X4VPcysxHljM","createdAt":{"$$date":1517182405358},"updatedAt":{"$$date":1517182405358}}
-{"command":{"event":"server_command_error"},"_id":"uq62bMMranNbjABF","createdAt":{"$$date":1517256447036},"updatedAt":{"$$date":1517256447036}}
-{"command":{"event":"server_command_error"},"_id":"usKwWzWbE0dXo4u4","createdAt":{"$$date":1517199002474},"updatedAt":{"$$date":1517199002474}}
-{"command":{"event":"server_command_error"},"_id":"uxgTyZ8EeXWMyxuD","createdAt":{"$$date":1517536507931},"updatedAt":{"$$date":1517536507931}}
-{"command":{"event":"server_command_error"},"_id":"v89Tvk0UJPsbFMBg","createdAt":{"$$date":1517239192597},"updatedAt":{"$$date":1517239192597}}
-{"command":{"event":"server_command_error"},"_id":"vFKnCij8HtWU6rfj","createdAt":{"$$date":1516848277699},"updatedAt":{"$$date":1516848277699}}
-{"command":{"event":"server_command_error"},"_id":"vQFXt7bBXMATxdLh","createdAt":{"$$date":1517255968905},"updatedAt":{"$$date":1517255968905}}
-{"command":{"event":"server_command_error"},"_id":"valdfuews0pkHAQ5","createdAt":{"$$date":1517248250805},"updatedAt":{"$$date":1517248250805}}
-{"action":{"command":"instance -e","error":true},"event":"client_command_error","_id":"veWYHYKnZXSgPWGP","createdAt":{"$$date":1517546190552},"updatedAt":{"$$date":1517546190552}}
-{"command":{"event":"server_command_error"},"_id":"vg5HvjU4pH1dHjEn","createdAt":{"$$date":1517248758171},"updatedAt":{"$$date":1517248758171}}
-{"command":{"event":"server_command_error"},"_id":"vtNPS6Pdkw30mYDb","createdAt":{"$$date":1517248756584},"updatedAt":{"$$date":1517248756584}}
-{"command":{"event":"server_command_error"},"_id":"vwwerbRMDQa5cYEX","createdAt":{"$$date":1516834977430},"updatedAt":{"$$date":1516834977430}}
-{"command":{"event":"server_command_error"},"_id":"w54qJSE6X52uiew2","createdAt":{"$$date":1517240321290},"updatedAt":{"$$date":1517240321290}}
-{"command":{"event":"server_command_error"},"_id":"wAFsjBNz0I7IGdxN","createdAt":{"$$date":1516902356050},"updatedAt":{"$$date":1516902356050}}
-{"command":{"event":"server_command_error"},"_id":"wByVQORUAooffzaO","createdAt":{"$$date":1517436104814},"updatedAt":{"$$date":1517436104814}}
-{"command":{"event":"server_command_error"},"_id":"wELOd2iBGVKIJnnn","createdAt":{"$$date":1517242585129},"updatedAt":{"$$date":1517242585129}}
-{"command":{"event":"server_command_error"},"_id":"wJlhaFBz3fEW9tlP","createdAt":{"$$date":1517249041764},"updatedAt":{"$$date":1517249041764}}
-{"command":{"event":"server_command_error"},"_id":"wOh2sF92yV4SFs28","createdAt":{"$$date":1517443143625},"updatedAt":{"$$date":1517443143625}}
-{"command":{"event":"server_command_error"},"_id":"wPpGCTBEqSNo8iTJ","createdAt":{"$$date":1516741645519},"updatedAt":{"$$date":1516741645519}}
-{"command":{"event":"server_command_error"},"_id":"wTtAEbEQ7iG2SPDt","createdAt":{"$$date":1517255921692},"updatedAt":{"$$date":1517255921692}}
-{"command":{"event":"server_command_error"},"_id":"whlO3fHS04gi2n8d","createdAt":{"$$date":1517546149821},"updatedAt":{"$$date":1517546149821}}
-{"command":{"event":"server_command_error"},"_id":"wiVVHnpCnDlweieR","createdAt":{"$$date":1517508620289},"updatedAt":{"$$date":1517508620289}}
-{"command":{"event":"server_command_error"},"_id":"wlST9cQ3j1ZcH39g","createdAt":{"$$date":1517166851157},"updatedAt":{"$$date":1517166851157}}
-{"command":{"event":"server_command_error"},"_id":"woc4qYTjxnhQ6l3h","createdAt":{"$$date":1517239330455},"updatedAt":{"$$date":1517239330455}}
-{"command":{"event":"server_command_error"},"_id":"woi3kxnjkYkIcHFi","createdAt":{"$$date":1516848046545},"updatedAt":{"$$date":1516848046545}}
-{"command":{"event":"server_command_error"},"_id":"wsZx0tbheiwGP5fe","createdAt":{"$$date":1516890119790},"updatedAt":{"$$date":1516890119790}}
-{"command":{"event":"server_command_error"},"_id":"wySsMxubtHMMXM1y","createdAt":{"$$date":1517318271447},"updatedAt":{"$$date":1517318271447}}
-{"command":{"event":"server_command_error"},"_id":"wywSUFeerJ4p9elG","createdAt":{"$$date":1516753674918},"updatedAt":{"$$date":1516753674918}}
-{"command":{"event":"server_command_error"},"_id":"x1pv0vWtFDCGbcCZ","createdAt":{"$$date":1517242108191},"updatedAt":{"$$date":1517242108191}}
-{"command":{"event":"server_command_error"},"_id":"x4RmCT7CMWNAeOVr","createdAt":{"$$date":1517097163477},"updatedAt":{"$$date":1517097163477}}
-{"command":{"event":"server_command_error"},"_id":"x5lrvotqPdDCLaPv","createdAt":{"$$date":1516890222658},"updatedAt":{"$$date":1516890222658}}
-{"command":{"event":"server_command_error"},"_id":"xD77bo55L6pGYwGp","createdAt":{"$$date":1517239475474},"updatedAt":{"$$date":1517239475474}}
-{"command":{"event":"server_command_error"},"_id":"xD7deGezjkv3CmsB","createdAt":{"$$date":1517242954043},"updatedAt":{"$$date":1517242954043}}
-{"command":{"event":"server_command_error"},"_id":"xFvOFJoQFzxFaptT","createdAt":{"$$date":1517337390517},"updatedAt":{"$$date":1517337390517}}
-{"command":{"event":"server_command_error"},"_id":"xQQ8bAGGs96mwR9r","createdAt":{"$$date":1517256428248},"updatedAt":{"$$date":1517256428248}}
-{"command":{"event":"server_command_error"},"_id":"xVi19OW8f79Oed9A","createdAt":{"$$date":1517242879119},"updatedAt":{"$$date":1517242879119}}
-{"command":{"event":"server_command_error"},"_id":"xWaYw23yY50flK4x","createdAt":{"$$date":1517242939396},"updatedAt":{"$$date":1517242939396}}
-{"command":{"event":"server_command_error"},"_id":"xZVi7DXzXW3KcB1R","createdAt":{"$$date":1516919794813},"updatedAt":{"$$date":1516919794813}}
-{"command":{"event":"server_command_error"},"_id":"xbcpxDtrDlRhyTlF","createdAt":{"$$date":1517242533975},"updatedAt":{"$$date":1517242533975}}
-{"command":{"event":"server_command_error"},"_id":"xkti4XCELUvntTPK","createdAt":{"$$date":1517237589001},"updatedAt":{"$$date":1517237589001}}
-{"command":{"event":"server_command_error"},"_id":"xql8GdbS7PkkqVmu","createdAt":{"$$date":1517546711550},"updatedAt":{"$$date":1517546711550}}
-{"command":{"event":"server_command_error"},"_id":"y6ueZOFiphLcenAV","createdAt":{"$$date":1516738581026},"updatedAt":{"$$date":1516738581026}}
-{"command":{"event":"server_command_error"},"_id":"y8HYITWYWNlRgAil","createdAt":{"$$date":1517248729731},"updatedAt":{"$$date":1517248729731}}
-{"command":{"event":"server_command_error"},"_id":"yAsjcuNNIPThQiVv","createdAt":{"$$date":1517583247690},"updatedAt":{"$$date":1517583247690}}
-{"command":{"event":"server_command_error"},"_id":"yDDK3YFQfCoSISIg","createdAt":{"$$date":1517506902507},"updatedAt":{"$$date":1517506902507}}
-{"command":{"event":"server_command_error"},"_id":"yOukyZK8hvs4gmY7","createdAt":{"$$date":1517167032608},"updatedAt":{"$$date":1517167032608}}
-{"command":{"event":"server_command_error"},"_id":"yWaWeQAu75r8HxEo","createdAt":{"$$date":1516890857813},"updatedAt":{"$$date":1516890857813}}
-{"command":{"event":"server_command_error"},"_id":"ybgYulb2fphGvb27","createdAt":{"$$date":1517248212827},"updatedAt":{"$$date":1517248212827}}
-{"command":{"event":"server_command_error"},"_id":"yyLsZ149UBpumZCA","createdAt":{"$$date":1518028689678},"updatedAt":{"$$date":1518028689678}}
-{"command":{"event":"server_command_error"},"_id":"z0wik6KUBKKeTaXQ","createdAt":{"$$date":1517255904892},"updatedAt":{"$$date":1517255904892}}
-{"command":{"event":"server_command_error"},"_id":"zBPLfKFk1q9RiFtN","createdAt":{"$$date":1516890410167},"updatedAt":{"$$date":1516890410167}}
-{"command":{"event":"server_command_error"},"_id":"zGh9yfN3Yl7NGLEE","createdAt":{"$$date":1517429488873},"updatedAt":{"$$date":1517429488873}}
-{"command":{"event":"server_command_error"},"_id":"zIVkiQFkpVdtTShf","createdAt":{"$$date":1517166403217},"updatedAt":{"$$date":1517166403217}}
-{"command":{"event":"server_command_error"},"_id":"zKQYMBtDnh903e4k","createdAt":{"$$date":1517167235587},"updatedAt":{"$$date":1517167235587}}
-{"command":{"event":"server_command_error"},"_id":"zKxwfn1tKjmBIflw","createdAt":{"$$date":1517173129773},"updatedAt":{"$$date":1517173129773}}
-{"command":{"event":"server_command_error"},"_id":"zYTxIY5k3f35HKQU","createdAt":{"$$date":1517442113926},"updatedAt":{"$$date":1517442113926}}
-{"command":{"event":"server_command_error"},"_id":"zzyHVlefl7DwLUeh","createdAt":{"$$date":1517793854992},"updatedAt":{"$$date":1517793854992}}
-{"command":{"event":"server_command_error"},"_id":"k3dezEwy0D3csJ9P","createdAt":{"$$date":1518034941849},"updatedAt":{"$$date":1518034941849}}
-{"command":{"event":"server_command_error"},"_id":"NxgfDHyDOlrWlrIB","createdAt":{"$$date":1518035676235},"updatedAt":{"$$date":1518035676235}}
-{"command":{"event":"server_command_error"},"_id":"AiN7RXIWLzrdMgtx","createdAt":{"$$date":1518035710836},"updatedAt":{"$$date":1518035710836}}
+{"command":{"command":"~ -b"},"_id":"03uiw4d1lB6LSSVe","createdAt":{"$$date":1522682819242},"updatedAt":{"$$date":1522682819242}}
+{"command":{"command":"instance --target 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"1oMjXaqvRKspBOGL","createdAt":{"$$date":1522338522961},"updatedAt":{"$$date":1522338522961}}
+{"command":{"command":"config -m"},"_id":"209WZnumEfGK7ikM","createdAt":{"$$date":1522524564109},"updatedAt":{"$$date":1522524564109}}
+{"command":{"command":"go"},"_id":"2ffLlAeHeWNT60Yh","createdAt":{"$$date":1522338811032},"updatedAt":{"$$date":1522338811032}}
+{"command":{"command":"sqlpad --start"},"_id":"2g66XpTSQO2pGG2p","createdAt":{"$$date":1522685934686},"updatedAt":{"$$date":1522685934686}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"3pwHEurcInrBkWyb","createdAt":{"$$date":1522713748922},"updatedAt":{"$$date":1522713748922}}
+{"command":{"command":"~ --remove e1c047717a20c0bd3d2fd51a5f51f973a6acd253d01c5eef2db87d90b25d7da3"},"_id":"4sDJzIkMNQxtx6uF","createdAt":{"$$date":1522685565195},"updatedAt":{"$$date":1522685565195}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"5uYjnAaNLywmhKFR","createdAt":{"$$date":1522698918242},"updatedAt":{"$$date":1522698918242}}
+{"command":{"command":"? -m remap"},"_id":"7TX0xobjw5vsBXTE","createdAt":{"$$date":1522269699590},"updatedAt":{"$$date":1522269699590}}
+{"command":{"command":"help about"},"_id":"7nFdXDkJvsUWyQvk","createdAt":{"$$date":1522507659311},"updatedAt":{"$$date":1522507659311}}
+{"command":{"command":"config -m"},"_id":"8ydX70kRyE0vz9eZ","createdAt":{"$$date":1522525996257},"updatedAt":{"$$date":1522525996257}}
+{"command":{"command":"help"},"_id":"9od1e00c4X905e71","createdAt":{"$$date":1522505093258},"updatedAt":{"$$date":1522505093258}}
+{"command":{"command":"config -m list"},"_id":"AGKDn4JHsTbvBVlJ","createdAt":{"$$date":1522589247479},"updatedAt":{"$$date":1522589247479}}
+{"command":{"command":"config -m"},"_id":"AmkfdEUeptZwt9hZ","createdAt":{"$$date":1522587544931},"updatedAt":{"$$date":1522587544931}}
+{"command":{"command":"config -m"},"_id":"B4lFOw9a2FlE9PDK","createdAt":{"$$date":1522587791837},"updatedAt":{"$$date":1522587791837}}
+{"command":{"command":"history -c"},"_id":"BVZbcnhYPr3lste2","createdAt":{"$$date":1522262622975},"updatedAt":{"$$date":1522262622975}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"CdZS7mC6F5F3Yr73","createdAt":{"$$date":1522707352809},"updatedAt":{"$$date":1522707352809}}
+{"command":{"command":"about -a"},"_id":"Cq9GPdOMIHI8jiEJ","createdAt":{"$$date":1522507966863},"updatedAt":{"$$date":1522507966863}}
+{"command":{"command":"? -m"},"_id":"DGLWkPaHDNiXGVla","createdAt":{"$$date":1522334844139},"updatedAt":{"$$date":1522334844139}}
+{"command":{"command":"api.log('error', new Error(err.message))"},"_id":"DVdeoXXOMRidDWya","createdAt":{"$$date":1522262200973},"updatedAt":{"$$date":1522262200973}}
+{"command":{"command":"? -m"},"_id":"Ddx2M6y8eiACP2Df","createdAt":{"$$date":1522713865820},"updatedAt":{"$$date":1522713865820}}
+{"command":{"command":"? -m"},"_id":"EP90lnNNbzNb7Amv","createdAt":{"$$date":1522332732472},"updatedAt":{"$$date":1522332732472}}
+{"command":{"command":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18"},"_id":"Ez89r3jdgJly2TEs","createdAt":{"$$date":1522361187827},"updatedAt":{"$$date":1522361187827}}
+{"command":{"command":"? -m"},"_id":"FQHks3o8AKWFTTSb","createdAt":{"$$date":1522360372485},"updatedAt":{"$$date":1522360372485}}
+{"command":{"command":"select @@SERVERNAME, @@VERSION"},"_id":"Frx9RJyXNrDNI5j4","createdAt":{"$$date":1522338929556},"updatedAt":{"$$date":1522338929556}}
+{"command":{"command":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa"},"_id":"G3Bb6iREpVBJ99ZX","createdAt":{"$$date":1522684775127},"updatedAt":{"$$date":1522684775127}}
+{"command":{"command":"image --pull"},"_id":"HQYkvtRcG8IE2iv6","createdAt":{"$$date":1522269655810},"updatedAt":{"$$date":1522269655810}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"HX5JwvFLX0xYSWrz","createdAt":{"$$date":1522332724646},"updatedAt":{"$$date":1522332724646}}
+{"command":{"command":"go"},"_id":"HrnSA83rAaE3x4U3","createdAt":{"$$date":1522332961626},"updatedAt":{"$$date":1522332961626}}
+{"command":{"command":"config -m"},"_id":"InjuM2UD0nDd3UOx","createdAt":{"$$date":1522529285551},"updatedAt":{"$$date":1522529285551}}
+{"command":{"command":"config -m"},"_id":"JXLkR9nTnzhPzQRp","createdAt":{"$$date":1522525102621},"updatedAt":{"$$date":1522525102621}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"Kt1mWtQeRVKvGar3","createdAt":{"$$date":1522360363779},"updatedAt":{"$$date":1522360363779}}
+{"command":{"command":"? -m"},"_id":"LOVJ0t012AthIzhl","createdAt":{"$$date":1522339439737},"updatedAt":{"$$date":1522339439737}}
+{"command":{"command":"sqlpad"},"_id":"M62jbzhTJr32VUnl","createdAt":{"$$date":1522685928346},"updatedAt":{"$$date":1522685928346}}
+{"command":{"command":"config -m"},"_id":"Mqo9rIdFP43mYNtQ","createdAt":{"$$date":1522530236298},"updatedAt":{"$$date":1522530236298}}
+{"command":{"command":"SERVERPROPERTY('ServerName')"},"_id":"N3AjgiAS4H2ksays","createdAt":{"$$date":1522338809364},"updatedAt":{"$$date":1522338809364}}
+{"command":{"command":"config -m"},"_id":"NMouwXVOktw0EruH","createdAt":{"$$date":1522530365821},"updatedAt":{"$$date":1522530365821}}
+{"command":{"command":"config"},"_id":"O0jBqI65WWwtI5SI","createdAt":{"$$date":1522529248126},"updatedAt":{"$$date":1522529248126}}
+{"command":{"command":"go"},"_id":"OKDpprRjFE8qxNFr","createdAt":{"$$date":1522334831715},"updatedAt":{"$$date":1522334831715}}
+{"command":{"command":"config -m"},"_id":"PKZeXsmJbIIQPFTP","createdAt":{"$$date":1522523592525},"updatedAt":{"$$date":1522523592525}}
+{"command":{"command":"? -m"},"_id":"QMSe2XcM6t0sKpPM","createdAt":{"$$date":1522332401736},"updatedAt":{"$$date":1522332401736}}
+{"command":{"command":"? -m"},"_id":"RdMG2suVSsuvBT9u","createdAt":{"$$date":1522332860440},"updatedAt":{"$$date":1522332860440}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"RlrPO4kxNjoMNhwK","createdAt":{"$$date":1522715148056},"updatedAt":{"$$date":1522715148056}}
+{"command":{"command":"config -m"},"_id":"SI1XnptbSITacGi1","createdAt":{"$$date":1522523801623},"updatedAt":{"$$date":1522523801623}}
+{"command":{"command":"? -m"},"_id":"SPb1HiwpmkTE7IFO","createdAt":{"$$date":1522708785703},"updatedAt":{"$$date":1522708785703}}
+{"command":{"command":"config -m f"},"_id":"T9sBobal10HyRWPZ","createdAt":{"$$date":1522591803575},"updatedAt":{"$$date":1522591803575}}
+{"command":{"command":"? -m"},"_id":"TNR5lrgGPnbpJwSX","createdAt":{"$$date":1522382206135},"updatedAt":{"$$date":1522382206135}}
+{"command":{"command":"instance --target sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa"},"_id":"ULWSVFqGUzPtvrB9","createdAt":{"$$date":1522269810525},"updatedAt":{"$$date":1522269810525}}
+{"command":{"command":"config -m"},"_id":"UvWgEzeKanaqWYUV","createdAt":{"$$date":1522526066130},"updatedAt":{"$$date":1522526066130}}
+{"command":{"command":"history -c"},"_id":"Uy6dAIOkvKQE9JCr","createdAt":{"$$date":1522684682762},"updatedAt":{"$$date":1522684682762}}
+{"command":{"command":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa"},"_id":"VGlasBTHvM3kDLSe","createdAt":{"$$date":1522269777388},"updatedAt":{"$$date":1522269777388}}
+{"command":{"command":"config -m"},"_id":"VO9DeLSAIQQhqWER","createdAt":{"$$date":1522529489109},"updatedAt":{"$$date":1522529489109}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"VsHIOwjtM1vVTMLK","createdAt":{"$$date":1522713858372},"updatedAt":{"$$date":1522713858372}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"W8hKbKeI3j8XjQ7d","createdAt":{"$$date":1522352361807},"updatedAt":{"$$date":1522352361807}}
+{"command":{"command":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18"},"_id":"WKtSP7L7mWAcoQZ6","createdAt":{"$$date":1522361630417},"updatedAt":{"$$date":1522361630417}}
+{"command":{"command":"go"},"_id":"WgZqnbMra7biiwrS","createdAt":{"$$date":1522338930935},"updatedAt":{"$$date":1522338930935}}
+{"command":{"command":"about -q"},"_id":"X2z6O6l7OC4Q2bpK","createdAt":{"$$date":1522507659310},"updatedAt":{"$$date":1522507659310}}
+{"command":{"command":"config"},"_id":"X6aUfQgS9np2Syqa","createdAt":{"$$date":1522526042459},"updatedAt":{"$$date":1522526042459}}
+{"command":{"command":"? -m"},"_id":"XU2oCtQqRQ3QrN8W","createdAt":{"$$date":1522709232157},"updatedAt":{"$$date":1522709232157}}
+{"command":{"command":"history -e"},"_id":"XUfYbfNGPZKJvTqH","createdAt":{"$$date":1522262738542},"updatedAt":{"$$date":1522262738542}}
+{"command":{"command":"config -m"},"_id":"XhFkiEj8NVbQ610c","createdAt":{"$$date":1522529401831},"updatedAt":{"$$date":1522529401831}}
+{"command":{"command":"about -a"},"_id":"Z3OxZSLI1iiHD436","createdAt":{"$$date":1522507904158},"updatedAt":{"$$date":1522507904158}}
+{"command":{"command":"config -m"},"_id":"Z6dtj1W6vQtmEQa9","createdAt":{"$$date":1522524046442},"updatedAt":{"$$date":1522524046442}}
+{"command":{"command":"~ --remove e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136"},"_id":"ZEoJPIOtJA1FVS14","createdAt":{"$$date":1522684594518},"updatedAt":{"$$date":1522684594518}}
+{"command":{"command":"history -b"},"_id":"ZNiHKYnZXIdPNZ21","createdAt":{"$$date":1522262577187},"updatedAt":{"$$date":1522262577187}}
+{"command":{"command":"? -m"},"_id":"aBIXEpd6aY0fFUvm","createdAt":{"$$date":1522713759996},"updatedAt":{"$$date":1522713759996}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"aETqgJwKzLlUGeQr","createdAt":{"$$date":1522700426269},"updatedAt":{"$$date":1522700426269}}
+{"command":{"command":"select @@SERVERNAME"},"_id":"aFVcBWsPS0tdtg8c","createdAt":{"$$date":1522332960807},"updatedAt":{"$$date":1522332960807}}
+{"command":{"command":"? -m"},"_id":"aFduL7W2MORNDqqS","createdAt":{"$$date":1522706322374},"updatedAt":{"$$date":1522706322374}}
+{"command":{"command":"history"},"_id":"aybo3XkI8s6jc7Nr","createdAt":{"$$date":1522262324533},"updatedAt":{"$$date":1522262324533}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"bknaA69vcUhbg94u","createdAt":{"$$date":1522332390523},"updatedAt":{"$$date":1522332390523}}
+{"command":{"command":"~ -b"},"_id":"c4PaxlqNWRGJwWHB","createdAt":{"$$date":1522505077676},"updatedAt":{"$$date":1522505077676}}
+{"command":{"command":"~ -f e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136"},"_id":"cBDKMKLDWAGl9i4e","createdAt":{"$$date":1522684404980},"updatedAt":{"$$date":1522684404980}}
+{"command":{"command":"? -m remap"},"_id":"dNb2Hxucmdjqf4um","createdAt":{"$$date":1522685524716},"updatedAt":{"$$date":1522685524716}}
+{"command":{"command":"config -m"},"_id":"daSHTQB6xZEaFf2t","createdAt":{"$$date":1522531007827},"updatedAt":{"$$date":1522531007827}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"dyW5iRFF7mW0MPMb","createdAt":{"$$date":1522338899426},"updatedAt":{"$$date":1522338899426}}
+{"command":{"command":"~ -b"},"_id":"e9PkFJqUG34r3p00","createdAt":{"$$date":1522701028139},"updatedAt":{"$$date":1522701028139}}
+{"command":{"command":"~ -b"},"_id":"ea2mH6YvPeMgrwfE","createdAt":{"$$date":1522505064082},"updatedAt":{"$$date":1522505064082}}
+{"command":{"command":"? -m"},"_id":"fMdGgwVh87hcrFGr","createdAt":{"$$date":1522333085255},"updatedAt":{"$$date":1522333085255}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"fYTvOxAfxUvX1Pzm","createdAt":{"$$date":1522361233524},"updatedAt":{"$$date":1522361233524}}
+{"command":{"command":"? -m"},"_id":"faq8ErCmvlgbnlLB","createdAt":{"$$date":1522352101278},"updatedAt":{"$$date":1522352101278}}
+{"command":{"command":"~ -f"},"_id":"g8ydit6Z0OycKoAO","createdAt":{"$$date":1522449887333},"updatedAt":{"$$date":1522449887333}}
+{"command":{"command":"history -l"},"_id":"gXEebCrD9WCg5Ikk","createdAt":{"$$date":1522262897351},"updatedAt":{"$$date":1522262897351}}
+{"command":{"command":"? -m remap"},"_id":"h2SlA76JcRV7A7jf","createdAt":{"$$date":1522684192816},"updatedAt":{"$$date":1522684192816}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"hH6lQT4StvZ3jAJL","createdAt":{"$$date":1522706939706},"updatedAt":{"$$date":1522706939706}}
+{"command":{"command":"go"},"_id":"iVcE9veK5POMDZE8","createdAt":{"$$date":1522338774905},"updatedAt":{"$$date":1522338774905}}
+{"command":{"command":"config -m"},"_id":"ijyPNWNqukv7chCV","createdAt":{"$$date":1522526104367},"updatedAt":{"$$date":1522526104367}}
+{"command":{"command":"select @@SERVERNAME"},"_id":"io3TDs7dfB7wlHrK","createdAt":{"$$date":1522338724119},"updatedAt":{"$$date":1522338724119}}
+{"command":{"command":"config -m list"},"_id":"isEluOj9KAtc1qn0","createdAt":{"$$date":1522587558571},"updatedAt":{"$$date":1522587558571}}
+{"command":{"command":"instance -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"j2wern3LgPgHCJ5D","createdAt":{"$$date":1522294592588},"updatedAt":{"$$date":1522294592588}}
+{"command":{"command":"select @@SERVERNAME"},"_id":"k0Uh5hGWZAQ526M0","createdAt":{"$$date":1522334800807},"updatedAt":{"$$date":1522334800807}}
+{"command":{"command":"go"},"_id":"kG15CjgU9s5wCaGp","createdAt":{"$$date":1522334802429},"updatedAt":{"$$date":1522334802429}}
+{"command":{"command":"? -m"},"_id":"mVhxmXqe52pshRWV","createdAt":{"$$date":1522715168294},"updatedAt":{"$$date":1522715168294}}
+{"command":{"command":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18"},"_id":"mcYxJS0Ifnwc3SMs","createdAt":{"$$date":1522351992463},"updatedAt":{"$$date":1522351992463}}
+{"command":{"command":"? -m"},"_id":"mxYHoiSvSkHa6luH","createdAt":{"$$date":1522294611685},"updatedAt":{"$$date":1522294611685}}
+{"command":{"command":"? -m"},"_id":"nCvNqcT8tZ3tSkPG","createdAt":{"$$date":1522382174371},"updatedAt":{"$$date":1522382174371}}
+{"command":{"command":"?"},"_id":"nV6Z7kM9uH6eDll9","createdAt":{"$$date":1522294604141},"updatedAt":{"$$date":1522294604141}}
+{"command":{"command":"~ -t         mssql.close"},"_id":"naohpsVW4YQR6efw","createdAt":{"$$date":1522700402355},"updatedAt":{"$$date":1522700402355}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"nmWxD8aUFtuRCsQN","createdAt":{"$$date":1522334825603},"updatedAt":{"$$date":1522334825603}}
+{"command":{"command":"? -m"},"_id":"nzaONr1mUhgmOIRp","createdAt":{"$$date":1522332348604},"updatedAt":{"$$date":1522332348604}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"oWqyp1HYgxALmjzl","createdAt":{"$$date":1522708835207},"updatedAt":{"$$date":1522708835207}}
+{"command":{"command":"select @@SERVERNAME"},"_id":"pZO0j18dIqVp8PJ0","createdAt":{"$$date":1522334829546},"updatedAt":{"$$date":1522334829546}}
+{"command":{"command":"? -m remap"},"_id":"qDSrq5ew5f5Ct3Z0","createdAt":{"$$date":1522294550390},"updatedAt":{"$$date":1522294550390}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"qQGhUOem3cgPZDeq","createdAt":{"$$date":1522361695824},"updatedAt":{"$$date":1522361695824}}
+{"command":{"command":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa"},"_id":"rkfGabVI3i7xvF5R","createdAt":{"$$date":1522682916051},"updatedAt":{"$$date":1522682916051}}
+{"command":{"command":"select @@servername"},"_id":"rtefT2p8flBoWocZ","createdAt":{"$$date":1522360332512},"updatedAt":{"$$date":1522360332512}}
+{"command":{"command":"config -m"},"_id":"saGDJswtC7tHGdq4","createdAt":{"$$date":1522524267651},"updatedAt":{"$$date":1522524267651}}
+{"command":{"command":"history -r"},"_id":"t0S8S7MKw5bCTsZE","createdAt":{"$$date":1522262885445},"updatedAt":{"$$date":1522262885445}}
+{"command":{"command":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b"},"_id":"tOCFIHi20CmJMZuD","createdAt":{"$$date":1522700390743},"updatedAt":{"$$date":1522700390743}}
+{"command":{"command":"go"},"_id":"tVWCiRdCF0MOnRe3","createdAt":{"$$date":1522338725615},"updatedAt":{"$$date":1522338725615}}
+{"command":{"command":"select SERVERPROPERTY('ServerName')"},"_id":"thGw2lQDt5q2tmBn","createdAt":{"$$date":1522338771887},"updatedAt":{"$$date":1522338771887}}
+{"command":{"command":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18"},"_id":"ucMC3qTDC2H1Gygg","createdAt":{"$$date":1522701058578},"updatedAt":{"$$date":1522701058578}}
+{"command":{"command":"history --errors"},"_id":"vaIhzjmvNJ2MsZo0","createdAt":{"$$date":1522269509788},"updatedAt":{"$$date":1522269509788}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"voLi7pEvjqIucWfq","createdAt":{"$$date":1522707136959},"updatedAt":{"$$date":1522707136959}}
+{"command":{"command":"go"},"_id":"w6DVgsvFW9WuTpoH","createdAt":{"$$date":1522360333325},"updatedAt":{"$$date":1522360333325}}
+{"command":{"command":"config -m"},"_id":"wMY2V9u05SqJckbB","createdAt":{"$$date":1522524109618},"updatedAt":{"$$date":1522524109618}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"wXUJOcHFsDROHdCf","createdAt":{"$$date":1522262234839},"updatedAt":{"$$date":1522262234839}}
+{"command":{"command":"history"},"_id":"wh4PxXKQ78QFhsip","createdAt":{"$$date":1522262569227},"updatedAt":{"$$date":1522262569227}}
+{"command":{"command":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542"},"_id":"woamdBeiJmzTkgqG","createdAt":{"$$date":1522332941962},"updatedAt":{"$$date":1522332941962}}
+{"command":{"command":"? -m"},"_id":"zE63Z9PJskKQ6TTH","createdAt":{"$$date":1522352396663},"updatedAt":{"$$date":1522352396663}}
+{"command":{"command":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b"},"_id":"s0PufZtiJkAv0dfm","createdAt":{"$$date":1522715634131},"updatedAt":{"$$date":1522715634131}}
+{"command":{"command":"? -m"},"_id":"KPUrHdgUCRBGu6Me","createdAt":{"$$date":1522715642740},"updatedAt":{"$$date":1522715642740}}

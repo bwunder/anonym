@@ -1,4 +1,5 @@
 //// NPM
+const chalk = require('chalk')
 const Vorpal = require('vorpal')
 const vorpalLog = require('vorpal-log')
 //// core
@@ -12,14 +13,13 @@ const sqldb = require('./sqldb')
 const api = require('./api')
 const store = require('./store')
 
-const sqlName=`SQL Server for Linux`.italic
-const Batch = config.batch
+const sqlName=chalk.italic(`SQL Server for Linux`)
 let appStart = new Date()
 
 const vorpal = new Vorpal()
   vorpal
     .use( vorpalLog, { printDate: config.printDate } )
-    .delimiter( `${config.vorpal.port}`.rainbow+'>' )
+    .delimiter( chalk.dim(`${config.vorpal.port}>`) )
     .show()
 
   vorpal.logger.setFilter(config.vorpal.loglevel)
@@ -32,32 +32,32 @@ const vorpal = new Vorpal()
 
   // Maps to error for socket.io-client
   vorpal.on('client_error', (err) => {
-    log.warn(`[CLI error]`.magenta)
+    log.warn(chalk.magenta(`[CLI error]`))
     log.error(err.message)
     log.debug(err.stack)
-    store.clients.put({ error: err, event: 'client_error' })
+    store.errors.put(err)
   })
 
   vorpal.on('client_prompt_submit', (data) => {
     if (data!='') { // ignore empty lines
-      log.debug(`[vorpal client_prompt_submit] ${api.format(data)}`.magenta)
-      store.lines.put(data, 'client_prompt_submit')
+      log.debug(chalk.magenta(`[vorpal client_prompt_submit] ${api.format(data)}`))
+      store.lines.put(data)
     }
   })
 
   vorpal.on('client_command_error', (err) => {
-    log.warn(`[CLI command error]`.magenta)
+    log.warn(chalk.magenta(`[CLI command error]`))
     log.error(err)
-    store.clients.put(err, 'client_command_error')
+    store.errors.put(err)
   })
 
   vorpal.on('client_command_executed', (data) => {
-   log.debug(`[vorpal client_command_executed]\n${api.format(data)}`.magenta)
-   store.commands.put({event: 'server_command_error'})   // using client_prompt_submit instead for logging
+   log.debug(chalk.magenta(`[vorpal client_command_executed]\n${api.format(data)}`))
+   store.commands.put(data)   // using client_prompt_submit instead for logging
   })
 
   // could easily be modified or cloned to use su or sudo for elevation
-  vorpal.command(`engine`, `Host Docker Engine Administration (requires root access on '${process.env.HOST}')`.blue)
+  vorpal.command(`engine`, chalk.blue(`Host Docker Engine Administration (requires root access on '${process.env.HOST}')`))
   .option(`-s, --status`, `Report on Current Status default`)
   .option(`--start`, `Start Container Engine`)
   .option(`--stop`, `Stop Container Engine`)
@@ -66,7 +66,7 @@ const vorpal = new Vorpal()
       case ("start"):
       case ("stop"):
         api.setEngine(Object.keys(args.options)[0])
-        api.loadCatalog()
+        api.intern()
         break
       case ("status"):
       default:
@@ -76,7 +76,7 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`image`, `SQL Server for Linux Docker Images`.blue)
+  vorpal.command(`image`, chalk.blue(`SQL Server for Linux Docker Images`))
   .option(`-a, --all`, `List Images in Host\'s Catalog`)
   .option(`-f, --full [image-id]`, `Show a Hosted ${sqlName} Docker Image (Target\'s image if no id entered)`)
   .option(`-i, --id`, `Show Id of Target Container\'s Image`)
@@ -87,12 +87,12 @@ const vorpal = new Vorpal()
     .then( async (running) => {
       let imageId=args.options[0]
       if (!imageId && api.sqlCatalog.Instance) {
-        imageId=api.getContainerInfo().ImageID
+        imageId=api.getInstanceInfo().ImageID
       }
       if (running) {
         switch (true) {
           case (args.options.all):
-            log.log(api.listImages())
+            log.log(api.format(api.listImages()))
             break
           case (typeof args.options.full==='string'):
             log.log(api.format(await api.getImage(args.options.full)))
@@ -112,18 +112,18 @@ const vorpal = new Vorpal()
             break
           case (typeof args.options.run===`string`):
             log.log(await api.runImage(args.options.run))
-            await api.loadCatalog()
+            await api.intern()
             break
           case (args.options.run):
             log.log(await api.runImage())
-            await api.loadCatalog()
+            await api.intern()
             break
           default:
             log.log(`Target Image: ${imageId}`)
             break
         }
       }
-      callback()
+      callback(log.log(api.bandAid))
     })
     .catch( (err) => {
       api.log('warn', `(command image) error`)
@@ -134,15 +134,15 @@ const vorpal = new Vorpal()
     })
   })
 
-  vorpal.command(`instance`, `SQL Server for Linux Docker Containers`.blue)
+  vorpal.command(`instance`, chalk.blue(`SQL Server for Linux Docker Containers`))
   .alias('~')
-  .option(`-a, --all`, `See Local SQL Server Containers`)
+  .option(chalk`-a, --all`, `Local SQL Server Containers`)
   .option(`-b, --bash [container-id]`, `Open Interactive bash shell in a Cataloged Container`)
-  .option(`-c, --connection [`+`O`.underline+`PEN|`+`C`.underline+`LOSE]`, `See [or Set] Connection Pool State of Target SQL Instance`)
+  .option(chalk`-c, --connection [{underline O}PEN|{underline C}LOSE]`, `See [or Set] Connection Pool State of Target SQL Instance`)
   .option(`-e, --entity [container-id]`, `See Container\'s docker+node API Entity Object`)
   .option(`-f, --full [container-id]`, `See Container\'s definition`)
-  .option(`-l, --last [n]`, `See Last n (default 3) SQL Containers Created`)
-  .option(`--remove <container-id>`, `Remove a Container - container-id mandatory`)
+  .option(`-l, --last [{italic n}]`, `See Last n (default 3) SQL Containers Created`)
+  .option(`--remove <container-id>`, `Remove a Container - container-id mandatory (did you backup?)`)
   .option(`--restart [container-id]`, `Restart a Container - only if 'running', default is Target`)
   .option(`--start [container-id]`, `Start a Container - if not already 'running', default is Target`)
   .option(`--stop [container-id]`, `Stop a Container - default is Target`)
@@ -150,16 +150,15 @@ const vorpal = new Vorpal()
   .action( async (args, callback) => {
     let containerId, targetId
     if (await api.isDocker()) {
-      let lastTargetId=api.sqlCatalog.Instance
       if (typeof args.options[Object.keys(args.options)[0]]==='string' &&
         api.sqlCatalog.ContainerInfos.has(args.options[Object.keys(args.options)[0]])) {
           containerId=args.options[Object.keys(args.options)[0]]
       } else if (typeof args.options[Object.keys(args.options)[0]]==='boolean') {
-        containerId=lastTargetId
+        containerId=api.sqlCatalog.Instance
       }
       switch(Object.keys(args.options)[0]) {
         case ("all"):
-          log.log(api.format(api.listContainers()))
+          log.log(api.format(api.listInstances()))
           break
         case ("bash"):
           api.interactiveShell(containerId)
@@ -168,62 +167,104 @@ const vorpal = new Vorpal()
             if (/^cl*o*s*e*$/i.test(args.options.connection)) {
               log.log(await sqldb.closePool())
             } else if (/^op*e*n*$/i.test(args.options.connection)) {
-              log.log(await sqldb.openPool())
+              log.log(await sqldb.openPool(containerId))
             } else {
-              log.log(`connection pool state: ${sqldb.state()}`)
+              log.log(`connection pool: ${sqldb.state()}`)
             }
           break
         case ("entity"):
-          log.log(api.format(api.getDockerContainer(containerId)))
+          log.log(api.format(api.getInstanceInfo(containerId)))
           break
         case ("full"):
-          log.log('api.sqlCatalog.ContainerInfo'.inverse)
-          log.log(api.format(api.getContainerInfo(containerId)))
-          log.log('api.sqlCatalog.Image'.inverse)
-          log.log(api.format(await api.getImage(api.getContainerInfo(containerId).ImageID)))
+          log.log(chalk.inverse('api.sqlCatalog.ContainerInfo'))
+          log.log(api.format(api.getInstanceInfo(containerId)))
+          log.log(chalk.inverse('api.sqlCatalog.Image'))
+          log.log(api.format(await api.getImage(api.getInstanceInfo(containerId).ImageID)))
           break
         case ("last"):
-          log.log(api.format(await api.latestContainers(args.options.last)))
+          log.log(api.format(await api.latestInstances(containerId)))
           break
         case ("remove"):
-          if (api.getContainerInfo(args.options.remove).State!='running') {
-            log.log(api.format(await api.removeContainer(args.options.remove)))
+          if (api.getInstanceInfo(containerId).State!='running') { // was using args.options.remove
+            log.log(api.format(await api.removeInstance(containerId)))
           } else {
             log.warn(`Container must be stopped before it can be removed`)
           }
+          await api.intern(containerId)
           break
         case ("restart"):
-          if (typeof args.options.restart==='string') {
-            await api.restartContainer(args.options.restart)
-          } else {
-            await api.restartContainer(api.sqlCatalog.Instance)
-          }
+          await api.restartInstance(containerId)
           break
         case ("start"):
-          if (typeof args.options.start==='string') {
-            await api.startContainer(args.options.start)
-          } else {
-            await api.startContainer()
-          }
+          await api.startInstance(containerId)
           break
         case ("stop"):
-          await api.stopContainer(containerId)
+          await api.stopInstance(containerId)
           break
         case ("target"):
           if (containerId && containerId!=api.sqlCatalog.Instance) {
-            await api.loadCatalog(containerId)
+            await api.intern(containerId)
           }
-          break
         default:
           log.log(`Target Container: ${api.sqlCatalog.Instance}`)
           break
       }
     }
-    callback()
+    callback(log.log(api.bandAid))
 
   })
 
-  vorpal.command(`bcp [options]`, `Bulk Copy Data in or out of Target using BCP from mssql-tools`.yellow)
+  vorpal.command(`config`, chalk.red(`Component Configurations.`))
+  .option(`-a, --app [edit]`, `sqlpal 'config.json' file`)
+  .option(chalk`-m, --mssqlconf [mssql-conf-args...]|[{underline F}ILE]`, `Target Container\'s mssql-conf.py utility or mssql.conf out file`)
+  .option(`-s, --sqlserver [option-name]`, `sys.configurations (edit with EXEC sp_configure(option-name, new-value))`)
+  .action( async (args, callback) => {
+    let containerId
+    if (await api.isDocker()) {
+      containerId=api.sqlCatalog.Instance
+      switch(true) {
+        case (/^ed*i*t*$/i.test(args.options.app)):
+          await api.editFile(`config.json`)
+          break
+        case (args.options.app===true):
+          log.log(await api.fileToJSON('config.json'))
+          break
+        case (/^fi*l*e*$/i.test(args.options.mssqlconf)):
+          if (containerId) {
+            api.shell(containerId, `cat ${path.resolve(config.mssql.binPath, 'mssql.conf')}`)
+          }
+          break
+        case (typeof args.options.mssqlconf==='string'):
+          if (containerId) {
+            let doc = await store.lines.getLast()
+            await api.mssqlConf(containerId, doc.line.split(' ').slice(2).join(' '))
+          }
+          break
+        case (args.options.mssqlconf===true):
+          if (containerId) {
+            await api.mssqlConf(containerId, '-h')
+          }
+          break
+        case (typeof args.options.sqlserver==='string'):
+          if (containerId) {
+            let doc = await store.lines.getLast()
+            await sqldb.query(`EXEC sp_configure '${doc.line.split(' ').slice(2).join(' ')}'`)
+          }
+          break
+        case (args.options.sqlserver===true):
+          if (targetId) {
+            await sqldb.query(await store.queries.get(`configurations`))
+          }
+          break
+        default:
+          break
+      }
+    }
+    callback(log.log(api.bandAid))
+
+  })
+
+  vorpal.command(`bcp [options]`, chalk.yellow(`Bulk Copy Data in or out of Target using BCP from mssql-tools`))
   // .option(`-i, --input [data-file| T-SQL | TABLE | VIEW ]`, `source of data`)
   // .option(`-o, --output [data-file]`, `result output file (default stdout)`)
   .action( (args, callback) => {
@@ -233,7 +274,7 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`bulk <table>`, `Bulk Insert data using mssql bulk mode`.yellow)
+  vorpal.command(`bulk <table>`, chalk.yellow(`Bulk Insert data using mssql.bulk()`))
   // .option(`-i, --input [data-file| T-SQL | TABLE | VIEW ]`, `source of data`)
   // .option(`-o, --output [data-file]`, `result output file (default stdout)`)
   .action( (args, callback) => {
@@ -243,23 +284,25 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`sqlcmd`, `Process a cached batch or file script on Target using SQLCMD`.green)
-  .option(`-e, --execsql`, `Process batch via sp_executesql, `+`after`.italic+` the prefix executes`)
+  vorpal.command(`sqlcmd`, chalk.green(`Process a cached batch or file script on Target using SQLCMD`))
+  .option(`-e, --execsql`, chalk`Process batch via sp_executesql, {italic after} the prefix executes`)
   .option(`-i, --input <script-file>`, `process a T-SQL script file rather than the batch`)
   .option(`-Q, --Query`, `Process the prefixed batch and exit, rendering JSON results`)
-  .option(`-p, --prefix [`+`e`.underline+`dit]`, `Inspect/Edit SET Statement(s) prefixed to all queries`)
+  .option(chalk`-p, --prefix [{underline e}dit]`, `Inspect/Edit SET Statement(s) prefixed to all queries`)
   .option(`-q, --query`, `Process the prefixed batch in sqlcmd, rendering tabular results`)
-  .option(`-o, --output <data-file>`, `write result to the file - one of [e, i, Q or q] also required`)
-  .option(`-s, --switch [switch-flag]|[`+`e`.underline+`dit]`, `Inspect/Edit Command-line switch defaults`)
+  .option(`-o, --output <data-file>`, `write result to the file - one of flag [e, i, Q or q] also required`)
+  .option(chalk`-s, --switch [switch-flag]|[{underline e}dit]`, `Inspect/Edit Command-line switch defaults`)
   .action( async (args, callback) => {
     // different containerId could be used behind -H switch, what happens then?
     let containerId = api.sqlCatalog.Instance
     if (containerId) {
       let cmdArgs = []
       let sqlArg = ''
+      let usingBatch = false
       switch(true) {
         case (args.options.execsql):
-          sqlArg=`-Q "${api.compile(config.sqlcmd.prefix)} exec sp_executesq('${api.compile(Batch)}')"`
+          sqlArg=`-Q "${api.compile(config.sqlcmd.prefix)} exec sp_executesq('${api.compile()}')"`
+          usingBatch=true
           break
         case (typeof args.options.input==='string'):
           sqlArg=`-i "${args.options.input}"`
@@ -275,13 +318,18 @@ const vorpal = new Vorpal()
           result=config.sqlcmd.switch
           break
         case (args.options.Query):
-          sqlArg=`-Q "${api.compile(config.sqlcmd.prefix)} ${api.compile(Batch)}"`
+          sqlArg=`-Q "${api.compile(config.sqlcmd.prefix)} ${api.compile()}"`
+          usingBatch=true
           break
         case (args.options.query):
-          sqlArg=`-q "${api.compile(config.sqlcmd.prefix)} ${api.compile(Batch)}"`
-          log.info(`type 'exit' to close sqlcmd and resume `+`sqlpal`.rainbow+` -- or browse to sqlpad for a one-off`)
+          sqlArg=`-q "${api.compile(config.sqlcmd.prefix)} ${api.compile()}"`
+          log.info(`type 'exit' to close sqlcmd and resume sqlpal CLI`)
+          usingBatch=true
           break
         default:
+          sqlArg=''
+          await api.shell(containerId, `${path.resolve(config.odbc.binPath, 'sqlcmd -?')}`)
+          callback()
           break
       }
       if (sqlArg) {
@@ -298,15 +346,19 @@ const vorpal = new Vorpal()
           cmdArgs.push(`-o "${args.options.output}"`)
         }
         await api.shell(containerId, `${path.resolve(config.odbc.binPath, 'sqlcmd')} ${cmdArgs.join(' ')} ${sqlArg}`)
+        if (usingBatch) {
+          api.batch.splice(0)
+        }
         callback()
       }
     }
   })
 
-  vorpal.command(`go`, `Execute the Cached tSQL Batch with mssql query mode`.green)
+  vorpal.command('go', chalk.green(`Send the Batch to the Pool Target using mssql.Request.query() and await the results`))
   .action( async (args, callback) => {
     try {
-      log.log(api.format(await sqldb.query()))
+      let results = await sqldb.query()
+      log.log(api.format(results))
     }
     catch (err) {
       if (typeof err!='undefined') {
@@ -316,24 +368,59 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`run`, `Execute the Cached tSQL with mssql batch mode`.green)
+  vorpal.command(`run`, chalk.green(`Send the Batch to the Pool Target using mssql.Request.batch() and await the results`))
+  .option(chalk`-s, --showplan [{underline A}LL|{underline T}EXT|{underline X}ML]`, chalk`Append {italic SET SHOWPLAN_ALL|TEXT|XML ON}`)
+  .option(chalk`-t, --statistics [{underline I}O|{underline P}ROFILE|{underline T}IME|{underline X}ML]`, chalk`Prepend {italic SET STATISTICS IO ON} statement to batch`)
   .action( async (args, callback) => {
-    log.log(api.format(await sqldb.batch()))
+    let stmt
+    switch (true) {
+      case (/^al*l*$/i.test(args.options.showplan)):
+        stmt='SHOWPLAN_ALL'
+        break
+      case (/^te*x*t*$/i.test(args.options.showplan)):
+        stmt='SHOWPLAN_TEXT'
+        break
+      case (/^xm*l*$/i.test(args.options.showplan)):
+        stmt='SHOWPLAN_XML'
+        break
+      case (/^io*$/i.test(args.options.statistics)):
+        stmt=`STATISTICS IO`
+        break
+      case (/^pr*o*f*i*l*e*$/i.test(args.options.statistics)):
+        stmt=`STATISTICS PROFILE`
+        break
+      case (/^ti*m*e*$/i.test(args.options.statistics)):
+        stmt=`STATISTICS TIME`
+        break
+      case (/^xm*l*$/i.test(args.options.statistics)):
+        stmt=`STATISTICS XML`
+        break
+      default:
+        break
+      }
+      if (stmt) {
+        api.batch.unshift(`SET ${stmt} ON`, `GO`)
+        api.batch.push(`GO`, `SET ${stmt} OFF`)
+      }
+      let results = await sqldb.batch()
+      log.log(api.format(results))
+      callback()
+    })
+
+  vorpal.command(`issql`, chalk`{green Non-destructive Evaluation of Batch as tSQL on the CLI Target - uses} {italic SET NOEXEC ON}`)
+  .action( async (args, callback) => {
+    if (await sqldb.isSQL(api.compile())) {
+      log.confirm(chalk`Accepted as tSQL by Target SQL Server {yellow (objects not verified)}`)
+    }
     callback()
   })
 
-  vorpal.command(`test`, `Evaluate the Cached tSQL on the CLI Target with NOEXEC`.green)
-  .action( async (args, callback) => {
-    log.log(await sqldb.isSQL(api.compile(Batch)))
-    callback()
-  })
-
-  vorpal.command(`query [queryName]`, `List Stored Queries or overlay Batch Cache with one.`.magenta)
+  vorpal.command(`query [queryName]`, chalk.magenta(`Load a local nedb stored query - omit queryName to list available`))
   .action( async (args, callback) => {
     let list=await store.queries.names()
     if (!args.queryName) {
       log.log((list).join('\n'))
-      log.info(`Type 'query <exact first letters that uniquely identify the name>' to load one to the Batch`)
+      log.info(`Type 'query <exact first letters that uniquely identify the name>' to load specified to the batch`)
     } else {
       let found = list.find((name) => {
         if (name.startsWith(args.queryName)) return name
@@ -343,18 +430,28 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`script [scriptFile]`, `List '${path.resolve(config.vorpal.cli.scriptPath)}' Scripts or Push Content of One to the Cache`.magenta)
+  vorpal.command(`script [fileName]`, chalk.magenta(`Load a local '.sql' script file - omit fileName to list available`))
   .action( async (args, callback) => {
-    if (!args.scriptFile) {
-      log.log(await api.listFiles(path.resolve(config.vorpal.cli.scriptPath), `.sql`))
-      log.info('scriptFile autocomplete enabled')
-    } else {
-      api.fileToBatch(path.resolve(__dirname, config.vorpal.cli.scriptPath, args.scriptFile))
+    try {
+      if (!args.scriptFile) {
+        for (let script of await api.listFiles(path.resolve(config.vorpal.cli.scriptPath), `.sql`)) {
+          log.log(script.replace('.sql', ''))
+        }
+      } else {
+        await api.fileToBatch(path.resolve(__dirname, config.vorpal.cli.scriptPath, args.fileNmae+`.sql`))
+      }
     }
-    callback()
+    catch(err) {
+      log.warn(`script files error`)
+      log.error(err.message)
+      log.debug(err.stack)
+    }
+    finally {
+      callback()
+    }
   })
 
-  vorpal.command(`errorlog [ext]`, `SQL Server errorlog (no ext for active log file)`.cyan)
+  vorpal.command(`errorlog [ext]`, chalk.cyan(`SQL Server errorlog (no ext for active log file)`))
   .action( (args, callback) => {
     // show log file (+tail & follow) docker.run stuff default to current
     // file maintenance
@@ -363,88 +460,56 @@ const vorpal = new Vorpal()
     callback()
   })
 
-  vorpal.command(`files`, `SQL Server File Inspector - Target is default`.cyan)
-  .option(`-b, --backups [container-id]`, `SQL Server Database backups files`)
-  .option(`-c, --dumps [container-id]`, `SQL Server Core Stack Dump files`)
-  .option(`-d, --data [container-id]`, `SQL Server Database Data files`)
-  .option(`-l, --log [container-id]`, `SQL Server Database Log files`)
+  vorpal.command(`files [container-id]`, chalk.cyan(`SQL Server File Collections (defaults to target)`))
+  .option(`-b, --backups [filename]`, `SQL Server Database backups files`)
+  .option(`-c, --dumps [filename]`, `SQL Server Core Stack Dump files`)
+  .option(`-d, --data [filename]`, `SQL Server Database Data files`)
+  .option(`-l, --log [filename]`, `SQL Server Database Log files`)
   .action( (args, callback) => {
     api.isDocker()
-    .then( (running) => {
-      let containerId = typeof args.options[0]!='string'? args.options[0]: api.sqlCatalog.Instance
+    .then( async (running) => {
+      let containerId = typeof args.options[Object.keys(args.options)[0]]==='string'?args.options[Object.keys(args.options)[0]]: api.sqlCatalog.Instance
       if (running && containerId) {
-        let folder
-        let filter
+        let folder, filter
         switch(true) {
           case (args.options.backups):
-            // SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database Name], bs.recovery_model,
-            // CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
-            // CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
-            // CONVERT (NUMERIC (20,2), (CONVERT (FLOAT, bs.backup_size) /
-            // CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], bs.has_backup_checksums, bs.is_copy_only, bs.encryptor_type,
-            // DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) AS [Backup Elapsed Time (sec)],
-            // bs.backup_finish_date AS [Backup Finish Date], bmf.physical_device_name AS [Backup Location], bmf.physical_block_size
-            // FROM msdb.dbo.backupset AS bs WITH (NOLOCK)
-            // INNER JOIN msdb.dbo.backupmediafamily AS bmf WITH (NOLOCK)
-            // ON bs.media_set_id = bmf.media_set_id
-            // WHERE bs.database_name = DB_NAME(DB_ID())
-            // AND bs.[type] = 'D' -- Change to L if you want Log backups
-            // ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
+            folder=path.resolve(config.mssql.backup.path)
+            filter=config.mssql.backup.filter
+            break
+          case (typeof args.options.backups==='string'):
             folder=path.resolve(config.mssql.backup.path)
             filter=config.mssql.backup.filter
             break
           case (args.options.dumps):
-            //SELECT [filename], creation_time, size_in_bytes/1048576.0 AS [Size (MB)]
-            //FROM sys.dm_server_memory_dumps WITH (NOLOCK)
-            //ORDER BY creation_time DESC OPTION (RECOMPILE);
             folder=path.resolve(config.mssql.dump.path)
             filter=config.mssql.dump.filter
             break
           case (args.options.data):
-            // SELECT f.name AS [File Name] , f.physical_name AS [Physical Name],
-            // CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
-            // CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2))
-            // AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
-            // f.is_percent_growth, f.growth,
-            // fg.is_default, fg.is_read_only
-            // FROM sys.database_files AS f WITH (NOLOCK)
-            // LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
-            // ON f.data_space_id = fg.data_space_id
-            // ORDER BY f.[file_id] OPTION (RECOMPILE);
             folder=path.resolve(config.mssql.data.path)
             filter=config.mssql.data.filter
             break
           case (args.options.log):
-            // SELECT DB_NAME(lsu.database_id) AS [Database Name], db.recovery_model_desc AS [Recovery Model],
-            // 		CAST(lsu.total_log_size_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Total Log Space (MB)],
-            // 		CAST(lsu.used_log_space_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space (MB)],
-            // 		CAST(lsu.used_log_space_in_percent AS DECIMAL(10, 2)) AS [Used Log Space %],
-            // 		CAST(lsu.log_space_in_bytes_since_last_backup/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space Since Last Backup (MB)],
-            // 		db.log_reuse_wait_desc
-            // FROM sys.dm_db_log_space_usage AS lsu WITH (NOLOCK)
-            // INNER JOIN sys.databases AS db WITH (NOLOCK)
-            // ON lsu.database_id = db.database_id
-            // OPTION (RECOMPILE);
             folder=path.resolve(config.mssql.log.path)
             filter=config.mssql.log.filter
             break
           default:
             break
         }
-        log.log(api.mssqlFiles(containerId, folder, filter))
+        await api.mssqlFiles(containerId, folder, filter)
+        callback()
       }
     })
     .catch( (err) => {
-      api.log('warn', `(command files) error`)
-      api.log('error', err.message)
-      api.log('debug', err.stack)
+      log.warn(`(command files) error`)
+      log.error(err.message)
+      log.debug(err.stack)
     })
-    .then( () => {
-      callback()
-    })
+    // .then( () => {
+      // callback()
+    // })
   })
 
-  vorpal.command(`sqlpad`, `Web server for writing and running SQL queries and visualizing the results`.cyan)
+  vorpal.command(`sqlpad`, chalk.cyan(`Web server for writing and running SQL queries and visualizing the results`))
   .option(`--start`, `Launch the SQLPad server`)
   .option(`--stop`, `Stop the SQLPad server`)
   .option(`-u, --url`, ``)
@@ -457,28 +522,31 @@ const vorpal = new Vorpal()
         config.sqlpad.sqlpad.kill(1)
         break
       case (args.options.url):
-        log.log(`url: https://127.0.0.1:${config.sqlpad["https-port"]}`)
+        if (!config.sqlpad["sqlpad"]) {
+          log.log(chalk`web server not detected, try {italic sqlpad --start}`)
+        } else {
+          log.log(`url: https://127.0.0.1:${config.sqlpad["https-port"]}`)
+        }
         break
       default:
-        log.log(`pid: ${!config.sqlpad.sqlpad? 'none': config.sqlpad.sqlpad.pid}`)
+        log.log(`pid: ${!config.sqlpad["sqlpad"]? 'none': config.sqlpad.sqlpad.pid}`)
         break
     }
     callback()
   })
 
-  vorpal.command(`use <dbName>`, `Changes CLI Connection Pool Database Context`.red)
+  vorpal.command(`use <dbName>`, chalk.red(`CLI Database Context - changes Connection Pool, UPPERCASE 'USE' affects this query only`))
   .action( async (args, callback) => {
-    log.confirm(await sqldb.openPool(args.dbName))
+    config.mssql.pool.database = args.dbName
     callback()
   })
 
-  vorpal.command(`cache`, `Application Cache`.red)
+  vorpal.command(`cache`, chalk.red(`Non-persistent CLI details`))
   .alias(`?`)
   .option(`-b, --batch`, `T-SQL Batch Cache Buffer (default)`)
-  .option(`-c, --compile <`+`s`.underline+`qlcmd|`+`m`.underline+`ssql>`, `Compile Batch Buffer as if for submit`)
-  .option(`-h, --history [begin-timestamp[, end-timestamp]]`, `T-SQL Batch History for this Session`)
-  .option(`-m, --map [`+`i`.underline+`p|`+`r`.underline+`eload]`, `Catalog of Hosted SQL Server for Linux Containers`)
-  .option(`-n, --new`, `Prepare the T-SQL Batch Array for a new query`)
+  .option(chalk`-c, --compile <{underline s}qlcmd|{underline m}ssql>`, chalk`Compile Batch Buffer {gray (as if for submit)}`)
+  .option(chalk`-m, --map [{underline i}p|{underline r}emap]`, `Local Catalog of SQL Server for Linux Containers`)
+  .option(`-r, --reset`, `Remove all text from active Batch, as for a new query`)
   .action( (args, callback) => {
       switch(true) {
         case (typeof args.options.compile!='undefined'):
@@ -486,29 +554,28 @@ const vorpal = new Vorpal()
             case (/^sq*l*c*m*d*$/i.test(args.options.compile)):
               log.log(`${config.odbc.binPath}/sqlcmd
                 ${api.compile(config.sqlcmd.switch)} \n[-i | -q | -Q]\n
-                "${api.compile(config.sqlcmd.prefix)} \n${api.compile(Batch)}"`)
+                "${api.compile(config.sqlcmd.prefix)} \n${api.compile()}"`)
               break
             case (/^ms*s*q*l*$/i.test(args.options.compile)):
             default:
-              log.log(api.compile(Batch))
+              log.log(api.compile())
               break
           }
           break
-        case (args.options.history):
-          log.log(api.format(store.batches.list({Date: appStart})))
-          break
         case (/^ip*$/i.test(args.options.map)):
-          log.log(api.mapPorts())
+          log.log(api.getPorts())
           break
-        case (/^re*l*o*a*d*$/i.test(args.options.map)):
-          api.loadCatalog()
+        case (/^re*m*a*p*$/i.test(args.options.map)):
+          api.intern()
           break
         case (args.options.map):
-          log.log('api.sqlCatalog.Images'.inverse)
+          log.log(chalk`{inverse api.sqlCatalog.Images}`)
           log.log(api.format(api.listImages()))
-          log.log('api.sqlCatalog.ContainerInfos'.inverse)
-          log.log(api.format(api.listContainers()))
-          log.log(`api.sqlCatalog.Instance`.inverse+` ${api.sqlCatalog.Instance}`)
+          log.log(chalk`{inverse api.sqlCatalog.ContainerInfos}`)
+          log.log(api.format(api.listInstances()))
+          log.log(chalk`{inverse api.sqlCatalog.Pools}`)
+          log.log(api.format(api.listPools()))
+          log.log(chalk`{inverse api.sqlCatalog.Instance}\n\t${api.sqlCatalog.Instance}`)
           break
         case (typeof args.options.key==='timestamp'):
           log.log(store.batches.list({Date: args.options.key}))
@@ -516,59 +583,78 @@ const vorpal = new Vorpal()
         case (typeof args.options.switch==='string'):
           log.log(config.sqlcmd.switch[args.options.switch])
           break
-        case (args.options.new):
-          Batch.splice(0)
+        case (args.options.reset):
+          api.batch.splice(0)
           break
         case (args.options.batch):
         default:
-          log.log(api.compile(Batch))
+          log.log(api.compile())
           break
       }
       callback()
   })
 
-  vorpal.command(`about`, `sqlpal`.rainbow+ ` Application Information`.red)
-  .option(`-a, --app`, `CLI Commands with all options (self-document)`)
-  .option(`-c, --config [edit]`, `View [or open in configured editor] application settings`)
-  .option(`-n, --npm`, `Check NPM for package updates of direct descendents`)
-  .option(`-p, --package`, `Show the package.json file`)
-  .option(`-u, --usage`, `Usage information (aka `+`--HELP`.rainbow+`)`)
-  .option(`-v, --version`, `Version (from package.json)`)
+  vorpal.command(`history [query-json] [projection-json] [sort-json] [limit-nbr]`, chalk.red(`Persistent CLI Details [default limit-nbr is 8 rows]`))
+  .option(`-b, --batches`, `Batches submitted`)
+  .option(`-c, --commands`, `Command lines entered`)
+  .option(`-e, --errors`, `Errors caught`)
+  .option(`-r, --configs`, `sqlpal Configuration snapshots`)
+  .option(`-l, --lines`, `how is this different than commands + batches????`)
+  .option(`-n, --npm`, `NPM dependecy version checks`)
+  .option(`-p, --pulls`, `Dockerhub downloads`)
+  .option(`-t, --templates`, `queries`)
+  .action( async (args, callback) => {
+    let query = args["query-json"] || {}
+    let projection = args["projection-json"] || {}
+    let sort = args["sort-json"] || {}
+    let limit = args["limit-nbr"] || 0
+    switch(true) {
+      case (args.options.batches):
+        log.log(api.format(await store.batches.list(query, projection, sort, limit)))
+        break
+      case (args.options.commands):
+        log.log(api.format(await store.commands.list(query, projection, sort, limit)))
+        break
+      case (args.options.configs):
+        log.log(api.format(await store.configs.list(query, projection, sort, limit)))
+        break
+      case (args.options.errors):
+        log.log(api.format(await store.errors.list(query, projection, sort, limit)))
+        break
+      case (args.options.lines):
+        log.log(api.format(await store.lines.list(query, projection, sort, limit)))
+        break
+      case (args.options.npm):
+        log.log(api.format(await store.npm.list(query, projection, sort, limit)))
+        break
+      case (args.options.pulls):
+        log.log(api.format(await store.pulls.list(query, projection, sort, limit)))
+        break
+      case (args.options.templates):
+        log.log(api.format(await store.templates.list(query, projection, sort, limit)))
+        break
+      default:
+        log.log('resent lines entered')
+        log.log(await store.lines.list({}, {_id: 0, line: 1, createdAt: 1}, {createdAt: -1}, 8))
+        break
+    }
+    callback()
+  })
+
+  vorpal.command(`about`, chalk.red(`About sqlpal - with helper options`))
+  .option(chalk`-c, --config [{underline E}DIT]`, `View [or open in configured editor] application settings`)
+  .option(`-d, --dependencies`, `sqlpal ./package.json dependencies)`)
+  .option(`-n, --npm`, `Check NPM for updates to sqlpal and all ./package.json dependencies)`)
+  .option(`-q, --quickstart`, `Show quickstart usage message`)
+  .option(`-r, --readme`, `Show the ./README.md file`)
+  .option(`-v, --version`, `sqlpal Version (from ./package.json)`)
   .action( async (args, callback) => {
     switch (true) {
-      case (args.options.app):
-        let cmds = vorpal.commands
-        Object.keys(cmds).forEach( function(i) {
-          if (cmds[i]._name.length>0) {
-            let results = {}
-            results[`${cmds[i]._name}`] = `${cmds[i]._description}`
-            if (cmds[i].options.length>0) {
-              for (opt in cmds[i].options) {
-                results[`  ${cmds[i].options[opt].flags}`] = cmds[i].options[opt].description
-              }
-            }
-            log.log(api.format(results))
-          }
-        })
-        break
-      case (/^ed*i*t*$/i.test(args.options.config)):
-        await api.editFile(`config.json`)
-        break
-      case (args.options.config):
-        log.log(await api.fileToJSON('config.json'))
-        break
-      case (['boolean', 'number'].includes(typeof args.options.npm)):
+      case (args.options.npm):
         log.log(await api.checkNPM())
         break
-      case (args.options.package):
-        log.log(api.format(package))
-        break
-      case (args.options.version):
-        log.log(`node version: ${process.version}`)
-        log.log(`sqlpal version: ${package.version}`)
-        break
-      case (args.options.usage):
-        log.log(api.commandAid(vorpal.commands))
+      case (args.options.quickstart):
+        log.log(api.format(api.commandAid(vorpal.commands)))
         break
       default:
         log.log(api.bandAid)
@@ -590,11 +676,9 @@ const vorpal = new Vorpal()
     })
     .then( async (line) => {
       if (line.length>0) {
-        Batch.push(line)
+        api.batch.push(line)
       }
       callback()
     })
 
   })
-
-//v don't need pem })

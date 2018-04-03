@@ -1,764 +1,157 @@
-{"line":"go","event":"client_prompt_submit","_id":"01TJCmQtLMGqx8Zy","createdAt":{"$$date":1517187658880},"updatedAt":{"$$date":1517187658880}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"0O4FfdHt1FSksjYj","createdAt":{"$$date":1516738619884},"updatedAt":{"$$date":1516738619884}}
-{"line":"about -c e","event":"client_prompt_submit","_id":"0cB6qTkERxTQvSlT","createdAt":{"$$date":1516888598714},"updatedAt":{"$$date":1516888598714}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"0cIfz3CRrXdMX8Zi","createdAt":{"$$date":1517256540699},"updatedAt":{"$$date":1517256540699}}
-{"line":"image","event":"client_prompt_submit","_id":"0cdxAGOSOWnTNGSO","createdAt":{"$$date":1517232135487},"updatedAt":{"$$date":1517232135487}}
-{"line":"about","event":"client_prompt_submit","_id":"0pwp8yEIHicYKOzq","createdAt":{"$$date":1517278704273},"updatedAt":{"$$date":1517278704273}}
-{"line":"SELECT * FROM (SERVERPROPERTY('ProductVersion') AS version) as Product","event":"client_prompt_submit","_id":"0tZXZ9EoyeTaQwNt","createdAt":{"$$date":1517239134680},"updatedAt":{"$$date":1517239134680}}
-{"line":"select 7","event":"client_prompt_submit","_id":"0xmMrjvNhUFvsz7j","createdAt":{"$$date":1516835752602},"updatedAt":{"$$date":1516835752602}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"0zBNObzKCrUfHTVq","createdAt":{"$$date":1517188348982},"updatedAt":{"$$date":1517188348982}}
-{"line":"about -t","event":"client_prompt_submit","_id":"162gWN62f7671d48","createdAt":{"$$date":1517497946508},"updatedAt":{"$$date":1517497946508}}
-{"line":"sqlpad --stop","event":"client_prompt_submit","_id":"16WIG9NMrmS4BAnP","createdAt":{"$$date":1517451253306},"updatedAt":{"$$date":1517451253306}}
-{"line":"about -c","event":"client_prompt_submit","_id":"1Ac73LELJn7AHqLG","createdAt":{"$$date":1516888593957},"updatedAt":{"$$date":1516888593957}}
-{"line":"select @@servername","event":"client_prompt_submit","_id":"1FWDFz7BnY2htyuv","createdAt":{"$$date":1517670010812},"updatedAt":{"$$date":1517670010812}}
-{"line":"go","event":"client_prompt_submit","_id":"1IgRyQ5Fi8MxCAZG","createdAt":{"$$date":1517240566273},"updatedAt":{"$$date":1517240566273}}
-{"line":"go","event":"client_prompt_submit","_id":"1TIs40f5NrYziDvv","createdAt":{"$$date":1517249024963},"updatedAt":{"$$date":1517249024963}}
-{"line":"instance --remove","event":"client_prompt_submit","_id":"1YazWjxGm2cCgBA3","createdAt":{"$$date":1517091795848},"updatedAt":{"$$date":1517091795848}}
-{"line":"config e","event":"client_prompt_submit","_id":"1YcWkA84tq09IMc4","createdAt":{"$$date":1516848011585},"updatedAt":{"$$date":1516848011585}}
-{"line":"? -n","event":"client_prompt_submit","_id":"1Zpd0CxISlG7hh31","createdAt":{"$$date":1517249160958},"updatedAt":{"$$date":1517249160958}}
-{"line":"query pro","event":"client_prompt_submit","_id":"1e6oSmjURttd6HGV","createdAt":{"$$date":1517187565671},"updatedAt":{"$$date":1517187565671}}
-{"line":"SELECT * FROM (SELECT SERVERPROPERTY('ProductVersion') AS version) as Product","event":"client_prompt_submit","_id":"1eA8p5nB0wUeOJAB","createdAt":{"$$date":1517239191053},"updatedAt":{"$$date":1517239191053}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"1jEX7nmvwaXgSGRh","createdAt":{"$$date":1517169549315},"updatedAt":{"$$date":1517169549315}}
-{"line":"instance -start 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"1kGzEfmVhoMp47jJ","createdAt":{"$$date":1516747888961},"updatedAt":{"$$date":1516747888961}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"1pQkvvhCYBQycTYx","createdAt":{"$$date":1516747479907},"updatedAt":{"$$date":1516747479907}}
-{"line":"about -n","event":"client_prompt_submit","_id":"1s7Y3VwvA1IDAeyb","createdAt":{"$$date":1517500821981},"updatedAt":{"$$date":1517500821981}}
-{"line":"sqlpad -u","event":"client_prompt_submit","_id":"1u4CyArj2x94fxiM","createdAt":{"$$date":1517429488873},"updatedAt":{"$$date":1517429488873}}
-{"line":"instance --start 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"1u4sZxz39XxyHPXc","createdAt":{"$$date":1516744102320},"updatedAt":{"$$date":1516744102320}}
-{"line":"select @@version","event":"client_prompt_submit","_id":"23gc2hiQEuFaD3fG","createdAt":{"$$date":1517096982804},"updatedAt":{"$$date":1517096982804}}
-{"line":"instance --stop 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"24NVFbGHqMithzgM","createdAt":{"$$date":1517092066517},"updatedAt":{"$$date":1517092066517}}
-{"line":"instance","event":"client_prompt_submit","_id":"25M2QraznLXZ8S4R","createdAt":{"$$date":1516890579083},"updatedAt":{"$$date":1516890579083}}
-{"line":"?","event":"client_prompt_submit","_id":"2BOQto7kE6puRrxL","createdAt":{"$$date":1517240317701},"updatedAt":{"$$date":1517240317701}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"2HI7Xrc0jiIKmgg3","createdAt":{"$$date":1517669922400},"updatedAt":{"$$date":1517669922400}}
-{"line":"--help","event":"client_prompt_submit","_id":"2fHN0lvdxvHpiEjP","createdAt":{"$$date":1516822159921},"updatedAt":{"$$date":1516822159921}}
-{"line":"go","event":"client_prompt_submit","_id":"2gSps3aU5aTNJ14z","createdAt":{"$$date":1517169566341},"updatedAt":{"$$date":1517169566341}}
-{"line":"SELECT SERVERPROPERTY('ProductVersion') AS [ProductName], SERVERPROPERTY('MachineName') AS [MachineName]","event":"client_prompt_submit","_id":"2ipVGkrA9nYh3ZhJ","createdAt":{"$$date":1517239301725},"updatedAt":{"$$date":1517239301725}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"2r1Azwm9lLYFEMSc","createdAt":{"$$date":1517240561525},"updatedAt":{"$$date":1517240561525}}
-{"line":"?","event":"client_prompt_submit","_id":"2zfLXzTYxG73Oi51","createdAt":{"$$date":1517172984587},"updatedAt":{"$$date":1517172984587}}
-{"line":"go","event":"client_prompt_submit","_id":"31HQjRRoIOGUlQjD","createdAt":{"$$date":1517232048604},"updatedAt":{"$$date":1517232048604}}
-{"line":"loglevel 10","event":"client_prompt_submit","_id":"3406FqlrD2oNLNga","createdAt":{"$$date":1516737022024},"updatedAt":{"$$date":1516737022024}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"37yEvMCowxiGeBgE","createdAt":{"$$date":1517242108191},"updatedAt":{"$$date":1517242108191}}
-{"line":"--help","event":"client_prompt_submit","_id":"3DMQ1Bw8pZsJXogk","createdAt":{"$$date":1516822379227},"updatedAt":{"$$date":1516822379227}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"3NoyYEAWNBoQxeJ1","createdAt":{"$$date":1517169347688},"updatedAt":{"$$date":1517169347688}}
-{"line":"go","event":"client_prompt_submit","_id":"3kglUAd6PRfEybNB","createdAt":{"$$date":1517241175366},"updatedAt":{"$$date":1517241175366}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"3nVgYStkBwYbvUmB","createdAt":{"$$date":1517241432698},"updatedAt":{"$$date":1517241432698}}
-{"line":"go","event":"client_prompt_submit","_id":"3tc8JhbBkgfy80p7","createdAt":{"$$date":1517242585121},"updatedAt":{"$$date":1517242585121}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"3tfVBrCP6OQBfxe0","createdAt":{"$$date":1517670769743},"updatedAt":{"$$date":1517670769743}}
-{"line":"go","event":"client_prompt_submit","_id":"4BlKTbePvRDeBxSW","createdAt":{"$$date":1517242508426},"updatedAt":{"$$date":1517242508426}}
-{"line":"help","event":"client_prompt_submit","_id":"4IVkRI7QYdHFZ3dm","createdAt":{"$$date":1516888588526},"updatedAt":{"$$date":1516888588526}}
-{"line":"? -n","event":"client_prompt_submit","_id":"4OqfSmEFIDWKuOt6","createdAt":{"$$date":1517238915227},"updatedAt":{"$$date":1517238915227}}
-{"line":"instance -f a8916bad504bf41d7488f7d7bee44421502f55345a65577d0855d9927f92336b","event":"client_prompt_submit","_id":"4auoTtGxt8xJG27j","createdAt":{"$$date":1517148360669},"updatedAt":{"$$date":1517148360669}}
-{"line":"image -r ddd","event":"client_prompt_submit","_id":"4juqhk7OnhNGJJhb","createdAt":{"$$date":1517106563698},"updatedAt":{"$$date":1517106563698}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"4pbDBlL51zrgzZms","createdAt":{"$$date":1517443243210},"updatedAt":{"$$date":1517443243210}}
-{"line":"exec sp_help","event":"client_prompt_submit","_id":"4qTzInBtsmINCEeV","createdAt":{"$$date":1516738554161},"updatedAt":{"$$date":1516738554161}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')","event":"client_prompt_submit","_id":"54EzfP7zvXjOpTYs","createdAt":{"$$date":1517252536242},"updatedAt":{"$$date":1517252536242}}
-{"line":"instance --stop 81aa847a0c5dc81170fd9880c61a976ac75a0727c0d42e0c0cd2e83c87e3b242","event":"client_prompt_submit","_id":"568KMx70CVc6zJW8","createdAt":{"$$date":1517169370136},"updatedAt":{"$$date":1517169370136}}
-{"line":"--help","event":"client_prompt_submit","_id":"5ArR8A6PDo3DdebU","createdAt":{"$$date":1517492229294},"updatedAt":{"$$date":1517492229294}}
-{"line":"go","event":"client_prompt_submit","_id":"5CKYdLkBTNOQVYqs","createdAt":{"$$date":1517239136672},"updatedAt":{"$$date":1517239136672}}
-{"line":"?","event":"client_prompt_submit","_id":"5GCZ5Db1wu4ppJGb","createdAt":{"$$date":1517240563059},"updatedAt":{"$$date":1517240563059}}
-{"line":"sqlpad --url","event":"client_prompt_submit","_id":"5IVxndtvhCUHMhJg","createdAt":{"$$date":1517450969905},"updatedAt":{"$$date":1517450969905}}
-{"line":"instance --remove 8b1ed5bf92d1a8560f70603e75d5df51ba4fc780a562a32ea6af10a56f308612","event":"client_prompt_submit","_id":"5JNp2Wkz9oCwbM8J","createdAt":{"$$date":1517096600867},"updatedAt":{"$$date":1517096600867}}
-{"line":"instance --start 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","event":"client_prompt_submit","_id":"5O69ASI1IokAqPWu","createdAt":{"$$date":1517708418949},"updatedAt":{"$$date":1517708418949}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"5k8vOhfxza9mcWEK","createdAt":{"$$date":1517106144962},"updatedAt":{"$$date":1517106144962}}
-{"line":"?","event":"client_prompt_submit","_id":"5p4K96xNcEK9Bkh2","createdAt":{"$$date":1516741622933},"updatedAt":{"$$date":1516741622933}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"60BrE4yf0i5oMaB2","createdAt":{"$$date":1516738718537},"updatedAt":{"$$date":1516738718537}}
-{"line":"RAISERROR ('Script does not match the ProductVersion [%s] of this instance. Many of these queries may not work on this version.' , 18 , 16 , @ProductVersion);","event":"client_prompt_submit","_id":"67fq9AjEzb6vh1Cq","createdAt":{"$$date":1517249394999},"updatedAt":{"$$date":1517249394999}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"6El4hSGYOqX8xbU3","createdAt":{"$$date":1517199028376},"updatedAt":{"$$date":1517199028376}}
-{"line":"instance --start 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"6MYqmFDd5nIRpsyO","createdAt":{"$$date":1516747863714},"updatedAt":{"$$date":1516747863714}}
-{"line":"?","event":"client_prompt_submit","_id":"6UmQrODkAdkOQbqB","createdAt":{"$$date":1517256641016},"updatedAt":{"$$date":1517256641016}}
-{"line":"~ -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"6cduUshgbcmBXiId","createdAt":{"$$date":1517448161506},"updatedAt":{"$$date":1517448161506}}
-{"line":"--help","event":"client_prompt_submit","_id":"6mD5PkZZ9yfRYO08","createdAt":{"$$date":1516769158138},"updatedAt":{"$$date":1516769158138}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"6s73t1BKPVfQ1T1w","createdAt":{"$$date":1517242939396},"updatedAt":{"$$date":1517242939396}}
-{"line":"select top(1) * from master.dbo.sysmessages where error = 263","event":"client_prompt_submit","_id":"75pNOgDUyN97qTET","createdAt":{"$$date":1517255984711},"updatedAt":{"$$date":1517255984711}}
-{"line":"select 1","event":"client_prompt_submit","_id":"7Guf2uAoTsq50i9z","createdAt":{"$$date":1517239329444},"updatedAt":{"$$date":1517239329444}}
-{"line":"image -f","event":"client_prompt_submit","_id":"7I5UtZ5CMdH78MuU","createdAt":{"$$date":1517506902507},"updatedAt":{"$$date":1517506902507}}
-{"line":"?","event":"client_prompt_submit","_id":"7ZxGuiJbaWHNoiME","createdAt":{"$$date":1517237660011},"updatedAt":{"$$date":1517237660011}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"7eGQLwYZvi2tXZJq","createdAt":{"$$date":1517428972134},"updatedAt":{"$$date":1517428972134}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"7xnpp8PodH6tuFj5","createdAt":{"$$date":1517199103831},"updatedAt":{"$$date":1517199103831}}
-{"line":"If NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%') BEGIN SELECT 42 ELSE SELECT 0 END","event":"client_prompt_submit","_id":"80lc3GJ3OijfnR2d","createdAt":{"$$date":1517242358337},"updatedAt":{"$$date":1517242358337}}
-{"line":"? -n","event":"client_prompt_submit","_id":"8AW7P8OOGppB6flk","createdAt":{"$$date":1517242364302},"updatedAt":{"$$date":1517242364302}}
-{"line":"instance --start 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"8By6jjllOkdN4oUA","createdAt":{"$$date":1516747910775},"updatedAt":{"$$date":1516747910775}}
-{"line":"? -n","event":"client_prompt_submit","_id":"8D0VXzNGHYvcCxvz","createdAt":{"$$date":1517240143423},"updatedAt":{"$$date":1517240143423}}
-{"line":"SELECT SERVERPROPERTY('ProductVersion').toString()","event":"client_prompt_submit","_id":"8DU2Y3pjElbQusBZ","createdAt":{"$$date":1517239034250},"updatedAt":{"$$date":1517239034250}}
-{"line":"help about","event":"client_prompt_submit","_id":"8NkbmPJP574xddEz","createdAt":{"$$date":1516902207468},"updatedAt":{"$$date":1516902207468}}
-{"line":"instance","event":"client_prompt_submit","_id":"8jexdFRjYXTQwwKK","createdAt":{"$$date":1516890410167},"updatedAt":{"$$date":1516890410167}}
-{"line":"about -n","event":"client_prompt_submit","_id":"8kUv4zBQLI4ogcDM","createdAt":{"$$date":1517500866718},"updatedAt":{"$$date":1517500866718}}
-{"line":"select @@servername","event":"client_prompt_submit","_id":"8paUNktPSHQNSGj4","createdAt":{"$$date":1518028679767},"updatedAt":{"$$date":1518028679767}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"8rhuKVIootORl4zU","createdAt":{"$$date":1517256618180},"updatedAt":{"$$date":1517256618180}}
-{"line":"--HELP","event":"client_prompt_submit","_id":"8veK9viPdT0kNq3T","createdAt":{"$$date":1516821939575},"updatedAt":{"$$date":1516821939575}}
-{"line":"select name from sys.databases","event":"client_prompt_submit","_id":"90IGGBolyaSjwShB","createdAt":{"$$date":1517669937413},"updatedAt":{"$$date":1517669937413}}
-{"line":"SERVERPROPERTY('InstanceName') AS [Instance],","event":"client_prompt_submit","_id":"90crh7kL4p99HeTa","createdAt":{"$$date":1517239444574},"updatedAt":{"$$date":1517239444574}}
-{"line":"who","event":"client_prompt_submit","_id":"93Wqm3wienfrbRve","createdAt":{"$$date":1517490585238},"updatedAt":{"$$date":1517490585238}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"93uxWtETRSTHBhKD","createdAt":{"$$date":1517248274237},"updatedAt":{"$$date":1517248274237}}
-{"line":"help","event":"client_prompt_submit","_id":"952Ljx1y4YgoUA8u","createdAt":{"$$date":1516769472864},"updatedAt":{"$$date":1516769472864}}
-{"line":"image --full","event":"client_prompt_submit","_id":"95KArPYVn4dO1USv","createdAt":{"$$date":1517506847828},"updatedAt":{"$$date":1517506847828}}
-{"line":"instance -b","event":"client_prompt_submit","_id":"9GlPMzCuGMDCWAmj","createdAt":{"$$date":1517167029368},"updatedAt":{"$$date":1517167029368}}
-{"line":"image --run sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"9WytuzMze5bUosCj","createdAt":{"$$date":1517096631168},"updatedAt":{"$$date":1517096631168}}
-{"line":"~ -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"9XU7odNQQS9jVZJZ","createdAt":{"$$date":1517443143624},"updatedAt":{"$$date":1517443143624}}
-{"line":"~","event":"client_prompt_submit","_id":"9bVxajfdBcIwaUyl","createdAt":{"$$date":1516891038358},"updatedAt":{"$$date":1516891038358}}
-{"line":"config","event":"client_prompt_submit","_id":"9gFmMM4LUWf9rZB2","createdAt":{"$$date":1516736977583},"updatedAt":{"$$date":1516736977583}}
-{"line":"go","event":"client_prompt_submit","_id":"9jotL1fEH39nw8TV","createdAt":{"$$date":1517239330447},"updatedAt":{"$$date":1517239330447}}
-{"line":"SERVERPROPERTY('ProductLevel') AS [ProductLevel],-- What servicing branch (RTM/SP/CU)","event":"client_prompt_submit","_id":"9qRfMqUp2ZzPNro7","createdAt":{"$$date":1517239501903},"updatedAt":{"$$date":1517239501903}}
-{"line":"--help","event":"client_prompt_submit","_id":"9wBvU9yAPTvoF117","createdAt":{"$$date":1516809338468},"updatedAt":{"$$date":1516809338468}}
-{"line":"go","event":"client_prompt_submit","_id":"9wqVXJe3owIRpas0","createdAt":{"$$date":1517239067508},"updatedAt":{"$$date":1517239067508}}
-{"line":"script","event":"client_prompt_submit","_id":"9xDTbUPhQYoTk2QU","createdAt":{"$$date":1517098159693},"updatedAt":{"$$date":1517098159693}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"AJcF1nCsOmPNRdsV","createdAt":{"$$date":1517199440204},"updatedAt":{"$$date":1517199440204}}
-{"line":"--stop","event":"client_prompt_submit","_id":"ALAXkJThEeXbRPqE","createdAt":{"$$date":1517451245474},"updatedAt":{"$$date":1517451245474}}
-{"line":"print N'test'","event":"client_prompt_submit","_id":"AO2f3uIRD8oREH5P","createdAt":{"$$date":1517240140171},"updatedAt":{"$$date":1517240140171}}
-{"line":"image","event":"client_prompt_submit","_id":"AQS0USz0oGi5u4at","createdAt":{"$$date":1516890219409},"updatedAt":{"$$date":1516890219409}}
-{"line":"config e","event":"client_prompt_submit","_id":"ASC4q4XLEbeM2ttv","createdAt":{"$$date":1516847320096},"updatedAt":{"$$date":1516847320096}}
-{"line":"instance --bash","event":"client_prompt_submit","_id":"ASQtoG9r7vPKnfJq","createdAt":{"$$date":1516919972957},"updatedAt":{"$$date":1516919972957}}
-{"line":"?","event":"client_prompt_submit","_id":"ASVPG3Ie0qSdHoMF","createdAt":{"$$date":1517187110878},"updatedAt":{"$$date":1517187110878}}
-{"line":"? -n","event":"client_prompt_submit","_id":"AUkUDwzcZQ7oPQoc","createdAt":{"$$date":1517248721178},"updatedAt":{"$$date":1517248721178}}
-{"line":"sqlcmd","event":"client_prompt_submit","_id":"AcvznUEnAG594p2e","createdAt":{"$$date":1516738613721},"updatedAt":{"$$date":1516738613721}}
-{"line":"--help","event":"client_prompt_submit","_id":"AnuoP9vMBIFkS5X9","createdAt":{"$$date":1516768219594},"updatedAt":{"$$date":1516768219594}}
-{"line":"?","event":"client_prompt_submit","_id":"B0GH7gjohiPZWHMv","createdAt":{"$$date":1517256490507},"updatedAt":{"$$date":1517256490507}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"B6o276Qx0NE3sFSe","createdAt":{"$$date":1517583247690},"updatedAt":{"$$date":1517583247690}}
-{"line":"go","event":"client_prompt_submit","_id":"BBBjURIaLgHoIMkk","createdAt":{"$$date":1517242312185},"updatedAt":{"$$date":1517242312185}}
-{"line":"go","event":"client_prompt_submit","_id":"BCiWFMP1h5ykx3Sa","createdAt":{"$$date":1517252538157},"updatedAt":{"$$date":1517252538157}}
-{"line":"instance -t","event":"client_prompt_submit","_id":"BDs6gQQX7FbVNnJv","createdAt":{"$$date":1517708470540},"updatedAt":{"$$date":1517708470540}}
-{"line":"debug off","event":"client_prompt_submit","_id":"BNbB6zEpMEjLacyN","createdAt":{"$$date":1516741645516},"updatedAt":{"$$date":1516741645516}}
-{"line":"image --pull","event":"client_prompt_submit","_id":"BPG5d788QO5lD7RK","createdAt":{"$$date":1517508620289},"updatedAt":{"$$date":1517508620289}}
-{"line":"HELP","event":"client_prompt_submit","_id":"BTDJ3bO5PUwqvSII","createdAt":{"$$date":1517242951088},"updatedAt":{"$$date":1517242951088}}
-{"line":"go","event":"client_prompt_submit","_id":"BdUEFBYzOOJJKj1h","createdAt":{"$$date":1517337360644},"updatedAt":{"$$date":1517337360644}}
-{"line":"about -c e","event":"client_prompt_submit","_id":"BjRGYG8asyhZQLCF","createdAt":{"$$date":1517327656049},"updatedAt":{"$$date":1517327656049}}
-{"line":"image -p","event":"client_prompt_submit","_id":"Br9um3C0whPvRHfm","createdAt":{"$$date":1516975806698},"updatedAt":{"$$date":1516975806698}}
-{"line":"image","event":"client_prompt_submit","_id":"BxjYFtgJJWUltUbF","createdAt":{"$$date":1516890586237},"updatedAt":{"$$date":1516890586237}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"C4dXsm6IbUwh7Jli","createdAt":{"$$date":1517252841172},"updatedAt":{"$$date":1517252841172}}
-{"line":"?","event":"client_prompt_submit","_id":"C9bweePSwlbTgrvR","createdAt":{"$$date":1517241685958},"updatedAt":{"$$date":1517241685958}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"CEDBF9FWA1wbWA4B","createdAt":{"$$date":1517199476425},"updatedAt":{"$$date":1517199476425}}
-{"line":"? -m","event":"client_prompt_submit","_id":"CNlDHATkbGAiWJ7H","createdAt":{"$$date":1517756969839},"updatedAt":{"$$date":1517756969839}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"CRCOmsq7HEbvi8Fd","createdAt":{"$$date":1517340446267},"updatedAt":{"$$date":1517340446267}}
-{"line":"help about","event":"client_prompt_submit","_id":"CSi9zCT3mMs5Xw8a","createdAt":{"$$date":1516821464126},"updatedAt":{"$$date":1516821464126}}
-{"line":"cache --map","event":"client_prompt_submit","_id":"Cb3IgjzHjM9p4iwa","createdAt":{"$$date":1517579175607},"updatedAt":{"$$date":1517579175607}}
-{"line":"help","event":"client_prompt_submit","_id":"Cf0EVwBbKpI3Z9oQ","createdAt":{"$$date":1517492243431},"updatedAt":{"$$date":1517492243431}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"ChLvt4KskbBEu6Fi","createdAt":{"$$date":1517536599855},"updatedAt":{"$$date":1517536599855}}
-{"line":"go","event":"client_prompt_submit","_id":"CwmPifP8w8k77jH0","createdAt":{"$$date":1517166851125},"updatedAt":{"$$date":1517166851125}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"DGEy4de946LqCgWH","createdAt":{"$$date":1517249420202},"updatedAt":{"$$date":1517249420202}}
-{"line":"select top(1) * from master.dbo.sysmessages where","event":"client_prompt_submit","_id":"DHCCWEECqhQWoNRj","createdAt":{"$$date":1517255950033},"updatedAt":{"$$date":1517255950033}}
-{"line":"--help","event":"client_prompt_submit","_id":"DI7EGP9e1cF31LyB","createdAt":{"$$date":1516753760332},"updatedAt":{"$$date":1516753760332}}
-{"line":"go","event":"client_prompt_submit","_id":"DQPpptquFc74rYLD","createdAt":{"$$date":1517248659047},"updatedAt":{"$$date":1517248659047}}
-{"line":"query","event":"client_prompt_submit","_id":"DZrWEUl4ePgxzpIs","createdAt":{"$$date":1517173217468},"updatedAt":{"$$date":1517173217468}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"DczSGTa3jw6C6nDG","createdAt":{"$$date":1517578295527},"updatedAt":{"$$date":1517578295527}}
-{"line":"~ -t 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"DldaxXPAVCQGINaW","createdAt":{"$$date":1516893669169},"updatedAt":{"$$date":1516893669169}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"DpljkJ3bz0UmjpWC","createdAt":{"$$date":1517199449671},"updatedAt":{"$$date":1517199449671}}
-{"line":"about -t","event":"client_prompt_submit","_id":"E2F0fRlQusdqDOVp","createdAt":{"$$date":1517498257731},"updatedAt":{"$$date":1517498257731}}
-{"line":"--help","event":"client_prompt_submit","_id":"E2aL5SecFZtES2mR","createdAt":{"$$date":1516769068371},"updatedAt":{"$$date":1516769068371}}
-{"line":"go","event":"client_prompt_submit","_id":"E8b6tvFmO4DqxdTs","createdAt":{"$$date":1516738566708},"updatedAt":{"$$date":1516738566708}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"EAPSNrROd9ek0uHR","createdAt":{"$$date":1517187750282},"updatedAt":{"$$date":1517187750282}}
-{"line":"--help","event":"client_prompt_submit","_id":"ECKxIfboWXyAzQVv","createdAt":{"$$date":1516821960853},"updatedAt":{"$$date":1516821960853}}
-{"line":"go","event":"client_prompt_submit","_id":"ED8DgxcvPz0Cqg4z","createdAt":{"$$date":1517098191524},"updatedAt":{"$$date":1517098191524}}
-{"line":"?","event":"client_prompt_submit","_id":"EMmxnZ2BiTIkCHZP","createdAt":{"$$date":1517240555519},"updatedAt":{"$$date":1517240555519}}
-{"line":"instance --remove 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"EOPhKXAD8pizL1AG","createdAt":{"$$date":1517091750080},"updatedAt":{"$$date":1517091750080}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'))","event":"client_prompt_submit","_id":"EQV49Kml9CgS88JW","createdAt":{"$$date":1517252549920},"updatedAt":{"$$date":1517252549920}}
-{"line":"select CONCERT(NVARCHAR(128), SERVERPROPERTY('Edition')) as [ServerProperty]","event":"client_prompt_submit","_id":"EQln6R7w3tdjS6dT","createdAt":{"$$date":1517248704662},"updatedAt":{"$$date":1517248704662}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ESUpNhW4aNEYxJod","createdAt":{"$$date":1517199141139},"updatedAt":{"$$date":1517199141139}}
-{"line":"cache --map reload","event":"client_prompt_submit","_id":"ETnteleuBaCU1wVr","createdAt":{"$$date":1517508746508},"updatedAt":{"$$date":1517508746508}}
-{"line":"--help","event":"client_prompt_submit","_id":"EiBn49WOjEQt2sbs","createdAt":{"$$date":1517763864446},"updatedAt":{"$$date":1517763864446}}
-{"line":"loglevel 20","event":"client_prompt_submit","_id":"ExDWYJYsrsDw8HP8","createdAt":{"$$date":1516737001371},"updatedAt":{"$$date":1516737001371}}
-{"line":"instance --target 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ExHuYZzQA3EKNUpQ","createdAt":{"$$date":1517238251422},"updatedAt":{"$$date":1517238251422}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"EyqM8jEXLdj9TwZH","createdAt":{"$$date":1517092093996},"updatedAt":{"$$date":1517092093996}}
-{"line":"instance --stop a8916bad504bf41d7488f7d7bee44421502f55345a65577d0855d9927f92336b","event":"client_prompt_submit","_id":"EzGiT21bylj0Vqyy","createdAt":{"$$date":1517148396385},"updatedAt":{"$$date":1517148396385}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"F5Z4rjZK5EB4TbEH","createdAt":{"$$date":1517436104814},"updatedAt":{"$$date":1517436104814}}
-{"line":"instance","event":"client_prompt_submit","_id":"F70nsu5bkytYA9qH","createdAt":{"$$date":1516919896467},"updatedAt":{"$$date":1516919896467}}
-{"line":"about -a","event":"client_prompt_submit","_id":"FD9RfrS8aI262GmT","createdAt":{"$$date":1516888620139},"updatedAt":{"$$date":1516888620139}}
-{"line":"?","event":"client_prompt_submit","_id":"FKqK1gW27SEJxsBZ","createdAt":{"$$date":1517098187310},"updatedAt":{"$$date":1517098187310}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"FM9IBvayrFqcwLsm","createdAt":{"$$date":1517241419962},"updatedAt":{"$$date":1517241419962}}
-{"line":"go","event":"client_prompt_submit","_id":"FMk7FGL2RjKOMQAj","createdAt":{"$$date":1516738589895},"updatedAt":{"$$date":1516738589895}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"FPBwhJPzkoBTykuZ","createdAt":{"$$date":1517148563396},"updatedAt":{"$$date":1517148563396}}
-{"line":"select 1","event":"client_prompt_submit","_id":"FSPWpoXZ6UyJ7pa4","createdAt":{"$$date":1517232177156},"updatedAt":{"$$date":1517232177156}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"FVe2NOx2RBmveBnS","createdAt":{"$$date":1517248151794},"updatedAt":{"$$date":1517248151794}}
-{"line":"? -n","event":"client_prompt_submit","_id":"Fp5P8tRyIQrkFNn3","createdAt":{"$$date":1516741653581},"updatedAt":{"$$date":1516741653581}}
-{"line":"?","event":"client_prompt_submit","_id":"Fx7Yqk1eM3zo34ww","createdAt":{"$$date":1517242102573},"updatedAt":{"$$date":1517242102573}}
-{"line":"instance -e","event":"client_prompt_submit","_id":"Fxze6pJjOMAGSa82","createdAt":{"$$date":1517546190552},"updatedAt":{"$$date":1517546190552}}
-{"line":"image -t","event":"client_prompt_submit","_id":"FyX8WWy9puJc7Ex0","createdAt":{"$$date":1517169258998},"updatedAt":{"$$date":1517169258998}}
-{"line":"~","event":"client_prompt_submit","_id":"FzkOGtu63HtADvZy","createdAt":{"$$date":1516893680250},"updatedAt":{"$$date":1516893680250}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"G71dtxjlJwss4iLo","createdAt":{"$$date":1517451161885},"updatedAt":{"$$date":1517451161885}}
-{"line":"go","event":"client_prompt_submit","_id":"GFC8gcGQ0ie1Xp5E","createdAt":{"$$date":1517255906220},"updatedAt":{"$$date":1517255906220}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"GI68jTXsledAEDhA","createdAt":{"$$date":1517579732915},"updatedAt":{"$$date":1517579732915}}
-{"line":"help","event":"client_prompt_submit","_id":"GQHtYGcgsjoarJVy","createdAt":{"$$date":1516886594509},"updatedAt":{"$$date":1516886594509}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"GZqwXWupZyJxQ8aZ","createdAt":{"$$date":1517092587964},"updatedAt":{"$$date":1517092587964}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"GZqwvclbNuz4JImn","createdAt":{"$$date":1517442280991},"updatedAt":{"$$date":1517442280991}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"Ggab5QKk6TNpzOdl","createdAt":{"$$date":1517545586470},"updatedAt":{"$$date":1517545586470}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"Gl3GhotvGds5f4lL","createdAt":{"$$date":1517241047698},"updatedAt":{"$$date":1517241047698}}
-{"line":"config e","event":"client_prompt_submit","_id":"GlKBUCr3cYGPlJM0","createdAt":{"$$date":1516848277698},"updatedAt":{"$$date":1516848277698}}
-{"line":"select top(1) * from master.dbo.sysmessages","event":"client_prompt_submit","_id":"GlSMtfNMMKhIuHgu","createdAt":{"$$date":1517255962407},"updatedAt":{"$$date":1517255962407}}
-{"line":"instance -b","event":"client_prompt_submit","_id":"GxsTOauCQucW9kcU","createdAt":{"$$date":1517166844658},"updatedAt":{"$$date":1517166844658}}
-{"line":"select name from sysdatabases","event":"client_prompt_submit","_id":"H1cKu4STcGE7rlmb","createdAt":{"$$date":1517546148054},"updatedAt":{"$$date":1517546148054}}
-{"line":"select top(1) * from master.dbo.sysmessages","event":"client_prompt_submit","_id":"HEVypgD72ghUddJf","createdAt":{"$$date":1517255971171},"updatedAt":{"$$date":1517255971171}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"HQUTQiTMlWlUBVhx","createdAt":{"$$date":1517429498357},"updatedAt":{"$$date":1517429498357}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"HVK5H8kNlrnllo6n","createdAt":{"$$date":1517340067742},"updatedAt":{"$$date":1517340067742}}
-{"line":"go","event":"client_prompt_submit","_id":"HieZD1DEgVKRrn5u","createdAt":{"$$date":1517242533967},"updatedAt":{"$$date":1517242533967}}
-{"line":"about -n","event":"client_prompt_submit","_id":"Hr4jWqbXkUzSavi2","createdAt":{"$$date":1517506662188},"updatedAt":{"$$date":1517506662188}}
-{"line":"go","event":"client_prompt_submit","_id":"Huc5FCD7TMFQMgc6","createdAt":{"$$date":1518028779620},"updatedAt":{"$$date":1518028779620}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"HxG6flogcXx7OwBA","createdAt":{"$$date":1516738711548},"updatedAt":{"$$date":1516738711548}}
-{"line":"select SERVERPROPERTY('Server Name')","event":"client_prompt_submit","_id":"HzVhuWbMJ0mGrwGJ","createdAt":{"$$date":1518028801905},"updatedAt":{"$$date":1518028801905}}
-{"line":"instance -t","event":"client_prompt_submit","_id":"I20yICBGZWfZTS5y","createdAt":{"$$date":1516890498526},"updatedAt":{"$$date":1516890498526}}
-{"line":"DECLARE @ProductVersion varchar(128) = CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'));","event":"client_prompt_submit","_id":"I3wvsp35GBNzND49","createdAt":{"$$date":1517249388199},"updatedAt":{"$$date":1517249388199}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"I8cGU7p8fpMpdIDH","createdAt":{"$$date":1517241107316},"updatedAt":{"$$date":1517241107316}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ICp0FCjrNk7Ry9MN","createdAt":{"$$date":1517442113925},"updatedAt":{"$$date":1517442113925}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"IDzqC9TATVptqN29","createdAt":{"$$date":1517579876458},"updatedAt":{"$$date":1517579876458}}
-{"line":"go","event":"client_prompt_submit","_id":"IK0FEGLf44yDOIKQ","createdAt":{"$$date":1517252551337},"updatedAt":{"$$date":1517252551337}}
-{"line":"sqlpad --stop","event":"client_prompt_submit","_id":"IWFXaQLSCix2Sw42","createdAt":{"$$date":1517450559284},"updatedAt":{"$$date":1517450559284}}
-{"line":"instance --stop 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"IbHskTRBxOJUEGQe","createdAt":{"$$date":1517091775288},"updatedAt":{"$$date":1517091775288}}
-{"line":"cache -m i","event":"client_prompt_submit","_id":"IhKrCFNcdT1EcTKw","createdAt":{"$$date":1517687317760},"updatedAt":{"$$date":1517687317760}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"IzcXPMkYmTI24nqW","createdAt":{"$$date":1517167032607},"updatedAt":{"$$date":1517167032607}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"J5HBzGox7qZuw4u0","createdAt":{"$$date":1517755586645},"updatedAt":{"$$date":1517755586645}}
-{"line":"sqlpad --start","event":"client_prompt_submit","_id":"J5snZCuaXAtJXf6L","createdAt":{"$$date":1517450935960},"updatedAt":{"$$date":1517450935960}}
-{"line":"config","event":"client_prompt_submit","_id":"JBBCmhL1XtdpFUzD","createdAt":{"$$date":1516737003971},"updatedAt":{"$$date":1516737003971}}
-{"line":"image --run sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"JBm3RbckbLfCgkVZ","createdAt":{"$$date":1517515745184},"updatedAt":{"$$date":1517515745184}}
-{"line":"instance -a","event":"client_prompt_submit","_id":"JI5TlPAr43FSTpFG","createdAt":{"$$date":1517280962344},"updatedAt":{"$$date":1517280962344}}
-{"line":"select CONCERT(SERVERPROPERTY('Edition'), NVARCHAR(128)) as [ServerProperty]","event":"client_prompt_submit","_id":"JNie76jlLCGdoGT9","createdAt":{"$$date":1517248657541},"updatedAt":{"$$date":1517248657541}}
-{"line":"cache","event":"client_prompt_submit","_id":"JQrvdR7vE7Wn3eaB","createdAt":{"$$date":1517232178782},"updatedAt":{"$$date":1517232178782}}
-{"line":"go","event":"client_prompt_submit","_id":"JWFDP6O83bAvOoIa","createdAt":{"$$date":1517669938793},"updatedAt":{"$$date":1517669938793}}
-{"line":"about","event":"client_prompt_submit","_id":"JWepxiwSwdvcaSIv","createdAt":{"$$date":1517278607027},"updatedAt":{"$$date":1517278607027}}
-{"line":"select (CONVERT(VARCHAR(128), SERVERPROPERTY('ProductVersion')) LIKE '14%') as [ServerProperty]","event":"client_prompt_submit","_id":"JYPYEjRGPbAVlqyB","createdAt":{"$$date":1517248978046},"updatedAt":{"$$date":1517248978046}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"JdxS4Di3bpyWcRl7","createdAt":{"$$date":1517583216877},"updatedAt":{"$$date":1517583216877}}
-{"line":"select CONVERT(NVARCHAR(128), SERVERPROPERTY('ProductVersion')) as [ServerProperty]","event":"client_prompt_submit","_id":"JqGLMVMCCru1iCzG","createdAt":{"$$date":1517248756577},"updatedAt":{"$$date":1517248756577}}
-{"line":"select name from sysdatabases","event":"client_prompt_submit","_id":"JyNvYel4K5OjaSX4","createdAt":{"$$date":1517169565067},"updatedAt":{"$$date":1517169565067}}
-{"line":"select @@VERSION AS [Version]","event":"client_prompt_submit","_id":"K0hMHCaZhlApfwrv","createdAt":{"$$date":1517248197386},"updatedAt":{"$$date":1517248197386}}
-{"line":"image -r sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"K2eNw6J5LBpZeKQp","createdAt":{"$$date":1517077494543},"updatedAt":{"$$date":1517077494543}}
-{"line":"~ -t b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"K4gMvspGyulseLpp","createdAt":{"$$date":1516919923612},"updatedAt":{"$$date":1516919923612}}
-{"line":"?","event":"client_prompt_submit","_id":"KBgEbvQO8ZRGKQaT","createdAt":{"$$date":1517256343856},"updatedAt":{"$$date":1517256343856}}
-{"line":"about -t","event":"client_prompt_submit","_id":"KGb7xMLkq8Avq1SR","createdAt":{"$$date":1517497716668},"updatedAt":{"$$date":1517497716668}}
-{"line":"select @@version","event":"client_prompt_submit","_id":"KH0jeARoy9k7BZxo","createdAt":{"$$date":1517242879112},"updatedAt":{"$$date":1517242879112}}
-{"line":"instance --restart 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"KQoMAsrW00g5OXPm","createdAt":{"$$date":1517516463321},"updatedAt":{"$$date":1517516463321}}
-{"line":"go","event":"client_prompt_submit","_id":"KWJlJNgNhLQgBDP8","createdAt":{"$$date":1517167236766},"updatedAt":{"$$date":1517167236766}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"KazJt81bCk8II41D","createdAt":{"$$date":1517579584432},"updatedAt":{"$$date":1517579584432}}
-{"line":"instance -b","event":"client_prompt_submit","_id":"Kgdi24NPwDE8j1UB","createdAt":{"$$date":1517236390346},"updatedAt":{"$$date":1517236390346}}
-{"line":"--help","event":"client_prompt_submit","_id":"KhUTma1nAAxa3ZPe","createdAt":{"$$date":1516769267927},"updatedAt":{"$$date":1516769267927}}
-{"line":"query","event":"client_prompt_submit","_id":"L06TaGBsO5XXv3cT","createdAt":{"$$date":1517172991343},"updatedAt":{"$$date":1517172991343}}
-{"line":"?","event":"client_prompt_submit","_id":"L8GUWouRuozVfvQK","createdAt":{"$$date":1517248318482},"updatedAt":{"$$date":1517248318482}}
-{"line":"exec sp_help","event":"client_prompt_submit","_id":"L8gh3oU1XDr2oSm5","createdAt":{"$$date":1516738493549},"updatedAt":{"$$date":1516738493549}}
-{"line":"go","event":"client_prompt_submit","_id":"LIRZGyP7ExDihLGR","createdAt":{"$$date":1517255986044},"updatedAt":{"$$date":1517255986044}}
-{"line":"--help","event":"client_prompt_submit","_id":"LUyotThtS1NTn2Fl","createdAt":{"$$date":1516888144627},"updatedAt":{"$$date":1516888144627}}
-{"line":"help","event":"client_prompt_submit","_id":"LWjqq852ewD1tkhG","createdAt":{"$$date":1517763176703},"updatedAt":{"$$date":1517763176703}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"LWyxiBDWT7sT4LTA","createdAt":{"$$date":1517256447036},"updatedAt":{"$$date":1517256447036}}
-{"line":"instance -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","event":"client_prompt_submit","_id":"LXvUs6PLrkjI99v5","createdAt":{"$$date":1517546711550},"updatedAt":{"$$date":1517546711550}}
-{"line":"select * from master.dbo.sysmessages where 1=2","event":"client_prompt_submit","_id":"LesbH6Ku3D4gsaDG","createdAt":{"$$date":1517255904883},"updatedAt":{"$$date":1517255904883}}
-{"line":"--help","event":"client_prompt_submit","_id":"LkFVZjFO0RdjeT2v","createdAt":{"$$date":1516767375748},"updatedAt":{"$$date":1516767375748}}
-{"line":"--help","event":"client_prompt_submit","_id":"LlwmDPku9DPZth2Z","createdAt":{"$$date":1516829502962},"updatedAt":{"$$date":1516829502962}}
-{"line":"query","event":"client_prompt_submit","_id":"LpCm9KjbEs0NQOXw","createdAt":{"$$date":1517182405349},"updatedAt":{"$$date":1517182405349}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"LpMewM7Ivz9A2OvL","createdAt":{"$$date":1517430242041},"updatedAt":{"$$date":1517430242041}}
-{"line":"exec sp_help","event":"client_prompt_submit","_id":"Lscn2RGpMiruG8GX","createdAt":{"$$date":1516738608005},"updatedAt":{"$$date":1516738608005}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"LzisO3oJGSquWV3R","createdAt":{"$$date":1517579843262},"updatedAt":{"$$date":1517579843262}}
-{"line":"about -t","event":"client_prompt_submit","_id":"M5L4xWcaHHtOSMhx","createdAt":{"$$date":1517498753553},"updatedAt":{"$$date":1517498753553}}
-{"line":"~ -t 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"MACc1xuy0xDZbiiH","createdAt":{"$$date":1516891023621},"updatedAt":{"$$date":1516891023621}}
-{"line":"SERVERPROPERTY('ProductUpdateLevel') AS [ProductUpdateLevel]","event":"client_prompt_submit","_id":"MCmslgNfjbIMTarY","createdAt":{"$$date":1517239565185},"updatedAt":{"$$date":1517239565185}}
-{"line":"about -t","event":"client_prompt_submit","_id":"MEnIKte5fPU66ACa","createdAt":{"$$date":1517499454786},"updatedAt":{"$$date":1517499454786}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"MKqiGar8YJmu9f5D","createdAt":{"$$date":1517582753820},"updatedAt":{"$$date":1517582753820}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"ML1N3th4CXOWsLZ1","createdAt":{"$$date":1517579636855},"updatedAt":{"$$date":1517579636855}}
-{"line":"select (CONVERT(VARCHAR(128), SERVERPROPERTY('ProductVersion')) LIKE '14%' as [ServerProperty]","event":"client_prompt_submit","_id":"MPL5BRieom8y76K7","createdAt":{"$$date":1517249022495},"updatedAt":{"$$date":1517249022495}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"MYqphwaHZDJlBsA8","createdAt":{"$$date":1517237968631},"updatedAt":{"$$date":1517237968631}}
-{"line":"--help","event":"client_prompt_submit","_id":"MZ0pQSI2dZyOPj9D","createdAt":{"$$date":1516847014631},"updatedAt":{"$$date":1516847014631}}
-{"line":"sqlpad --url","event":"client_prompt_submit","_id":"MhLe959UYQBp4Nna","createdAt":{"$$date":1517429478190},"updatedAt":{"$$date":1517429478190}}
-{"line":"about -t","event":"client_prompt_submit","_id":"MhrLmPf3yEdc6Znf","createdAt":{"$$date":1517498699635},"updatedAt":{"$$date":1517498699635}}
-{"line":"--help","event":"client_prompt_submit","_id":"MxX0o5BzfIpxORcf","createdAt":{"$$date":1516821973328},"updatedAt":{"$$date":1516821973328}}
-{"line":"config -e","event":"client_prompt_submit","_id":"N7hnvwYCFfbJSxiL","createdAt":{"$$date":1516848522910},"updatedAt":{"$$date":1516848522910}}
-{"line":"go","event":"client_prompt_submit","_id":"N97pFGTSi9Timz7x","createdAt":{"$$date":1517248064408},"updatedAt":{"$$date":1517248064408}}
-{"line":"--help","event":"client_prompt_submit","_id":"N9nsQpPHgr5dhCl3","createdAt":{"$$date":1516767208528},"updatedAt":{"$$date":1516767208528}}
-{"line":"help","event":"client_prompt_submit","_id":"NJPGmQM4zZzoKVq3","createdAt":{"$$date":1516919794812},"updatedAt":{"$$date":1516919794812}}
-{"line":"go","event":"client_prompt_submit","_id":"NPc1ScjkhlpDXi6h","createdAt":{"$$date":1517167065634},"updatedAt":{"$$date":1517167065634}}
-{"line":"?","event":"client_prompt_submit","_id":"NoSOHFs39N6ctBvT","createdAt":{"$$date":1517545844148},"updatedAt":{"$$date":1517545844148}}
-{"line":"about -t","event":"client_prompt_submit","_id":"NrhlcYXUfMV09EBo","createdAt":{"$$date":1517498303873},"updatedAt":{"$$date":1517498303873}}
-{"line":"--help","event":"client_prompt_submit","_id":"O3W6rlwhN1g29PyO","createdAt":{"$$date":1516809332048},"updatedAt":{"$$date":1516809332048}}
-{"line":"about","event":"client_prompt_submit","_id":"O5jOtFeyKnryRXZO","createdAt":{"$$date":1516890399174},"updatedAt":{"$$date":1516890399174}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"OEG1S2ZcbkmxcmLx","createdAt":{"$$date":1517429362660},"updatedAt":{"$$date":1517429362660}}
-{"line":"?","event":"client_prompt_submit","_id":"OEhGBYIkPvn1EUfC","createdAt":{"$$date":1517249250491},"updatedAt":{"$$date":1517249250491}}
-{"line":"sqlpad --start","event":"client_prompt_submit","_id":"OJ1f2WwDZ3PEuodv","createdAt":{"$$date":1517451643970},"updatedAt":{"$$date":1517451643970}}
-{"line":"select getdate()","event":"client_prompt_submit","_id":"OV9neQ4tuI6gpSh0","createdAt":{"$$date":1517318271436},"updatedAt":{"$$date":1517318271436}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"Oif1czBMN4XpE3yn","createdAt":{"$$date":1517429205217},"updatedAt":{"$$date":1517429205217}}
-{"line":"instance --remove 247c0322c6b9115a2b45cb7da8293a605b02edafebf3f85181ec80dddea07c24","event":"client_prompt_submit","_id":"Onzi9As4UvoHpq0v","createdAt":{"$$date":1517148292847},"updatedAt":{"$$date":1517148292847}}
-{"line":"sqlpad --stop","event":"client_prompt_submit","_id":"OquM78nbFG7r5lm7","createdAt":{"$$date":1517451546829},"updatedAt":{"$$date":1517451546829}}
-{"line":"config e","event":"client_prompt_submit","_id":"P3e61GergykMHyiP","createdAt":{"$$date":1516847328920},"updatedAt":{"$$date":1516847328920}}
-{"line":"help about","event":"client_prompt_submit","_id":"PILfivMVaTmDC8Ok","createdAt":{"$$date":1516902335425},"updatedAt":{"$$date":1516902335425}}
-{"line":"use AdventureWorks2014","event":"client_prompt_submit","_id":"PJftkLGGdOlUP1s4","createdAt":{"$$date":1517167212003},"updatedAt":{"$$date":1517167212003}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"PNo3NTyO2d3mBFGr","createdAt":{"$$date":1517105813228},"updatedAt":{"$$date":1517105813228}}
-{"line":"help cache","event":"client_prompt_submit","_id":"PSVpPyx9VZUQ3PPx","createdAt":{"$$date":1517582775639},"updatedAt":{"$$date":1517582775639}}
-{"line":"go","event":"client_prompt_submit","_id":"PZs5aIprG6PhyyrI","createdAt":{"$$date":1517240093174},"updatedAt":{"$$date":1517240093174}}
-{"line":"go","event":"client_prompt_submit","_id":"PcGac2LgX1XoDhuy","createdAt":{"$$date":1517169645326},"updatedAt":{"$$date":1517169645326}}
-{"line":"~ -t 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"PfeNMiIVQzSk1OJg","createdAt":{"$$date":1516890431130},"updatedAt":{"$$date":1516890431130}}
-{"line":"go","event":"client_prompt_submit","_id":"PkWUtcK959K6l7oi","createdAt":{"$$date":1517248002870},"updatedAt":{"$$date":1517248002870}}
-{"line":"config --help","event":"client_prompt_submit","_id":"Pn5oKlUewAcgQPR1","createdAt":{"$$date":1516847049446},"updatedAt":{"$$date":1516847049446}}
-{"line":"go","event":"client_prompt_submit","_id":"Ppa8p28JiLz0l9T5","createdAt":{"$$date":1517248729723},"updatedAt":{"$$date":1517248729723}}
-{"line":"ELSE","event":"client_prompt_submit","_id":"PzKiUMNgPNb3g3MQ","createdAt":{"$$date":1517249317660},"updatedAt":{"$$date":1517249317660}}
-{"line":"about -t","event":"client_prompt_submit","_id":"Q9XbRwuvdZexMiPG","createdAt":{"$$date":1517497739199},"updatedAt":{"$$date":1517497739199}}
-{"line":"?","event":"client_prompt_submit","_id":"QDklnn9m4hAM1YNH","createdAt":{"$$date":1517240101383},"updatedAt":{"$$date":1517240101383}}
-{"line":"go","event":"client_prompt_submit","_id":"QHPXCkIOoFaGwzU5","createdAt":{"$$date":1517239303820},"updatedAt":{"$$date":1517239303820}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"QKT8ufCHG2SqVlDl","createdAt":{"$$date":1517248343010},"updatedAt":{"$$date":1517248343010}}
-{"line":"go","event":"client_prompt_submit","_id":"QOAVH3ytQEgu1yqY","createdAt":{"$$date":1517187727634},"updatedAt":{"$$date":1517187727634}}
-{"line":"query procedures","event":"client_prompt_submit","_id":"QS4HpKvYECQP59Ei","createdAt":{"$$date":1517173002163},"updatedAt":{"$$date":1517173002163}}
-{"line":"select CONVERT(VARCHAR(128), SERVERPROPERTY('ProductVersion')) as [ServerProperty]","event":"client_prompt_submit","_id":"QW5uxGe3lFd5EaAA","createdAt":{"$$date":1517248872897},"updatedAt":{"$$date":1517248872897}}
-{"line":"exec sp_help","event":"client_prompt_submit","_id":"QdkxTkKj3y2GMfOU","createdAt":{"$$date":1516738535119},"updatedAt":{"$$date":1516738535119}}
-{"line":"instance -t","event":"client_prompt_submit","_id":"Qg6EAbbqnMSBqQYi","createdAt":{"$$date":1517166376311},"updatedAt":{"$$date":1517166376311}}
-{"line":"sqlpad -u","event":"client_prompt_submit","_id":"Qk6w4KYl4b9ey8KJ","createdAt":{"$$date":1517429407341},"updatedAt":{"$$date":1517429407341}}
-{"line":"--help","event":"client_prompt_submit","_id":"QojxgSkqeGrLTfhX","createdAt":{"$$date":1516886600712},"updatedAt":{"$$date":1516886600712}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"QrSyMGkAtcPc4JPH","createdAt":{"$$date":1517546629566},"updatedAt":{"$$date":1517546629566}}
-{"line":"go","event":"client_prompt_submit","_id":"R8FJbeS8tqHE7nVb","createdAt":{"$$date":1517167034738},"updatedAt":{"$$date":1517167034738}}
-{"line":"instance -c","event":"client_prompt_submit","_id":"R8gZIREN7iuY7HNR","createdAt":{"$$date":1517546164098},"updatedAt":{"$$date":1517546164098}}
-{"line":"help","event":"client_prompt_submit","_id":"REp1wNiIR1LYoVzD","createdAt":{"$$date":1517074478246},"updatedAt":{"$$date":1517074478246}}
-{"line":"instance --remove 81aa847a0c5dc81170fd9880c61a976ac75a0727c0d42e0c0cd2e83c87e3b242","event":"client_prompt_submit","_id":"RFPU7e6FWxk4VhzP","createdAt":{"$$date":1517169397869},"updatedAt":{"$$date":1517169397869}}
-{"line":"--help","event":"client_prompt_submit","_id":"RTPvUJBQcfzgyiKI","createdAt":{"$$date":1516767300424},"updatedAt":{"$$date":1516767300424}}
-{"line":"help","event":"client_prompt_submit","_id":"RU9FlIPOyEeKvDyK","createdAt":{"$$date":1517228535770},"updatedAt":{"$$date":1517228535770}}
-{"line":"go","event":"client_prompt_submit","_id":"RcNdPmkUO8HaHzA9","createdAt":{"$$date":1517255931551},"updatedAt":{"$$date":1517255931551}}
-{"line":"RAISERROR ('Script does not match the ProductVersion [%s] of this instance. Many of these queries may not work on this version.' , 18 , 16 , @ProductVersion);","event":"client_prompt_submit","_id":"Rdx8NyvfVqlXSmKq","createdAt":{"$$date":1517249271720},"updatedAt":{"$$date":1517249271720}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"Rdye6GBp93CJtfhP","createdAt":{"$$date":1517448204100},"updatedAt":{"$$date":1517448204100}}
-{"line":"go","event":"client_prompt_submit","_id":"RnaO58f8JUy3ZVl3","createdAt":{"$$date":1517256332455},"updatedAt":{"$$date":1517256332455}}
-{"line":"1 -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"Rxq8LU1Vw39ZLLdf","createdAt":{"$$date":1517442002981},"updatedAt":{"$$date":1517442002981}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"S2M3h9E3MW0CW8DB","createdAt":{"$$date":1517428738959},"updatedAt":{"$$date":1517428738959}}
-{"line":"help","event":"client_prompt_submit","_id":"S5qmsHRvGQEAxMBT","createdAt":{"$$date":1517758185461},"updatedAt":{"$$date":1517758185461}}
-{"line":"about -t","event":"client_prompt_submit","_id":"S8yqNchcQp7x4g2i","createdAt":{"$$date":1517499493759},"updatedAt":{"$$date":1517499493759}}
-{"line":"~ -t 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"SBc8OTzsuROOwGai","createdAt":{"$$date":1516890857813},"updatedAt":{"$$date":1516890857813}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"SDpYrGJGhQKp4RR7","createdAt":{"$$date":1517442295838},"updatedAt":{"$$date":1517442295838}}
-{"line":"instance -t 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"SE50lFjlvIGVkUGE","createdAt":{"$$date":1516738581026},"updatedAt":{"$$date":1516738581026}}
-{"line":"IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%')","event":"client_prompt_submit","_id":"SPqGRcieHV8Ghg9c","createdAt":{"$$date":1517249374594},"updatedAt":{"$$date":1517249374594}}
-{"line":"go","event":"client_prompt_submit","_id":"SPtDr9kKXsy0ga6n","createdAt":{"$$date":1517248301532},"updatedAt":{"$$date":1517248301532}}
-{"line":"instance --help","event":"client_prompt_submit","_id":"STW61ZRBQ1fhTIsA","createdAt":{"$$date":1517546174325},"updatedAt":{"$$date":1517546174325}}
-{"line":"image --pull","event":"client_prompt_submit","_id":"SVaaOXB3HFEWXgeW","createdAt":{"$$date":1517092541425},"updatedAt":{"$$date":1517092541425}}
-{"line":"instance","event":"client_prompt_submit","_id":"SYjMNZl7jap6qR6p","createdAt":{"$$date":1516890230244},"updatedAt":{"$$date":1516890230244}}
-{"line":"config","event":"client_prompt_submit","_id":"SYojgExHd6Wd2ELh","createdAt":{"$$date":1516847220284},"updatedAt":{"$$date":1516847220284}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"SgPfqNB30WmbHbgR","createdAt":{"$$date":1517187620848},"updatedAt":{"$$date":1517187620848}}
-{"line":"config e","event":"client_prompt_submit","_id":"Shk8zf2eML9Isdui","createdAt":{"$$date":1516848019417},"updatedAt":{"$$date":1516848019417}}
-{"line":"--help","event":"client_prompt_submit","_id":"SkrXyrjcdZq4jMJ5","createdAt":{"$$date":1517270368170},"updatedAt":{"$$date":1517270368170}}
-{"line":"cahe -m i","event":"client_prompt_submit","_id":"Sq8HZnRTs0qO4rOf","createdAt":{"$$date":1517687303499},"updatedAt":{"$$date":1517687303499}}
-{"line":"instance --remove 2d87c1a536da7c15e564b48f6211a55f736ed455f8d3ef64265451bf9b25ef30","event":"client_prompt_submit","_id":"Srp00ZjcGPJg2rJh","createdAt":{"$$date":1517509344080},"updatedAt":{"$$date":1517509344080}}
-{"line":"? -n","event":"client_prompt_submit","_id":"SseGYb8MpaGEVKav","createdAt":{"$$date":1517248688757},"updatedAt":{"$$date":1517248688757}}
-{"line":"config e","event":"client_prompt_submit","_id":"T8DQq9VTnLi6P8J2","createdAt":{"$$date":1516848376430},"updatedAt":{"$$date":1516848376430}}
-{"line":"instance -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"TI5s2yBmvq20u1ED","createdAt":{"$$date":1517199744310},"updatedAt":{"$$date":1517199744310}}
-{"line":"instance --help","event":"client_prompt_submit","_id":"TJZFr3xZNVdEv4hU","createdAt":{"$$date":1517086524342},"updatedAt":{"$$date":1517086524342}}
-{"line":"instance -t 247c0322c6b9115a2b45cb7da8293a605b02edafebf3f85181ec80dddea07c24","event":"client_prompt_submit","_id":"TOfS29kIVaWzqLOq","createdAt":{"$$date":1517146359553},"updatedAt":{"$$date":1517146359553}}
-{"line":"instance --stop b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"TS1MxdIykWAXozRl","createdAt":{"$$date":1517091839014},"updatedAt":{"$$date":1517091839014}}
-{"line":"config","event":"client_prompt_submit","_id":"TSk8W9uvIDf2O6Wl","createdAt":{"$$date":1516848514900},"updatedAt":{"$$date":1516848514900}}
-{"line":"instance -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","event":"client_prompt_submit","_id":"TUMCkO16oYwfdxOV","createdAt":{"$$date":1517545810760},"updatedAt":{"$$date":1517545810760}}
-{"line":"?","event":"client_prompt_submit","_id":"TVyOUMfnqn2UFoZh","createdAt":{"$$date":1517239426840},"updatedAt":{"$$date":1517239426840}}
-{"line":"instance --pull","event":"client_prompt_submit","_id":"ThEDOjC6VjquzM18","createdAt":{"$$date":1517092527834},"updatedAt":{"$$date":1517092527834}}
-{"line":"go","event":"client_prompt_submit","_id":"TjS0XckdrXTSjeOy","createdAt":{"$$date":1516736903608},"updatedAt":{"$$date":1516736903608}}
-{"line":"go","event":"client_prompt_submit","_id":"TkCgofD1pjPjZkB3","createdAt":{"$$date":1517166720726},"updatedAt":{"$$date":1517166720726}}
-{"line":"help","event":"client_prompt_submit","_id":"Tm1uaGFk3elwEWOy","createdAt":{"$$date":1516890222657},"updatedAt":{"$$date":1516890222657}}
-{"line":"?","event":"client_prompt_submit","_id":"Tm53TNKp6TjQZWu1","createdAt":{"$$date":1517249297081},"updatedAt":{"$$date":1517249297081}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"TmP92G1ja0Y7koyp","createdAt":{"$$date":1517166412525},"updatedAt":{"$$date":1517166412525}}
-{"line":"instance -f 113b444f8b81a345ad69dcd5b467051c3244a9f45d666c03d0ac20c7eca3e21a","event":"client_prompt_submit","_id":"TrOhPoKPoqhtcIAz","createdAt":{"$$date":1517148586741},"updatedAt":{"$$date":1517148586741}}
-{"line":"image","event":"client_prompt_submit","_id":"TugxLeiNalwFyMPb","createdAt":{"$$date":1516890119790},"updatedAt":{"$$date":1516890119790}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"U43Q16MdfGQq3vQZ","createdAt":{"$$date":1517106585001},"updatedAt":{"$$date":1517106585001}}
-{"line":"config e","event":"client_prompt_submit","_id":"U693tlr7flnJBpEO","createdAt":{"$$date":1516848285223},"updatedAt":{"$$date":1516848285223}}
-{"line":"about -n","event":"client_prompt_submit","_id":"UAhMv1xub6H22vEm","createdAt":{"$$date":1517509134551},"updatedAt":{"$$date":1517509134551}}
-{"line":"query","event":"client_prompt_submit","_id":"UD8Y4USqAh9Wy3CD","createdAt":{"$$date":1517174126671},"updatedAt":{"$$date":1517174126671}}
-{"line":"IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%')","event":"client_prompt_submit","_id":"UDsnZzsFl5DqHe9t","createdAt":{"$$date":1517255687104},"updatedAt":{"$$date":1517255687104}}
-{"line":"help sqlpad","event":"client_prompt_submit","_id":"UN2RW94CLb3Hkhuf","createdAt":{"$$date":1517492248912},"updatedAt":{"$$date":1517492248912}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"UPPh1i8V7YATcrUB","createdAt":{"$$date":1517582510541},"updatedAt":{"$$date":1517582510541}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"UaysSIQcMIjubyiL","createdAt":{"$$date":1517450548754},"updatedAt":{"$$date":1517450548754}}
-{"line":"instance --bash","event":"client_prompt_submit","_id":"UfkWCZAGCD3A3C8U","createdAt":{"$$date":1516923572965},"updatedAt":{"$$date":1516923572965}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"Uiq8BpMYovAh3KAG","createdAt":{"$$date":1517241927962},"updatedAt":{"$$date":1517241927962}}
-{"line":"image --pull","event":"client_prompt_submit","_id":"UqqlQwB0RrNiNvRX","createdAt":{"$$date":1517508394824},"updatedAt":{"$$date":1517508394824}}
-{"line":"ELSE","event":"client_prompt_submit","_id":"Ux2l2rBznIKVygkk","createdAt":{"$$date":1517249405411},"updatedAt":{"$$date":1517249405411}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"UzVzh6rdV8TufCpx","createdAt":{"$$date":1517200053851},"updatedAt":{"$$date":1517200053851}}
-{"line":"~ -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"V6sOuyDHMQne8fFr","createdAt":{"$$date":1517449944926},"updatedAt":{"$$date":1517449944926}}
-{"line":"select @@VERSION AS [Version], SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"V9ztSbcgpF1Wc4Ug","createdAt":{"$$date":1517248000993},"updatedAt":{"$$date":1517248000993}}
-{"line":"about -c","event":"client_prompt_submit","_id":"VFgJyIDkGGDK8YP4","createdAt":{"$$date":1516902297468},"updatedAt":{"$$date":1516902297468}}
-{"line":"SELECT CASE WHEN NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '1%') THEN 'true' ELSE 'false' END","event":"client_prompt_submit","_id":"VJkXG1paj1X00tWN","createdAt":{"$$date":1517242532114},"updatedAt":{"$$date":1517242532114}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"VSVEdnPYVMmdfG5e","createdAt":{"$$date":1517248255275},"updatedAt":{"$$date":1517248255275}}
-{"line":"go","event":"client_prompt_submit","_id":"VTCM5yvxkpsqsyop","createdAt":{"$$date":1517242360522},"updatedAt":{"$$date":1517242360522}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"VnPYdRovl5d77GB6","createdAt":{"$$date":1517146110540},"updatedAt":{"$$date":1517146110540}}
-{"line":"help","event":"client_prompt_submit","_id":"VooHfVLfBqUzTQ47","createdAt":{"$$date":1516753674918},"updatedAt":{"$$date":1516753674918}}
-{"line":"cache","event":"client_prompt_submit","_id":"VtWMhOOaVVzuNy4L","createdAt":{"$$date":1517232172742},"updatedAt":{"$$date":1517232172742}}
-{"line":"go","event":"client_prompt_submit","_id":"VuJj6ljUXgZxTglo","createdAt":{"$$date":1517248874242},"updatedAt":{"$$date":1517248874242}}
-{"line":"--help","event":"client_prompt_submit","_id":"Vw1aGcaxtHgBGkzA","createdAt":{"$$date":1516768190265},"updatedAt":{"$$date":1516768190265}}
-{"line":"loglevel 10","event":"client_prompt_submit","_id":"W0YUQK1JzmLwQZBS","createdAt":{"$$date":1516736963034},"updatedAt":{"$$date":1516736963034}}
-{"line":"--help","event":"client_prompt_submit","_id":"W757djM3Gj3XOSIA","createdAt":{"$$date":1516753836761},"updatedAt":{"$$date":1516753836761}}
-{"line":"instance -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"W7ql0jeCltp5tZ2U","createdAt":{"$$date":1517167730115},"updatedAt":{"$$date":1517167730115}}
-{"line":"go","event":"client_prompt_submit","_id":"W8P6tGQdh27Sh3J5","createdAt":{"$$date":1517450003938},"updatedAt":{"$$date":1517450003938}}
-{"line":"~ -t 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"WB6X2SlRlnO3ZM9Q","createdAt":{"$$date":1516890753492},"updatedAt":{"$$date":1516890753492}}
-{"line":"instance --remove 472e7cfb95e77443cd15dbd979dd1879acae5553c1aaf53c6eceead22cdb6d3a","event":"client_prompt_submit","_id":"WBygAGltN1toy02B","createdAt":{"$$date":1517252871374},"updatedAt":{"$$date":1517252871374}}
-{"line":"? -n","event":"client_prompt_submit","_id":"WBzouUDG4ROm2ajI","createdAt":{"$$date":1517239146173},"updatedAt":{"$$date":1517239146173}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"WCpFeh5X1lKKLwxy","createdAt":{"$$date":1517237609141},"updatedAt":{"$$date":1517237609141}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"WHTmh2fzJ9M9hCNc","createdAt":{"$$date":1517428790132},"updatedAt":{"$$date":1517428790132}}
-{"line":"SERVERPROPERTY('Edition') AS [Edition],","event":"client_prompt_submit","_id":"WJ7uOI0EhQKJZ1Ia","createdAt":{"$$date":1517239487800},"updatedAt":{"$$date":1517239487800}}
-{"line":"instance --remove 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"WQREmITPdKN9bMaF","createdAt":{"$$date":1517091765755},"updatedAt":{"$$date":1517091765755}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"WQxs2emDVqYn9AH7","createdAt":{"$$date":1517148329148},"updatedAt":{"$$date":1517148329148}}
-{"line":"go","event":"client_prompt_submit","_id":"WcyU8Ftq1lNzKVfh","createdAt":{"$$date":1517248758164},"updatedAt":{"$$date":1517248758164}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"WdczFHeLZwnm1jDC","createdAt":{"$$date":1517582596790},"updatedAt":{"$$date":1517582596790}}
-{"line":"go","event":"client_prompt_submit","_id":"Wr24DTzM4Q6jE5bK","createdAt":{"$$date":1517238083506},"updatedAt":{"$$date":1517238083506}}
-{"line":"query pro","event":"client_prompt_submit","_id":"Wv71ORYxI8i7arPZ","createdAt":{"$$date":1517187045709},"updatedAt":{"$$date":1517187045709}}
-{"line":"config e","event":"client_prompt_submit","_id":"WxcEDWxRrZRMy2Vb","createdAt":{"$$date":1516847043140},"updatedAt":{"$$date":1516847043140}}
-{"line":"sqlpad --stop","event":"client_prompt_submit","_id":"X2VDnKjyvcl7JJbW","createdAt":{"$$date":1517450948719},"updatedAt":{"$$date":1517450948719}}
-{"line":"~ -t","event":"client_prompt_submit","_id":"X44ynB5Jv3pvZNet","createdAt":{"$$date":1517256420512},"updatedAt":{"$$date":1517256420512}}
-{"line":"instance -t 81aa847a0c5dc81170fd9880c61a976ac75a0727c0d42e0c0cd2e83c87e3b242","event":"client_prompt_submit","_id":"XKLvOlSZfSDIVByC","createdAt":{"$$date":1517169337993},"updatedAt":{"$$date":1517169337993}}
-{"line":"image -r sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"XOeEnmX60I6Ylhni","createdAt":{"$$date":1517169422878},"updatedAt":{"$$date":1517169422878}}
-{"line":"sqlpad --start","event":"client_prompt_submit","_id":"XTH3bEPZcB7w8O0M","createdAt":{"$$date":1517451179688},"updatedAt":{"$$date":1517451179688}}
-{"line":"SQLCMD -Q","event":"client_prompt_submit","_id":"Xc3WtLGvksA6AFDz","createdAt":{"$$date":1517242903556},"updatedAt":{"$$date":1517242903556}}
-{"line":"? -m","event":"client_prompt_submit","_id":"XdmxMRe8s0oHgwUW","createdAt":{"$$date":1516973698027},"updatedAt":{"$$date":1516973698027}}
-{"line":"about -t","event":"client_prompt_submit","_id":"XofmSiOYU4veL8fw","createdAt":{"$$date":1517499305693},"updatedAt":{"$$date":1517499305693}}
-{"line":"--help","event":"client_prompt_submit","_id":"XowzF9xSuSjPYRFe","createdAt":{"$$date":1516902176463},"updatedAt":{"$$date":1516902176463}}
-{"line":"query pro","event":"client_prompt_submit","_id":"Xx9jjKUrB5UeDnZa","createdAt":{"$$date":1517187743807},"updatedAt":{"$$date":1517187743807}}
-{"line":"engine","event":"client_prompt_submit","_id":"XzH3VRTlWZjXn7PE","createdAt":{"$$date":1516889941070},"updatedAt":{"$$date":1516889941070}}
-{"line":"go","event":"client_prompt_submit","_id":"Y8kgKKj3K3VLe6mt","createdAt":{"$$date":1517240964558},"updatedAt":{"$$date":1517240964558}}
-{"line":"instance -t 81aa847a0c5dc81170fd9880c61a976ac75a0727c0d42e0c0cd2e83c87e3b242","event":"client_prompt_submit","_id":"YAFEBmhtXDIuxujV","createdAt":{"$$date":1517097644393},"updatedAt":{"$$date":1517097644393}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"YCfM4KHzbLfE73wv","createdAt":{"$$date":1517169580869},"updatedAt":{"$$date":1517169580869}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"YFGqUIWLxSikxyha","createdAt":{"$$date":1517546079982},"updatedAt":{"$$date":1517546079982}}
-{"line":"instance -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"YO6YFBJD8PfcZUI0","createdAt":{"$$date":1517167699428},"updatedAt":{"$$date":1517167699428}}
-{"line":"image -r sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"YSkl4RO8P0MSaTiD","createdAt":{"$$date":1517148319784},"updatedAt":{"$$date":1517148319784}}
-{"line":"engine","event":"client_prompt_submit","_id":"YUEAab09ylW2cY6f","createdAt":{"$$date":1517232127526},"updatedAt":{"$$date":1517232127526}}
-{"line":"select db_name()","event":"client_prompt_submit","_id":"YjbFQnauJMfOPSYu","createdAt":{"$$date":1517187779815},"updatedAt":{"$$date":1517187779815}}
-{"line":"?","event":"client_prompt_submit","_id":"Yn91chH2Lasd2Aj8","createdAt":{"$$date":1517239534494},"updatedAt":{"$$date":1517239534494}}
-{"line":"go","event":"client_prompt_submit","_id":"Yo3eu6lgk98euc7e","createdAt":{"$$date":1517252609394},"updatedAt":{"$$date":1517252609394}}
-{"line":"SERVERPROPERTY('ComputerNamePhysicalNetBIOS') AS [ComputerNamePhysicalNetBIOS],","event":"client_prompt_submit","_id":"YpOzzUh3dWcB8duj","createdAt":{"$$date":1517239475469},"updatedAt":{"$$date":1517239475469}}
-{"line":"query procedures","event":"client_prompt_submit","_id":"YrDO5O0Dauw46nnr","createdAt":{"$$date":1517187377136},"updatedAt":{"$$date":1517187377136}}
-{"line":"engine","event":"client_prompt_submit","_id":"YxHwEHpYvxYG1t2E","createdAt":{"$$date":1516889879609},"updatedAt":{"$$date":1516889879609}}
-{"line":"--help","event":"client_prompt_submit","_id":"Z478ThCGIAH3rTnF","createdAt":{"$$date":1517633341032},"updatedAt":{"$$date":1517633341032}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"ZAN6oRBk6QYQVUgP","createdAt":{"$$date":1517166848759},"updatedAt":{"$$date":1517166848759}}
-{"line":"instance --remove 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"ZIw7r9eFgu7HdBKz","createdAt":{"$$date":1517091806432},"updatedAt":{"$$date":1517091806432}}
-{"line":"help","event":"client_prompt_submit","_id":"ZMCasX1CwqKU7ADu","createdAt":{"$$date":1517276298656},"updatedAt":{"$$date":1517276298656}}
-{"line":"image -a","event":"client_prompt_submit","_id":"ZOqtgDtXiyNNsfBn","createdAt":{"$$date":1517280955489},"updatedAt":{"$$date":1517280955489}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ZQEoReLGQeAJZyCH","createdAt":{"$$date":1517248144097},"updatedAt":{"$$date":1517248144097}}
-{"line":"instance --start 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"ZSl39YI888fTilBo","createdAt":{"$$date":1516747684223},"updatedAt":{"$$date":1516747684223}}
-{"line":"about -t","event":"client_prompt_submit","_id":"Za6XFzxU5KbgGlCR","createdAt":{"$$date":1517498810254},"updatedAt":{"$$date":1517498810254}}
-{"line":"help","event":"client_prompt_submit","_id":"ZgN3HzJf8V6lKHQo","createdAt":{"$$date":1517762836193},"updatedAt":{"$$date":1517762836193}}
-{"line":"instance -t 81aa847a0c5dc81170fd9880c61a976ac75a0727c0d42e0c0cd2e83c87e3b242","event":"client_prompt_submit","_id":"Zh9ovvXW5SKrG4mo","createdAt":{"$$date":1517096961373},"updatedAt":{"$$date":1517096961373}}
-{"line":"config edit","event":"client_prompt_submit","_id":"Zj0h1VH1ibVoQgPg","createdAt":{"$$date":1516847076695},"updatedAt":{"$$date":1516847076695}}
-{"line":"image --help","event":"client_prompt_submit","_id":"ZrdhsYA6ZldV59u7","createdAt":{"$$date":1517086496498},"updatedAt":{"$$date":1517086496498}}
-{"line":"instance -i","event":"client_prompt_submit","_id":"ZvCTJ87oYag5fGXr","createdAt":{"$$date":1517708466512},"updatedAt":{"$$date":1517708466512}}
-{"line":"SQLCMD -Q","event":"client_prompt_submit","_id":"ZvLgnykgHouaDrEA","createdAt":{"$$date":1517242074381},"updatedAt":{"$$date":1517242074381}}
-{"line":"config e","event":"client_prompt_submit","_id":"a4QyZspehD4qJjRc","createdAt":{"$$date":1516848046544},"updatedAt":{"$$date":1516848046544}}
-{"line":"instance --remove 06b68ad92b651203bbe687e91115b06df535c9adf0efe844e557bbe0f649ec49","event":"client_prompt_submit","_id":"a5mxv0X1EEr3qdCD","createdAt":{"$$date":1517165468933},"updatedAt":{"$$date":1517165468933}}
-{"line":"query pro","event":"client_prompt_submit","_id":"a7gTVC7JEV2w7iNL","createdAt":{"$$date":1517186864082},"updatedAt":{"$$date":1517186864082}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"a7vY1ryOvi9YOoNv","createdAt":{"$$date":1517252607067},"updatedAt":{"$$date":1517252607067}}
-{"line":"go","event":"client_prompt_submit","_id":"aAAh9PlJw1qzsa4M","createdAt":{"$$date":1516835753907},"updatedAt":{"$$date":1516835753907}}
-{"line":"go","event":"client_prompt_submit","_id":"aByXCPBNGZZvIIoZ","createdAt":{"$$date":1517545854121},"updatedAt":{"$$date":1517545854121}}
-{"line":"select 1","event":"client_prompt_submit","_id":"aEtYYXw34LUfZaTG","createdAt":{"$$date":1517546276638},"updatedAt":{"$$date":1517546276638}}
-{"line":"~ -t 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"aHAvpFHPzfsZWhpr","createdAt":{"$$date":1516890722598},"updatedAt":{"$$date":1516890722598}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"aMvsQc7vgccma51F","createdAt":{"$$date":1517617732790},"updatedAt":{"$$date":1517617732790}}
-{"line":"--HELP","event":"client_prompt_submit","_id":"aQG2IafToGxPL8Iw","createdAt":{"$$date":1516821805109},"updatedAt":{"$$date":1516821805109}}
-{"line":"go","event":"client_prompt_submit","_id":"aUB5axj4uaa5p9gN","createdAt":{"$$date":1517242880603},"updatedAt":{"$$date":1517242880603}}
-{"line":"select name from sysdatabases","event":"client_prompt_submit","_id":"aZuNUpC1Zcxw7Eht","createdAt":{"$$date":1517167064649},"updatedAt":{"$$date":1517167064649}}
-{"line":"go","event":"client_prompt_submit","_id":"aaJKulCog3P6FLMP","createdAt":{"$$date":1517241697814},"updatedAt":{"$$date":1517241697814}}
-{"line":"select name from sysdatabases","event":"client_prompt_submit","_id":"adEewqWeH6buPaQs","createdAt":{"$$date":1517169643898},"updatedAt":{"$$date":1517169643898}}
-{"line":"select SERVERPROPERTY('Edition') AS [ServerProperty], @@VERSION AS [Version]","event":"client_prompt_submit","_id":"aj3kFSujYMnvGVYu","createdAt":{"$$date":1517248062897},"updatedAt":{"$$date":1517248062897}}
-{"line":"instance -t","event":"client_prompt_submit","_id":"akVQFzPnkqk3gGw6","createdAt":{"$$date":1517166403217},"updatedAt":{"$$date":1517166403217}}
-{"line":"?","event":"client_prompt_submit","_id":"akixTmLRZjPo0c4g","createdAt":{"$$date":1517241474168},"updatedAt":{"$$date":1517241474168}}
-{"line":"? -n","event":"client_prompt_submit","_id":"amiUSfjfweZwGBIU","createdAt":{"$$date":1517249030839},"updatedAt":{"$$date":1517249030839}}
-{"line":"?","event":"client_prompt_submit","_id":"aojWktIjmO7kMl2V","createdAt":{"$$date":1517249331801},"updatedAt":{"$$date":1517249331801}}
-{"line":"cache -c mssql","event":"client_prompt_submit","_id":"aqnCttIAuJvcQKCO","createdAt":{"$$date":1517546278351},"updatedAt":{"$$date":1517546278351}}
-{"line":"instance -t 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"b0OHtMoGuKhSwQzI","createdAt":{"$$date":1517091736974},"updatedAt":{"$$date":1517091736974}}
-{"line":"select CONVERT(NVARCHAR(128), SERVERPROPERTY('Edition')) as [ServerProperty]","event":"client_prompt_submit","_id":"bEmC9cX0KPcTQ8Sn","createdAt":{"$$date":1517248727901},"updatedAt":{"$$date":1517248727901}}
-{"line":"help about","event":"client_prompt_submit","_id":"bLveQPekhGouFVbD","createdAt":{"$$date":1516902291075},"updatedAt":{"$$date":1516902291075}}
-{"line":"instance --remove 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"bRqjrj0Fg6KdnXZJ","createdAt":{"$$date":1517165502980},"updatedAt":{"$$date":1517165502980}}
-{"line":"go","event":"client_prompt_submit","_id":"bUBMvQ9N2noo6hUw","createdAt":{"$$date":1517318273008},"updatedAt":{"$$date":1517318273008}}
-{"line":"If NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%') BEGIN SELECT 42 ELSE SELECT 0 END","event":"client_prompt_submit","_id":"bhIO59eQ9L4Dn5j3","createdAt":{"$$date":1517242389000},"updatedAt":{"$$date":1517242389000}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"brxHvfIwu8anM5qi","createdAt":{"$$date":1517536581138},"updatedAt":{"$$date":1517536581138}}
-{"line":"PRINT N'You have the correct major version of SQL Server for this diagnostic information script';","event":"client_prompt_submit","_id":"c80drpuVZHVlAjYy","createdAt":{"$$date":1517249323495},"updatedAt":{"$$date":1517249323495}}
-{"line":"? -n","event":"client_prompt_submit","_id":"cBBtFJSDceMeXLv7","createdAt":{"$$date":1517242189274},"updatedAt":{"$$date":1517242189274}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"cCzrxrCSnonbH3cw","createdAt":{"$$date":1517235064504},"updatedAt":{"$$date":1517235064504}}
-{"line":"instance --start","event":"client_prompt_submit","_id":"carCIDVtiRsmNuI9","createdAt":{"$$date":1517708392343},"updatedAt":{"$$date":1517708392343}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"cbV4aDEpu33V2xQE","createdAt":{"$$date":1517256729067},"updatedAt":{"$$date":1517256729067}}
-{"line":"?","event":"client_prompt_submit","_id":"ccGq0NAMrvQPWvUd","createdAt":{"$$date":1517182437786},"updatedAt":{"$$date":1517182437786}}
-{"line":"BEGIN","event":"client_prompt_submit","_id":"chlFzaJP1N71ADjQ","createdAt":{"$$date":1517249206491},"updatedAt":{"$$date":1517249206491}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"cjEYWmoyfkEn9mEW","createdAt":{"$$date":1517187783021},"updatedAt":{"$$date":1517187783021}}
-{"line":"--help","event":"client_prompt_submit","_id":"cpMg5iKdd74MCk2u","createdAt":{"$$date":1517430788868},"updatedAt":{"$$date":1517430788868}}
-{"line":"instance --start b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"csVEFEb7tTCPR5mS","createdAt":{"$$date":1516747929785},"updatedAt":{"$$date":1516747929785}}
-{"line":"instance --start 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"cvNF1wUGeCrIW3tt","createdAt":{"$$date":1516747645493},"updatedAt":{"$$date":1516747645493}}
-{"line":"script","event":"client_prompt_submit","_id":"cxa39a6fLnt6VWJf","createdAt":{"$$date":1517545820188},"updatedAt":{"$$date":1517545820188}}
-{"line":"print N'test'","event":"client_prompt_submit","_id":"d1ncyurLxrEyCnzX","createdAt":{"$$date":1517240145284},"updatedAt":{"$$date":1517240145284}}
-{"line":"engine","event":"client_prompt_submit","_id":"d9W4kA3Of8tPvYBq","createdAt":{"$$date":1517492449608},"updatedAt":{"$$date":1517492449608}}
-{"line":"query pro","event":"client_prompt_submit","_id":"d9myDtROy42LOkh9","createdAt":{"$$date":1517187383437},"updatedAt":{"$$date":1517187383437}}
-{"line":"go","event":"client_prompt_submit","_id":"dC0daPmDLMnGvViM","createdAt":{"$$date":1517249043254},"updatedAt":{"$$date":1517249043254}}
-{"line":"instance -t 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"dNY97bvPDsw0wwWk","createdAt":{"$$date":1516747990298},"updatedAt":{"$$date":1516747990298}}
-{"line":"ls","event":"client_prompt_submit","_id":"dPWzxqJGSgYiLIUb","createdAt":{"$$date":1516919978948},"updatedAt":{"$$date":1516919978948}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"dQ7T9ZRZKYoyuhAs","createdAt":{"$$date":1517256327725},"updatedAt":{"$$date":1517256327725}}
-{"line":"query","event":"client_prompt_submit","_id":"dTuUbNKQIDtH4dgN","createdAt":{"$$date":1517173129770},"updatedAt":{"$$date":1517173129770}}
-{"line":"instance --remove 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"dU53TRfWwItQAiVt","createdAt":{"$$date":1517088708356},"updatedAt":{"$$date":1517088708356}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"daG4dmf4rSAvFVet","createdAt":{"$$date":1517241173291},"updatedAt":{"$$date":1517241173291}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"dk9dK1Hj9PseMyX0","createdAt":{"$$date":1517166063754},"updatedAt":{"$$date":1517166063754}}
-{"line":"\u001f?","event":"client_prompt_submit","_id":"dpiu8YHEWWPAB3LB","createdAt":{"$$date":1517241678666},"updatedAt":{"$$date":1517241678666}}
-{"line":"query","event":"client_prompt_submit","_id":"duuuLlLpDVtP1LU7","createdAt":{"$$date":1517173686171},"updatedAt":{"$$date":1517173686171}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"dzYP2GFiV5afyZ9H","createdAt":{"$$date":1517248279242},"updatedAt":{"$$date":1517248279242}}
-{"line":"instance --stop 113b444f8b81a345ad69dcd5b467051c3244a9f45d666c03d0ac20c7eca3e21a","event":"client_prompt_submit","_id":"e4yaBahPIEp5SqHS","createdAt":{"$$date":1517161847950},"updatedAt":{"$$date":1517161847950}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"e6snbaYMFhvwozYR","createdAt":{"$$date":1517669656474},"updatedAt":{"$$date":1517669656474}}
-{"line":"image --help","event":"client_prompt_submit","_id":"eDX2w1tHhdE8moYU","createdAt":{"$$date":1517508672748},"updatedAt":{"$$date":1517508672748}}
-{"line":"about -a","event":"client_prompt_submit","_id":"eKTipysMsSpEinbG","createdAt":{"$$date":1516902288651},"updatedAt":{"$$date":1516902288651}}
-{"line":"about -n","event":"client_prompt_submit","_id":"eSafO66sSRNLMOCi","createdAt":{"$$date":1517500707187},"updatedAt":{"$$date":1517500707187}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"eqCl2QVvktMCWSRS","createdAt":{"$$date":1517765929476},"updatedAt":{"$$date":1517765929476}}
-{"line":"select @@VERSION AS [Version], SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"eruwJ9jViX7O2BIM","createdAt":{"$$date":1517248129197},"updatedAt":{"$$date":1517248129197}}
-{"line":"? -n","event":"client_prompt_submit","_id":"euD502Ac9FzB3I8n","createdAt":{"$$date":1517252615500},"updatedAt":{"$$date":1517252615500}}
-{"line":"query","event":"client_prompt_submit","_id":"evN5HjDf2pK4dYSk","createdAt":{"$$date":1517181463639},"updatedAt":{"$$date":1517181463639}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"f5vJICaxfJ0PKeZX","createdAt":{"$$date":1517338133534},"updatedAt":{"$$date":1517338133534}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"f6NPpGsUyhQkrsIV","createdAt":{"$$date":1517435953298},"updatedAt":{"$$date":1517435953298}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"f9pwLu6CZljXkpE9","createdAt":{"$$date":1517106248872},"updatedAt":{"$$date":1517106248872}}
-{"line":"select SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"fADiMgT4NQKpp4IZ","createdAt":{"$$date":1517248212821},"updatedAt":{"$$date":1517248212821}}
-{"line":"image -p","event":"client_prompt_submit","_id":"fBHviPeAHqIUJhWD","createdAt":{"$$date":1516976639751},"updatedAt":{"$$date":1516976639751}}
-{"line":"help","event":"client_prompt_submit","_id":"fCKpjPKUqxSxk88P","createdAt":{"$$date":1516889599032},"updatedAt":{"$$date":1516889599032}}
-{"line":"--help","event":"client_prompt_submit","_id":"fDtC140JsIE4I8Sy","createdAt":{"$$date":1517627775117},"updatedAt":{"$$date":1517627775117}}
-{"line":"If NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%') SELECT 1 ELSE SELECT 2 END","event":"client_prompt_submit","_id":"fO0H0iYNwuH8C9tW","createdAt":{"$$date":1517242309762},"updatedAt":{"$$date":1517242309762}}
-{"line":"?","event":"client_prompt_submit","_id":"fTqlgMepMLWiKuod","createdAt":{"$$date":1517186868831},"updatedAt":{"$$date":1517186868831}}
-{"line":"engine","event":"client_prompt_submit","_id":"fWLJIa1DQnyr2jGQ","createdAt":{"$$date":1516889997245},"updatedAt":{"$$date":1516889997245}}
-{"line":"? -n","event":"client_prompt_submit","_id":"fWimw6oyORBJXJiN","createdAt":{"$$date":1517239050413},"updatedAt":{"$$date":1517239050413}}
-{"line":"sqlpad --url","event":"client_prompt_submit","_id":"fb4Wi2PXuiBrkKS9","createdAt":{"$$date":1517429421331},"updatedAt":{"$$date":1517429421331}}
-{"line":"go","event":"client_prompt_submit","_id":"fd7ifR7Bwa0Yck0c","createdAt":{"$$date":1517241479218},"updatedAt":{"$$date":1517241479218}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"fieVoKg7SBAsoorJ","createdAt":{"$$date":1517793854991},"updatedAt":{"$$date":1517793854991}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"frWYSxyDNdEtWyq1","createdAt":{"$$date":1517241161511},"updatedAt":{"$$date":1517241161511}}
-{"line":"config e","event":"client_prompt_submit","_id":"ftuZgCTXAdZFvQYL","createdAt":{"$$date":1516847467949},"updatedAt":{"$$date":1516847467949}}
-{"line":"loglevel 10","event":"client_prompt_submit","_id":"g6CLToVJxkxOuXRn","createdAt":{"$$date":1517237697266},"updatedAt":{"$$date":1517237697266}}
-{"line":"go","event":"client_prompt_submit","_id":"g9pWuyKvYlJS4i5A","createdAt":{"$$date":1517252619751},"updatedAt":{"$$date":1517252619751}}
-{"line":"about -u","event":"client_prompt_submit","_id":"gDCSCbdUWOE7njY0","createdAt":{"$$date":1516902356050},"updatedAt":{"$$date":1516902356050}}
-{"line":"help --help","event":"client_prompt_submit","_id":"gDPnPwYtQ3Uen5AA","createdAt":{"$$date":1516768398401},"updatedAt":{"$$date":1516768398401}}
-{"line":"instance","event":"client_prompt_submit","_id":"gICHPgySGTsFkpkR","createdAt":{"$$date":1517708477554},"updatedAt":{"$$date":1517708477554}}
-{"line":"go","event":"client_prompt_submit","_id":"gLyM3yn2UokhM2ZZ","createdAt":{"$$date":1517237704553},"updatedAt":{"$$date":1517237704553}}
-{"line":"instance -help","event":"client_prompt_submit","_id":"gMNkX7bFkx9kuzVL","createdAt":{"$$date":1517097545157},"updatedAt":{"$$date":1517097545157}}
-{"line":"--help","event":"client_prompt_submit","_id":"gTkxrhz5cFOAzbZO","createdAt":{"$$date":1517626777718},"updatedAt":{"$$date":1517626777718}}
-{"line":"select @@servername as serverName","event":"client_prompt_submit","_id":"gU6vzJzn9I743YBC","createdAt":{"$$date":1518028721056},"updatedAt":{"$$date":1518028721056}}
-{"line":"?","event":"client_prompt_submit","_id":"gVzLzsWLu9AIi0E6","createdAt":{"$$date":1517256720596},"updatedAt":{"$$date":1517256720596}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"gfOTAWrvZXOkuLDm","createdAt":{"$$date":1517166711216},"updatedAt":{"$$date":1517166711216}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"gn0G2t4tSsaDodiZ","createdAt":{"$$date":1517165267756},"updatedAt":{"$$date":1517165267756}}
-{"line":"go","event":"client_prompt_submit","_id":"gnikwlVB4ifLALpM","createdAt":{"$$date":1517255951878},"updatedAt":{"$$date":1517255951878}}
-{"line":"help","event":"client_prompt_submit","_id":"gt7YgjMETMbpA9AV","createdAt":{"$$date":1516753779699},"updatedAt":{"$$date":1516753779699}}
-{"line":"?","event":"client_prompt_submit","_id":"gxOxWyxwsllzYXPj","createdAt":{"$$date":1517239218254},"updatedAt":{"$$date":1517239218254}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"h6Nsu9UPWebE8WU9","createdAt":{"$$date":1517451239921},"updatedAt":{"$$date":1517451239921}}
-{"line":"instance --bash","event":"client_prompt_submit","_id":"h8gSpOTL5YJUZGhy","createdAt":{"$$date":1516919869493},"updatedAt":{"$$date":1516919869493}}
-{"line":"SELECT SERVERPROPERTY('ProductMajorVersion') AS [ProductMajorVersion], SERVERPROPERTY('ProductMinorVersion') AS [ProductMinorVersion]","event":"client_prompt_submit","_id":"hBfLCviAviJvfein","createdAt":{"$$date":1517241466337},"updatedAt":{"$$date":1517241466337}}
-{"line":"about -t","event":"client_prompt_submit","_id":"hGDw5GC83sBjcDzG","createdAt":{"$$date":1517499118320},"updatedAt":{"$$date":1517499118320}}
-{"line":"select SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"hJZDeGilIeejiA5m","createdAt":{"$$date":1517248295165},"updatedAt":{"$$date":1517248295165}}
-{"line":"--help","event":"client_prompt_submit","_id":"hM1CVwrFKseMk7XV","createdAt":{"$$date":1517633071296},"updatedAt":{"$$date":1517633071296}}
-{"line":"instance","event":"client_prompt_submit","_id":"hN8QHUJwsFgu8Ia6","createdAt":{"$$date":1516890488440},"updatedAt":{"$$date":1516890488440}}
-{"line":"--help","event":"client_prompt_submit","_id":"hTslx4c1qSEX65dz","createdAt":{"$$date":1517763196472},"updatedAt":{"$$date":1517763196472}}
-{"line":"instance --remove c38ab971a4284e21f62a813302b81a7c2217da3845841c147a8c09c5e0b3d324","event":"client_prompt_submit","_id":"hUHgXLbNpnGbBvm5","createdAt":{"$$date":1517088250111},"updatedAt":{"$$date":1517088250111}}
-{"line":"select SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"hWxznDFPBCNaKq0c","createdAt":{"$$date":1517248324488},"updatedAt":{"$$date":1517248324488}}
-{"line":"go","event":"client_prompt_submit","_id":"hXUrJa6wklCGWINB","createdAt":{"$$date":1517546149735},"updatedAt":{"$$date":1517546149735}}
-{"line":"sqlpad -- start","event":"client_prompt_submit","_id":"hXdecp8sc0gSMZER","createdAt":{"$$date":1517451172248},"updatedAt":{"$$date":1517451172248}}
-{"line":"instance -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"hdyciuyTErFfCqCi","createdAt":{"$$date":1517508541361},"updatedAt":{"$$date":1517508541361}}
-{"line":"go","event":"client_prompt_submit","_id":"hiSFuGPL9mDtwYC5","createdAt":{"$$date":1518028689617},"updatedAt":{"$$date":1518028689617}}
-{"line":"?","event":"client_prompt_submit","_id":"hl3XhU7UbVM6ceHw","createdAt":{"$$date":1517166713377},"updatedAt":{"$$date":1517166713377}}
-{"line":"about -n","event":"client_prompt_submit","_id":"huXvSNx4pWGVSU5x","createdAt":{"$$date":1517500302811},"updatedAt":{"$$date":1517500302811}}
-{"line":"config e","event":"client_prompt_submit","_id":"i0fP0QhmiPigbq9g","createdAt":{"$$date":1516848250359},"updatedAt":{"$$date":1516848250359}}
-{"line":"sqlpad --start","event":"client_prompt_submit","_id":"i1exhmNpUg56xx4b","createdAt":{"$$date":1517450523863},"updatedAt":{"$$date":1517450523863}}
-{"line":"go","event":"client_prompt_submit","_id":"iAAoCnsk1ibzyCEw","createdAt":{"$$date":1517240146688},"updatedAt":{"$$date":1517240146688}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"iAu1VEb4KdTtg6XK","createdAt":{"$$date":1517242064166},"updatedAt":{"$$date":1517242064166}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"iCkI1utaiXTKwv5C","createdAt":{"$$date":1517166187012},"updatedAt":{"$$date":1517166187012}}
-{"line":"? -n","event":"client_prompt_submit","_id":"iDmsDSBZKwpoNEmP","createdAt":{"$$date":1517242433603},"updatedAt":{"$$date":1517242433603}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"iEmcXzRXnFkyWnPt","createdAt":{"$$date":1517256437325},"updatedAt":{"$$date":1517256437325}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"iHj753Nsuio0pNTz","createdAt":{"$$date":1517442014131},"updatedAt":{"$$date":1517442014131}}
-{"line":"query procedures","event":"client_prompt_submit","_id":"iNNjn1eA7aLwgRGr","createdAt":{"$$date":1517172981639},"updatedAt":{"$$date":1517172981639}}
-{"line":"help","event":"client_prompt_submit","_id":"iRpKvaoCJxVyulTI","createdAt":{"$$date":1516890115318},"updatedAt":{"$$date":1516890115318}}
-{"line":"instance -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"iYXF6FaPD1ek8DYU","createdAt":{"$$date":1517166359747},"updatedAt":{"$$date":1517166359747}}
-{"line":"go","event":"client_prompt_submit","_id":"icJmtP71P3ycTt3s","createdAt":{"$$date":1517248327712},"updatedAt":{"$$date":1517248327712}}
-{"line":"go","event":"client_prompt_submit","_id":"ieRUboa3I0aOtpqV","createdAt":{"$$date":1517169585128},"updatedAt":{"$$date":1517169585128}}
-{"line":"~ -t 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"ii234YxfRX2hCL1t","createdAt":{"$$date":1516890568184},"updatedAt":{"$$date":1516890568184}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ijmOUKiZstDc8Z5b","createdAt":{"$$date":1517199081065},"updatedAt":{"$$date":1517199081065}}
-{"line":"config e","event":"client_prompt_submit","_id":"in9JdU7NVP1o7Pus","createdAt":{"$$date":1516848500437},"updatedAt":{"$$date":1516848500437}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"inHqPJiP0BMVTZJY","createdAt":{"$$date":1517256718780},"updatedAt":{"$$date":1517256718780}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"iqkO2nfm1dOZjVeq","createdAt":{"$$date":1517240315411},"updatedAt":{"$$date":1517240315411}}
-{"line":"run","event":"client_prompt_submit","_id":"iriN9Vu1YCC1k1Xq","createdAt":{"$$date":1518028723279},"updatedAt":{"$$date":1518028723279}}
-{"line":"~ -t b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"ivkyyN417hkGH7WQ","createdAt":{"$$date":1516834977430},"updatedAt":{"$$date":1516834977430}}
-{"line":"instance -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"iwS2TxDJNsw2WiOZ","createdAt":{"$$date":1517199002474},"updatedAt":{"$$date":1517199002474}}
-{"line":"instance --remove b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"j0RS9yy4fzbINBYO","createdAt":{"$$date":1517165449409},"updatedAt":{"$$date":1517165449409}}
-{"line":"image --pull","event":"client_prompt_submit","_id":"jdwIKxtty4invI26","createdAt":{"$$date":1517508318169},"updatedAt":{"$$date":1517508318169}}
-{"line":"go","event":"client_prompt_submit","_id":"jenNNmoSB61cD9g7","createdAt":{"$$date":1517238311530},"updatedAt":{"$$date":1517238311530}}
-{"line":"go","event":"client_prompt_submit","_id":"juBwPsdzb6xDhN4T","createdAt":{"$$date":1517255972501},"updatedAt":{"$$date":1517255972501}}
-{"line":"instance --remove a8916bad504bf41d7488f7d7bee44421502f55345a65577d0855d9927f92336b","event":"client_prompt_submit","_id":"jvdXmuOfUI9nlfIj","createdAt":{"$$date":1517148428241},"updatedAt":{"$$date":1517148428241}}
-{"line":"? -n","event":"client_prompt_submit","_id":"jvkodeeB0fJLxTHL","createdAt":{"$$date":1517252691045},"updatedAt":{"$$date":1517252691045}}
-{"line":"BEGIN","event":"client_prompt_submit","_id":"jxg5PGN0aQxwTqjE","createdAt":{"$$date":1517249381733},"updatedAt":{"$$date":1517249381733}}
-{"line":"go","event":"client_prompt_submit","_id":"jxpi8N6XAHAUHja3","createdAt":{"$$date":1517241051857},"updatedAt":{"$$date":1517241051857}}
-{"line":"instance --remove 37b4367526b7312bf9c04603116eed248e3ae9ff8f00ae1fb681afb4f0c75143","event":"client_prompt_submit","_id":"k0JfVwyfEEetlgpk","createdAt":{"$$date":1517092499139},"updatedAt":{"$$date":1517092499139}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"k3kNudJcy9ddESan","createdAt":{"$$date":1517240099732},"updatedAt":{"$$date":1517240099732}}
-{"line":"instance --remove 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"k4a4XDtaVGE8FyLw","createdAt":{"$$date":1517088756091},"updatedAt":{"$$date":1517088756091}}
-{"line":"SELECT CASE WHEN NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '%') THEN 'true' ELSE 'false' END","event":"client_prompt_submit","_id":"k5eAb0VcUO4gn7fj","createdAt":{"$$date":1517242583700},"updatedAt":{"$$date":1517242583700}}
-{"line":"instance --stop 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"kBYSrRkK6voK4BfA","createdAt":{"$$date":1517088866164},"updatedAt":{"$$date":1517088866164}}
-{"line":"? -m relaod","event":"client_prompt_submit","_id":"kCncqi5N2tNEDVdZ","createdAt":{"$$date":1517086539026},"updatedAt":{"$$date":1517086539026}}
-{"line":"instance --start 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"kK0M3ijJlRpbiZFC","createdAt":{"$$date":1516747492944},"updatedAt":{"$$date":1516747492944}}
-{"line":"SELECT SERVERPROPERTY('MachineName') AS [MachineName]","event":"client_prompt_submit","_id":"kLdtJid8JC7dGSVp","createdAt":{"$$date":1517241035795},"updatedAt":{"$$date":1517241035795}}
-{"line":"--help","event":"client_prompt_submit","_id":"kRDFjiWSPyWT5AHv","createdAt":{"$$date":1516753692410},"updatedAt":{"$$date":1516753692410}}
-{"line":"about -t","event":"client_prompt_submit","_id":"kSOTR6Ncukgjomsx","createdAt":{"$$date":1517499868009},"updatedAt":{"$$date":1517499868009}}
-{"line":"go","event":"client_prompt_submit","_id":"kaFBDrI0bvFtnptQ","createdAt":{"$$date":1517096983898},"updatedAt":{"$$date":1517096983898}}
-{"line":"SELECT SERVERPROPERTY('ProductVersion')","event":"client_prompt_submit","_id":"kbjjnQQWpgvU3KHn","createdAt":{"$$date":1517238902596},"updatedAt":{"$$date":1517238902596}}
-{"line":"cache -c mssql","event":"client_prompt_submit","_id":"kfwgLm2pjVwgx3DI","createdAt":{"$$date":1517546269777},"updatedAt":{"$$date":1517546269777}}
-{"line":"? -n","event":"client_prompt_submit","_id":"kirIJzTx2Arp531f","createdAt":{"$$date":1517256409198},"updatedAt":{"$$date":1517256409198}}
-{"line":"image --run sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"kkMDT7TtqQPrhrPy","createdAt":{"$$date":1517169434794},"updatedAt":{"$$date":1517169434794}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"kl7FxWfdaTEfsqpl","createdAt":{"$$date":1517238976084},"updatedAt":{"$$date":1517238976084}}
-{"line":"config e","event":"client_prompt_submit","_id":"kui6mhC8f2q7UgFV","createdAt":{"$$date":1516847294982},"updatedAt":{"$$date":1516847294982}}
-{"line":"help","event":"client_prompt_submit","_id":"lCqAOIn7B75kjgo4","createdAt":{"$$date":1517626637869},"updatedAt":{"$$date":1517626637869}}
-{"line":"about -s","event":"client_prompt_submit","_id":"lJB1wcbrVOwoqX94","createdAt":{"$$date":1517281683559},"updatedAt":{"$$date":1517281683559}}
-{"line":"go","event":"client_prompt_submit","_id":"lPFWur4oJQ477V8g","createdAt":{"$$date":1517187594956},"updatedAt":{"$$date":1517187594956}}
-{"line":"?","event":"client_prompt_submit","_id":"lPn0LyabISdFFteC","createdAt":{"$$date":1517239394415},"updatedAt":{"$$date":1517239394415}}
-{"line":"?","event":"client_prompt_submit","_id":"lQegogLc5C8fBJA3","createdAt":{"$$date":1517242954043},"updatedAt":{"$$date":1517242954043}}
-{"line":"go","event":"client_prompt_submit","_id":"lTnP4TcEQjqfu2dw","createdAt":{"$$date":1517237612888},"updatedAt":{"$$date":1517237612888}}
-{"line":"help","event":"client_prompt_submit","_id":"ljzCevmJdH6o8x8M","createdAt":{"$$date":1516768386020},"updatedAt":{"$$date":1516768386020}}
-{"line":"instance --remove 87fdebe1e92e344aede724d3b5f90d5044abfbc6dde2d23dddfd8c8f3f26ff4b","event":"client_prompt_submit","_id":"lnuCQvIxprDnh4v2","createdAt":{"$$date":1517166256823},"updatedAt":{"$$date":1517166256823}}
-{"line":"query databases","event":"client_prompt_submit","_id":"lpv8dgpaT7wxY0ug","createdAt":{"$$date":1517173018649},"updatedAt":{"$$date":1517173018649}}
-{"line":"?","event":"client_prompt_submit","_id":"lrhH9a8OXMs4ov5P","createdAt":{"$$date":1516738721267},"updatedAt":{"$$date":1516738721267}}
-{"line":"config e","event":"client_prompt_submit","_id":"ltXANW3uLfsGXQE9","createdAt":{"$$date":1516847223553},"updatedAt":{"$$date":1516847223553}}
-{"line":"about -t","event":"client_prompt_submit","_id":"lw8lp4zb2CPQcLwW","createdAt":{"$$date":1517498748571},"updatedAt":{"$$date":1517498748571}}
-{"line":"sqlpad --start","event":"client_prompt_submit","_id":"m0gJ0RMjO9h6UKqQ","createdAt":{"$$date":1517450988477},"updatedAt":{"$$date":1517450988477}}
-{"line":"query","event":"client_prompt_submit","_id":"m1q3b6RG2kxYNEvE","createdAt":{"$$date":1517187368543},"updatedAt":{"$$date":1517187368543}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"mD8GaTja7XisXhdZ","createdAt":{"$$date":1517449989452},"updatedAt":{"$$date":1517449989452}}
-{"line":"query","event":"client_prompt_submit","_id":"mGOp6idwOiwvzhBO","createdAt":{"$$date":1517173513978},"updatedAt":{"$$date":1517173513978}}
-{"line":"go","event":"client_prompt_submit","_id":"mTk6V7Cly6Ub5xw9","createdAt":{"$$date":1517239035679},"updatedAt":{"$$date":1517239035679}}
-{"line":"go","event":"client_prompt_submit","_id":"mbOCbVPFPk21V2ip","createdAt":{"$$date":1517237591357},"updatedAt":{"$$date":1517237591357}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"mffcm81T5Yna6lJH","createdAt":{"$$date":1517097559753},"updatedAt":{"$$date":1517097559753}}
-{"line":"? --help","event":"client_prompt_submit","_id":"mpr3Vojn90mWnZKA","createdAt":{"$$date":1517579591323},"updatedAt":{"$$date":1517579591323}}
-{"line":"~ -t 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"mtquJMH7EdO94QgJ","createdAt":{"$$date":1517199800519},"updatedAt":{"$$date":1517199800519}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"myQWnAanJB82ZjrB","createdAt":{"$$date":1517086543315},"updatedAt":{"$$date":1517086543315}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"n8f6i9ErLUarukky","createdAt":{"$$date":1517546803452},"updatedAt":{"$$date":1517546803452}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"nDdeV38eucTMbZ6R","createdAt":{"$$date":1517241672979},"updatedAt":{"$$date":1517241672979}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"nDsUkrtEE78pQfjw","createdAt":{"$$date":1517252618320},"updatedAt":{"$$date":1517252618320}}
-{"line":"go","event":"client_prompt_submit","_id":"nPROq8C3U8CwGfou","createdAt":{"$$date":1517242066944},"updatedAt":{"$$date":1517242066944}}
-{"line":"about -t","event":"client_prompt_submit","_id":"nefMI3ZUKMF7FC8B","createdAt":{"$$date":1517498705834},"updatedAt":{"$$date":1517498705834}}
-{"line":"instance -b","event":"client_prompt_submit","_id":"njUQgaI0YnazUDnt","createdAt":{"$$date":1516919877213},"updatedAt":{"$$date":1516919877213}}
-{"line":"IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%')","event":"client_prompt_submit","_id":"nmq7N5mSyo1TT0LT","createdAt":{"$$date":1517249172692},"updatedAt":{"$$date":1517249172692}}
-{"line":"image --run sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"nuBhhEGELu9NiQSd","createdAt":{"$$date":1517092627591},"updatedAt":{"$$date":1517092627591}}
-{"line":"?","event":"client_prompt_submit","_id":"nypcbio1ZYQZkgpA","createdAt":{"$$date":1517187581743},"updatedAt":{"$$date":1517187581743}}
-{"line":"go","event":"client_prompt_submit","_id":"o2o4V08EBROBVyRz","createdAt":{"$$date":1517239192589},"updatedAt":{"$$date":1517239192589}}
-{"line":"--help","event":"client_prompt_submit","_id":"o9wAkC9b140sZpVI","createdAt":{"$$date":1516813646801},"updatedAt":{"$$date":1516813646801}}
-{"line":"~","event":"client_prompt_submit","_id":"oIE2mCVzzQq7beVS","createdAt":{"$$date":1516891008410},"updatedAt":{"$$date":1516891008410}}
-{"line":"select db_name()","event":"client_prompt_submit","_id":"oNir2xd1cdNuwTr3","createdAt":{"$$date":1517167235582},"updatedAt":{"$$date":1517167235582}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"oRPvoQOTOlN1vsWV","createdAt":{"$$date":1517256623484},"updatedAt":{"$$date":1517256623484}}
-{"line":"help","event":"client_prompt_submit","_id":"oYpDIC0wBWcEMue8","createdAt":{"$$date":1516889782534},"updatedAt":{"$$date":1516889782534}}
-{"line":"--help","event":"client_prompt_submit","_id":"ocQxYypu8MdaOPGz","createdAt":{"$$date":1516809049127},"updatedAt":{"$$date":1516809049127}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"ocoKiVAgWIqaxkAm","createdAt":{"$$date":1517442192373},"updatedAt":{"$$date":1517442192373}}
-{"line":"select @@SERVERNAME","event":"client_prompt_submit","_id":"ohChzIdjxBKW1Pkx","createdAt":{"$$date":1517450001672},"updatedAt":{"$$date":1517450001672}}
-{"line":"--help","event":"client_prompt_submit","_id":"ojeFHpn4Hzf2m98y","createdAt":{"$$date":1516769278242},"updatedAt":{"$$date":1516769278242}}
-{"line":"instance --start 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"olVPS3eNmXCoKrdV","createdAt":{"$$date":1517515778044},"updatedAt":{"$$date":1517515778044}}
-{"line":"query pro","event":"client_prompt_submit","_id":"otj2rw5RLEegRSVn","createdAt":{"$$date":1517182413491},"updatedAt":{"$$date":1517182413491}}
-{"line":"config e","event":"client_prompt_submit","_id":"pE7LwXnSpCmsu2tl","createdAt":{"$$date":1516848532172},"updatedAt":{"$$date":1516848532172}}
-{"line":"DECLARE @ProductVersion varchar(128) = CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'));","event":"client_prompt_submit","_id":"pH6rwVS1jOovvHBr","createdAt":{"$$date":1517249217929},"updatedAt":{"$$date":1517249217929}}
-{"line":"ls","event":"client_prompt_submit","_id":"pLnA2FfENlhIssPj","createdAt":{"$$date":1516923557658},"updatedAt":{"$$date":1516923557658}}
-{"line":"help","event":"client_prompt_submit","_id":"pZ6eSjzt90HQlA1j","createdAt":{"$$date":1517764687575},"updatedAt":{"$$date":1517764687575}}
-{"line":"cache --map","event":"client_prompt_submit","_id":"pbebm1lb8KxIjW37","createdAt":{"$$date":1517579100076},"updatedAt":{"$$date":1517579100076}}
-{"line":"SELECT SERVERPROPERTY('ProductVersion')","event":"client_prompt_submit","_id":"pc00U87BNwSIcf8Q","createdAt":{"$$date":1517238928373},"updatedAt":{"$$date":1517238928373}}
-{"line":"select CONVERT(VARCHAR(128), SERVERPROPERTY('ProductVersion')) LIKE '14%' as [ServerProperty]","event":"client_prompt_submit","_id":"pe9F4TU9zKiw3LOO","createdAt":{"$$date":1517248960631},"updatedAt":{"$$date":1517248960631}}
-{"line":"go","event":"client_prompt_submit","_id":"pj1ardv7vUXBKH7v","createdAt":{"$$date":1517239517577},"updatedAt":{"$$date":1517239517577}}
-{"line":"\u001f","event":"client_prompt_submit","_id":"pk54J8h7w691t2lI","createdAt":{"$$date":1517241674121},"updatedAt":{"$$date":1517241674121}}
-{"line":"sqlcmd -Q","event":"client_prompt_submit","_id":"poLRRlyCv87YXEhR","createdAt":{"$$date":1517252673932},"updatedAt":{"$$date":1517252673932}}
-{"line":"config","event":"client_prompt_submit","_id":"pyrCuYkgDxmA47yB","createdAt":{"$$date":1516848240849},"updatedAt":{"$$date":1516848240849}}
-{"line":"go","event":"client_prompt_submit","_id":"q4zdBfzy9DMPlvoT","createdAt":{"$$date":1518028804571},"updatedAt":{"$$date":1518028804571}}
-{"line":"query pro","event":"client_prompt_submit","_id":"qEMCEcrfvhcjReZW","createdAt":{"$$date":1517187725828},"updatedAt":{"$$date":1517187725828}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"qMERQA01Uo5Yw6D4","createdAt":{"$$date":1517238081059},"updatedAt":{"$$date":1517238081059}}
-{"line":"about -t","event":"client_prompt_submit","_id":"qRbPZ0sEWhW6Lzm2","createdAt":{"$$date":1517498021547},"updatedAt":{"$$date":1517498021547}}
-{"line":"instance --stop","event":"client_prompt_submit","_id":"qTk3Xv0wgQXhfF26","createdAt":{"$$date":1517515683001},"updatedAt":{"$$date":1517515683001}}
-{"line":"instance --remove 113b444f8b81a345ad69dcd5b467051c3244a9f45d666c03d0ac20c7eca3e21a","event":"client_prompt_submit","_id":"qVQv9FoxM7aR8SRz","createdAt":{"$$date":1517161871659},"updatedAt":{"$$date":1517161871659}}
-{"line":"go","event":"client_prompt_submit","_id":"qYpNj9me8vnrJsQe","createdAt":{"$$date":1517237684283},"updatedAt":{"$$date":1517237684283}}
-{"line":"go","event":"client_prompt_submit","_id":"qfgkxDXVrxRByhwT","createdAt":{"$$date":1517252561678},"updatedAt":{"$$date":1517252561678}}
-{"line":"go","event":"client_prompt_submit","_id":"r6GphYuSk3YJqpzW","createdAt":{"$$date":1517238933063},"updatedAt":{"$$date":1517238933063}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"rFUB8lAhAoXRH1yO","createdAt":{"$$date":1517240089914},"updatedAt":{"$$date":1517240089914}}
-{"line":"--help","event":"client_prompt_submit","_id":"rNGKbMPhev3gbqY4","createdAt":{"$$date":1516809597873},"updatedAt":{"$$date":1516809597873}}
-{"line":"go","event":"client_prompt_submit","_id":"rOBfr2vJufB7YAKA","createdAt":{"$$date":1517670013463},"updatedAt":{"$$date":1517670013463}}
-{"line":"~","event":"client_prompt_submit","_id":"rOSgYxXlaw6kjnAT","createdAt":{"$$date":1518028654220},"updatedAt":{"$$date":1518028654220}}
-{"line":"go","event":"client_prompt_submit","_id":"rTIDt42TVTAmiX0U","createdAt":{"$$date":1517248214519},"updatedAt":{"$$date":1517248214519}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"rXwFOnm00MhszmyI","createdAt":{"$$date":1517582589905},"updatedAt":{"$$date":1517582589905}}
-{"line":"SELECT CASE WHEN NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%') THEN 'true' ELSE 'false' END","event":"client_prompt_submit","_id":"rZgBLYo3qaykmmvp","createdAt":{"$$date":1517242506767},"updatedAt":{"$$date":1517242506767}}
-{"line":"\u001f","event":"client_prompt_submit","_id":"rZjDaunSW5CHYJEP","createdAt":{"$$date":1517241668481},"updatedAt":{"$$date":1517241668481}}
-{"line":"? -n","event":"client_prompt_submit","_id":"rb7FxcCyeItUNIa0","createdAt":{"$$date":1517256615297},"updatedAt":{"$$date":1517256615297}}
-{"line":"SELECT SERVERPROPERTY('MachineName') AS [MachineName],","event":"client_prompt_submit","_id":"rkTdoUU42XcJQgiy","createdAt":{"$$date":1517239388367},"updatedAt":{"$$date":1517239388367}}
-{"line":"about -n","event":"client_prompt_submit","_id":"rqmU5cYU033kNmQY","createdAt":{"$$date":1517500363949},"updatedAt":{"$$date":1517500363949}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"rs2thQCwPYC8LsDQ","createdAt":{"$$date":1517256489107},"updatedAt":{"$$date":1517256489107}}
-{"line":"cache","event":"client_prompt_submit","_id":"rtqc0j0rv2BfdA8Z","createdAt":{"$$date":1517172532722},"updatedAt":{"$$date":1517172532722}}
-{"line":"about -c","event":"client_prompt_submit","_id":"ru7KW7tTLiVE9nEW","createdAt":{"$$date":1517097163475},"updatedAt":{"$$date":1517097163475}}
-{"line":"instance --stop 2d87c1a536da7c15e564b48f6211a55f736ed455f8d3ef64265451bf9b25ef30","event":"client_prompt_submit","_id":"rvNmr3PQlb5AMqHT","createdAt":{"$$date":1517509311967},"updatedAt":{"$$date":1517509311967}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"s09Ov6qqNl5GiXVJ","createdAt":{"$$date":1517582658929},"updatedAt":{"$$date":1517582658929}}
-{"line":"help about","event":"client_prompt_submit","_id":"s2c5soLIsdzxWpDM","createdAt":{"$$date":1516902299478},"updatedAt":{"$$date":1516902299478}}
-{"line":"go","event":"client_prompt_submit","_id":"s2g0Hl96wk72Ib2b","createdAt":{"$$date":1517242391315},"updatedAt":{"$$date":1517242391315}}
-{"line":"select SERVERPROPERTY('Edition') as [ServerProperty]","event":"client_prompt_submit","_id":"s51PgcQpZS0RaWDf","createdAt":{"$$date":1517248335629},"updatedAt":{"$$date":1517248335629}}
-{"line":"? -n","event":"client_prompt_submit","_id":"sRVQcnQrxvYIkXUn","createdAt":{"$$date":1517252665742},"updatedAt":{"$$date":1517252665742}}
-{"line":"--help","event":"client_prompt_submit","_id":"sWp3LXKue1S8aUqz","createdAt":{"$$date":1516810743935},"updatedAt":{"$$date":1516810743935}}
-{"line":"image --run sha256:db87203a2ae61126b739f23e222a17ecb6578ba1d80dc46f91c82c6e9d7c4806","event":"client_prompt_submit","_id":"sc2NzpDYGeDHY4Xn","createdAt":{"$$date":1517508695931},"updatedAt":{"$$date":1517508695931}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"sddOknLxhx0Yl1OV","createdAt":{"$$date":1517241683388},"updatedAt":{"$$date":1517241683388}}
-{"line":"query","event":"client_prompt_submit","_id":"sjpBQ7AaWePGD1Rn","createdAt":{"$$date":1517173692627},"updatedAt":{"$$date":1517173692627}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"snb9bcjqH0UwK0sp","createdAt":{"$$date":1517098184769},"updatedAt":{"$$date":1517098184769}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"suSaGR59WiXmnGue","createdAt":{"$$date":1517166272238},"updatedAt":{"$$date":1517166272238}}
-{"line":"go","event":"client_prompt_submit","_id":"t3kMtzR9k4MEtMPy","createdAt":{"$$date":1517238094226},"updatedAt":{"$$date":1517238094226}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"t5RG6hfoXfwYSpR5","createdAt":{"$$date":1517240961168},"updatedAt":{"$$date":1517240961168}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"t6tTtgsexF60La4V","createdAt":{"$$date":1517167673438},"updatedAt":{"$$date":1517167673438}}
-{"line":"go","event":"client_prompt_submit","_id":"tBljVmZXu6u5UOa1","createdAt":{"$$date":1517241110339},"updatedAt":{"$$date":1517241110339}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"tF8V0cmKsfN02ZMa","createdAt":{"$$date":1517546724208},"updatedAt":{"$$date":1517546724208}}
-{"line":"script restoreAdventureWorks.sql","event":"client_prompt_submit","_id":"tM62l5O01vm5Bkuu","createdAt":{"$$date":1517545842560},"updatedAt":{"$$date":1517545842560}}
-{"line":"? -n","event":"client_prompt_submit","_id":"tMUMe8ogJGY2aNBv","createdAt":{"$$date":1517255968905},"updatedAt":{"$$date":1517255968905}}
-{"line":"instance --remove 2938ed78d9516565cdb4689e9635a020eb570abee37e657510d54ec97106ee7e","event":"client_prompt_submit","_id":"tfv3nL7q6nnT2yr9","createdAt":{"$$date":1517165485796},"updatedAt":{"$$date":1517165485796}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"tiX7DRTdj6hDiODs","createdAt":{"$$date":1517256702482},"updatedAt":{"$$date":1517256702482}}
-{"line":"about -a","event":"client_prompt_submit","_id":"tjRE6mE5fAZccU3P","createdAt":{"$$date":1516889707683},"updatedAt":{"$$date":1516889707683}}
-{"line":"SELECT SERVERPROPERTY('ProductVersion')","event":"client_prompt_submit","_id":"tnZaYRanvXhyOAlE","createdAt":{"$$date":1517239063599},"updatedAt":{"$$date":1517239063599}}
-{"line":"--help","event":"client_prompt_submit","_id":"to4uj4YeSRPKLfU9","createdAt":{"$$date":1517764767820},"updatedAt":{"$$date":1517764767820}}
-{"line":"~","event":"client_prompt_submit","_id":"toOLk0OCc7ebo4cX","createdAt":{"$$date":1517256428248},"updatedAt":{"$$date":1517256428248}}
-{"line":"about -p","event":"client_prompt_submit","_id":"ttvP9kdi6WGISlEV","createdAt":{"$$date":1516902332714},"updatedAt":{"$$date":1516902332714}}
-{"line":"\u001f?","event":"client_prompt_submit","_id":"u2EWtrw33u20TJYK","createdAt":{"$$date":1517256474130},"updatedAt":{"$$date":1517256474130}}
-{"line":"instance --stop c38ab971a4284e21f62a813302b81a7c2217da3845841c147a8c09c5e0b3d324","event":"client_prompt_submit","_id":"u2cWiqDkIona6vzh","createdAt":{"$$date":1517088224993},"updatedAt":{"$$date":1517088224993}}
-{"line":"instance -t b56b9fff975fcc36f7bc93e3bd556417a26885f0a39b4235f7417c9006297856","event":"client_prompt_submit","_id":"u3Ox5NqQIRwvGvO3","createdAt":{"$$date":1516736949278},"updatedAt":{"$$date":1516736949278}}
-{"line":"?","event":"client_prompt_submit","_id":"u42s72w5oqq9rOlP","createdAt":{"$$date":1517187392524},"updatedAt":{"$$date":1517187392524}}
-{"line":"script serverPropertiesTest.sql","event":"client_prompt_submit","_id":"u872u9uXh4DakOAp","createdAt":{"$$date":1517240948419},"updatedAt":{"$$date":1517240948419}}
-{"line":"SERVERPROPERTY('ServerName') AS [ServerName],","event":"client_prompt_submit","_id":"uBIrEmoWCkYTO1e2","createdAt":{"$$date":1517239419534},"updatedAt":{"$$date":1517239419534}}
-{"line":"loglevel 10","event":"client_prompt_submit","_id":"uEU2AoO6ZJpVzcJy","createdAt":{"$$date":1517238091703},"updatedAt":{"$$date":1517238091703}}
-{"line":"about -t","event":"client_prompt_submit","_id":"uN3HDIh64YDidVMV","createdAt":{"$$date":1517497768579},"updatedAt":{"$$date":1517497768579}}
-{"line":"~","event":"client_prompt_submit","_id":"ubxTTMLVImQiQckR","createdAt":{"$$date":1516890911220},"updatedAt":{"$$date":1516890911220}}
-{"line":"instance","event":"client_prompt_submit","_id":"ujmRN1yPME25O39i","createdAt":{"$$date":1517232150981},"updatedAt":{"$$date":1517232150981}}
-{"line":"go","event":"client_prompt_submit","_id":"ul5w04rQWJNzS0aL","createdAt":{"$$date":1517248706041},"updatedAt":{"$$date":1517248706041}}
-{"line":"PRINT N'You have the correct major version of SQL Server for this diagnostic information script';","event":"client_prompt_submit","_id":"uqLQy888ek1i6hhV","createdAt":{"$$date":1517249409380},"updatedAt":{"$$date":1517249409380}}
-{"line":"go","event":"client_prompt_submit","_id":"uwVJQsWsDVGmQCld","createdAt":{"$$date":1517249327314},"updatedAt":{"$$date":1517249327314}}
-{"line":"use AdventureWorks2014","event":"client_prompt_submit","_id":"uxOssb8Vd5w3wtce","createdAt":{"$$date":1517187689359},"updatedAt":{"$$date":1517187689359}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"v08b86PukgOVxHVZ","createdAt":{"$$date":1517451016926},"updatedAt":{"$$date":1517451016926}}
-{"line":"? -m","event":"client_prompt_submit","_id":"vHVaxBy7Jz9UJJFv","createdAt":{"$$date":1517169742430},"updatedAt":{"$$date":1517169742430}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"vMKg7XLDtcKYvN12","createdAt":{"$$date":1517238304008},"updatedAt":{"$$date":1517238304008}}
-{"line":"select 1","event":"client_prompt_submit","_id":"vUJ4RfBMNsBczK1S","createdAt":{"$$date":1517232047535},"updatedAt":{"$$date":1517232047535}}
-{"line":"query pro","event":"client_prompt_submit","_id":"vcKia1Ai7tM6Pks8","createdAt":{"$$date":1517187079262},"updatedAt":{"$$date":1517187079262}}
-{"line":"cache --help","event":"client_prompt_submit","_id":"vieKhZLlEM8lytn0","createdAt":{"$$date":1517546249428},"updatedAt":{"$$date":1517546249428}}
-{"line":"END","event":"client_prompt_submit","_id":"vkNdZqgZ0LLNpSME","createdAt":{"$$date":1517249401062},"updatedAt":{"$$date":1517249401062}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"vrfJmyUFhIj6s2IA","createdAt":{"$$date":1517337390517},"updatedAt":{"$$date":1517337390517}}
-{"line":"END","event":"client_prompt_submit","_id":"vy58tEP1VojAutHE","createdAt":{"$$date":1517249301343},"updatedAt":{"$$date":1517249301343}}
-{"line":"--help","event":"client_prompt_submit","_id":"vzOLRaSwocnb16UB","createdAt":{"$$date":1516889613002},"updatedAt":{"$$date":1516889613002}}
-{"line":"?","event":"client_prompt_submit","_id":"vzVSkAPN6p6CUtOk","createdAt":{"$$date":1517248685672},"updatedAt":{"$$date":1517248685672}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"w0Mtq9YxegwU2NWM","createdAt":{"$$date":1517199673799},"updatedAt":{"$$date":1517199673799}}
-{"line":"image --run sha256:5985832855cf1233b22c268d5f69c55b83e89e01679ec0869d8664fd11e8aff4","event":"client_prompt_submit","_id":"w2heH5rSHwFP2JWG","createdAt":{"$$date":1517252810674},"updatedAt":{"$$date":1517252810674}}
-{"line":"select (CONVERT(VARCHAR(128), SERVERPROPERTY('ProductVersion'))) LIKE '14%' as [ServerProperty]","event":"client_prompt_submit","_id":"w68nuJvD4huNndZc","createdAt":{"$$date":1517249041759},"updatedAt":{"$$date":1517249041759}}
-{"line":"~ --start 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"wGUNjkK8R41xD8m1","createdAt":{"$$date":1517708441167},"updatedAt":{"$$date":1517708441167}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"wURIbl6HxQGn9EmZ","createdAt":{"$$date":1517237588993},"updatedAt":{"$$date":1517237588993}}
-{"line":"? -n","event":"client_prompt_submit","_id":"wXG2Ptu4qmRdQNap","createdAt":{"$$date":1517252557706},"updatedAt":{"$$date":1517252557706}}
-{"line":"?","event":"client_prompt_submit","_id":"wYLkJqCDxx2piP7M","createdAt":{"$$date":1516741649205},"updatedAt":{"$$date":1516741649205}}
-{"line":"query","event":"client_prompt_submit","_id":"wfgxQV3DfrdZc2bp","createdAt":{"$$date":1517187571904},"updatedAt":{"$$date":1517187571904}}
-{"line":"SERVERPROPERTY('IsClustered') AS [IsClustered],","event":"client_prompt_submit","_id":"wgnZFjzlMcWdMb63","createdAt":{"$$date":1517239463349},"updatedAt":{"$$date":1517239463349}}
-{"line":"go","event":"client_prompt_submit","_id":"wpxq9R40RydsX8fz","createdAt":{"$$date":1517241433941},"updatedAt":{"$$date":1517241433941}}
-{"line":"select 1","event":"client_prompt_submit","_id":"wxvR2jRrroc1Iau7","createdAt":{"$$date":1517337358833},"updatedAt":{"$$date":1517337358833}}
-{"line":"config e","event":"client_prompt_submit","_id":"x0GTIaAPDAvIHkcS","createdAt":{"$$date":1516848108442},"updatedAt":{"$$date":1516848108442}}
-{"line":"query","event":"client_prompt_submit","_id":"xDlZLClHbPT7rkHC","createdAt":{"$$date":1517173520063},"updatedAt":{"$$date":1517173520063}}
-{"line":"go","event":"client_prompt_submit","_id":"xEBZHFslxLwaSvBy","createdAt":{"$$date":1517239567680},"updatedAt":{"$$date":1517239567680}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"xHVUiBPJU2CE4So6","createdAt":{"$$date":1517441941995},"updatedAt":{"$$date":1517441941995}}
-{"line":"image --run sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"xINHjDKjna8zOh7E","createdAt":{"$$date":1517092414987},"updatedAt":{"$$date":1517092414987}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"xL87iXBP5GWeCxay","createdAt":{"$$date":1517199153302},"updatedAt":{"$$date":1517199153302}}
-{"line":"repl","event":"client_prompt_submit","_id":"xNutQune86pcBvcg","createdAt":{"$$date":1517278312882},"updatedAt":{"$$date":1517278312882}}
-{"line":"instance --remove sha256:cb3198f4b4d3eaa2bc257c993e9a015e7a467189e94d3fa9611db04357276168","event":"client_prompt_submit","_id":"xO2hE0g38hQx7kWb","createdAt":{"$$date":1517086802120},"updatedAt":{"$$date":1517086802120}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%'","event":"client_prompt_submit","_id":"xOzPvHrsBu1OcxK7","createdAt":{"$$date":1517252668520},"updatedAt":{"$$date":1517252668520}}
-{"line":"query","event":"client_prompt_submit","_id":"xURhvdMhosJJp6pQ","createdAt":{"$$date":1517186878045},"updatedAt":{"$$date":1517186878045}}
-{"line":"instance --stop 247c0322c6b9115a2b45cb7da8293a605b02edafebf3f85181ec80dddea07c24","event":"client_prompt_submit","_id":"xUfWxJK68MgDn1eU","createdAt":{"$$date":1517148260108},"updatedAt":{"$$date":1517148260108}}
-{"line":"? -n","event":"client_prompt_submit","_id":"xgzkbaU0eGWZXiAO","createdAt":{"$$date":1517252757262},"updatedAt":{"$$date":1517252757262}}
-{"line":"SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'))","event":"client_prompt_submit","_id":"xhqcmbRhKZjMBpAA","createdAt":{"$$date":1517252560494},"updatedAt":{"$$date":1517252560494}}
-{"line":"image --pull","event":"client_prompt_submit","_id":"xiC6p855sNcfXm2u","createdAt":{"$$date":1517508571907},"updatedAt":{"$$date":1517508571907}}
-{"line":"cache -m i","event":"client_prompt_submit","_id":"xvnOWFQLbUhnYYIj","createdAt":{"$$date":1517708497441},"updatedAt":{"$$date":1517708497441}}
-{"line":"about -t","event":"client_prompt_submit","_id":"xwnieqmRHxDvYx0U","createdAt":{"$$date":1517498292865},"updatedAt":{"$$date":1517498292865}}
-{"line":"?","event":"client_prompt_submit","_id":"y0ruH0juFaZ5YTHL","createdAt":{"$$date":1517242436659},"updatedAt":{"$$date":1517242436659}}
-{"line":"about -c e","event":"client_prompt_submit","_id":"y2nLsy2yyO2GZe48","createdAt":{"$$date":1517450440034},"updatedAt":{"$$date":1517450440034}}
-{"line":"--help","event":"client_prompt_submit","_id":"y7ZdXq8w5IHdwEkD","createdAt":{"$$date":1516769165814},"updatedAt":{"$$date":1516769165814}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"y8wMsYjjUPlnEjJW","createdAt":{"$$date":1517508654515},"updatedAt":{"$$date":1517508654515}}
-{"line":"? -m i","event":"client_prompt_submit","_id":"yB6p8QLtwEyFX9Yn","createdAt":{"$$date":1517580046158},"updatedAt":{"$$date":1517580046158}}
-{"line":"instance -start 2cf41463290708722c4e7e78dd9fe06cc6d1739da38b72180247f2161aaae73f","event":"client_prompt_submit","_id":"yBHWW4U8dtM6cC2Z","createdAt":{"$$date":1516747674176},"updatedAt":{"$$date":1516747674176}}
-{"line":"go","event":"client_prompt_submit","_id":"yIAmFZELcqWjk88J","createdAt":{"$$date":1517240321285},"updatedAt":{"$$date":1517240321285}}
-{"line":"go","event":"client_prompt_submit","_id":"yKU4hIoTpQhQRHwL","createdAt":{"$$date":1517255964067},"updatedAt":{"$$date":1517255964067}}
-{"line":"instance -a","event":"client_prompt_submit","_id":"yKnAmrOEVkiTlxCF","createdAt":{"$$date":1517536507930},"updatedAt":{"$$date":1517536507930}}
-{"line":"sqlpad","event":"client_prompt_submit","_id":"yRAUpuKc5GDM4C0O","createdAt":{"$$date":1517450972904},"updatedAt":{"$$date":1517450972904}}
-{"line":"go","event":"client_prompt_submit","_id":"ySsw5JnhYrOEw8bN","createdAt":{"$$date":1517096970735},"updatedAt":{"$$date":1517096970735}}
-{"line":"select @@VERSION AS [Version]","event":"client_prompt_submit","_id":"yT5IctRtDEgH3mEE","createdAt":{"$$date":1517248250795},"updatedAt":{"$$date":1517248250795}}
-{"line":"select SERVERPROPERTY(\"ServerName\")","event":"client_prompt_submit","_id":"ybrOmqCTGYh0ye5G","createdAt":{"$$date":1518028777996},"updatedAt":{"$$date":1518028777996}}
-{"line":"config e","event":"client_prompt_submit","_id":"ycwJtmRl8aCtMjKV","createdAt":{"$$date":1516847973665},"updatedAt":{"$$date":1516847973665}}
-{"line":"instance -f","event":"client_prompt_submit","_id":"ydJr1ocPT4zXE40X","createdAt":{"$$date":1517146373907},"updatedAt":{"$$date":1517146373907}}
-{"line":"query","event":"client_prompt_submit","_id":"ydbXuqfw90fPUyKw","createdAt":{"$$date":1516768507376},"updatedAt":{"$$date":1516768507376}}
-{"line":"instance -s 3506b8aff069425ae4aec65c46a8d711c8a5c45a67819b650d98b5c44cf3c257","event":"client_prompt_submit","_id":"ylhTkTMdIOkvHGJM","createdAt":{"$$date":1516744089206},"updatedAt":{"$$date":1516744089206}}
-{"line":"select @@version","event":"client_prompt_submit","_id":"ypPUtTy8koTIfBsO","createdAt":{"$$date":1517242896889},"updatedAt":{"$$date":1517242896889}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"yyjrsZv8KzhFJI3m","createdAt":{"$$date":1517318261683},"updatedAt":{"$$date":1517318261683}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"z5WEKZrYNTBF3AGy","createdAt":{"$$date":1517255921691},"updatedAt":{"$$date":1517255921691}}
-{"line":"config e","event":"client_prompt_submit","_id":"zC7SOky9JOxTGohE","createdAt":{"$$date":1516847059939},"updatedAt":{"$$date":1516847059939}}
-{"line":"query proc","event":"client_prompt_submit","_id":"zIDqJsPaJ5YxqPaK","createdAt":{"$$date":1517181472380},"updatedAt":{"$$date":1517181472380}}
-{"line":"instance -i","event":"client_prompt_submit","_id":"zIpgIoP3YLxXUtzf","createdAt":{"$$date":1517166387845},"updatedAt":{"$$date":1517166387845}}
-{"line":"~ -t 2c763577db75f51c98eaeee497d9426dc97ae661659b1c0279e4120e06f8e461","event":"client_prompt_submit","_id":"zMe8UGIdoxATVkk0","createdAt":{"$$date":1517199957747},"updatedAt":{"$$date":1517199957747}}
-{"line":"about -n","event":"client_prompt_submit","_id":"zgFoVgPzXOeXdFZ9","createdAt":{"$$date":1516902307222},"updatedAt":{"$$date":1516902307222}}
-{"line":"image --run sha256:b0bb2e68f09100503de16ff066e4b67d1495ac96708d94b38b25ff0b250b96ae","event":"client_prompt_submit","_id":"zhoFKGLJ0yudA44r","createdAt":{"$$date":1517166090704},"updatedAt":{"$$date":1517166090704}}
-{"line":"config","event":"client_prompt_submit","_id":"zikUAw9YyalVOf7d","createdAt":{"$$date":1516847036334},"updatedAt":{"$$date":1516847036334}}
-{"line":"query procedures","event":"client_prompt_submit","_id":"zl3TK9xEk6XkK1L0","createdAt":{"$$date":1517173700523},"updatedAt":{"$$date":1517173700523}}
-{"line":"? -m reload","event":"client_prompt_submit","_id":"zrwopDPLECEArf1v","createdAt":{"$$date":1517096576680},"updatedAt":{"$$date":1517096576680}}
-{"line":"select 1","event":"client_prompt_submit","_id":"zuXQpJ6ItgXjSNzj","createdAt":{"$$date":1517096969363},"updatedAt":{"$$date":1517096969363}}
-{"line":"help","event":"client_prompt_submit","_id":"zzOsha8cojZB7DRx","createdAt":{"$$date":1516829516465},"updatedAt":{"$$date":1516829516465}}
+{"line":"go","_id":"0XoUwrRPyYRotpas","createdAt":{"$$date":1522338811020},"updatedAt":{"$$date":1522338811020}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"0d96uZ8qXLJ9VKwd","createdAt":{"$$date":1522700190187},"updatedAt":{"$$date":1522700190187}}
+{"line":"config -m","_id":"15caz07lhmdsbWVV","createdAt":{"$$date":1522587791837},"updatedAt":{"$$date":1522587791837}}
+{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"1jXctYcK7qmsQ2Er","createdAt":{"$$date":1522684772066},"updatedAt":{"$$date":1522684772066}}
+{"line":"? -m","_id":"23fHY9cIMfB0d5Kp","createdAt":{"$$date":1522334844139},"updatedAt":{"$$date":1522334844139}}
+{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"2MgPNhrBUFH4UGb1","createdAt":{"$$date":1522361571154},"updatedAt":{"$$date":1522361571154}}
+{"line":"about -a","_id":"2zCOfg9DLsqceNgv","createdAt":{"$$date":1522507904158},"updatedAt":{"$$date":1522507904158}}
+{"line":"config -m","_id":"3ZmOKrHelziC8rP1","createdAt":{"$$date":1522524109617},"updatedAt":{"$$date":1522524109617}}
+{"line":"config -m","_id":"41xsUf5cRi9WOb9G","createdAt":{"$$date":1522525996257},"updatedAt":{"$$date":1522525996257}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"44IlsY006uw308ig","createdAt":{"$$date":1522713856393},"updatedAt":{"$$date":1522713856393}}
+{"line":"config -m list","_id":"4cHPgJEKi2XL1YNp","createdAt":{"$$date":1522587191265},"updatedAt":{"$$date":1522587191265}}
+{"line":"? -m","_id":"4ugJ16r6ELCpGimN","createdAt":{"$$date":1522332401736},"updatedAt":{"$$date":1522332401736}}
+{"line":"about -a","_id":"5mEAjks2I8YpmXJs","createdAt":{"$$date":1522507966863},"updatedAt":{"$$date":1522507966863}}
+{"line":"select @@SERVERNAME","_id":"6HFDc15IB6jbYUDJ","createdAt":{"$$date":1522334800804},"updatedAt":{"$$date":1522334800804}}
+{"line":"config -m","_id":"6Q9PmM7kkyfwmiSW","createdAt":{"$$date":1522531007827},"updatedAt":{"$$date":1522531007827}}
+{"line":"go","_id":"71wlYVej8jugc9hd","createdAt":{"$$date":1522338774898},"updatedAt":{"$$date":1522338774898}}
+{"line":"config -m","_id":"7IiXVjyH3Qk7BC3i","createdAt":{"$$date":1522530334821},"updatedAt":{"$$date":1522530334821}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"7PfjeyRJ2GgPK5Cd","createdAt":{"$$date":1522352360187},"updatedAt":{"$$date":1522352360187}}
+{"line":"? -m","_id":"83wcxFNLkSr37x5H","createdAt":{"$$date":1522352396663},"updatedAt":{"$$date":1522352396663}}
+{"line":"config -m list","_id":"8GH6ZFy1WkcdEqCB","createdAt":{"$$date":1522589247475},"updatedAt":{"$$date":1522589247475}}
+{"line":"history","_id":"8oDrXEd9JNfh3nwL","createdAt":{"$$date":1522262324529},"updatedAt":{"$$date":1522262324529}}
+{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"8s0fpAg97M85uwec","createdAt":{"$$date":1522701056623},"updatedAt":{"$$date":1522701056623}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9K3ojRoOf3RHCVhJ","createdAt":{"$$date":1522262233479},"updatedAt":{"$$date":1522262233479}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9kB13PEPnbgda70h","createdAt":{"$$date":1522360361870},"updatedAt":{"$$date":1522360361870}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9x8SXzSJJ7ffksTv","createdAt":{"$$date":1522332388982},"updatedAt":{"$$date":1522332388982}}
+{"line":"sqlpad","_id":"9xGIhhirgYUbpSXD","createdAt":{"$$date":1522685928345},"updatedAt":{"$$date":1522685928345}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"ApmgLKkScpNyZPZ3","createdAt":{"$$date":1522332723111},"updatedAt":{"$$date":1522332723111}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"CGAad5GvbdYyjdyt","createdAt":{"$$date":1522361651221},"updatedAt":{"$$date":1522361651221}}
+{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"CLcsIMQphq6PxjT2","createdAt":{"$$date":1522351990826},"updatedAt":{"$$date":1522351990826}}
+{"line":"config -m","_id":"CfFNWpGQPmWrqMav","createdAt":{"$$date":1522526104367},"updatedAt":{"$$date":1522526104367}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"CmpBhpanDaeSSNdE","createdAt":{"$$date":1522330631315},"updatedAt":{"$$date":1522330631315}}
+{"line":"--help","_id":"CywPWcmwZImEjtEQ","createdAt":{"$$date":1522507594740},"updatedAt":{"$$date":1522507594740}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"DCCMUlKhwokHIG2C","createdAt":{"$$date":1522706937718},"updatedAt":{"$$date":1522706937718}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"DViZluxfLACGDDrW","createdAt":{"$$date":1522360808004},"updatedAt":{"$$date":1522360808004}}
+{"line":"? -m","_id":"ECzdnea5nrvHClCF","createdAt":{"$$date":1522715168294},"updatedAt":{"$$date":1522715168294}}
+{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"EI3GuCbMMRyVmGW8","createdAt":{"$$date":1522269770218},"updatedAt":{"$$date":1522269770218}}
+{"line":"~ -i 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"EPQfBfNmdPl2ylLw","createdAt":{"$$date":1522262220956},"updatedAt":{"$$date":1522262220956}}
+{"line":"history -c","_id":"EkGUkfCtaXmLghQs","createdAt":{"$$date":1522262622974},"updatedAt":{"$$date":1522262622974}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"ElXxJWGQluekEGmq","createdAt":{"$$date":1522707350855},"updatedAt":{"$$date":1522707350855}}
+{"line":"go","_id":"EmMFEYy8c8Jzx0WD","createdAt":{"$$date":1522334802420},"updatedAt":{"$$date":1522334802420}}
+{"line":"config -m","_id":"Ewe4ZXawyBYVWRG4","createdAt":{"$$date":1522524564109},"updatedAt":{"$$date":1522524564109}}
+{"line":"config -m \"-h\"","_id":"FA87Vw0AVEpQeQrS","createdAt":{"$$date":1522524262097},"updatedAt":{"$$date":1522524262097}}
+{"line":"go","_id":"G8Mr2U0L9BJmTsX2","createdAt":{"$$date":1522338725607},"updatedAt":{"$$date":1522338725607}}
+{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"Gr0KO5ZJgzLInes9","createdAt":{"$$date":1522682912455},"updatedAt":{"$$date":1522682912455}}
+{"line":"? -m","_id":"HQPj1kvaXCpT0SDa","createdAt":{"$$date":1522713865819},"updatedAt":{"$$date":1522713865819}}
+{"line":"? -m remap","_id":"Hw7Kn0iXrKIte4zx","createdAt":{"$$date":1522269699590},"updatedAt":{"$$date":1522269699590}}
+{"line":"? -m","_id":"HygMCZUAVHGPJyPz","createdAt":{"$$date":1522708785702},"updatedAt":{"$$date":1522708785702}}
+{"line":"~ -f e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"IMVxJvJ0aIJptkPJ","createdAt":{"$$date":1522684404979},"updatedAt":{"$$date":1522684404979}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"IlwtnN1pJOmPKDPY","createdAt":{"$$date":1522700390742},"updatedAt":{"$$date":1522700390742}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"J6gUa0oIg3cyPhQ0","createdAt":{"$$date":1522693994010},"updatedAt":{"$$date":1522693994010}}
+{"line":"select SERVERPROPERTY('ServerName')","_id":"JDaSPrSdT87NCgqU","createdAt":{"$$date":1522338771885},"updatedAt":{"$$date":1522338771885}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"JF063nJc6CPxZ6Go","createdAt":{"$$date":1522700424305},"updatedAt":{"$$date":1522700424305}}
+{"line":"help","_id":"JPEP9qVT2gY3UjJL","createdAt":{"$$date":1522505093258},"updatedAt":{"$$date":1522505093258}}
+{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"JUUWmup2B7coVzfy","createdAt":{"$$date":1522361186223},"updatedAt":{"$$date":1522361186223}}
+{"line":"config -m","_id":"Jyx6ibFdJrSkk0dt","createdAt":{"$$date":1522529489109},"updatedAt":{"$$date":1522529489109}}
+{"line":"? -m","_id":"KigcO6tEIH3WfKca","createdAt":{"$$date":1522294611684},"updatedAt":{"$$date":1522294611684}}
+{"line":"~ -t         mssql.close","_id":"LQHTpjfhS4yQi5QE","createdAt":{"$$date":1522700402355},"updatedAt":{"$$date":1522700402355}}
+{"line":"config -m '-h'","_id":"Lxq8dNulchlAHyvA","createdAt":{"$$date":1522524241806},"updatedAt":{"$$date":1522524241806}}
+{"line":"? -m","_id":"LzK1rGOTBI9XvCG5","createdAt":{"$$date":1522333085254},"updatedAt":{"$$date":1522333085254}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"MacUiiIVarKYoxzU","createdAt":{"$$date":1522334824070},"updatedAt":{"$$date":1522334824070}}
+{"line":"select @@SERVERNAME, @@VERSION","_id":"N2onRmltdumM2Ohk","createdAt":{"$$date":1522338929554},"updatedAt":{"$$date":1522338929554}}
+{"line":"~ -b","_id":"NP1zjR5kGXryvSLE","createdAt":{"$$date":1522701028138},"updatedAt":{"$$date":1522701028138}}
+{"line":"api.log('error', new Error(err.message))","_id":"OFXkfsQ3n4eXlDuo","createdAt":{"$$date":1522262200970},"updatedAt":{"$$date":1522262200970}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"ORCsmQKTjGRkb6id","createdAt":{"$$date":1522699980828},"updatedAt":{"$$date":1522699980828}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"PZejz4bPTyQtaPXx","createdAt":{"$$date":1522699055348},"updatedAt":{"$$date":1522699055348}}
+{"line":"~ -b","_id":"PwLzuIqC7VkofODv","createdAt":{"$$date":1522505064082},"updatedAt":{"$$date":1522505064082}}
+{"line":"instance --target sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"Q0g6RqKj65RcoFu7","createdAt":{"$$date":1522269810525},"updatedAt":{"$$date":1522269810525}}
+{"line":"config -m","_id":"QqlQDOIZlVNoLkn7","createdAt":{"$$date":1522525040908},"updatedAt":{"$$date":1522525040908}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"QxBh7xd1cr09E3ui","createdAt":{"$$date":1522708833222},"updatedAt":{"$$date":1522708833222}}
+{"line":"go","_id":"RPryEaCDT1HFM2H3","createdAt":{"$$date":1522360333318},"updatedAt":{"$$date":1522360333318}}
+{"line":"instance -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"RZIP4Xe4UPw3iSdP","createdAt":{"$$date":1522294590945},"updatedAt":{"$$date":1522294590945}}
+{"line":"config -m","_id":"S17sBXXpNuFyfeBp","createdAt":{"$$date":1522529622147},"updatedAt":{"$$date":1522529622147}}
+{"line":"? -m remap","_id":"S1iTcCUHq8nQaWPD","createdAt":{"$$date":1522685524716},"updatedAt":{"$$date":1522685524716}}
+{"line":"config -m","_id":"S5QU4ILvp4rCOsOD","createdAt":{"$$date":1522529583420},"updatedAt":{"$$date":1522529583420}}
+{"line":"? -m","_id":"SQunfmfs0xIwEpaj","createdAt":{"$$date":1522339439736},"updatedAt":{"$$date":1522339439736}}
+{"line":"config -m","_id":"SUnjPQwgAuyCujna","createdAt":{"$$date":1522530236298},"updatedAt":{"$$date":1522530236298}}
+{"line":"image --pull","_id":"St8TSZYrCnoY1Rkc","createdAt":{"$$date":1522269525064},"updatedAt":{"$$date":1522269525064}}
+{"line":"? -m","_id":"Sy5nsSKHfpyx0ZTv","createdAt":{"$$date":1522382174371},"updatedAt":{"$$date":1522382174371}}
+{"line":"? -m","_id":"T9aiamP1Vq5zSvwO","createdAt":{"$$date":1522709232156},"updatedAt":{"$$date":1522709232156}}
+{"line":"sqlpad --start","_id":"TTgE3yJdm5ViTzee","createdAt":{"$$date":1522685934686},"updatedAt":{"$$date":1522685934686}}
+{"line":"~ --remove -f e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"U5IA18PARbGHwQsy","createdAt":{"$$date":1522684387756},"updatedAt":{"$$date":1522684387756}}
+{"line":"~ -b","_id":"UGt90sxLZMKdKWeV","createdAt":{"$$date":1522505077676},"updatedAt":{"$$date":1522505077676}}
+{"line":"config --help","_id":"UNPVHJCItVqZilil","createdAt":{"$$date":1522523256684},"updatedAt":{"$$date":1522523256684}}
+{"line":"history -l query-json={} projection-json={_id: 0, line: 1, createdAt: 1} sort-json={createdAt: -1} limit-nbr=5","_id":"UjsgReJBHFqFQMsP","createdAt":{"$$date":1522269464891},"updatedAt":{"$$date":1522269464891}}
+{"line":"~ -b","_id":"V7dDlba61tFELBQu","createdAt":{"$$date":1522682819242},"updatedAt":{"$$date":1522682819242}}
+{"line":"config -m","_id":"Xe02faOVCCDizvQt","createdAt":{"$$date":1522523592525},"updatedAt":{"$$date":1522523592525}}
+{"line":"? -m remap","_id":"XrecDEPrbBdMyO8T","createdAt":{"$$date":1522684192815},"updatedAt":{"$$date":1522684192815}}
+{"line":"? -m remap","_id":"Z7stsDbRik6b5Xuz","createdAt":{"$$date":1522294550390},"updatedAt":{"$$date":1522294550390}}
+{"line":"SERVERPROPERTY('ServerName')","_id":"ZdQ74K7X2RmEJ2qV","createdAt":{"$$date":1522338809361},"updatedAt":{"$$date":1522338809361}}
+{"line":"select @@SERVERNAME","_id":"Zt5J66IhI9cjmMPe","createdAt":{"$$date":1522332960806},"updatedAt":{"$$date":1522332960806}}
+{"line":"~ --remove e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"aHo8zCKEB8GG9sd8","createdAt":{"$$date":1522684213012},"updatedAt":{"$$date":1522684213012}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"atfDsRztOH8mdKSc","createdAt":{"$$date":1522338897846},"updatedAt":{"$$date":1522338897846}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"b5O0cUai6DKqa73Q","createdAt":{"$$date":1522332940427},"updatedAt":{"$$date":1522332940427}}
+{"line":"~ --remove e1c047717a20c0bd3d2fd51a5f51f973a6acd253d01c5eef2db87d90b25d7da3","_id":"bYw8tD8UhTCQ9AjK","createdAt":{"$$date":1522685563344},"updatedAt":{"$$date":1522685563344}}
+{"line":"? -m","_id":"bg4dabENFphKVYFi","createdAt":{"$$date":1522382206135},"updatedAt":{"$$date":1522382206135}}
+{"line":"config","_id":"ctx1jD0yOVo6aeAN","createdAt":{"$$date":1522529248126},"updatedAt":{"$$date":1522529248126}}
+{"line":"go","_id":"cupJ9wLfGnAqD9hy","createdAt":{"$$date":1522338930927},"updatedAt":{"$$date":1522338930927}}
+{"line":"config -m","_id":"dKXFQYcuwjFIAwRL","createdAt":{"$$date":1522525865241},"updatedAt":{"$$date":1522525865241}}
+{"line":"? -m","_id":"dsW1nX9x4yI3u1OO","createdAt":{"$$date":1522713759996},"updatedAt":{"$$date":1522713759996}}
+{"line":"~ --remove e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"e3O9fiUmg4bEUbHF","createdAt":{"$$date":1522684592623},"updatedAt":{"$$date":1522684592623}}
+{"line":"instance --help","_id":"ekKa9n6R57xGSeVq","createdAt":{"$$date":1522269843403},"updatedAt":{"$$date":1522269843403}}
+{"line":"config -m","_id":"enRl15l9QaxQziWX","createdAt":{"$$date":1522530365820},"updatedAt":{"$$date":1522530365820}}
+{"line":"history -r","_id":"ezsqlGx3MnNZEDkd","createdAt":{"$$date":1522262885443},"updatedAt":{"$$date":1522262885443}}
+{"line":"history","_id":"fceyS8IYPqPbs0Ms","createdAt":{"$$date":1522262569215},"updatedAt":{"$$date":1522262569215}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"gRkv3iPfy3CgQSBT","createdAt":{"$$date":1522361231884},"updatedAt":{"$$date":1522361231884}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"h698ay3E7gTPqscJ","createdAt":{"$$date":1522715146020},"updatedAt":{"$$date":1522715146020}}
+{"line":"history -l","_id":"hIlNTq37o11JR6HU","createdAt":{"$$date":1522262897349},"updatedAt":{"$$date":1522262897349}}
+{"line":"select @@SERVERNAME","_id":"hQCquLeg51Aht4bq","createdAt":{"$$date":1522334829544},"updatedAt":{"$$date":1522334829544}}
+{"line":"go","_id":"hgHsTK0RwNGBMCak","createdAt":{"$$date":1522334831707},"updatedAt":{"$$date":1522334831707}}
+{"line":"history -l {} {_id: 0, line: 1, createdAt: 1} {createdAt: -1} 5","_id":"huFeabujMfiLKcMe","createdAt":{"$$date":1522269316806},"updatedAt":{"$$date":1522269316806}}
+{"line":"select @@servername","_id":"iAppsMphUuJELb72","createdAt":{"$$date":1522360332450},"updatedAt":{"$$date":1522360332450}}
+{"line":"config -m","_id":"jw5sHiq9Dwm0ix1O","createdAt":{"$$date":1522526066130},"updatedAt":{"$$date":1522526066130}}
+{"line":"config","_id":"kFjlSeXHreWVnuSk","createdAt":{"$$date":1522526042459},"updatedAt":{"$$date":1522526042459}}
+{"line":"? -m","_id":"kRo9zcgaWnHRUGJa","createdAt":{"$$date":1522360372485},"updatedAt":{"$$date":1522360372485}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"lSl1BmOKIIZmKyPL","createdAt":{"$$date":1522713746923},"updatedAt":{"$$date":1522713746923}}
+{"line":"? -m","_id":"lfs0FLlfkZocn51T","createdAt":{"$$date":1522352101278},"updatedAt":{"$$date":1522352101278}}
+{"line":"history -e","_id":"lriHGlrTxQAYAuIw","createdAt":{"$$date":1522262451279},"updatedAt":{"$$date":1522262451279}}
+{"line":"? -m","_id":"mBJhoieslwQUBR8J","createdAt":{"$$date":1522706322374},"updatedAt":{"$$date":1522706322374}}
+{"line":"config -m list","_id":"mMcw3IItT7kEI4Ah","createdAt":{"$$date":1522587558568},"updatedAt":{"$$date":1522587558568}}
+{"line":"? -m","_id":"mgPM3oIWmpalcVF0","createdAt":{"$$date":1522332348603},"updatedAt":{"$$date":1522332348603}}
+{"line":"go","_id":"mtJPb8RxxJtUuc7v","createdAt":{"$$date":1522332961620},"updatedAt":{"$$date":1522332961620}}
+{"line":"config -m -h","_id":"nTWIw73xYBFbMShf","createdAt":{"$$date":1522524215179},"updatedAt":{"$$date":1522524215179}}
+{"line":"history -e","_id":"o7ili2cfeqWRlwZQ","createdAt":{"$$date":1522262738541},"updatedAt":{"$$date":1522262738541}}
+{"line":"config -m","_id":"oBi2XHgqqACiyQKP","createdAt":{"$$date":1522530205732},"updatedAt":{"$$date":1522530205732}}
+{"line":"? -m","_id":"p0hYZcXUZBDq99DU","createdAt":{"$$date":1522332732472},"updatedAt":{"$$date":1522332732472}}
+{"line":"config -m","_id":"p4M5YiGm5VgFqKsG","createdAt":{"$$date":1522587544930},"updatedAt":{"$$date":1522587544930}}
+{"line":"config -m","_id":"psnK95D23NDQPaGY","createdAt":{"$$date":1522524046442},"updatedAt":{"$$date":1522524046442}}
+{"line":"about -q","_id":"rH4tDjPOpzNbvBpO","createdAt":{"$$date":1522507659310},"updatedAt":{"$$date":1522507659310}}
+{"line":"instance --target 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"rKMVlU3iJY9X2Fny","createdAt":{"$$date":1522338521369},"updatedAt":{"$$date":1522338521369}}
+{"line":"history --help","_id":"rLXT6o5qfXMGqiEH","createdAt":{"$$date":1522262728222},"updatedAt":{"$$date":1522262728222}}
+{"line":"history -b","_id":"sBgNm6H1lOq0tCIf","createdAt":{"$$date":1522262577185},"updatedAt":{"$$date":1522262577185}}
+{"line":"config","_id":"sK8TXontkcaqN5fw","createdAt":{"$$date":1522525962859},"updatedAt":{"$$date":1522525962859}}
+{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"sLxt0K0BheQwcMou","createdAt":{"$$date":1522361630417},"updatedAt":{"$$date":1522361630417}}
+{"line":"~ -f","_id":"sV0eKFgkOsZ09S9a","createdAt":{"$$date":1522449887333},"updatedAt":{"$$date":1522449887333}}
+{"line":"? -m","_id":"tAVq62dh5JqtHSEs","createdAt":{"$$date":1522332860440},"updatedAt":{"$$date":1522332860440}}
+{"line":"config -m","_id":"tN5I6NiPMBhYyt7W","createdAt":{"$$date":1522524267650},"updatedAt":{"$$date":1522524267650}}
+{"line":"select @@SERVERNAME","_id":"ty1bGSmLxlXBQQmo","createdAt":{"$$date":1522338724115},"updatedAt":{"$$date":1522338724115}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"uBLPJS0N9PWfxXfS","createdAt":{"$$date":1522700321820},"updatedAt":{"$$date":1522700321820}}
+{"line":"history -c","_id":"uTJSw8pEQjKETcm1","createdAt":{"$$date":1522684682757},"updatedAt":{"$$date":1522684682757}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"uvLxg9FjNGuJEzAT","createdAt":{"$$date":1522699771469},"updatedAt":{"$$date":1522699771469}}
+{"line":"config -m","_id":"uyePd0zjICGTFfWZ","createdAt":{"$$date":1522525102621},"updatedAt":{"$$date":1522525102621}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"vPpDx9VhR1pBg6oY","createdAt":{"$$date":1522698947158},"updatedAt":{"$$date":1522698947158}}
+{"line":"~ -i   store.errors.put(new Error(err.message))","_id":"w17gHpSH7J535LvG","createdAt":{"$$date":1522262200969},"updatedAt":{"$$date":1522262200969}}
+{"line":"config -m","_id":"wH1zoBbyuVyjhtYE","createdAt":{"$$date":1522523801623},"updatedAt":{"$$date":1522523801623}}
+{"line":"config -m f","_id":"wdpqCDjJLJMOJ0O9","createdAt":{"$$date":1522591803575},"updatedAt":{"$$date":1522591803575}}
+{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"xe0ZQjyiJ30osLiG","createdAt":{"$$date":1522698918242},"updatedAt":{"$$date":1522698918242}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"xisufyewQwuQ60TA","createdAt":{"$$date":1522361695823},"updatedAt":{"$$date":1522361695823}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"xliAtr5s0j1xJVxZ","createdAt":{"$$date":1522361240594},"updatedAt":{"$$date":1522361240594}}
+{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"ykPL31q742Pix0p3","createdAt":{"$$date":1522707134832},"updatedAt":{"$$date":1522707134832}}
+{"line":"history --errors","_id":"zDjoQvOIxCabqpSy","createdAt":{"$$date":1522269509786},"updatedAt":{"$$date":1522269509786}}
+{"line":"config -m","_id":"zIJYxFZ5K9bT6NYj","createdAt":{"$$date":1522529401831},"updatedAt":{"$$date":1522529401831}}
+{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"zSTWlj6SXVuZLbTi","createdAt":{"$$date":1522693850031},"updatedAt":{"$$date":1522693850031}}
+{"line":"config -m","_id":"zZAr4gECO8fpCbAC","createdAt":{"$$date":1522529285551},"updatedAt":{"$$date":1522529285551}}
+{"line":"?","_id":"zaNs1tHIf9TSnz4w","createdAt":{"$$date":1522294604141},"updatedAt":{"$$date":1522294604141}}
 {"$$indexCreated":{"fieldName":"createdAt","unique":false,"sparse":false}}
-{"line":"instance --start","event":"client_prompt_submit","_id":"1wD0rCM2K1DaOON0","createdAt":{"$$date":1518034940334},"updatedAt":{"$$date":1518034940334}}
-{"line":"~ --start 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","event":"client_prompt_submit","_id":"HxXPGtwBsJxG8561","createdAt":{"$$date":1518035674957},"updatedAt":{"$$date":1518035674957}}
-{"line":"~ --start 5d1813b14ca605560c130ba0d9ddd003d0335e830b4dd27a817d3b3e8257993b","event":"client_prompt_submit","_id":"ODTSKtvH513dWGlf","createdAt":{"$$date":1518035709611},"updatedAt":{"$$date":1518035709611}}
+{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"4x9MxUhV3AqPOf6Z","createdAt":{"$$date":1522715632099},"updatedAt":{"$$date":1522715632099}}
+{"line":"? -m","_id":"quokw58uniIY3DaS","createdAt":{"$$date":1522715642740},"updatedAt":{"$$date":1522715642740}}
