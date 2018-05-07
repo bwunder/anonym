@@ -1,157 +1,381 @@
-{"line":"go","_id":"0XoUwrRPyYRotpas","createdAt":{"$$date":1522338811020},"updatedAt":{"$$date":1522338811020}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"0d96uZ8qXLJ9VKwd","createdAt":{"$$date":1522700190187},"updatedAt":{"$$date":1522700190187}}
-{"line":"config -m","_id":"15caz07lhmdsbWVV","createdAt":{"$$date":1522587791837},"updatedAt":{"$$date":1522587791837}}
-{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"1jXctYcK7qmsQ2Er","createdAt":{"$$date":1522684772066},"updatedAt":{"$$date":1522684772066}}
-{"line":"? -m","_id":"23fHY9cIMfB0d5Kp","createdAt":{"$$date":1522334844139},"updatedAt":{"$$date":1522334844139}}
-{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"2MgPNhrBUFH4UGb1","createdAt":{"$$date":1522361571154},"updatedAt":{"$$date":1522361571154}}
-{"line":"about -a","_id":"2zCOfg9DLsqceNgv","createdAt":{"$$date":1522507904158},"updatedAt":{"$$date":1522507904158}}
-{"line":"config -m","_id":"3ZmOKrHelziC8rP1","createdAt":{"$$date":1522524109617},"updatedAt":{"$$date":1522524109617}}
-{"line":"config -m","_id":"41xsUf5cRi9WOb9G","createdAt":{"$$date":1522525996257},"updatedAt":{"$$date":1522525996257}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"44IlsY006uw308ig","createdAt":{"$$date":1522713856393},"updatedAt":{"$$date":1522713856393}}
-{"line":"config -m list","_id":"4cHPgJEKi2XL1YNp","createdAt":{"$$date":1522587191265},"updatedAt":{"$$date":1522587191265}}
-{"line":"? -m","_id":"4ugJ16r6ELCpGimN","createdAt":{"$$date":1522332401736},"updatedAt":{"$$date":1522332401736}}
-{"line":"about -a","_id":"5mEAjks2I8YpmXJs","createdAt":{"$$date":1522507966863},"updatedAt":{"$$date":1522507966863}}
-{"line":"select @@SERVERNAME","_id":"6HFDc15IB6jbYUDJ","createdAt":{"$$date":1522334800804},"updatedAt":{"$$date":1522334800804}}
-{"line":"config -m","_id":"6Q9PmM7kkyfwmiSW","createdAt":{"$$date":1522531007827},"updatedAt":{"$$date":1522531007827}}
-{"line":"go","_id":"71wlYVej8jugc9hd","createdAt":{"$$date":1522338774898},"updatedAt":{"$$date":1522338774898}}
-{"line":"config -m","_id":"7IiXVjyH3Qk7BC3i","createdAt":{"$$date":1522530334821},"updatedAt":{"$$date":1522530334821}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"7PfjeyRJ2GgPK5Cd","createdAt":{"$$date":1522352360187},"updatedAt":{"$$date":1522352360187}}
-{"line":"? -m","_id":"83wcxFNLkSr37x5H","createdAt":{"$$date":1522352396663},"updatedAt":{"$$date":1522352396663}}
-{"line":"config -m list","_id":"8GH6ZFy1WkcdEqCB","createdAt":{"$$date":1522589247475},"updatedAt":{"$$date":1522589247475}}
-{"line":"history","_id":"8oDrXEd9JNfh3nwL","createdAt":{"$$date":1522262324529},"updatedAt":{"$$date":1522262324529}}
-{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"8s0fpAg97M85uwec","createdAt":{"$$date":1522701056623},"updatedAt":{"$$date":1522701056623}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9K3ojRoOf3RHCVhJ","createdAt":{"$$date":1522262233479},"updatedAt":{"$$date":1522262233479}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9kB13PEPnbgda70h","createdAt":{"$$date":1522360361870},"updatedAt":{"$$date":1522360361870}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"9x8SXzSJJ7ffksTv","createdAt":{"$$date":1522332388982},"updatedAt":{"$$date":1522332388982}}
-{"line":"sqlpad","_id":"9xGIhhirgYUbpSXD","createdAt":{"$$date":1522685928345},"updatedAt":{"$$date":1522685928345}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"ApmgLKkScpNyZPZ3","createdAt":{"$$date":1522332723111},"updatedAt":{"$$date":1522332723111}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"CGAad5GvbdYyjdyt","createdAt":{"$$date":1522361651221},"updatedAt":{"$$date":1522361651221}}
-{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"CLcsIMQphq6PxjT2","createdAt":{"$$date":1522351990826},"updatedAt":{"$$date":1522351990826}}
-{"line":"config -m","_id":"CfFNWpGQPmWrqMav","createdAt":{"$$date":1522526104367},"updatedAt":{"$$date":1522526104367}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"CmpBhpanDaeSSNdE","createdAt":{"$$date":1522330631315},"updatedAt":{"$$date":1522330631315}}
-{"line":"--help","_id":"CywPWcmwZImEjtEQ","createdAt":{"$$date":1522507594740},"updatedAt":{"$$date":1522507594740}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"DCCMUlKhwokHIG2C","createdAt":{"$$date":1522706937718},"updatedAt":{"$$date":1522706937718}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"DViZluxfLACGDDrW","createdAt":{"$$date":1522360808004},"updatedAt":{"$$date":1522360808004}}
-{"line":"? -m","_id":"ECzdnea5nrvHClCF","createdAt":{"$$date":1522715168294},"updatedAt":{"$$date":1522715168294}}
-{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"EI3GuCbMMRyVmGW8","createdAt":{"$$date":1522269770218},"updatedAt":{"$$date":1522269770218}}
-{"line":"~ -i 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"EPQfBfNmdPl2ylLw","createdAt":{"$$date":1522262220956},"updatedAt":{"$$date":1522262220956}}
-{"line":"history -c","_id":"EkGUkfCtaXmLghQs","createdAt":{"$$date":1522262622974},"updatedAt":{"$$date":1522262622974}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"ElXxJWGQluekEGmq","createdAt":{"$$date":1522707350855},"updatedAt":{"$$date":1522707350855}}
-{"line":"go","_id":"EmMFEYy8c8Jzx0WD","createdAt":{"$$date":1522334802420},"updatedAt":{"$$date":1522334802420}}
-{"line":"config -m","_id":"Ewe4ZXawyBYVWRG4","createdAt":{"$$date":1522524564109},"updatedAt":{"$$date":1522524564109}}
-{"line":"config -m \"-h\"","_id":"FA87Vw0AVEpQeQrS","createdAt":{"$$date":1522524262097},"updatedAt":{"$$date":1522524262097}}
-{"line":"go","_id":"G8Mr2U0L9BJmTsX2","createdAt":{"$$date":1522338725607},"updatedAt":{"$$date":1522338725607}}
-{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"Gr0KO5ZJgzLInes9","createdAt":{"$$date":1522682912455},"updatedAt":{"$$date":1522682912455}}
-{"line":"? -m","_id":"HQPj1kvaXCpT0SDa","createdAt":{"$$date":1522713865819},"updatedAt":{"$$date":1522713865819}}
-{"line":"? -m remap","_id":"Hw7Kn0iXrKIte4zx","createdAt":{"$$date":1522269699590},"updatedAt":{"$$date":1522269699590}}
-{"line":"? -m","_id":"HygMCZUAVHGPJyPz","createdAt":{"$$date":1522708785702},"updatedAt":{"$$date":1522708785702}}
-{"line":"~ -f e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"IMVxJvJ0aIJptkPJ","createdAt":{"$$date":1522684404979},"updatedAt":{"$$date":1522684404979}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"IlwtnN1pJOmPKDPY","createdAt":{"$$date":1522700390742},"updatedAt":{"$$date":1522700390742}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"J6gUa0oIg3cyPhQ0","createdAt":{"$$date":1522693994010},"updatedAt":{"$$date":1522693994010}}
-{"line":"select SERVERPROPERTY('ServerName')","_id":"JDaSPrSdT87NCgqU","createdAt":{"$$date":1522338771885},"updatedAt":{"$$date":1522338771885}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"JF063nJc6CPxZ6Go","createdAt":{"$$date":1522700424305},"updatedAt":{"$$date":1522700424305}}
-{"line":"help","_id":"JPEP9qVT2gY3UjJL","createdAt":{"$$date":1522505093258},"updatedAt":{"$$date":1522505093258}}
-{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"JUUWmup2B7coVzfy","createdAt":{"$$date":1522361186223},"updatedAt":{"$$date":1522361186223}}
-{"line":"config -m","_id":"Jyx6ibFdJrSkk0dt","createdAt":{"$$date":1522529489109},"updatedAt":{"$$date":1522529489109}}
-{"line":"? -m","_id":"KigcO6tEIH3WfKca","createdAt":{"$$date":1522294611684},"updatedAt":{"$$date":1522294611684}}
-{"line":"~ -t         mssql.close","_id":"LQHTpjfhS4yQi5QE","createdAt":{"$$date":1522700402355},"updatedAt":{"$$date":1522700402355}}
-{"line":"config -m '-h'","_id":"Lxq8dNulchlAHyvA","createdAt":{"$$date":1522524241806},"updatedAt":{"$$date":1522524241806}}
-{"line":"? -m","_id":"LzK1rGOTBI9XvCG5","createdAt":{"$$date":1522333085254},"updatedAt":{"$$date":1522333085254}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"MacUiiIVarKYoxzU","createdAt":{"$$date":1522334824070},"updatedAt":{"$$date":1522334824070}}
-{"line":"select @@SERVERNAME, @@VERSION","_id":"N2onRmltdumM2Ohk","createdAt":{"$$date":1522338929554},"updatedAt":{"$$date":1522338929554}}
-{"line":"~ -b","_id":"NP1zjR5kGXryvSLE","createdAt":{"$$date":1522701028138},"updatedAt":{"$$date":1522701028138}}
-{"line":"api.log('error', new Error(err.message))","_id":"OFXkfsQ3n4eXlDuo","createdAt":{"$$date":1522262200970},"updatedAt":{"$$date":1522262200970}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"ORCsmQKTjGRkb6id","createdAt":{"$$date":1522699980828},"updatedAt":{"$$date":1522699980828}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"PZejz4bPTyQtaPXx","createdAt":{"$$date":1522699055348},"updatedAt":{"$$date":1522699055348}}
-{"line":"~ -b","_id":"PwLzuIqC7VkofODv","createdAt":{"$$date":1522505064082},"updatedAt":{"$$date":1522505064082}}
-{"line":"instance --target sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"Q0g6RqKj65RcoFu7","createdAt":{"$$date":1522269810525},"updatedAt":{"$$date":1522269810525}}
-{"line":"config -m","_id":"QqlQDOIZlVNoLkn7","createdAt":{"$$date":1522525040908},"updatedAt":{"$$date":1522525040908}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"QxBh7xd1cr09E3ui","createdAt":{"$$date":1522708833222},"updatedAt":{"$$date":1522708833222}}
-{"line":"go","_id":"RPryEaCDT1HFM2H3","createdAt":{"$$date":1522360333318},"updatedAt":{"$$date":1522360333318}}
-{"line":"instance -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"RZIP4Xe4UPw3iSdP","createdAt":{"$$date":1522294590945},"updatedAt":{"$$date":1522294590945}}
-{"line":"config -m","_id":"S17sBXXpNuFyfeBp","createdAt":{"$$date":1522529622147},"updatedAt":{"$$date":1522529622147}}
-{"line":"? -m remap","_id":"S1iTcCUHq8nQaWPD","createdAt":{"$$date":1522685524716},"updatedAt":{"$$date":1522685524716}}
-{"line":"config -m","_id":"S5QU4ILvp4rCOsOD","createdAt":{"$$date":1522529583420},"updatedAt":{"$$date":1522529583420}}
-{"line":"? -m","_id":"SQunfmfs0xIwEpaj","createdAt":{"$$date":1522339439736},"updatedAt":{"$$date":1522339439736}}
-{"line":"config -m","_id":"SUnjPQwgAuyCujna","createdAt":{"$$date":1522530236298},"updatedAt":{"$$date":1522530236298}}
-{"line":"image --pull","_id":"St8TSZYrCnoY1Rkc","createdAt":{"$$date":1522269525064},"updatedAt":{"$$date":1522269525064}}
-{"line":"? -m","_id":"Sy5nsSKHfpyx0ZTv","createdAt":{"$$date":1522382174371},"updatedAt":{"$$date":1522382174371}}
-{"line":"? -m","_id":"T9aiamP1Vq5zSvwO","createdAt":{"$$date":1522709232156},"updatedAt":{"$$date":1522709232156}}
-{"line":"sqlpad --start","_id":"TTgE3yJdm5ViTzee","createdAt":{"$$date":1522685934686},"updatedAt":{"$$date":1522685934686}}
-{"line":"~ --remove -f e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"U5IA18PARbGHwQsy","createdAt":{"$$date":1522684387756},"updatedAt":{"$$date":1522684387756}}
-{"line":"~ -b","_id":"UGt90sxLZMKdKWeV","createdAt":{"$$date":1522505077676},"updatedAt":{"$$date":1522505077676}}
-{"line":"config --help","_id":"UNPVHJCItVqZilil","createdAt":{"$$date":1522523256684},"updatedAt":{"$$date":1522523256684}}
-{"line":"history -l query-json={} projection-json={_id: 0, line: 1, createdAt: 1} sort-json={createdAt: -1} limit-nbr=5","_id":"UjsgReJBHFqFQMsP","createdAt":{"$$date":1522269464891},"updatedAt":{"$$date":1522269464891}}
-{"line":"~ -b","_id":"V7dDlba61tFELBQu","createdAt":{"$$date":1522682819242},"updatedAt":{"$$date":1522682819242}}
-{"line":"config -m","_id":"Xe02faOVCCDizvQt","createdAt":{"$$date":1522523592525},"updatedAt":{"$$date":1522523592525}}
-{"line":"? -m remap","_id":"XrecDEPrbBdMyO8T","createdAt":{"$$date":1522684192815},"updatedAt":{"$$date":1522684192815}}
-{"line":"? -m remap","_id":"Z7stsDbRik6b5Xuz","createdAt":{"$$date":1522294550390},"updatedAt":{"$$date":1522294550390}}
-{"line":"SERVERPROPERTY('ServerName')","_id":"ZdQ74K7X2RmEJ2qV","createdAt":{"$$date":1522338809361},"updatedAt":{"$$date":1522338809361}}
-{"line":"select @@SERVERNAME","_id":"Zt5J66IhI9cjmMPe","createdAt":{"$$date":1522332960806},"updatedAt":{"$$date":1522332960806}}
-{"line":"~ --remove e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"aHo8zCKEB8GG9sd8","createdAt":{"$$date":1522684213012},"updatedAt":{"$$date":1522684213012}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"atfDsRztOH8mdKSc","createdAt":{"$$date":1522338897846},"updatedAt":{"$$date":1522338897846}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"b5O0cUai6DKqa73Q","createdAt":{"$$date":1522332940427},"updatedAt":{"$$date":1522332940427}}
-{"line":"~ --remove e1c047717a20c0bd3d2fd51a5f51f973a6acd253d01c5eef2db87d90b25d7da3","_id":"bYw8tD8UhTCQ9AjK","createdAt":{"$$date":1522685563344},"updatedAt":{"$$date":1522685563344}}
-{"line":"? -m","_id":"bg4dabENFphKVYFi","createdAt":{"$$date":1522382206135},"updatedAt":{"$$date":1522382206135}}
-{"line":"config","_id":"ctx1jD0yOVo6aeAN","createdAt":{"$$date":1522529248126},"updatedAt":{"$$date":1522529248126}}
-{"line":"go","_id":"cupJ9wLfGnAqD9hy","createdAt":{"$$date":1522338930927},"updatedAt":{"$$date":1522338930927}}
-{"line":"config -m","_id":"dKXFQYcuwjFIAwRL","createdAt":{"$$date":1522525865241},"updatedAt":{"$$date":1522525865241}}
-{"line":"? -m","_id":"dsW1nX9x4yI3u1OO","createdAt":{"$$date":1522713759996},"updatedAt":{"$$date":1522713759996}}
-{"line":"~ --remove e9f552a0ca5a499f5e6de0aac5750b3e8a9fa0e5ec53094837e59abcafba1136","_id":"e3O9fiUmg4bEUbHF","createdAt":{"$$date":1522684592623},"updatedAt":{"$$date":1522684592623}}
-{"line":"instance --help","_id":"ekKa9n6R57xGSeVq","createdAt":{"$$date":1522269843403},"updatedAt":{"$$date":1522269843403}}
-{"line":"config -m","_id":"enRl15l9QaxQziWX","createdAt":{"$$date":1522530365820},"updatedAt":{"$$date":1522530365820}}
-{"line":"history -r","_id":"ezsqlGx3MnNZEDkd","createdAt":{"$$date":1522262885443},"updatedAt":{"$$date":1522262885443}}
-{"line":"history","_id":"fceyS8IYPqPbs0Ms","createdAt":{"$$date":1522262569215},"updatedAt":{"$$date":1522262569215}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"gRkv3iPfy3CgQSBT","createdAt":{"$$date":1522361231884},"updatedAt":{"$$date":1522361231884}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"h698ay3E7gTPqscJ","createdAt":{"$$date":1522715146020},"updatedAt":{"$$date":1522715146020}}
-{"line":"history -l","_id":"hIlNTq37o11JR6HU","createdAt":{"$$date":1522262897349},"updatedAt":{"$$date":1522262897349}}
-{"line":"select @@SERVERNAME","_id":"hQCquLeg51Aht4bq","createdAt":{"$$date":1522334829544},"updatedAt":{"$$date":1522334829544}}
-{"line":"go","_id":"hgHsTK0RwNGBMCak","createdAt":{"$$date":1522334831707},"updatedAt":{"$$date":1522334831707}}
-{"line":"history -l {} {_id: 0, line: 1, createdAt: 1} {createdAt: -1} 5","_id":"huFeabujMfiLKcMe","createdAt":{"$$date":1522269316806},"updatedAt":{"$$date":1522269316806}}
-{"line":"select @@servername","_id":"iAppsMphUuJELb72","createdAt":{"$$date":1522360332450},"updatedAt":{"$$date":1522360332450}}
-{"line":"config -m","_id":"jw5sHiq9Dwm0ix1O","createdAt":{"$$date":1522526066130},"updatedAt":{"$$date":1522526066130}}
-{"line":"config","_id":"kFjlSeXHreWVnuSk","createdAt":{"$$date":1522526042459},"updatedAt":{"$$date":1522526042459}}
-{"line":"? -m","_id":"kRo9zcgaWnHRUGJa","createdAt":{"$$date":1522360372485},"updatedAt":{"$$date":1522360372485}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"lSl1BmOKIIZmKyPL","createdAt":{"$$date":1522713746923},"updatedAt":{"$$date":1522713746923}}
-{"line":"? -m","_id":"lfs0FLlfkZocn51T","createdAt":{"$$date":1522352101278},"updatedAt":{"$$date":1522352101278}}
-{"line":"history -e","_id":"lriHGlrTxQAYAuIw","createdAt":{"$$date":1522262451279},"updatedAt":{"$$date":1522262451279}}
-{"line":"? -m","_id":"mBJhoieslwQUBR8J","createdAt":{"$$date":1522706322374},"updatedAt":{"$$date":1522706322374}}
-{"line":"config -m list","_id":"mMcw3IItT7kEI4Ah","createdAt":{"$$date":1522587558568},"updatedAt":{"$$date":1522587558568}}
-{"line":"? -m","_id":"mgPM3oIWmpalcVF0","createdAt":{"$$date":1522332348603},"updatedAt":{"$$date":1522332348603}}
-{"line":"go","_id":"mtJPb8RxxJtUuc7v","createdAt":{"$$date":1522332961620},"updatedAt":{"$$date":1522332961620}}
-{"line":"config -m -h","_id":"nTWIw73xYBFbMShf","createdAt":{"$$date":1522524215179},"updatedAt":{"$$date":1522524215179}}
-{"line":"history -e","_id":"o7ili2cfeqWRlwZQ","createdAt":{"$$date":1522262738541},"updatedAt":{"$$date":1522262738541}}
-{"line":"config -m","_id":"oBi2XHgqqACiyQKP","createdAt":{"$$date":1522530205732},"updatedAt":{"$$date":1522530205732}}
-{"line":"? -m","_id":"p0hYZcXUZBDq99DU","createdAt":{"$$date":1522332732472},"updatedAt":{"$$date":1522332732472}}
-{"line":"config -m","_id":"p4M5YiGm5VgFqKsG","createdAt":{"$$date":1522587544930},"updatedAt":{"$$date":1522587544930}}
-{"line":"config -m","_id":"psnK95D23NDQPaGY","createdAt":{"$$date":1522524046442},"updatedAt":{"$$date":1522524046442}}
-{"line":"about -q","_id":"rH4tDjPOpzNbvBpO","createdAt":{"$$date":1522507659310},"updatedAt":{"$$date":1522507659310}}
-{"line":"instance --target 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"rKMVlU3iJY9X2Fny","createdAt":{"$$date":1522338521369},"updatedAt":{"$$date":1522338521369}}
-{"line":"history --help","_id":"rLXT6o5qfXMGqiEH","createdAt":{"$$date":1522262728222},"updatedAt":{"$$date":1522262728222}}
-{"line":"history -b","_id":"sBgNm6H1lOq0tCIf","createdAt":{"$$date":1522262577185},"updatedAt":{"$$date":1522262577185}}
-{"line":"config","_id":"sK8TXontkcaqN5fw","createdAt":{"$$date":1522525962859},"updatedAt":{"$$date":1522525962859}}
-{"line":"~ -t 8fc7ca29a208862ee03b0b8a6eb4875dd3d8e856c5badf1991bc18069555ec18","_id":"sLxt0K0BheQwcMou","createdAt":{"$$date":1522361630417},"updatedAt":{"$$date":1522361630417}}
-{"line":"~ -f","_id":"sV0eKFgkOsZ09S9a","createdAt":{"$$date":1522449887333},"updatedAt":{"$$date":1522449887333}}
-{"line":"? -m","_id":"tAVq62dh5JqtHSEs","createdAt":{"$$date":1522332860440},"updatedAt":{"$$date":1522332860440}}
-{"line":"config -m","_id":"tN5I6NiPMBhYyt7W","createdAt":{"$$date":1522524267650},"updatedAt":{"$$date":1522524267650}}
-{"line":"select @@SERVERNAME","_id":"ty1bGSmLxlXBQQmo","createdAt":{"$$date":1522338724115},"updatedAt":{"$$date":1522338724115}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"uBLPJS0N9PWfxXfS","createdAt":{"$$date":1522700321820},"updatedAt":{"$$date":1522700321820}}
-{"line":"history -c","_id":"uTJSw8pEQjKETcm1","createdAt":{"$$date":1522684682757},"updatedAt":{"$$date":1522684682757}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"uvLxg9FjNGuJEzAT","createdAt":{"$$date":1522699771469},"updatedAt":{"$$date":1522699771469}}
-{"line":"config -m","_id":"uyePd0zjICGTFfWZ","createdAt":{"$$date":1522525102621},"updatedAt":{"$$date":1522525102621}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"vPpDx9VhR1pBg6oY","createdAt":{"$$date":1522698947158},"updatedAt":{"$$date":1522698947158}}
-{"line":"~ -i   store.errors.put(new Error(err.message))","_id":"w17gHpSH7J535LvG","createdAt":{"$$date":1522262200969},"updatedAt":{"$$date":1522262200969}}
-{"line":"config -m","_id":"wH1zoBbyuVyjhtYE","createdAt":{"$$date":1522523801623},"updatedAt":{"$$date":1522523801623}}
-{"line":"config -m f","_id":"wdpqCDjJLJMOJ0O9","createdAt":{"$$date":1522591803575},"updatedAt":{"$$date":1522591803575}}
-{"line":"~ -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"xe0ZQjyiJ30osLiG","createdAt":{"$$date":1522698918242},"updatedAt":{"$$date":1522698918242}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"xisufyewQwuQ60TA","createdAt":{"$$date":1522361695823},"updatedAt":{"$$date":1522361695823}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"xliAtr5s0j1xJVxZ","createdAt":{"$$date":1522361240594},"updatedAt":{"$$date":1522361240594}}
-{"line":"~ -t 59827d497cc8b852cad48822e9be53083e6be1aab1db495af4ed4e8e100f3542","_id":"ykPL31q742Pix0p3","createdAt":{"$$date":1522707134832},"updatedAt":{"$$date":1522707134832}}
-{"line":"history --errors","_id":"zDjoQvOIxCabqpSy","createdAt":{"$$date":1522269509786},"updatedAt":{"$$date":1522269509786}}
-{"line":"config -m","_id":"zIJYxFZ5K9bT6NYj","createdAt":{"$$date":1522529401831},"updatedAt":{"$$date":1522529401831}}
-{"line":"image --run sha256:741bd53beb225a954edc719a0229b589ec8a7b1db73f25ea4b0334050176b4fa","_id":"zSTWlj6SXVuZLbTi","createdAt":{"$$date":1522693850031},"updatedAt":{"$$date":1522693850031}}
-{"line":"config -m","_id":"zZAr4gECO8fpCbAC","createdAt":{"$$date":1522529285551},"updatedAt":{"$$date":1522529285551}}
-{"line":"?","_id":"zaNs1tHIf9TSnz4w","createdAt":{"$$date":1522294604141},"updatedAt":{"$$date":1522294604141}}
+{"line":"certificate --ca","_id":"09IJSvrIrdoFIIcJ","createdAt":{"$$date":1525519669342},"updatedAt":{"$$date":1525519669342}}
+{"line":"about readme","_id":"0A19AU5f9v2ibxj6","createdAt":{"$$date":1524923809602},"updatedAt":{"$$date":1524923809602}}
+{"line":"history -s '{line: {\"$eq\": \"history -s\"}' lines","_id":"0iisHiMzWBsZSAsP","createdAt":{"$$date":1524664275409},"updatedAt":{"$$date":1524664275409}}
+{"line":"about quickstart","_id":"0sCbtSGnKhpSm4lL","createdAt":{"$$date":1524966373350},"updatedAt":{"$$date":1524966373350}}
+{"line":"certificate --new first","_id":"15dMaqiyKmF2QHlw","createdAt":{"$$date":1525441021615},"updatedAt":{"$$date":1525441021615}}
+{"line":"script fmtmsg","_id":"18yDhZiRp6I2mRQ5","createdAt":{"$$date":1524949087984},"updatedAt":{"$$date":1524949087984}}
+{"line":"history -s {updatedAt:-1} -l 0 lines","_id":"1TK0cMBT8V98DOQ1","createdAt":{"$$date":1524681202970},"updatedAt":{"$$date":1524681202970}}
+{"line":"history lines","_id":"1ebPrTkRoRJ8WkwY","createdAt":{"$$date":1524682820089},"updatedAt":{"$$date":1524682820089}}
+{"line":"history lines -a {createdAt:-1}","_id":"1j2wsnlXWxttAjFS","createdAt":{"$$date":1524683003956},"updatedAt":{"$$date":1524683003956}}
+{"line":"history -s {updatedAt:-1} lines","_id":"1jSWfITIKSIrX1oa","createdAt":{"$$date":1524680949509},"updatedAt":{"$$date":1524680949509}}
+{"line":"history lines","_id":"2CYQSmM2B8ee8XcL","createdAt":{"$$date":1524685331388},"updatedAt":{"$$date":1524685331388}}
+{"line":"about q","_id":"2Ee7jLcSDoDhgL9D","createdAt":{"$$date":1524966388011},"updatedAt":{"$$date":1524966388011}}
+{"line":"history -s '{updatedAt: -1}' lines","_id":"2dIOHC9lsYJJKRRi","createdAt":{"$$date":1524611864655},"updatedAt":{"$$date":1524611864655}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"2fSiyl6r1ObzyXYI","createdAt":{"$$date":1524578400945},"updatedAt":{"$$date":1524578400945}}
+{"line":"help history","_id":"31HxU5Fj9tNNOPtV","createdAt":{"$$date":1524531701216},"updatedAt":{"$$date":1524531701216}}
+{"line":"certificate --new first","_id":"31xxfT36l7y1v4Xc","createdAt":{"$$date":1525185541544},"updatedAt":{"$$date":1525185541544}}
+{"line":"script","_id":"37sUscTXrI5iDOdL","createdAt":{"$$date":1524946234245},"updatedAt":{"$$date":1524946234245}}
+{"line":"help","_id":"3O65YNxwj2dHY2Dh","createdAt":{"$$date":1525288671837},"updatedAt":{"$$date":1525288671837}}
+{"line":"about","_id":"3XQrQ9WTSRhKwdUI","createdAt":{"$$date":1524949956039},"updatedAt":{"$$date":1524949956039}}
+{"line":"script serverPropertiesTest","_id":"3yBafWOeahNIeS3s","createdAt":{"$$date":1524946260026},"updatedAt":{"$$date":1524946260026}}
+{"line":"script","_id":"445apzvZ2dqn4vEr","createdAt":{"$$date":1524927759083},"updatedAt":{"$$date":1524927759083}}
+{"line":"select 1","_id":"4U4TimKNH03XIIRh","createdAt":{"$$date":1524682693726},"updatedAt":{"$$date":1524682693726}}
+{"line":"certificate --new first","_id":"4VIUT2w16EOnICbU","createdAt":{"$$date":1525194272587},"updatedAt":{"$$date":1525194272587}}
+{"line":"help script","_id":"4WsJnbXUwrb9p1Zb","createdAt":{"$$date":1524863001752},"updatedAt":{"$$date":1524863001752}}
+{"line":"history -s {updatedAt:-1} lines","_id":"4ygpAX2p5D6mAHZw","createdAt":{"$$date":1524681137516},"updatedAt":{"$$date":1524681137516}}
+{"line":"history list","_id":"5F5yWTHtCvHEtKI0","createdAt":{"$$date":1524665082415},"updatedAt":{"$$date":1524665082415}}
+{"line":"certificate --ca","_id":"5Hwdpvz9L4ZB3YIQ","createdAt":{"$$date":1525485233176},"updatedAt":{"$$date":1525485233176}}
+{"line":"history lines -s {updatedAt:1}}","_id":"5IjaYDQ4jyhAOdTZ","createdAt":{"$$date":1524709481260},"updatedAt":{"$$date":1524709481260}}
+{"line":"history lines","_id":"5OkBu5Cia6z8mBNM","createdAt":{"$$date":1524611808290},"updatedAt":{"$$date":1524611808290}}
+{"line":"about cli","_id":"5rrw5tTgioVfbwNO","createdAt":{"$$date":1525314164695},"updatedAt":{"$$date":1525314164695}}
+{"line":"?","_id":"6AupdTzUpLeE6Ald","createdAt":{"$$date":1524946794407},"updatedAt":{"$$date":1524946794407}}
+{"line":"about --hep","_id":"6LBeFf6vIuLlw2wb","createdAt":{"$$date":1524950002413},"updatedAt":{"$$date":1524950002413}}
+{"line":"sqlpad","_id":"6NtJBRG0QVWjdx7l","createdAt":{"$$date":1524967746166},"updatedAt":{"$$date":1524967746166}}
+{"line":"about --hep","_id":"6Q6uRZFHVkgynydd","createdAt":{"$$date":1524951142553},"updatedAt":{"$$date":1524951142553}}
+{"line":"history lines","_id":"6f7EL0YWMPxb2Vxh","createdAt":{"$$date":1524685330188},"updatedAt":{"$$date":1524685330188}}
+{"line":"help","_id":"71J0uRnB27o73WPZ","createdAt":{"$$date":1524967634327},"updatedAt":{"$$date":1524967634327}}
+{"line":"history -s ({updatedAt: -1}) lines","_id":"73QYCW0BCuWh66d2","createdAt":{"$$date":1524669188566},"updatedAt":{"$$date":1524669188566}}
+{"line":"history -e","_id":"7JGV1os6BZ6xJfaH","createdAt":{"$$date":1524494184190},"updatedAt":{"$$date":1524494184190}}
+{"line":"history config","_id":"7kthVljrrHxNRUbj","createdAt":{"$$date":1524613985329},"updatedAt":{"$$date":1524613985329}}
+{"line":"script","_id":"7x9l4R9kRQs9tOtK","createdAt":{"$$date":1524945206312},"updatedAt":{"$$date":1524945206312}}
+{"line":"history -l {} {updatedAt: -1} {} 5","_id":"8IS5MGzfKSctcIy1","createdAt":{"$$date":1524503378775},"updatedAt":{"$$date":1524503378775}}
+{"line":"certificate --ca","_id":"8ae5tNAboJxeu1kR","createdAt":{"$$date":1525109576469},"updatedAt":{"$$date":1525109576469}}
+{"line":"history -c","_id":"8s7CUVRgxGJiugZJ","createdAt":{"$$date":1524503208458},"updatedAt":{"$$date":1524503208458}}
+{"line":"certificate --new first","_id":"9FaycCcquA2GZeTX","createdAt":{"$$date":1525441475493},"updatedAt":{"$$date":1525441475493}}
+{"line":"history lines","_id":"9KFc5OAlNkGVUByt","createdAt":{"$$date":1524663698282},"updatedAt":{"$$date":1524663698282}}
+{"line":"about --help","_id":"9L5szDP1x8CVFDMa","createdAt":{"$$date":1524951283213},"updatedAt":{"$$date":1524951283213}}
+{"line":"history lines","_id":"9OsHIbWhSsEIyFKo","createdAt":{"$$date":1524685334306},"updatedAt":{"$$date":1524685334306}}
+{"line":"certificate --ca","_id":"9RJ99ORESxGeWYr7","createdAt":{"$$date":1525108853307},"updatedAt":{"$$date":1525108853307}}
+{"line":"history -y","_id":"9Y6IEOQhdwNvf4Hy","createdAt":{"$$date":1524497195375},"updatedAt":{"$$date":1524497195375}}
+{"line":"about -r","_id":"9lhVfBVfeNghikil","createdAt":{"$$date":1524752915493},"updatedAt":{"$$date":1524752915493}}
+{"line":"catalog","_id":"9vZzPB3iQnrqy7QG","createdAt":{"$$date":1524743573383},"updatedAt":{"$$date":1524743573383}}
+{"line":"script -l","_id":"A2FHTeKFL11XxMWk","createdAt":{"$$date":1525186784907},"updatedAt":{"$$date":1525186784907}}
+{"line":"history -s '{line: \"1\"}' lines","_id":"AAmrRTVBOuK51cUH","createdAt":{"$$date":1524610940595},"updatedAt":{"$$date":1524610940595}}
+{"line":"history pulls","_id":"AFLZn7MzF8ZRowJ9","createdAt":{"$$date":1524613990230},"updatedAt":{"$$date":1524613990230}}
+{"line":"scripts -l","_id":"AGdIywJ39CheJFif","createdAt":{"$$date":1525189790533},"updatedAt":{"$$date":1525189790533}}
+{"line":"history","_id":"AIc3DahMZLuCtVUk","createdAt":{"$$date":1524682702184},"updatedAt":{"$$date":1524682702184}}
+{"line":"history -l","_id":"AZuCEQegKvUgl5UF","createdAt":{"$$date":1524503063226},"updatedAt":{"$$date":1524503063226}}
+{"line":"sqlpad --start","_id":"BEhZ1Mn65MTzSTse","createdAt":{"$$date":1524968104160},"updatedAt":{"$$date":1524968104160}}
+{"line":"?","_id":"BT5vucMWei27qs0z","createdAt":{"$$date":1524849271222},"updatedAt":{"$$date":1524849271222}}
+{"line":"history lines","_id":"BVz2ZjpqNylIKqHM","createdAt":{"$$date":1524710284593},"updatedAt":{"$$date":1524710284593}}
+{"line":"help","_id":"Bi1UGhlpPli3vewc","createdAt":{"$$date":1524949894387},"updatedAt":{"$$date":1524949894387}}
+{"line":"history lines","_id":"CM1TKSXOJGVrOqlb","createdAt":{"$$date":1524610771271},"updatedAt":{"$$date":1524610771271}}
+{"line":"history -s {updatedAt:-2} lines","_id":"D5ggVuZqunIboG0A","createdAt":{"$$date":1524669214899},"updatedAt":{"$$date":1524669214899}}
+{"line":"certificate --ca","_id":"D6N132zNK49JRqIi","createdAt":{"$$date":1525182866404},"updatedAt":{"$$date":1525182866404}}
+{"line":"target -t 643a3e9cf5fcb6517ad494abacf7edd225f9ebc6537a1bd5957d78c56aaf246b","_id":"DISrytJ2olCZp4QR","createdAt":{"$$date":1524488777080},"updatedAt":{"$$date":1524488777080}}
+{"line":"help","_id":"DKvD5H9l4B9Pe1Gd","createdAt":{"$$date":1525186603628},"updatedAt":{"$$date":1525186603628}}
+{"line":"certificate --new first","_id":"DNw3P57ru7xwV2aI","createdAt":{"$$date":1525139617191},"updatedAt":{"$$date":1525139617191}}
+{"line":"script fmtmsg","_id":"DYQw2lSRgyPP5AKb","createdAt":{"$$date":1524863153355},"updatedAt":{"$$date":1524863153355}}
+{"line":"certificate --help","_id":"DYm6zD4tYWluVBtj","createdAt":{"$$date":1525138156119},"updatedAt":{"$$date":1525138156119}}
+{"line":"history -c","_id":"DsZZ0sDoEEEBBK9f","createdAt":{"$$date":1524488902002},"updatedAt":{"$$date":1524488902002}}
+{"line":"script help","_id":"E1bxS7aQq9KcaoNt","createdAt":{"$$date":1525186765748},"updatedAt":{"$$date":1525186765748}}
+{"line":"certificate --ca","_id":"ECslnE2WoWzClUv2","createdAt":{"$$date":1525488043246},"updatedAt":{"$$date":1525488043246}}
+{"line":"about cli","_id":"ELPIIUkGQldFZyqo","createdAt":{"$$date":1524966358637},"updatedAt":{"$$date":1524966358637}}
+{"line":"history -s '{\"updatedAt\": \"1\"}' lines","_id":"EMzYuGDs5VHyCocH","createdAt":{"$$date":1524610882509},"updatedAt":{"$$date":1524610882509}}
+{"line":"about -n","_id":"Ei2jwmGuSAaMJMQw","createdAt":{"$$date":1524503135088},"updatedAt":{"$$date":1524503135088}}
+{"line":"map","_id":"EyyazR64SFXpL4NV","createdAt":{"$$date":1524923381519},"updatedAt":{"$$date":1524923381519}}
+{"line":"history -b","_id":"F1qDh0NHKm7KjOeC","createdAt":{"$$date":1524502991816},"updatedAt":{"$$date":1524502991816}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"FBMi1eDoRqzM68hQ","createdAt":{"$$date":1524664078725},"updatedAt":{"$$date":1524664078725}}
+{"line":"help scripts","_id":"FGHBkYJgnelVurYB","createdAt":{"$$date":1525189781600},"updatedAt":{"$$date":1525189781600}}
+{"line":"about","_id":"FX3tTfrHZvcYvCE9","createdAt":{"$$date":1524966347883},"updatedAt":{"$$date":1524966347883}}
+{"line":"history -l {}, {}, {}, 5","_id":"FZa4IWgUxwrQhm6V","createdAt":{"$$date":1524503755556},"updatedAt":{"$$date":1524503755556}}
+{"line":"history lines","_id":"FdIWG7vW7u1djkyc","createdAt":{"$$date":1524610682897},"updatedAt":{"$$date":1524610682897}}
+{"line":"history lines -p {}","_id":"GA8lSBx9C5tzSCwI","createdAt":{"$$date":1524709595165},"updatedAt":{"$$date":1524709595165}}
+{"line":"certificate --ca","_id":"GBaFONgyuyAzF8lW","createdAt":{"$$date":1525479965255},"updatedAt":{"$$date":1525479965255}}
+{"line":"catalog","_id":"GClMZMiAcYWJGVEA","createdAt":{"$$date":1524743691119},"updatedAt":{"$$date":1524743691119}}
+{"line":"about cli","_id":"GQhP79oXd45ftYBY","createdAt":{"$$date":1525021179006},"updatedAt":{"$$date":1525021179006}}
+{"line":"certificate --ca","_id":"GlJM6ugA84mdO2wh","createdAt":{"$$date":1525109270967},"updatedAt":{"$$date":1525109270967}}
+{"line":"history lines -l 4 -k 2 -s {createdAt:-1}","_id":"GvneW1yLbYo7Yrau","createdAt":{"$$date":1524710503380},"updatedAt":{"$$date":1524710503380}}
+{"line":"history -l {}, {}, {updatedAt: -1}, 5","_id":"H476HqmtiYdCSwJT","createdAt":{"$$date":1524503457807},"updatedAt":{"$$date":1524503457807}}
+{"line":"history lines","_id":"H8BZTZVY75dkMhNh","createdAt":{"$$date":1524685310082},"updatedAt":{"$$date":1524685310082}}
+{"line":"about version -e","_id":"HJeUkChYNdI6sygX","createdAt":{"$$date":1524924334333},"updatedAt":{"$$date":1524924334333}}
+{"line":"history","_id":"HOONFOP7GRMqhlv4","createdAt":{"$$date":1524682793083},"updatedAt":{"$$date":1524682793083}}
+{"line":"history -b","_id":"HSJvffHMeO29Sif7","createdAt":{"$$date":1524488830450},"updatedAt":{"$$date":1524488830450}}
+{"line":"history -s {updatedAt:0} lines","_id":"HUZLGSY6npJ0FKF1","createdAt":{"$$date":1524681080913},"updatedAt":{"$$date":1524681080913}}
+{"line":"history lines","_id":"Hg5UQGkTHnE1ZEFl","createdAt":{"$$date":1524611917919},"updatedAt":{"$$date":1524611917919}}
+{"line":"about npm","_id":"HgPi9wEXQBpCC8bW","createdAt":{"$$date":1524923603313},"updatedAt":{"$$date":1524923603313}}
+{"line":"certificate --new","_id":"HmnU7yq3tlqYqmBT","createdAt":{"$$date":1525182877124},"updatedAt":{"$$date":1525182877124}}
+{"line":"history lines","_id":"HwINqPS27OPwU4B1","createdAt":{"$$date":1524617922654},"updatedAt":{"$$date":1524617922654}}
+{"line":"history -s '{\"line\": \"history -s\"}' lines","_id":"I2SrsxrgmNALiR6j","createdAt":{"$$date":1524664205847},"updatedAt":{"$$date":1524664205847}}
+{"line":"certificate --ca","_id":"INQ0bswTdLlLxLPD","createdAt":{"$$date":1525108788339},"updatedAt":{"$$date":1525108788339}}
+{"line":"history lines -s {createdAt:-1}","_id":"INUdT1k9V2IVpBiH","createdAt":{"$$date":1524683025278},"updatedAt":{"$$date":1524683025278}}
+{"line":"script backups","_id":"IWADLoM2k89Aoq0K","createdAt":{"$$date":1525355632417},"updatedAt":{"$$date":1525355632417}}
+{"line":"about --help","_id":"IYe3sJ8oHABGBbSr","createdAt":{"$$date":1524951093194},"updatedAt":{"$$date":1524951093194}}
+{"line":"history -s '{\"updatedAt\": \"-1\"}' lines","_id":"Ic1Z1nBm00J4EEOF","createdAt":{"$$date":1524610871833},"updatedAt":{"$$date":1524610871833}}
+{"line":"history -s '{\"updatedAt\": \"-1\"}' lines","_id":"IiPnhW5m8BQQlBw5","createdAt":{"$$date":1524668895069},"updatedAt":{"$$date":1524668895069}}
+{"line":"certificate --ca","_id":"Ipt3BuWAphmYCstS","createdAt":{"$$date":1525109855576},"updatedAt":{"$$date":1525109855576}}
+{"line":"history -s '{updatedAt: 1}' lines","_id":"IyPu6tuXT9kqVS4V","createdAt":{"$$date":1524611884953},"updatedAt":{"$$date":1524611884953}}
+{"line":"history lines -s {createdAt:1}","_id":"Izdb9ZovSwGRGpTD","createdAt":{"$$date":1524683822143},"updatedAt":{"$$date":1524683822143}}
+{"line":"history lines","_id":"JQ7zIbf83bdpX4Vu","createdAt":{"$$date":1524709634472},"updatedAt":{"$$date":1524709634472}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"JWqY4A8keYtag9JP","createdAt":{"$$date":1524576472221},"updatedAt":{"$$date":1524576472221}}
+{"line":"history -e","_id":"Jg1e9lwpA6pYRJQO","createdAt":{"$$date":1524488895194},"updatedAt":{"$$date":1524488895194}}
+{"line":"script fmtmsg","_id":"Jhz7JCaldAuYzjFr","createdAt":{"$$date":1524945909682},"updatedAt":{"$$date":1524945909682}}
+{"line":"script -e fmtmsg.sql","_id":"JnYrH5A1VYvQYgqH","createdAt":{"$$date":1524863037861},"updatedAt":{"$$date":1524863037861}}
+{"line":"script fmtmsg","_id":"JvY4v74lvhWjJtPB","createdAt":{"$$date":1524945489358},"updatedAt":{"$$date":1524945489358}}
+{"line":"sqlpad --help","_id":"JwOZV0bSU3H8HEwO","createdAt":{"$$date":1524967719005},"updatedAt":{"$$date":1524967719005}}
+{"line":"about --help","_id":"K1L7eX5Tqa0O6lQ0","createdAt":{"$$date":1524752907374},"updatedAt":{"$$date":1524752907374}}
+{"line":"help","_id":"L7GDPSRQKVxOSs1W","createdAt":{"$$date":1524446829753},"updatedAt":{"$$date":1524446829753}}
+{"line":"certificate --new first","_id":"LLAoNcTtgE3hZFGH","createdAt":{"$$date":1525441347025},"updatedAt":{"$$date":1525441347025}}
+{"line":"history batches","_id":"LXUAVlzAknxCWi01","createdAt":{"$$date":1524613939947},"updatedAt":{"$$date":1524613939947}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"LYKWdevH4XZ1KIMg","createdAt":{"$$date":1524597802239},"updatedAt":{"$$date":1524597802239}}
+{"line":"history lines","_id":"LmrAizbLsgbRn3Od","createdAt":{"$$date":1524532281960},"updatedAt":{"$$date":1524532281960}}
+{"line":"history -s {createdAt: 1} lines","_id":"LshEVvB4P3giEi5u","createdAt":{"$$date":1524611411885},"updatedAt":{"$$date":1524611411885}}
+{"line":"?","_id":"Lt1p7GXZI7gvn365","createdAt":{"$$date":1525189774789},"updatedAt":{"$$date":1525189774789}}
+{"line":"certificate --ca","_id":"M3W8b9bLYjWDzALx","createdAt":{"$$date":1525109100660},"updatedAt":{"$$date":1525109100660}}
+{"line":"history","_id":"M7MDj7d1etGdTP0v","createdAt":{"$$date":1524613961375},"updatedAt":{"$$date":1524613961375}}
+{"line":"?","_id":"MeycTJCmhgSYinTl","createdAt":{"$$date":1524936497658},"updatedAt":{"$$date":1524936497658}}
+{"line":"history lines","_id":"N205yt0Ir2GqF8wG","createdAt":{"$$date":1524685337768},"updatedAt":{"$$date":1524685337768}}
+{"line":"certificate --ca","_id":"NAuI6jenbbDpfs28","createdAt":{"$$date":1525109215578},"updatedAt":{"$$date":1525109215578}}
+{"line":"history lines","_id":"NDXniVOcaeSbB4v2","createdAt":{"$$date":1524611726264},"updatedAt":{"$$date":1524611726264}}
+{"line":"history -s '{createdAt: -1}' lines","_id":"NcrcTv2Ah6OvhZTF","createdAt":{"$$date":1524611606509},"updatedAt":{"$$date":1524611606509}}
+{"line":"history lines -s {createdAt:-1} -p {_id:0,line:1}","_id":"Nlmk4esaXRDovoCM","createdAt":{"$$date":1524683162398},"updatedAt":{"$$date":1524683162398}}
+{"line":"?","_id":"Nm8bZi55r25f2Kh7","createdAt":{"$$date":1524946264798},"updatedAt":{"$$date":1524946264798}}
+{"line":"catalog --help","_id":"NuoldH5cyKK7SXoa","createdAt":{"$$date":1525103206561},"updatedAt":{"$$date":1525103206561}}
+{"line":"history lines -s {updatedAt:1}","_id":"Nv7klaXZ9DFKD97M","createdAt":{"$$date":1524709509366},"updatedAt":{"$$date":1524709509366}}
+{"line":"catalog","_id":"NxRB18UMK51g4GGs","createdAt":{"$$date":1525097463240},"updatedAt":{"$$date":1525097463240}}
+{"line":"help","_id":"NzglcdIFqENsGLPc","createdAt":{"$$date":1525108669158},"updatedAt":{"$$date":1525108669158}}
+{"line":"help","_id":"OJntmmBIo1oqwDM4","createdAt":{"$$date":1525106026728},"updatedAt":{"$$date":1525106026728}}
+{"line":"history -l {} {} {\"updatedAt\": \"a\"} 5","_id":"OMuLldcQBqoRVoBR","createdAt":{"$$date":1524504860908},"updatedAt":{"$$date":1524504860908}}
+{"line":"config -a e","_id":"ONLAxtYauB6bvEq1","createdAt":{"$$date":1525355753032},"updatedAt":{"$$date":1525355753032}}
+{"line":"go","_id":"OWe4SWqs9gd6tO48","createdAt":{"$$date":1524949091163},"updatedAt":{"$$date":1524949091163}}
+{"line":"history -a '{\"updatedAt\": -1}' lines","_id":"OueEOiORoJaMISg5","createdAt":{"$$date":1524665185877},"updatedAt":{"$$date":1524665185877}}
+{"line":"history lines -p {line:1}","_id":"OvEMrdDf504yomGK","createdAt":{"$$date":1524684879435},"updatedAt":{"$$date":1524684879435}}
+{"line":"history -l {}, {}, {\"updatedAt\": \"a\"}, 5","_id":"P0BBNxcCIhOpDKkc","createdAt":{"$$date":1524504047572},"updatedAt":{"$$date":1524504047572}}
+{"line":"history lines","_id":"PEoIDK2LbpWjsGXV","createdAt":{"$$date":1524685313338},"updatedAt":{"$$date":1524685313338}}
+{"line":"history -l {}, {}, {\"updatedAt\": \"-1\"}, 5","_id":"PJWya3RWDvFX7hSS","createdAt":{"$$date":1524503993504},"updatedAt":{"$$date":1524503993504}}
+{"line":"history lines","_id":"PNSLzRO3BFVgMi3k","createdAt":{"$$date":1524685328093},"updatedAt":{"$$date":1524685328093}}
+{"line":"help ?","_id":"PPYnqKQphwWr3p6c","createdAt":{"$$date":1525189849394},"updatedAt":{"$$date":1525189849394}}
+{"line":"history lines -l 4 -k 2","_id":"PfBIopcfxhdKK8vg","createdAt":{"$$date":1524710440295},"updatedAt":{"$$date":1524710440295}}
+{"line":"history lines -s {updatedAt:-1}","_id":"PpItQoJRDTqqC4cP","createdAt":{"$$date":1524709351573},"updatedAt":{"$$date":1524709351573}}
+{"line":"history commands","_id":"PrAx65WptgAIt2Gk","createdAt":{"$$date":1524532330328},"updatedAt":{"$$date":1524532330328}}
+{"line":"history -s '{createdAt: 1}' lines","_id":"PrxnjKrp7kvA2A8D","createdAt":{"$$date":1524611319585},"updatedAt":{"$$date":1524611319585}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"Q8XDVjcwBbajUVem","createdAt":{"$$date":1524598360852},"updatedAt":{"$$date":1524598360852}}
+{"line":"history -s {createdAt: 1} lines","_id":"QCQcn9OMLZZkV4E2","createdAt":{"$$date":1524611308186},"updatedAt":{"$$date":1524611308186}}
+{"line":"about npm","_id":"QCo8Fp45SG32nlRF","createdAt":{"$$date":1524923497639},"updatedAt":{"$$date":1524923497639}}
+{"line":"script -e","_id":"Qgs5tPoi5sOBhDJG","createdAt":{"$$date":1524862995115},"updatedAt":{"$$date":1524862995115}}
+{"line":"history -l {} {} {\"updatedAt\": \"-1\"} 5","_id":"QjjJyYJbkB6fCoXS","createdAt":{"$$date":1524504871398},"updatedAt":{"$$date":1524504871398}}
+{"line":"--help","_id":"R13k6OO78oSBeRhh","createdAt":{"$$date":1524598469442},"updatedAt":{"$$date":1524598469442}}
+{"line":"history lines","_id":"R2NffM3eB4kRWhv2","createdAt":{"$$date":1524685326974},"updatedAt":{"$$date":1524685326974}}
+{"line":"history lines","_id":"R7ZffbBg7kPIRlIr","createdAt":{"$$date":1524685329079},"updatedAt":{"$$date":1524685329079}}
+{"line":"script -a fmtmsg","_id":"RMNESTa7DgwAPOur","createdAt":{"$$date":1524863128351},"updatedAt":{"$$date":1524863128351}}
+{"line":"script fmtmsg","_id":"RSG7TwmlDvdkNd9S","createdAt":{"$$date":1524945578656},"updatedAt":{"$$date":1524945578656}}
+{"line":"help certificate","_id":"RUR0iOXFmDbpbA2T","createdAt":{"$$date":1525186611485},"updatedAt":{"$$date":1525186611485}}
+{"line":"about readme","_id":"RblSdFiVTnWsVNQh","createdAt":{"$$date":1525021113075},"updatedAt":{"$$date":1525021113075}}
+{"line":"history -s '{\"line\": \"1\"}' lines","_id":"S1b2RvPTSCeXBuQk","createdAt":{"$$date":1524610920790},"updatedAt":{"$$date":1524610920790}}
+{"line":"history batch","_id":"S6aAmoQt8eEbQAKh","createdAt":{"$$date":1524532127895},"updatedAt":{"$$date":1524532127895}}
+{"line":"history --help","_id":"SCiE2SU6mD9iS2l4","createdAt":{"$$date":1524503233426},"updatedAt":{"$$date":1524503233426}}
+{"line":"history batches","_id":"SCnbiFwFm0sioa8M","createdAt":{"$$date":1524532229042},"updatedAt":{"$$date":1524532229042}}
+{"line":"history -s '{updatedAt: 0}' lines","_id":"SH4G019CbaLgOIPv","createdAt":{"$$date":1524611906843},"updatedAt":{"$$date":1524611906843}}
+{"line":"history -s '{createdAt: -1}' lines","_id":"SfSrwMN9A8HvuSCc","createdAt":{"$$date":1524611717085},"updatedAt":{"$$date":1524611717085}}
+{"line":"history lines","_id":"SklgOLWhhIhAScoe","createdAt":{"$$date":1524685302759},"updatedAt":{"$$date":1524685302759}}
+{"line":"history -s '{createdAt: 1}' lines","_id":"T0owo614R1nw0tOv","createdAt":{"$$date":1524611433424},"updatedAt":{"$$date":1524611433424}}
+{"line":"history -l 12 lines","_id":"TMiD5A4wszm12gkw","createdAt":{"$$date":1524610799016},"updatedAt":{"$$date":1524610799016}}
+{"line":"history lines","_id":"Tpuzxc7SXA806VIi","createdAt":{"$$date":1524665101247},"updatedAt":{"$$date":1524665101247}}
+{"line":"history -l {}, {}, {updatedAt: -1}, 5","_id":"U4atCTMOCyVk10Ax","createdAt":{"$$date":1524503611749},"updatedAt":{"$$date":1524503611749}}
+{"line":"history -s '{\"updatedAt\": \"-1\"}' lines","_id":"U4wHT78T5IY4m5Ft","createdAt":{"$$date":1524665713868},"updatedAt":{"$$date":1524665713868}}
+{"line":"script -e fmtmsg","_id":"UGDaij0P3iHcVNBb","createdAt":{"$$date":1524863057432},"updatedAt":{"$$date":1524863057432}}
+{"line":"catalog","_id":"URbIt5DQriNriDLm","createdAt":{"$$date":1524778851184},"updatedAt":{"$$date":1524778851184}}
+{"line":"certificate --ca","_id":"UfiBietpXWc3EZoY","createdAt":{"$$date":1525109165204},"updatedAt":{"$$date":1525109165204}}
+{"line":"about --help","_id":"UzsYv5onsPIp0caI","createdAt":{"$$date":1524951209109},"updatedAt":{"$$date":1524951209109}}
+{"line":"about -e","_id":"V4pHsRjShId5hznH","createdAt":{"$$date":1524923662158},"updatedAt":{"$$date":1524923662158}}
+{"line":"history -s '{createdAt: -1}' lines","_id":"V6JQx9nikSj8c4T2","createdAt":{"$$date":1524611447912},"updatedAt":{"$$date":1524611447912}}
+{"line":"credentials -","_id":"V7FvPLNW92bzy2K5","createdAt":{"$$date":1525024886913},"updatedAt":{"$$date":1525024886913}}
+{"line":"history lines -s {updatedAt: -1}","_id":"VNezy3NOyHqEiVUV","createdAt":{"$$date":1524577278196},"updatedAt":{"$$date":1524577278196}}
+{"line":"go","_id":"VO3UMpAz0v68Pgbi","createdAt":{"$$date":1524682694755},"updatedAt":{"$$date":1524682694755}}
+{"line":"about","_id":"VO4Suob5O56CrTsE","createdAt":{"$$date":1524950218022},"updatedAt":{"$$date":1524950218022}}
+{"line":"catalog","_id":"VxIG1NLzIOxweMKO","createdAt":{"$$date":1524768902389},"updatedAt":{"$$date":1524768902389}}
+{"line":"sqpad --start","_id":"VzQ4EutVnvyPYkcF","createdAt":{"$$date":1524968098353},"updatedAt":{"$$date":1524968098353}}
+{"line":"certificate","_id":"WM2Qbbs4HAoEG9r1","createdAt":{"$$date":1525194079629},"updatedAt":{"$$date":1525194079629}}
+{"line":"map","_id":"WMuS4sVjLNB3JnqQ","createdAt":{"$$date":1524492677966},"updatedAt":{"$$date":1524492677966}}
+{"line":"history -n","_id":"WSsUs9dNdec8mvXw","createdAt":{"$$date":1524488926519},"updatedAt":{"$$date":1524488926519}}
+{"line":"certificate --help","_id":"WTiorHtcKzkJw7N0","createdAt":{"$$date":1525108682402},"updatedAt":{"$$date":1525108682402}}
+{"line":"script","_id":"WUtuOff8zkMUxDui","createdAt":{"$$date":1524929930234},"updatedAt":{"$$date":1524929930234}}
+{"line":"certificate --new first","_id":"WsFVwpZY85GRe7JE","createdAt":{"$$date":1525442064696},"updatedAt":{"$$date":1525442064696}}
+{"line":"map","_id":"X2E1NrGwLLiErUPd","createdAt":{"$$date":1524743508726},"updatedAt":{"$$date":1524743508726}}
+{"line":"? --map IP","_id":"X8hqUhPBUJoSEYre","createdAt":{"$$date":1524768851669},"updatedAt":{"$$date":1524768851669}}
+{"line":"catalog -c","_id":"XCIK5uNAAj0ieQAC","createdAt":{"$$date":1525103225734},"updatedAt":{"$$date":1525103225734}}
+{"line":"about","_id":"XLNCzAtnpgvYHq35","createdAt":{"$$date":1524950546389},"updatedAt":{"$$date":1524950546389}}
+{"line":"certificate --ls","_id":"XMg5aosVAIZKY8dS","createdAt":{"$$date":1525186592934},"updatedAt":{"$$date":1525186592934}}
+{"line":"history -l {}, {}, {}, 5","_id":"XVPnSxrdeNtAkVHC","createdAt":{"$$date":1524504112079},"updatedAt":{"$$date":1524504112079}}
+{"line":"script dbProps","_id":"Xe27MggaWs4yHTo3","createdAt":{"$$date":1524946652680},"updatedAt":{"$$date":1524946652680}}
+{"line":"history -l {} {} {\"updatedAt\":-1} 5","_id":"XeGoYMtoq5wiYclu","createdAt":{"$$date":1524504884364},"updatedAt":{"$$date":1524504884364}}
+{"line":"go","_id":"Xk3K6Z9EL9nkQn8d","createdAt":{"$$date":1524446877603},"updatedAt":{"$$date":1524446877603}}
+{"line":"about --help","_id":"XkPbvn7HS0WfpMUx","createdAt":{"$$date":1524923423282},"updatedAt":{"$$date":1524923423282}}
+{"line":"history lines","_id":"Xl8RGV7u5KqEiGCl","createdAt":{"$$date":1524685288979},"updatedAt":{"$$date":1524685288979}}
+{"line":"history -s '{\"updatedAt\": 1}' lines","_id":"Y95o9fKYqFapOol9","createdAt":{"$$date":1524664090075},"updatedAt":{"$$date":1524664090075}}
+{"line":"? -n","_id":"YDq36h5laEEI9UPv","createdAt":{"$$date":1524849277493},"updatedAt":{"$$date":1524849277493}}
+{"line":"certificate --new first","_id":"YG3AHo14E6DsMWRi","createdAt":{"$$date":1525193836910},"updatedAt":{"$$date":1525193836910}}
+{"line":"history -l","_id":"YLKDxe5YTP3gWPrV","createdAt":{"$$date":1524503272755},"updatedAt":{"$$date":1524503272755}}
+{"line":"certificate --new sqlpad","_id":"YZh6jtKoGAAjOMVg","createdAt":{"$$date":1525488232404},"updatedAt":{"$$date":1525488232404}}
+{"line":"go","_id":"YbghAv6iUDB64zKc","createdAt":{"$$date":1524949476996},"updatedAt":{"$$date":1524949476996}}
+{"line":"history  -l 12 lines","_id":"Ylz288dlfTydKAb2","createdAt":{"$$date":1524668968788},"updatedAt":{"$$date":1524668968788}}
+{"line":"certificate --new first","_id":"a7Y77165oJ9i3pWz","createdAt":{"$$date":1525479993859},"updatedAt":{"$$date":1525479993859}}
+{"line":"about -u","_id":"aLLeRuLuRICLt5SO","createdAt":{"$$date":1524923700783},"updatedAt":{"$$date":1524923700783}}
+{"line":"history -s {updatedAt: -1} lines","_id":"aPKYmRKfWcyf99he","createdAt":{"$$date":1524663783533},"updatedAt":{"$$date":1524663783533}}
+{"line":"history lines","_id":"aXvsYWNO0fLM28Pc","createdAt":{"$$date":1524611477009},"updatedAt":{"$$date":1524611477009}}
+{"line":"history list","_id":"bHXz8BsoO91odWlh","createdAt":{"$$date":1524665046141},"updatedAt":{"$$date":1524665046141}}
+{"line":"certificate --new first","_id":"bLfOIcr638QM8Pqy","createdAt":{"$$date":1525185103987},"updatedAt":{"$$date":1525185103987}}
+{"line":"certificate --help","_id":"bPhYneXZJhI7epym","createdAt":{"$$date":1525468972004},"updatedAt":{"$$date":1525468972004}}
+{"line":"about","_id":"bX7u7CbZXTuhKkQk","createdAt":{"$$date":1524951274503},"updatedAt":{"$$date":1524951274503}}
+{"line":"about quickstart","_id":"bqdZMkCtQSWT10nN","createdAt":{"$$date":1525021149697},"updatedAt":{"$$date":1525021149697}}
+{"line":"history -a '{\"updatedAt\": \"-1\"}' lines","_id":"c3CYLuVTjRQKwiVZ","createdAt":{"$$date":1524665204894},"updatedAt":{"$$date":1524665204894}}
+{"line":"history -l {} {} {} 5","_id":"cK13fl9lr62I9uWT","createdAt":{"$$date":1524504839086},"updatedAt":{"$$date":1524504839086}}
+{"line":"script","_id":"ccn2WI8N8OV7mlJn","createdAt":{"$$date":1525189770763},"updatedAt":{"$$date":1525189770763}}
+{"line":"about --quickstart","_id":"cigt8DwTVfczQ1Ba","createdAt":{"$$date":1524768941277},"updatedAt":{"$$date":1524768941277}}
+{"line":"history -s '{line: {\"$eq\": \"history -s\"}}' lines","_id":"cn40XvuKZgmqMbl9","createdAt":{"$$date":1524664304744},"updatedAt":{"$$date":1524664304744}}
+{"line":"history -b","_id":"crtBqBh22kRayIho","createdAt":{"$$date":1524503260004},"updatedAt":{"$$date":1524503260004}}
+{"line":"scripts","_id":"cw66aYKBE25hB3h3","createdAt":{"$$date":1524937029792},"updatedAt":{"$$date":1524937029792}}
+{"line":"history --help","_id":"czE7MLymX1YKsNag","createdAt":{"$$date":1524488888890},"updatedAt":{"$$date":1524488888890}}
+{"line":"script","_id":"dMxU2K6AmIyikuQc","createdAt":{"$$date":1525355617780},"updatedAt":{"$$date":1525355617780}}
+{"line":"script --help","_id":"dvmWv0FGd1ZBZh0p","createdAt":{"$$date":1525186778359},"updatedAt":{"$$date":1525186778359}}
+{"line":"about quickstart","_id":"eAaFPaGdKZvZOVEv","createdAt":{"$$date":1524966393351},"updatedAt":{"$$date":1524966393351}}
+{"line":"certificate --new first","_id":"eJ9p3tdqA4elgEEL","createdAt":{"$$date":1525194102726},"updatedAt":{"$$date":1525194102726}}
+{"line":"help","_id":"eLk7euhzYxI7plie","createdAt":{"$$date":1524598465180},"updatedAt":{"$$date":1524598465180}}
+{"line":"certificate --new first","_id":"eR3YKxmvZCUEXenS","createdAt":{"$$date":1525185218100},"updatedAt":{"$$date":1525185218100}}
+{"line":"history -l","_id":"eTbbS8v2OuIc8ZWb","createdAt":{"$$date":1524488908122},"updatedAt":{"$$date":1524488908122}}
+{"line":"history","_id":"eX1wQvwdxDPpyJaS","createdAt":{"$$date":1524680983470},"updatedAt":{"$$date":1524680983470}}
+{"line":"history lines -s {createdAt:-1}","_id":"emHmgxDlf35NCkrr","createdAt":{"$$date":1524683514046},"updatedAt":{"$$date":1524683514046}}
+{"line":"history lines -s {createdAt:1}","_id":"eqHO4o0E9B6TAFJZ","createdAt":{"$$date":1524683727211},"updatedAt":{"$$date":1524683727211}}
+{"line":"history -s {updatedAt: -1} lines","_id":"eti2vDlPS1gii09c","createdAt":{"$$date":1524610847888},"updatedAt":{"$$date":1524610847888}}
+{"line":"store.npm.put(result)","_id":"evbXs1vwNylmbqYE","createdAt":{"$$date":1524498056348},"updatedAt":{"$$date":1524498056348}}
+{"line":"history -s {updatedAt: -2} lines","_id":"f9dREu8kLTZLEBTN","createdAt":{"$$date":1524669205408},"updatedAt":{"$$date":1524669205408}}
+{"line":"?","_id":"fBfJVcghMmiWf0zp","createdAt":{"$$date":1525355678694},"updatedAt":{"$$date":1525355678694}}
+{"line":"about --help","_id":"fMF9Jv98zwC8yaks","createdAt":{"$$date":1525314149689},"updatedAt":{"$$date":1525314149689}}
+{"line":"history lines -p {line:1}","_id":"fP4DTQ2beVIJMFIU","createdAt":{"$$date":1524709586667},"updatedAt":{"$$date":1524709586667}}
+{"line":"certificate --ca","_id":"fYERhQBKhSEgy14Q","createdAt":{"$$date":1525468993626},"updatedAt":{"$$date":1525468993626}}
+{"line":"certificate --new first","_id":"fn9sqKA5Gz9KPXEF","createdAt":{"$$date":1525193473383},"updatedAt":{"$$date":1525193473383}}
+{"line":"scripts","_id":"fp3orgLfPJaudJZN","createdAt":{"$$date":1525189773271},"updatedAt":{"$$date":1525189773271}}
+{"line":"history lines","_id":"g5SdLfqEdYKdqugW","createdAt":{"$$date":1524610033153},"updatedAt":{"$$date":1524610033153}}
+{"line":"history -c","_id":"g5lP5jNpXzK7CnTb","createdAt":{"$$date":1524488882452},"updatedAt":{"$$date":1524488882452}}
+{"line":"history -n","_id":"gAz0BDoUGdsvzD5c","createdAt":{"$$date":1524490864577},"updatedAt":{"$$date":1524490864577}}
+{"line":"go","_id":"gUBzl3QPAocgyZYn","createdAt":{"$$date":1524446837492},"updatedAt":{"$$date":1524446837492}}
+{"line":"history -s {updatedAt: -1} lines","_id":"gh7IaWOreMbTGEWk","createdAt":{"$$date":1524578485971},"updatedAt":{"$$date":1524578485971}}
+{"line":"help script","_id":"h0dQRC09SWVY6q8t","createdAt":{"$$date":1525189800717},"updatedAt":{"$$date":1525189800717}}
+{"line":"history lines","_id":"h8uJY3oxKVyJLyCg","createdAt":{"$$date":1524680999565},"updatedAt":{"$$date":1524680999565}}
+{"line":"history -e","_id":"hDBLM9jC1EBJbmR0","createdAt":{"$$date":1524497206289},"updatedAt":{"$$date":1524497206289}}
+{"line":"history list","_id":"hDEd6L202XAvvlAy","createdAt":{"$$date":1524617798225},"updatedAt":{"$$date":1524617798225}}
+{"line":"certificate --ca","_id":"hPpf5tdkgYihaKry","createdAt":{"$$date":1525479233446},"updatedAt":{"$$date":1525479233446}}
+{"line":"history -l {} {} {updatedAt: -1} 5","_id":"hTn1iPYtBOpxB34y","createdAt":{"$$date":1524503414960},"updatedAt":{"$$date":1524503414960}}
+{"line":"history -s lines","_id":"hgBM8nyZXxquas1D","createdAt":{"$$date":1524664124380},"updatedAt":{"$$date":1524664124380}}
+{"line":"history lines","_id":"hhe1vkK1P4pLpiPu","createdAt":{"$$date":1524664569007},"updatedAt":{"$$date":1524664569007}}
+{"line":"about","_id":"hmo1UlMBXNJn5zWN","createdAt":{"$$date":1524923591497},"updatedAt":{"$$date":1524923591497}}
+{"line":"map","_id":"hxLbKsgqVaF7uQrg","createdAt":{"$$date":1524715644507},"updatedAt":{"$$date":1524715644507}}
+{"line":"history -s '{createdAt: 1}' lines","_id":"iCTH1D7dqPsQxSBR","createdAt":{"$$date":1524611400410},"updatedAt":{"$$date":1524611400410}}
+{"line":"history lines -s {updatedAt:-1}}","_id":"iDYeNjRTxE315XvE","createdAt":{"$$date":1524709474858},"updatedAt":{"$$date":1524709474858}}
+{"line":"? -x","_id":"ijmJmyuB73cBlbMy","createdAt":{"$$date":1524849281866},"updatedAt":{"$$date":1524849281866}}
+{"line":"history lines","_id":"irOeeirlrMWsxHaB","createdAt":{"$$date":1524682933694},"updatedAt":{"$$date":1524682933694}}
+{"line":"history lines","_id":"irpKqHErM2hzJMEM","createdAt":{"$$date":1524662958444},"updatedAt":{"$$date":1524662958444}}
+{"line":"history lines -l 4","_id":"j5JZCmmo6uuZE4hL","createdAt":{"$$date":1524710314418},"updatedAt":{"$$date":1524710314418}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"jAlJZgdIBhTiM20I","createdAt":{"$$date":1524578280626},"updatedAt":{"$$date":1524578280626}}
+{"line":"certificate --new sqlpalSSL","_id":"jUF4U9dHYLxSNDEG","createdAt":{"$$date":1525138185414},"updatedAt":{"$$date":1525138185414}}
+{"line":"history lines -l 4 -k 1 -p {}","_id":"jeBiMYDTVnlAsAJC","createdAt":{"$$date":1524710408500},"updatedAt":{"$$date":1524710408500}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"jqcMUHHRbMR51Fo0","createdAt":{"$$date":1524577292313},"updatedAt":{"$$date":1524577292313}}
+{"line":"certificate first","_id":"k7OUV6r8WppsHh7D","createdAt":{"$$date":1525185903618},"updatedAt":{"$$date":1525185903618}}
+{"line":"certificate --ca","_id":"k88abmqgDNQ3mw8f","createdAt":{"$$date":1525108701669},"updatedAt":{"$$date":1525108701669}}
+{"line":"o","_id":"k9ziDBYJxezRSuVG","createdAt":{"$$date":1525109737700},"updatedAt":{"$$date":1525109737700}}
+{"line":"select * from sysdatabases","_id":"kXzQBbkR1SxE5lYT","createdAt":{"$$date":1524446873350},"updatedAt":{"$$date":1524446873350}}
+{"line":"certificate --new first","_id":"kZc1A4OihXdxqH3r","createdAt":{"$$date":1525480303427},"updatedAt":{"$$date":1525480303427}}
+{"line":"history -a `{\"updatedAt\": -1}' lines","_id":"kcudYdGRZD8FXVNq","createdAt":{"$$date":1524665145382},"updatedAt":{"$$date":1524665145382}}
+{"line":"history lines -s {updatedAt:-1} -p {line:1,_id:0}","_id":"kgwbZKxNRRGv1fAU","createdAt":{"$$date":1524709418548},"updatedAt":{"$$date":1524709418548}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"krYbPryC1ALdRBil","createdAt":{"$$date":1524664111134},"updatedAt":{"$$date":1524664111134}}
+{"line":"?","_id":"kxtHQBOQndmij9LC","createdAt":{"$$date":1525024891411},"updatedAt":{"$$date":1525024891411}}
+{"line":"history -l {} {} {updatedAt:-1} 5","_id":"l1kfZHua9Lbk7yAa","createdAt":{"$$date":1524504904890},"updatedAt":{"$$date":1524504904890}}
+{"line":"history -c","_id":"l5ipQkju3Pje5JzZ","createdAt":{"$$date":1524503016734},"updatedAt":{"$$date":1524503016734}}
+{"line":"history lines","_id":"l7oA20Ycz5JdqY5f","createdAt":{"$$date":1524681852578},"updatedAt":{"$$date":1524681852578}}
+{"line":"certificate --ca","_id":"lGXNSFAF2369oK3J","createdAt":{"$$date":1525478922137},"updatedAt":{"$$date":1525478922137}}
+{"line":"about","_id":"lO35ooOUBEbhQ6nH","createdAt":{"$$date":1524949898412},"updatedAt":{"$$date":1524949898412}}
+{"line":"history lines","_id":"lg6OruqokDgHvFua","createdAt":{"$$date":1524709319800},"updatedAt":{"$$date":1524709319800}}
+{"line":"sqlpad --start","_id":"ln6YooTVsOUk3Pqo","createdAt":{"$$date":1524967807953},"updatedAt":{"$$date":1524967807953}}
+{"line":"catalog -n","_id":"mBsbj7GQlm8IAO4x","createdAt":{"$$date":1524778882259},"updatedAt":{"$$date":1524778882259}}
+{"line":"image --pull","_id":"mOSb1S65d14EuHmD","createdAt":{"$$date":1524492514729},"updatedAt":{"$$date":1524492514729}}
+{"line":"history -s '{line: {\"$eq\": \"history -s\"}}' lines","_id":"mVcVZa75nawcP12m","createdAt":{"$$date":1524664319369},"updatedAt":{"$$date":1524664319369}}
+{"line":"history lines","_id":"meB3WAWAo8fygj34","createdAt":{"$$date":1524532553878},"updatedAt":{"$$date":1524532553878}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"nLsAdAc2J9ymUct2","createdAt":{"$$date":1524573483444},"updatedAt":{"$$date":1524573483444}}
+{"line":"history lines","_id":"nRljzGuwdftlt1tt","createdAt":{"$$date":1524663634000},"updatedAt":{"$$date":1524663634000}}
+{"line":"history -s {updatedAt:1} lines","_id":"naL1vcg0LR4ZId2L","createdAt":{"$$date":1524669231359},"updatedAt":{"$$date":1524669231359}}
+{"line":"about","_id":"ncRpe7W9O7serFoZ","createdAt":{"$$date":1524599701356},"updatedAt":{"$$date":1524599701356}}
+{"line":"history  lines","_id":"ndceP9keDsaUKYLU","createdAt":{"$$date":1524668909671},"updatedAt":{"$$date":1524668909671}}
+{"line":"history -l {}, {}, {\"updatedAt\": \"-1\"}, 5","_id":"np09oOPlSCYa2b0i","createdAt":{"$$date":1524503744105},"updatedAt":{"$$date":1524503744105}}
+{"line":"script fmtmsg","_id":"nycyYNUJd0hRTwVX","createdAt":{"$$date":1524936489367},"updatedAt":{"$$date":1524936489367}}
+{"line":"about version","_id":"o407LbkFzGiNvEVB","createdAt":{"$$date":1525021156401},"updatedAt":{"$$date":1525021156401}}
+{"line":"certificate --ca","_id":"oAvGGaP4xZsm3NhF","createdAt":{"$$date":1525110750452},"updatedAt":{"$$date":1525110750452}}
+{"line":"credentials --help","_id":"oNaqGQOgPeDYpdbh","createdAt":{"$$date":1525024879833},"updatedAt":{"$$date":1525024879833}}
+{"line":"history lines -s {createdAt:-1} -p {_id:0,line:1,createdAt:1}","_id":"of12rVn4y836HsOR","createdAt":{"$$date":1524683189442},"updatedAt":{"$$date":1524683189442}}
+{"line":"certificate --new first","_id":"ojELHZgeCkGOcJC9","createdAt":{"$$date":1525185331895},"updatedAt":{"$$date":1525185331895}}
+{"line":"script","_id":"ooP6M2h2djZKQKnQ","createdAt":{"$$date":1525193415865},"updatedAt":{"$$date":1525193415865}}
+{"line":"help","_id":"opRXmL2alO3ntstq","createdAt":{"$$date":1525024831801},"updatedAt":{"$$date":1525024831801}}
+{"line":"help about","_id":"p2GKRmETgKP2Equw","createdAt":{"$$date":1524923786913},"updatedAt":{"$$date":1524923786913}}
+{"line":"history --pull","_id":"p39sPTbFvlJrtjxA","createdAt":{"$$date":1524492694970},"updatedAt":{"$$date":1524492694970}}
+{"line":"? -e","_id":"pChwRAzPipl8cfko","createdAt":{"$$date":1525355675431},"updatedAt":{"$$date":1525355675431}}
+{"line":"history lines -l 4 -k 1","_id":"pI09jsoKCFIqfbHN","createdAt":{"$$date":1524710366539},"updatedAt":{"$$date":1524710366539}}
+{"line":"about -q","_id":"pWbsSNtyQYskUtDe","createdAt":{"$$date":1524743584357},"updatedAt":{"$$date":1524743584357}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"pq1WHHxFMi3AYy2d","createdAt":{"$$date":1524578373417},"updatedAt":{"$$date":1524578373417}}
+{"line":"about","_id":"prkgM3nzG9FtUbD9","createdAt":{"$$date":1524951071693},"updatedAt":{"$$date":1524951071693}}
+{"line":"history -s '{line: history -s}' lines","_id":"ptP9b2ESdRGBpLO0","createdAt":{"$$date":1524664230540},"updatedAt":{"$$date":1524664230540}}
+{"line":"history lines -p {line:1,_id:0}","_id":"pwMGEe7sl7Qyva7V","createdAt":{"$$date":1524709535941},"updatedAt":{"$$date":1524709535941}}
+{"line":"certificate --new first","_id":"q161RHjvTbxN74GH","createdAt":{"$$date":1525139473150},"updatedAt":{"$$date":1525139473150}}
+{"line":"certificate --new first","_id":"q58Mc6joqn508Kun","createdAt":{"$$date":1525441148833},"updatedAt":{"$$date":1525441148833}}
+{"line":"about cli","_id":"qDhrJuNGw4LJ6C61","createdAt":{"$$date":1524949990366},"updatedAt":{"$$date":1524949990366}}
+{"line":"history c","_id":"qIj8QtvabwHW1HN4","createdAt":{"$$date":1524613947171},"updatedAt":{"$$date":1524613947171}}
+{"line":"map","_id":"qQpiemY7rKO3EEfn","createdAt":{"$$date":1524488742149},"updatedAt":{"$$date":1524488742149}}
+{"line":"history lines -l 4 -k 1","_id":"qpI48BIxKnkIEmte","createdAt":{"$$date":1524710337202},"updatedAt":{"$$date":1524710337202}}
+{"line":"about","_id":"qw2ANcKTufCDWsvp","createdAt":{"$$date":1524950518709},"updatedAt":{"$$date":1524950518709}}
+{"line":"history lines -l 4 -k 1 -p {_id:0}","_id":"rD07omh4L0qb720r","createdAt":{"$$date":1524710421765},"updatedAt":{"$$date":1524710421765}}
+{"line":"script tableProperties","_id":"rIAZkDosKtUdGrBT","createdAt":{"$$date":1524936513636},"updatedAt":{"$$date":1524936513636}}
+{"line":"script dbProps","_id":"rL59qA80tPST1evW","createdAt":{"$$date":1524946778036},"updatedAt":{"$$date":1524946778036}}
+{"line":"history lines","_id":"rPEls2PQ4wi3PXaZ","createdAt":{"$$date":1524610981347},"updatedAt":{"$$date":1524610981347}}
+{"line":"certificate --new second","_id":"rZVb5qGGzD4DYP4P","createdAt":{"$$date":1525485340986},"updatedAt":{"$$date":1525485340986}}
+{"line":"script","_id":"rcJ6Bb2bvssf3aIP","createdAt":{"$$date":1524936336226},"updatedAt":{"$$date":1524936336226}}
+{"line":"about --quickstart","_id":"rmKF0uXO7HEmi4qf","createdAt":{"$$date":1524778869308},"updatedAt":{"$$date":1524778869308}}
+{"line":"script","_id":"sapuu9UwY7WRP5Ig","createdAt":{"$$date":1524948704526},"updatedAt":{"$$date":1524948704526}}
+{"line":"help","_id":"sbiPvv9999NUP9rq","createdAt":{"$$date":1524949564372},"updatedAt":{"$$date":1524949564372}}
+{"line":"history batches","_id":"t19KHvZUYUwYn8hF","createdAt":{"$$date":1524617335994},"updatedAt":{"$$date":1524617335994}}
+{"line":"history -s {updatedAt:-1} lines","_id":"tB6YcQvoLkLEUzCs","createdAt":{"$$date":1524681919877},"updatedAt":{"$$date":1524681919877}}
+{"line":"history -s {updatedAt:-1} lines","_id":"tF5MgGFfsyScrjAk","createdAt":{"$$date":1524669241099},"updatedAt":{"$$date":1524669241099}}
+{"line":"certificate --ca","_id":"tU2SHei94E2oEOzW","createdAt":{"$$date":1525115519117},"updatedAt":{"$$date":1525115519117}}
+{"line":"history -c","_id":"u6doErkiKOnL6BUZ","createdAt":{"$$date":1524503251722},"updatedAt":{"$$date":1524503251722}}
+{"line":"about --help","_id":"uPgH4HjgwZ0xEu0P","createdAt":{"$$date":1524490496182},"updatedAt":{"$$date":1524490496182}}
+{"line":"help","_id":"uURm3xVCZlVCXkl0","createdAt":{"$$date":1524966292839},"updatedAt":{"$$date":1524966292839}}
+{"line":"script backups","_id":"uUjPJsGUnX1arQ5W","createdAt":{"$$date":1524949475511},"updatedAt":{"$$date":1524949475511}}
+{"line":"about npm","_id":"uX9d4DWuWcNVWXS2","createdAt":{"$$date":1525021122725},"updatedAt":{"$$date":1525021122725}}
+{"line":"history -s '{line: \"-1\"}' lines","_id":"ueBcO4OL2Q8jlTBI","createdAt":{"$$date":1524610961342},"updatedAt":{"$$date":1524610961342}}
+{"line":"history lines -s '{\"updatedAt\": -1}'","_id":"uo3mVF8GnKrUTBnR","createdAt":{"$$date":1524573534595},"updatedAt":{"$$date":1524573534595}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"vAqNBxdSBRk8wAPy","createdAt":{"$$date":1524597900587},"updatedAt":{"$$date":1524597900587}}
+{"line":"history batches","_id":"vB2P2oxoIj2IIyHv","createdAt":{"$$date":1524532148302},"updatedAt":{"$$date":1524532148302}}
+{"line":"scripts","_id":"va8wTU6ovdXrpcp4","createdAt":{"$$date":1524937065026},"updatedAt":{"$$date":1524937065026}}
+{"line":"history -a `{\"updatedAt\": \"-1\"}' lines","_id":"vbekZ7coAV3TR21m","createdAt":{"$$date":1524665159657},"updatedAt":{"$$date":1524665159657}}
+{"line":"credential --help","_id":"vc9GEVJh4T0WlPab","createdAt":{"$$date":1525024875514},"updatedAt":{"$$date":1525024875514}}
+{"line":"about -n u","_id":"vmR312ibpuSz6GJV","createdAt":{"$$date":1524490850062},"updatedAt":{"$$date":1524490850062}}
+{"line":"about --quickstart","_id":"vxmvCDOSWMRPU1sy","createdAt":{"$$date":1524743711880},"updatedAt":{"$$date":1524743711880}}
+{"line":"history","_id":"w2JpfqQ2c96J8ilT","createdAt":{"$$date":1524682921632},"updatedAt":{"$$date":1524682921632}}
+{"line":"certificate --new first","_id":"wNSzNZgNBVXUYhIe","createdAt":{"$$date":1525183141924},"updatedAt":{"$$date":1525183141924}}
+{"line":"history -s '{\"updatedAt\": \"-1\"}' lines","_id":"wS4NLDxYhdmtkTIi","createdAt":{"$$date":1524665220886},"updatedAt":{"$$date":1524665220886}}
+{"line":"certificate --new first","_id":"wes3EdsWCCdkjaGP","createdAt":{"$$date":1525139730909},"updatedAt":{"$$date":1525139730909}}
+{"line":"history lines","_id":"wnCvtCA3vaTLPlyt","createdAt":{"$$date":1524685325051},"updatedAt":{"$$date":1524685325051}}
+{"line":"certificate --new","_id":"wpSf7AHCqcF1XmEi","createdAt":{"$$date":1525139609099},"updatedAt":{"$$date":1525139609099}}
+{"line":"config --help","_id":"wprLRYXFwgWMwzhE","createdAt":{"$$date":1525355717406},"updatedAt":{"$$date":1525355717406}}
+{"line":"certificate --new first","_id":"wreTdVsfs5DxjICn","createdAt":{"$$date":1525183579117},"updatedAt":{"$$date":1525183579117}}
+{"line":"history -s '{updatedAt: -1}' lines","_id":"wrxMwZAO8MxyKHvt","createdAt":{"$$date":1524663754021},"updatedAt":{"$$date":1524663754021}}
+{"line":"history --pulls","_id":"wsOymaFDF1yMLokN","createdAt":{"$$date":1524492703503},"updatedAt":{"$$date":1524492703503}}
+{"line":"history -l","_id":"x1VHNHPYS79lHGQ8","createdAt":{"$$date":1524503178738},"updatedAt":{"$$date":1524503178738}}
+{"line":"history lines","_id":"xSDyqI3RAXaFMdhX","createdAt":{"$$date":1524611367887},"updatedAt":{"$$date":1524611367887}}
+{"line":"-- printf formatting  %[[flag][width][.precision]]type","_id":"xYNbP4hGfm1vYfUm","createdAt":{"$$date":1524849264683},"updatedAt":{"$$date":1524849264683}}
+{"line":"script","_id":"xZQigxL1hg80OkJc","createdAt":{"$$date":1524936740099},"updatedAt":{"$$date":1524936740099}}
+{"line":"history lines","_id":"xbqCfVC4CUalcaxm","createdAt":{"$$date":1524664148850},"updatedAt":{"$$date":1524664148850}}
+{"line":"hep","_id":"xmjMQo4qQQSgPPrZ","createdAt":{"$$date":1524967630939},"updatedAt":{"$$date":1524967630939}}
+{"line":"history lines -l 4 -k 2 -s {createdAt:-1}","_id":"xslYsadz92vddISF","createdAt":{"$$date":1524710480602},"updatedAt":{"$$date":1524710480602}}
+{"line":"script dbProps","_id":"yAgz2MxOgnnp0rQm","createdAt":{"$$date":1524945225386},"updatedAt":{"$$date":1524945225386}}
+{"line":"about -r","_id":"yCtYIHXR5myJeW1M","createdAt":{"$$date":1525021104760},"updatedAt":{"$$date":1525021104760}}
+{"line":"history lines","_id":"yDNNaMRsVxHk0mwS","createdAt":{"$$date":1524610381793},"updatedAt":{"$$date":1524610381793}}
+{"line":"history -l","_id":"yKwbgB6mBHPRe1da","createdAt":{"$$date":1524503138875},"updatedAt":{"$$date":1524503138875}}
+{"line":"select 1","_id":"ySXNT4SaadT1TLKE","createdAt":{"$$date":1524446835235},"updatedAt":{"$$date":1524446835235}}
+{"line":"catalog -n","_id":"ya2gmQMpQPY21qXl","createdAt":{"$$date":1524778811549},"updatedAt":{"$$date":1524778811549}}
+{"line":"history -s '{\"updatedAt\": -1}' lines","_id":"zJQax4Nk2VPcbewi","createdAt":{"$$date":1524579318099},"updatedAt":{"$$date":1524579318099}}
+{"line":"history lines -s {updatedAt: -1}","_id":"zMPxvYph1GQrR4xS","createdAt":{"$$date":1524572231388},"updatedAt":{"$$date":1524572231388}}
+{"line":"script","_id":"zTR4TvhHzr47h5lv","createdAt":{"$$date":1525186755933},"updatedAt":{"$$date":1525186755933}}
+{"line":"certificate --new","_id":"zYMeVaMDJozMWPcE","createdAt":{"$$date":1525139437960},"updatedAt":{"$$date":1525139437960}}
+{"line":"about","_id":"ztgGHbEXs4MAIp03","createdAt":{"$$date":1524923400582},"updatedAt":{"$$date":1524923400582}}
+{"line":"about -n u","_id":"zwZ752ZVl9EAHnwW","createdAt":{"$$date":1524490502274},"updatedAt":{"$$date":1524490502274}}
 {"$$indexCreated":{"fieldName":"createdAt","unique":false,"sparse":false}}
-{"line":"~ -t 5d8a383ba1a3113d25d6464eff23ff7c70bf4e1296402f717a004e5f02b2e68b","_id":"4x9MxUhV3AqPOf6Z","createdAt":{"$$date":1522715632099},"updatedAt":{"$$date":1522715632099}}
-{"line":"? -m","_id":"quokw58uniIY3DaS","createdAt":{"$$date":1522715642740},"updatedAt":{"$$date":1522715642740}}
+{"$$indexCreated":{"fieldName":"updatedAt","unique":false,"sparse":false}}
+{"line":"certificate --ca","_id":"sdCzSE51N5AmitYd","createdAt":{"$$date":1525614607267},"updatedAt":{"$$date":1525614607267}}

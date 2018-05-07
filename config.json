@@ -1,14 +1,23 @@
 {
   "bcp": {
     "switch": {
-      "d": "staging"
+      "placeholder": 0
     }
   },
+  "cli": {
+    "xxxbatch": {
+        "xxxpath": "history"
+      },
+    "docs": {
+      ""
+      "path": "docs",
+    "editor": "vim",
+    "ide": "atom-beta",
+    "scriptPath": "scripts",
+    "storePath": "data",
+    "odbcPath": "/opt/mssql-tools/bin"
+  },
   "docker": {
-    "backupPath": "backups/",
-    "backupVolume": "sqlBackups",
-    "bindMountMssql": false,
-    "hostVolume": "/var/opt/mssql",
     "hostSQLPort": 1433,
     "repo": "microsoft/mssql-server-linux",
     "pullTag": "2017-latest",
@@ -16,22 +25,11 @@
     "sqlPath": "/var/opt/mssql",
     "timeout": 100
   },
-  "editor": "emacs",
-  "storeFolder": "data",
-  "odbc": {
-    "binPath": "/opt/mssql-tools/bin",
-    "retry": {
-      "count": 2,
-      "wait": 10000
-    }
-  },
   "mssql": {
     "acceptEULA": "Y",
-    "PID": "Developer",
-    "backup": {
-      "filter": ".bak",
-      "path": "/var/opt/mssql/backup",
-      "volume": "sqlBackups"
+    "agent": {
+      "filter": "sqlagent",
+      "path": "/var/opt/mssql/log"
     },
     "binPath": "/opt/mssql/bin",
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
@@ -51,6 +49,7 @@
       "filter": ".ldf",
       "path": "/var/opt/mssql/data"
     },
+    "PID": "Developer",
     "pool":  {
       "user": "sa",
       "password": "<YourStrong!Passw0rd>",
@@ -71,18 +70,6 @@
     "days": 1,
     "selfSigned": true
   },
-  "sqlcmd": {
-    "prefix": [
-      "SET STATISTICS IO ON;",
-      "SET STATISTICS TIME ON;"
-    ],
-    "switch": {
-      "d": "tempdb",
-      "r": "r",
-      "I": "I",
-      "h": -1
-    }
-  },
   "sqlpad": {
     "enabledAtStartup": false,
     "localHostOnly": false,
@@ -93,8 +80,8 @@
     "baseUrl": "",
     "passphrase": "yet-aN0ther_pA$$werd",
     "cert-passphrase": "",
-    "key-path": "private/privateKey.pem",
-    "cert-path": "private/cert.pem",
+    "key-path": "private/sqlpad-key.pem",
+    "cert-path": "private/sqlpad-cert.pem",
     "admin": "bwunder@yahoo.com",
     "google-client-id": "",
     "google-client-secret": "",
@@ -114,13 +101,32 @@
     "smtp-password": "",
     "whitelisted-domains": ""
   },
-  "vorpal": {
-    "cli": {
-      "batchPath": "history",
-      "printDate": false,
-      "scriptPath": "scripts",
-      "binPath": "/usr/bin"
+  "sqlcmd": {
+    "prefix": [
+      "SET STATISTICS IO ON;",
+      "SET STATISTICS TIME ON;"
+    ],
+    "switch": {
+      "d": "tempdb",
+      "r": "r",
+      "I": "I",
+      "h": -1
+    }
+  },
+  "volume": {
+    "sqlBackups": {
+      "filter": ".bak",
+      "path": "/var/opt/mssql/backup",
+      "link": "/var/lib/docker/volumes/sqlBackups/_data"
     },
+    "private": {
+      "filter": ".pem",
+      "path": "/var/opt/mssql/private",
+      "link": "/var/lib/docker/volumes/private/_data"
+    }
+  },
+  "vorpal": {
+    "printDate": false,
     "loglevel": 20,
     "port": 8753
   }

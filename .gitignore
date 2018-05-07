@@ -3,7 +3,11 @@ logs
 *.log
 
 # Keys
+certs
 private
+*.csr
+*.pem
+*.srl
 
 # history
 history
