@@ -5,24 +5,32 @@
     }
   },
   "cli": {
-    "xxxbatch": {
-        "xxxpath": "history"
-      },
     "docs": {
-      ""
-      "path": "docs",
+      "path": "docs"
+    },
     "editor": "vim",
     "ide": "atom-beta",
-    "scriptPath": "scripts",
-    "storePath": "data",
-    "odbcPath": "/opt/mssql-tools/bin"
+    "script": {
+      "path": "scripts",
+      "filter": ".sql"
+    },
+    "store": {
+      "path" : "data"
+      },
+    "odbc": {
+      "path": "/opt/mssql-tools/bin"
+    }
   },
   "docker": {
-    "hostSQLPort": 1433,
-    "repo": "microsoft/mssql-server-linux",
-    "pullTag": "2017-latest",
+    "pull": {
+      "repo": "microsoft/mssql-server-linux",
+      "tag": "2017-latest"
+    },
     "socket": "/var/run/docker.sock",
-    "sqlPath": "/var/opt/mssql",
+    "mssql": {
+      "path": "/var/opt/mssql",
+      "port": 1433
+      },
     "timeout": 100
   },
   "mssql": {
@@ -31,7 +39,9 @@
       "filter": "sqlagent",
       "path": "/var/opt/mssql/log"
     },
-    "binPath": "/opt/mssql/bin",
+    "bin": {
+      "path": "/opt/mssql/bin"
+      },
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "data": {
       "filter": ".mdf",

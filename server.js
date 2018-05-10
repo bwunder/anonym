@@ -1,11 +1,12 @@
 const chalk = require(`chalk`)
-const config = require(`./config.json`)
+const config = require(`./config/config.json`)
 const api = require(`./lib/api.js`)
 const cli = require(`./lib/commands.js`)
 const store = require(`./lib/store.js`)
 
 process.on('unhandledRejection', (err) => {
   store.errors.put(new Error(err.message))
+  api.log('error', 'process Unhandled Promise Rejection')
   api.log('error', new Error(err.message))
   store.errors.put(err)
   api.log('error', err)
@@ -36,7 +37,7 @@ process.on('exit', (code) => {
       pool[1].close()
     }
   }
-  
+
   api.log('log', chalk`{italic (exit)} sqlpal exit code ${code}`)
   // a couple of phantom exits of code 0. both during startInstance I think?
   // 2nd was for sure at start of unstarted and it did start but did not output any tail???
@@ -44,12 +45,11 @@ process.on('exit', (code) => {
   api.log('confirm', new Error().stack)
 })
 
-// hardwire a start-up SQL Server - o'wise uses last
+// add an _id as config.target to hardwire a SQL Server
+// otherwise will try to connect to last target
 api.intern(config.target)
-.then( () => {
-  // SQLPad in here becomes child process, not using global (-g),
-  // can it be obliviously started - or stopped - on demand even when global is also installed  ???
-  // if true, could be a security hole in some environs to depend on any
+.then(() => {
+  // SQLPad becomes child process, not using globally (-g) installed,
   if (config.sqlpad.enabledAtStartup) {
     api.startSQLPad()
   }

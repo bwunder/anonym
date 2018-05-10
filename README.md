@@ -6,7 +6,7 @@ own IP at port 1433.
 
 ![Image](./docs/catalog.png)
 
-Licensing and Scalability not withstanding, architectural form and function can be accurately 
+Licensing and Scalability not withstanding, architectural form and function can be accurately
 reproduced with little brain smoke through the well known magic of SQL Server backup/restore,
 TSQL scripts and human intelligence. And it all can be easily done today using the Node.js
 event loop, the "Official" SQL Server for Linux Docker Images Developer Edition with a couple
@@ -57,21 +57,6 @@ Review then clone or copy-paste the project source to this folder from the githu
 
     > https://www.github.com/bwunder/sqlpal
 
-### Create links to the Volumes created above
-
-Certificates are created and self-signed by the host into the private Volume.
-SQL Server backups are staged on the sqlBackups volume and can be copied or moved to or
-from this location. To enable files to enter from the local network we place a symbolic link
-to the volume mointPoint on the host. Obtain the mountPoint path using *docker volume*:
-
-    > docker volume inspect private
-    > docker volume inspect sqlBackups
-
-and add a link to that path (here I show my mountPoint, yours could be different)
-
-    > ln -s /var/lib/docker/volumes/private/_data private
-    > ln -s /var/lib/docker/volumes/sqlBackups/_data sqlBackups
-
 ### Define queries available to the runtime by editing the queries.js module file.
 
 In general, shorter queries that need no modification and expect no parameters are
@@ -82,19 +67,28 @@ Copy and paste any TSQL queries desired and enclose with template string delimit
 Queries are upserted into the 'templates.db' nedb database at each application start-up: all
 additions, changes and deletions applied since the last start-up are reported in the log.
 
+Queries can added, edited or removed at any time using the sqlpal CLI. Changes take effect immediately
+in sqlpal beginning with the next query after the query is saved.
+
 ### Copy or move the user's TSQL Scripts into the scripts subfolder.
 
-Glenn Barry's "Diagnostic Information Queries" is a good example to answer the question,
-"script or query" The individual query expressions are nicely suited for inclusion as queries
-however, the script he posts on-line is written atomically. To run as one batch or fail the version test.
-In order to reference the splendid notes or execute the atomic behemoth query this probably better
-stored as a script. Scripts are available for external access as files. Scripts can be added, changed
-or removed from the folder at user will just like any other file.
+Individual query expressions are nicely for inclusion in templates.db. Scripts with more than one
+query are probably better stored as script files. Scripts can be added, changed or removed from the
+folder at any time like any other file or from the sqlpal CLI (**script <file-name> --edit**). Changes
+take effect immediately beginning with the next script execution after the save.
 
-Scripts must use the *.sql* extension to recognized by the *script* command.
+Only Scripts using the *.sql* extension are recognized by the **script** command.
 
 ### Review and edit the config.json file as required
-  defaults, passwords, paths,
 
-Configuration changes can be made at any time and are applied at the next inline reference - if
+Settings in config.json, other than perhaps passwords, will usually get you started with no changes.
+Many are simply the defaults used when a setting is not explicitly set.
+
+Configuration changes can be made at any time and are applied at the next runtime reference - if
 that happens - else at the next application start-up as config.json is imported anew.
+
+See
+[sqlpad config documentation](https://github.com/rickbergfalk/sqlpad/blob/master/server/lib/config/configItems.js)
+for details on sqlpad configruration. Note that we are using sqlpad as a dependent process. It is
+not necessary to also install a global instance. You can if wish, however the global instance
+will not use any configuration values from sqlpal's config.json.
