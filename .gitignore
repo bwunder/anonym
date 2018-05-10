@@ -8,13 +8,14 @@ private
 *.pem
 *.srl
 
-# history
-history
+#sqlBackups
+sqlBackups
 
-# nedb stores
+# sqlpad nedb store
 sqlpaddata
+
+# cli nedb store
 data
-*.db
 
 # Runtime data
 pids
