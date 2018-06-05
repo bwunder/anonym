@@ -89,6 +89,6 @@ that happens - else at the next application start-up as config.json is imported 
 
 See
 [sqlpad config documentation](https://github.com/rickbergfalk/sqlpad/blob/master/server/lib/config/configItems.js)
-for details on sqlpad configruration. Note that we are using sqlpad as a dependent process. It is
+for details on sqlpad configuration. Note that we are using sqlpad as a dependent process. It is
 not necessary to also install a global instance. You can if wish, however the global instance
 will not use any configuration values from sqlpal's config.json.

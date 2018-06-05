@@ -5,26 +5,27 @@ const cli = require(`./lib/commands.js`)
 const store = require(`./lib/store.js`)
 
 process.on('unhandledRejection', (err) => {
-  store.errors.put(new Error(err.message))
-  api.log('error', 'process Unhandled Promise Rejection')
-  api.log('error', new Error(err.message))
   store.errors.put(err)
-  api.log('error', err)
+//  store.errors.put(new Error(err.message))
+  api.log('error', 'Unhandled Promise Rejection handled')
+  api.log('error', err.message)
+  api.log('log', new Error(err.stack).stack)
+//  api.log('error', new Error(err.message))
 })
 
 process.on('error', (err) => {
   store.errors.put(err)
   api.log('warn', 'process error')
   api.log('error', err.message)
-  api.log('debug', err.stack)
-  api.log('log', new Error().stack)
-  //process.emit('exit')
+//  api.log('log', err.stack)
+  api.log('log', new Error(err.stack).stack)
+//  process.emit('exit')
 })
 
 process.on('exit', (code) => {
-  if (config.sqlpad[`sqlpad`]) {
+  if (api.sqlpad) {
     api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse stop} sqlpad server`)
-    config.sqlpad.sqlpad.kill(1)
+    api.sqlpad.kill(1)
   }
   if (config.tail) {
     api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse kill} process following SQL Server errorlog}`)

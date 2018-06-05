@@ -9,60 +9,57 @@
       "path": "docs"
     },
     "editor": "vim",
+    "editor2": "emacs",
     "ide": "atom-beta",
+    "ide2": "vscode",
+    "odbc": {
+      "path": "/opt/mssql-tools/bin"
+    },
     "script": {
       "path": "scripts",
       "filter": ".sql"
     },
     "store": {
       "path" : "data"
-      },
-    "odbc": {
-      "path": "/opt/mssql-tools/bin"
-    }
+      }
   },
   "docker": {
     "pull": {
       "repo": "microsoft/mssql-server-linux",
       "tag": "2017-latest"
     },
-    "socket": "/var/run/docker.sock",
     "mssql": {
-      "path": "/var/opt/mssql",
-      "port": 1433
-      },
-    "timeout": 100
+      "path": "/var/opt/mssql"
+    },
+    "socket": "/var/run/docker.sock",
+    "tailSeconds": 10
   },
   "mssql": {
-    "acceptEULA": "Y",
-    "agent": {
-      "filter": "sqlagent",
-      "path": "/var/opt/mssql/log"
-    },
-    "bin": {
-      "path": "/opt/mssql/bin"
-      },
+    "env": [
+      "ACCEPT_EULA=Y",
+      "MSSQL_MEMORY_LIMIT_MB=",
+      "MSSQL_LCID=1033",
+      "MSSQL_COLLATION=",
+      "MSSQL_TCP_PORT=1433",
+      "MSSQL_IP_ADDRESS=",
+      "MSSQL_ENABLE_HADR=0",
+      "MSSQL_AGENT_ENABLED=false",
+      "MSSQL_MASTER_DATA_FILE=",
+      "MSSQL_MASTER_LOG_FILE=",
+      "MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>",
+      "MSSQL_PID=Developer",
+      "MSSQL_BACKUP_DIR=/var/opt/mssql/backup",
+      "MSSQL_BIN_DIR=/opt/mssql/bin",
+      "MSSQL_DATA_DIR=/var/opt/mssql/data",
+      "MSSQL_ERRORLOG_DIR=/var/opt/mssql/log",
+      "MSSQL_LOG_DIR=/var/opt/mssql/data",
+      "MSSQL_PRIVATE_DIR=/var/opt/mssql/private",
+      "MSSQL_DUMP_DIR=/var/opt/mssql/log"
+    ],
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
-    "data": {
-      "filter": ".mdf",
-      "path": "/var/opt/mssql/data"
-    },
-    "dump": {
-      "filter": "core",
-      "path": "/var/opt/mssql/log"
-    },
-    "errorlog": {
-      "filter": "errorlog",
-      "path": "/var/opt/mssql/log"
-    },
-    "log": {
-      "filter": ".ldf",
-      "path": "/var/opt/mssql/data"
-    },
-    "PID": "Developer",
     "pool":  {
-      "user": "sa",
-      "password": "<YourStrong!Passw0rd>",
+      "user": "",
+      "password": "",
       "server": "localhost",
       "database": "master",
       "connectionTimeout": 15000,
@@ -76,22 +73,18 @@
       }
     }
   },
-  "pem": {
-    "days": 1,
-    "selfSigned": true
-  },
   "sqlpad": {
     "enabledAtStartup": false,
-    "localHostOnly": false,
+    "localHostOnly": true,
     "debug": false,
     "dir": "sqlpaddata",
-    "port": 8754,
+    "port": 0,
     "https-port": 8755,
     "baseUrl": "",
     "passphrase": "yet-aN0ther_pA$$werd",
-    "cert-passphrase": "",
-    "key-path": "private/sqlpad-key.pem",
-    "cert-path": "private/sqlpad-cert.pem",
+    "cert-passphrase": "sagebrush",
+    "key-path": "sqlpad-key.pem",
+    "cert-path": "sqlpad-cert.pem",
     "admin": "bwunder@yahoo.com",
     "google-client-id": "",
     "google-client-secret": "",
@@ -112,9 +105,13 @@
     "whitelisted-domains": ""
   },
   "sqlcmd": {
-    "prefix": [
+    "prebatch": [
       "SET STATISTICS IO ON;",
       "SET STATISTICS TIME ON;"
+    ],
+    "prefix": [
+      "SET QUOTED_IDENTIFIER OFF;",
+      "SET ANSI NULLS ON"
     ],
     "switch": {
       "d": "tempdb",

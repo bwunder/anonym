@@ -15,13 +15,13 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "dockerode": "^2.5.5",
-    "external-editor": "^2.2.0",
+    "external-editor": "^3.0",
     "get-port": "^3.2.0",
     "mssql": "^4.0.1",
     "nedb": "^1.8.0",
     "pem": "^1.12.5",
     "pretty-data": "^0.40.0",
-    "sqlpad": "^2.5.6",
+    "sqlpad": "^2.6.0",
     "vorpal": "^1.12.0",
     "vorpal-log": "^1.1.0"
   },
