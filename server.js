@@ -9,7 +9,8 @@ process.on('unhandledRejection', (err) => {
 //  store.errors.put(new Error(err.message))
   api.log('error', 'Unhandled Promise Rejection handled')
   api.log('error', err.message)
-  api.log('log', new Error(err.stack).stack)
+  api.log('log', err.stack)
+  api.log('log', new Error().stack)
 //  api.log('error', new Error(err.message))
 })
 
@@ -24,26 +25,23 @@ process.on('error', (err) => {
 
 process.on('exit', (code) => {
   if (api.sqlpad) {
-    api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse stop} sqlpad server`)
+    api.log('log', chalk`{italic.bold (exit)} {red stop} sqlpad server`)
     api.sqlpad.kill(1)
   }
   if (config.tail) {
-    api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse kill} process following SQL Server errorlog}`)
+    api.log('log', chalk`{italic.bold (exit)} {red kill} process following SQL Server errorlog}`)
     config.tail.kill(1)
   }
   if (api.sqlCatalog.Pools && api.sqlCatalog.Pools.size > 0) {
     for (let pool in api.sqlCatalog.Pools) {
-      api.log('log', chalk`{italic (exit)} {red.bgBlackBright.inverse close} connection pool ${pool[0]}`)
-      // slim chance but could spin on a running query I reckon???
+      api.log('log', chalk`{italic.bold (exit)} {red close} connection pool ${pool[0]}`)
+      // pool state doesn't really matter if no active queries: memory object
       pool[1].close()
+      // anticipte sql blocking holding pool if queries running, transactions open, etc. but have not seen any - yet
+      // setTimeout()
     }
   }
-
-  api.log('log', chalk`{italic (exit)} sqlpal exit code ${code}`)
-  // a couple of phantom exits of code 0. both during startInstance I think?
-  // 2nd was for sure at start of unstarted and it did start but did not output any tail???
-  // can't repro so will try putting up with a stack trace here for a while
-  api.log('confirm', new Error().stack)
+  console.log(chalk`{italic.bold (exit)} code: ${code} \n${api.bandAid}`)
 })
 
 // add an _id as config.target to hardwire a SQL Server

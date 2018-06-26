@@ -5,6 +5,9 @@
     }
   },
   "cli": {
+    "bash": {
+      "path": "bash"
+    },
     "docs": {
       "path": "docs"
     },
@@ -21,7 +24,7 @@
     },
     "store": {
       "path" : "data"
-      }
+    }
   },
   "docker": {
     "pull": {
@@ -75,10 +78,10 @@
   },
   "sqlpad": {
     "enabledAtStartup": false,
-    "localHostOnly": true,
+    "ip": "127.0.0.1",
     "debug": false,
     "dir": "sqlpaddata",
-    "port": 0,
+    "port": -0,
     "https-port": 8755,
     "baseUrl": "",
     "passphrase": "yet-aN0ther_pA$$werd",
@@ -124,12 +127,14 @@
     "sqlBackups": {
       "filter": ".bak",
       "path": "/var/opt/mssql/backup",
-      "link": "/var/lib/docker/volumes/sqlBackups/_data"
+      "link": "/var/lib/docker/volumes/sqlBackups/_data",
+      "target": "sqlBackups"
     },
     "private": {
       "filter": ".pem",
       "path": "/var/opt/mssql/private",
-      "link": "/var/lib/docker/volumes/private/_data"
+      "link": "/var/lib/docker/volumes/private/_data",
+      "target": "private"
     }
   },
   "vorpal": {

@@ -1,6 +1,6 @@
 {
   "name": "sqlpal",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Host Console for SQL Server on Linux Docker Container",
   "main": "server.js",
   "directories": {
@@ -21,7 +21,7 @@
     "nedb": "^1.8.0",
     "pem": "^1.12.5",
     "pretty-data": "^0.40.0",
-    "sqlpad": "^2.6.0",
+    "sqlpad": "^2.6.1",
     "vorpal": "^1.12.0",
     "vorpal-log": "^1.1.0"
   },
