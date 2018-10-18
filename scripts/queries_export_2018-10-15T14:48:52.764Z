@@ -1,5 +1,4 @@
-module.exports = {
-ringBuffers: `SELECT [ring_buffer_type]
+module.exports = {ringBuffers: `SELECT [ring_buffer_type]
       , ISNULL( COUNT(buffer.[ring_buffer_type] ), 0 ) AS [type_count]
     FROM sys.dm_os_ring_buffers buffer
     CROSS JOIN sys.dm_os_sys_info info

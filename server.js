@@ -1,55 +1,56 @@
-const chalk = require(`chalk`)
-const config = require(`./config/config.json`)
-const api = require(`./lib/api.js`)
-const cli = require(`./lib/commands.js`)
-const store = require(`./lib/store.js`)
+////NPM
+const chalk = require('chalk')
+////local
+const {log, format, sqlCatalog} = require('./lib/api')
+const { errors } = require('./lib/store')
+
+const config = require('./config/config.json')
 
 process.on('unhandledRejection', (err) => {
-  store.errors.put(err)
-//  store.errors.put(new Error(err.message))
-  api.log('error', 'Unhandled Promise Rejection handled')
-  api.log('error', err.message)
-  api.log('log', err.stack)
-  api.log('log', new Error().stack)
-//  api.log('error', new Error(err.message))
+  errors.put(err)
+  log('error', format(err))
+  log('error', format(new Error(`UnhandledRejection handler supplement`)))
 })
 
 process.on('error', (err) => {
-  store.errors.put(err)
-  api.log('warn', 'process error')
-  api.log('error', err.message)
-//  api.log('log', err.stack)
-  api.log('log', new Error(err.stack).stack)
-//  process.emit('exit')
+  errors.put(err)
+  log('error', `(process) error\n${format(err)}`)
+  log('error', format(new Error(`Process error handler supplement`)))
 })
 
 process.on('exit', (code) => {
-  if (api.sqlpad) {
-    api.log('log', chalk`{italic.bold (exit)} {red stop} sqlpad server`)
-    api.sqlpad.kill(1)
+//  let haveWaited = 0
+  if (config.sqlpad.sqlpad) {
+    log('log', chalk`\u2BA8 {inverse.red stop} sqlpad server\n`)
+    config.sqlpad.sqlpad.kill(1)
   }
-  if (config.tail) {
-    api.log('log', chalk`{italic.bold (exit)} {red kill} process following SQL Server errorlog}`)
-    config.tail.kill(1)
-  }
-  if (api.sqlCatalog.Pools && api.sqlCatalog.Pools.size > 0) {
-    for (let pool in api.sqlCatalog.Pools) {
-      api.log('log', chalk`{italic.bold (exit)} {red close} connection pool ${pool[0]}`)
+  if (sqlCatalog.Pools && sqlCatalog.Pools.size > 0) {
+    for (let pool in sqlCatalog.Pools) {
+      log('log', chalk`\u2BA8 {inverse.red close} connection pool ${pool[0]}...\n`)
       // pool state doesn't really matter if no active queries: memory object
+      // expecting close() to spin on running queries
       pool[1].close()
-      // anticipte sql blocking holding pool if queries running, transactions open, etc. but have not seen any - yet
-      // setTimeout()
     }
   }
-  console.log(chalk`{italic.bold (exit)} code: ${code} \n${api.bandAid}`)
+  // If sql blocking holds pool open (queries running, transactions open, etc.) could be bad or good!
+ // but I never tested and it look awful! don't think I ever saw it run anyway  - have commented it out for now
+  // let interval = 500
+  // setInterval(() => {
+  //   let waiting = false
+  //   let waitforit = Math.round(config.pool.closeTimeoutMillis/3)
+  //   // ?  
+  //   process.stdout.write('.')
+  //   if (haveWaited >= config.pool.closeTimeoutMillis - waitforit) {
+  //     if (!waiting) {
+  //       waiting = true
+  //       setTimeout(() => {
+  //         process.abort()
+  //       }, waitforit)
+  //     }
+  //   }
+  //   haveWaited += interval
+  // }, interval)
+  process.stdout.write(chalk`\u2BA8  code: ${code}`)
 })
 
-// add an _id as config.target to hardwire a SQL Server
-// otherwise will try to connect to last target
-api.intern(config.target)
-.then(() => {
-  // SQLPad becomes child process, not using globally (-g) installed,
-  if (config.sqlpad.enabledAtStartup) {
-    api.startSQLPad()
-  }
-})
+require('./lib/commands')

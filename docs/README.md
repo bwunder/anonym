@@ -1,4 +1,4 @@
-## Autonomous Development and Testing with SQL Server on Linux
+## Autonomous Development and Testing with SQL Server for Linux
 Design, construct, reconstruct, simulate, evaluate a network of SQL Server instances.
 Six (6) or more SQL Instances on i5-8GB laptop - depending on the hardware resources - on
 Linux host using Docker Containers and each listening for network query requests on their
@@ -9,7 +9,7 @@ own IP at port 1433 while simultaneously connected to the host at local app assi
 Licensing and Scalability not withstanding, architectural form and function can be accurately
 reproduced with little brain smoke through the well known magic of SQL Server backup/restore,
 TSQL scripts and a one page diagram/plan. Here the Node.js event loop is used along with the
-"Official" SQL Server on Linux Docker Images Developer Edition and a couple of Docker Volumes
+"Official" SQL Server for Linux Docker Images Developer Edition and a couple of Docker Volumes
 to facilitate backups/restore and OpenSSL credential sharing for an autonomous self-signed
 TLS security profile: the credentials are not available outside the uncompromised host.
 
@@ -27,29 +27,22 @@ that might be necessary for configuration and data obfuscation when necessary.
 ## Installation
 
 ### 1. Prerequisites
-    Docker, 
-    Node.js, 
-    OpenSSL, 
-    mssql_tools (a.k.a., sqlcmd and bcp), 
-    IDE (i.e., Atom or VSCode )  
+#### Docker, Node.js, OpenSSL and the mssql_tools
 
-Try first to source prereqs in the primary package repo(s) for your Linux 
-distro using the included package manager else compile from source to 
-complete this step. 
-
-The mssql_tools are on Microsoft's SQL Server on Linux support site. This 
-is a different download than the SQL Server Data Tools (SSDT). See Microsoft's SQL 
-Server on Linux Installation page on-line for more details. 
+It is recommended that the primary package repo and the CLI package manager for your Linux
+OS. e.g., apt-get, rpm, yast, yum, zypper, etc. else local compile from source is used to
+complete this step. It may, in some cases, be necessary to get the mssql_tools formerly known
+as ODBC from Microsoft's repo. See the Microsoft SQL Server for Linux on-line documentation
+for mssql_tools download and installation details.
 
 ### 2. Init
 #### Prepare and enter a new folder
 
-While ocassional elevation to local admin credentials is required for full 
-app functionality, running the Node.js CLI app from a folder in the current 
-user's $HOME is strongly recommended.
-Following this practice, multiple people can run a personal app instance and 
-all can share the SQL Server Containers. Each user will generate a personal 
-activity history stored in a personal nedb document database.
+While local root credentials are required for full app functionality, running
+the Node.js CLI app from a folder location in the current user's $HOME is strongly recommended.
+With this practice, multiple people can run a personal app instance and all can use the same
+containers as necessary with each having a personal activity history much like *$HOME/.bash_history*
+except stored in the client's document database providing far better query & search support.
 
     > mkdir sqlpal
     > cd sqlpal
@@ -58,20 +51,22 @@ activity history stored in a personal nedb document database.
 
     > https://www.github.com/bwunder/sqlpal
 
-#### Define queries available to the runtime by editing the queries.js module file.
+#### (optional) Define queries available to the runtime by editing the queries.js module file.
 
 In general, shorter queries that need no modification and expect no parameters are
-best suited for the query-store, but the user is free to decide what belongs in the 
-query-store and what would better be in a script (we add those below). Scripts have 
-the decided advantage of being accessible and usable from other tools. Queries have 
-the decided advantage of being private and - if warranted - obfuscated when at rest.
+best suited for embedding as template strings, however, the user is always free to decide what
+belongs in queries and what should be a script (we add those below). Scripts have the decided
+advantage of being accessible and usable from other tools. Queries have the decided advantage
+of __not__ being useful
 
-    Queries.js is upserted on demand (query --import)
-Additions, changes and deletions to the queries.js file serialization applied since 
-the last start-up are reported to stdout as the changes are moved into the query-store.
-Changes are in effect with the next query after the query is imported.
+Copy and paste any TSQL queries desired and enclose with template string delimiters (`back-ticks`).
+Queries are upserted into the 'templates.db' nedb database at each application start-up: all
+additions, changes and deletions applied since the last start-up are reported in the log.
 
-###Copy or move TSQL Scripts into the scripts subfolder.
+Queries can be added, edited or removed at any time using the sqlpal CLI. Changes take effect immediately
+in sqlpal beginning with the next query after the query is saved.
+
+#### (optional) Copy or move TSQL Scripts into the scripts subfolder.
 
 Individual query expressions are nicely for inclusion in templates.db. Scripts with more than one
 query are probably better stored as script files. Scripts can be added, changed or removed from the

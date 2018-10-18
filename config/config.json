@@ -1,8 +1,11 @@
 {
   "bcp": {
     "switch": {
-      "placeholder": 0
+      "placeholder": "not baked, use bcp in container shell or host shell when mssql-tools on host"
     }
+  },
+  "ca": {
+    "pkey-password": "ca-pkey-password"
   },
   "cli": {
     "bash": {
@@ -11,17 +14,19 @@
     "docs": {
       "path": "docs"
     },
-    "editor": "vim",
-    "editor2": "emacs",
-    "ide": "atom-beta",
-    "ide2": "vscode",
+    "editor": "emacs",
+    "editor2": "vim",
+    "ide": "vscode",
+    "ide2": "atom-beta",
     "odbc": {
       "path": "/opt/mssql-tools/bin"
     },
+    "alwaysCheckSyntax": true,
     "script": {
       "path": "scripts",
       "filter": ".sql"
     },
+    "showEventTimes": true,
     "store": {
       "path" : "data"
     }
@@ -49,7 +54,7 @@
       "MSSQL_AGENT_ENABLED": "false",
       "MSSQL_MASTER_DATA_FILE": "",
       "MSSQL_MASTER_LOG_FILE": "",
-      "MSSQL_SA_PASSWORD": "<YourStrong!Passw0rd>",
+      "MSSQL_SA_PASSWORD": "<YourStrong!Passw0rd>`",
       "MSSQL_PID": "Developer",
       "MSSQL_BACKUP_DIR": "/var/opt/mssql/backup",
       "MSSQL_BIN_DIR": "/opt/mssql/bin",
@@ -59,21 +64,23 @@
       "MSSQL_PRIVATE_DIR": "/var/opt/mssql/private",
       "MSSQL_DUMP_DIR": "/var/opt/mssql/log"
     },
+    "pkey-passphrase": "mssql-pkey-passphrase",
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "pool":  {
-      "user": "",
-      "password": "",
-      "server": "localhost",
-      "database": "master",
       "connectionTimeout": 15000,
-      "requestTimeout": 15000,
-      "stream": false,
+      "options": {
+        "encrypt": false
+      },
       "parseJSON": true,
       "pool": {
+        "closeTimeoutMillis": 30000,
+        "idleTimeoutMillis": 30000,
         "max": 10,
-        "min": 0,
-        "idleTimeoutMillis": 30000
-      }
+        "min": 0
+      },
+      "requestTimeout": 15000,
+      "server": "localhost",
+      "stream": false
     }
   },
   "sqlpad": {
@@ -81,7 +88,7 @@
     "ip": "127.0.0.1",
     "debug": false,
     "dir": "sqlpaddata",
-    "port": -0,
+    "port": 8754,
     "https-port": 8755,
     "baseUrl": "",
     "passphrase": "yet-aN0ther_pA$$werd",
@@ -114,10 +121,11 @@
     ],
     "prefix": [
       "SET QUOTED_IDENTIFIER OFF;",
-      "SET ANSI NULLS ON"
+      "SET ANSI NULLS ON;"
     ],
     "switch": {
-      "d": "tempdb",
+      "U": "sa",
+      "P": "$MSSQL_SA_PASSWORD",
       "r": "r",
       "I": "I",
       "h": -1
@@ -126,19 +134,18 @@
   "volume": {
     "sqlBackups": {
       "filter": ".bak",
-      "path": "/var/opt/mssql/backup",
-      "link": "/var/lib/docker/volumes/sqlBackups/_data",
-      "target": "sqlBackups"
+      "containerPath": "/var/opt/mssql/backup",
+      "hostPath": "/var/lib/docker/volumes/sqlBackups/",
+      "appLink": "sqlBackups"
     },
     "private": {
       "filter": ".pem",
-      "path": "/var/opt/mssql/private",
-      "link": "/var/lib/docker/volumes/private/_data",
-      "target": "private"
+      "containerPath": "/var/opt/mssql/private",
+      "hostPath": "/var/lib/docker/volumes/private",
+      "appLink": "private"
     }
   },
   "vorpal": {
-    "printDate": false,
     "loglevel": 20,
     "port": 8753
   }

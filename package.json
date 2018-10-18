@@ -1,7 +1,8 @@
 {
   "name": "sqlpal",
   "version": "0.1.0",
-  "description": "Host Console for SQL Server on Linux Docker Container",
+  "private": true,
+  "description": "Host Console for SQL Server on Linux Docker Containers",
   "main": "server.js",
   "directories": {
     "data": "data",
@@ -9,23 +10,28 @@
     "private": "private",
     "scripts": "scripts"
   },
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
+    "ajv": "^6.5.4",
     "chalk": "^2.4.1",
     "dockerode": "^2.5.5",
     "external-editor": "^3.0",
-    "get-port": "^3.2.0",
-    "mssql": "^4.0.1",
+    "get-port": "^4.0.0",
+    "inquirer": "^6.0.0",
+    "install": "^0.12.1",
+    "mssql": "^4.2.1",
     "nedb": "^1.8.0",
+    "npm": "^6.4.1",
     "pem": "^1.12.5",
     "pretty-data": "^0.40.0",
-    "sqlpad": "^2.6.1",
+    "semver": "^5.5.0",
+    "sqlpad": "^2.7.0",
     "vorpal": "^1.12.0",
     "vorpal-log": "^1.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "jshint": "^2.9.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bwunder/sqlpal.git"
@@ -36,13 +42,22 @@
     "on",
     "Linux",
     "Docker",
+    "Container",
     "CLI",
+    "Ports",
+    "TSQL",
+    "Pools",
+    "mssql-conf",
+    "mssql-tools",
+    "sqlcmd",
+    "tedious",
     "SQLPad"
   ],
   "author": "Bill Wunder",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bwunder/sqlpal/issues"
-  },
-  "homepage": "https://github.com/bwunder/sqlpal#readme"
+  "bugs": "https://github.com/bwunder/sqlpal/issues",
+  "homepage": "https://github.com/bwunder/sqlpal#readme",
+  "os": [
+    "linux"
+  ]
 }
