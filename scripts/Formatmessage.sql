@@ -55,6 +55,7 @@ IF @KeyPhraseName IS NOT NULL AND @CipherType = 'PW'
   VALUES ( @KeyPhraseName 
          , ENCRYPTBYKEY( key_guid('#TestKey'), N'@Keytvp.Value', 1
                  , CAST(DECRYPTBYKEY(@KeyPhraseName) AS NVARCHAR(448))));
+SELECT count(*) as [TVP] from @Keytvp
 --------------------------------------------------------------------------
 -- decryption with FORMATMESSAGE 
 SELECT FORMATMESSAGE 
@@ -96,7 +97,7 @@ SELECT FORMATMESSAGE
                                                 , CAST ( DECRYPTBYKEY( Name ) 
                                                             AS NVARCHAR(448) ) 
                                                 ) AS NVARCHAR(128) ) )  
-                                FROM @KeyTvp )
+                                FROM @Keytvp )
                 ELSE '' END )
         ELSE '' END
 

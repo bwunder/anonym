@@ -1,55 +1,54 @@
-## Autonomous Development and Testing with SQL Server for Linux
-Design, construct, reconstruct, simulate, evaluate a network of SQL Server instances.
-Six (6) or more SQL Instances on i5-8GB laptop - depending on the hardware resources - on
-Linux host using Docker Containers and each listening for network query requests on their
-own IP at port 1433 while simultaneously connected to the host at local app assigned ports.
+## CLI automation tools for local SQL Server Containers:
+### Create Private, Autonomous Virtual Distributed Data Topologies on a laptop   
+
 
 ![Image](./docs/catalog.png)
 
-Licensing and Scalability not withstanding, architectural form and function can be accurately
-reproduced with little brain smoke through the well known magic of SQL Server backup/restore,
-TSQL scripts and a one page diagram/plan. Here the Node.js event loop is used along with the
-"Official" SQL Server for Linux Docker Images Developer Edition and a couple of Docker Volumes
-to facilitate backups/restore and OpenSSL credential sharing for an autonomous self-signed
-TLS security profile: the credentials are not available outside the uncompromised host.
+Scalability not withstanding, architectural form and function can be accurately defined or 
+reproduced very quickly with little brain smoke and minimal expenditures through the magic of 
+the Open Source software. Here, the Node.js event loop and Docker Containers loaded with SQL Server 2017, along with interogative knowledge of the configurations in use in the environment.
 
-Given an ability to properly describe the live environment even SQL Server patch and update
-regression evaluations can be quick and easy with low internal resource requirements using
-containers. It helps that any collection of SQL Server 2017 versions and/or products (PIDs)
-can run side-by-side in this model. Every database backend needed can be on the host for
-continuity of productivity when disconnected - not to mention amazingly light performance
-impact on the host while everything runs in the background.
+The app expects at least occassional Internet access to obtain the latest versions of 
+Microsoft's "Official" SQL Server for Linux Developer Edition image from dockerhub.com and 
+code package revs from npmjs.com as they become available. 
 
-Training Databases can might be hosted on a Trainer's laptop. Other collaborations are surely
-enabled. All you need are database backups or delimited data files and the TSQL database scripts
-that might be necessary for configuration and data obfuscation when necessary.
+SQL Server versions and/or products run effortlessly side-by-side. 
+
+Use Cases
+Remote or irregularly Internet Connected Developers and testers
+Rapid Rebuild/recoveries when test cycles are data destructive
+Vendor patch and version deployment previews 
+AI
+Continuous Integration (CI) Testing
+Robotics (Complex Integration) Testing
+Hub for spoke Training Databases (on the Trainer's laptop so can be readied in transit) 
+    Trainee's could use PCs, cell phones, tablets, Raspberry Pis, cache registers, etc. 
+Many other applications, collaborations and innovations are enabled 
 
 ## Installation
 
 ### 1. Prerequisites
-#### Docker, Node.js, OpenSSL and the mssql_tools
+#### Docker, Node.js and OpenSSL
 
 It is recommended that the primary package repo and the CLI package manager for your Linux
 OS. e.g., apt-get, rpm, yast, yum, zypper, etc. else local compile from source is used to
-complete this step. It may, in some cases, be necessary to get the mssql_tools formerly known
-as ODBC from Microsoft's repo. See the Microsoft SQL Server for Linux on-line documentation
-for mssql_tools download and installation details.
+complete this step. 
 
 ### 2. Init
 #### Prepare and enter a new folder
 
-While local root credentials are required for full app functionality, running
-the Node.js CLI app from a folder location in the current user's $HOME is strongly recommended.
-With this practice, multiple people can run a personal app instance and all can use the same
-containers as necessary with each having a personal activity history much like *$HOME/.bash_history*
-except stored in the client's document database providing far better query & search support.
+Periodic password prompts from the OS maintain the user's sudo access to the compute instance
+Deploying the app under the current user's $HOME is required to avoid. With this practice, 
+multiple people can run a personal app instance and all can use the same containers as necessary 
+with each having a personal CLI activity history much like *$HOME/.bash_history*
+except stored in the client's document database providing improved query & search support.
 
-    > mkdir sqlpal
-    > cd sqlpal
+    > mkdir anonym
+    > cd s
 
-#### move the reviewed source from the sqlpal github project into this folder
+#### move the reviewed source from the anonym github project into folder created
 
-    > https://www.github.com/bwunder/sqlpal
+    > https://www.github.com/bwunder/anonym
 
 #### (optional) Define queries available to the runtime by editing the queries.js module file.
 
@@ -63,14 +62,14 @@ Copy and paste any TSQL queries desired and enclose with template string delimit
 Queries are upserted into the 'templates.db' nedb database at each application start-up: all
 additions, changes and deletions applied since the last start-up are reported in the log.
 
-Queries can be added, edited or removed at any time using the sqlpal CLI. Changes take effect immediately
-in sqlpal beginning with the next query after the query is saved.
+Queries can be added, edited or removed at any time using the anonym CLI. Changes take effect immediately
+in anonym beginning with the next query after the query is saved.
 
 #### (optional) Copy or move TSQL Scripts into the scripts subfolder.
 
 Individual query expressions are nicely for inclusion in templates.db. Scripts with more than one
 query are probably better stored as script files. Scripts can be added, changed or removed from the
-folder at any time like any other file or from the sqlpal CLI (**script <file-name> --edit**). Changes
+folder at any time like any other file or from the anonym CLI (**script <file-name> --edit**). Changes
 take effect immediately beginning with the next script execution after the save.
 
 Only Scripts using the *.sql* extension are recognized by the **script** command. Scripts can be added,
@@ -91,7 +90,7 @@ see [sqlpad config documentation](https://github.com/rickbergfalk/sqlpad/blob/ma
 for details on sqlpad configuration. Note that sqlpad is used as a dependent process. It is
 not necessary to also install a global instance. You can if wish, however the global instance
 will not use configuration values from config.json. (There will likely be another 'sqlpaddata'
-folder elsewhere on the machine shared among users of the global instance.  The sqlpal configured
+folder elsewhere on the machine shared among users of the global instance.  The anonym configured
 sqlpad.dir will be private to the dependency (caution: collisions when the same fully qualified path  
 is used may be possible - I have not adequately tested this.)
 
@@ -99,3 +98,10 @@ is used may be possible - I have not adequately tested this.)
 
     > npm update
     > npm start
+
+### Other Local Resources
+[sqlcmd cheatsheet](./docs/cheatsheet.md)
+[vim cheatsheet](./docs/vimCheatSheet.md)
+[docker daemon](./docs/daemon.md)
+[test extension](./docs/test.md)
+

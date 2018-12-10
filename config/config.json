@@ -1,47 +1,86 @@
 {
   "bcp": {
     "switch": {
-      "placeholder": "not baked, use bcp in container shell or host shell when mssql-tools on host"
+      "placeholder": "not baked in, use bcp in container shell or host shell when mssql-tools on host"
     }
   },
-  "ca": {
-    "pkey-password": "ca-pkey-password"
-  },
   "cli": {
+    "alwaysCheckSyntax": true,
     "bash": {
       "path": "bash"
+    },
+    "ca": {
+      "key": "CA-key.pem",
+      "password": "!ge55a81e^but^p@SSaBle_ca-pkey-password",
+      "cert": "CA-cert.pem"
     },
     "docs": {
       "path": "docs"
     },
     "editor": "emacs",
-    "editor2": "vim",
-    "ide": "vscode",
-    "ide2": "atom-beta",
+    "ide": "code",
     "odbc": {
       "path": "/opt/mssql-tools/bin"
     },
-    "alwaysCheckSyntax": true,
-    "script": {
+    "scripts": {
       "path": "scripts",
       "filter": ".sql"
     },
-    "showEventTimes": true,
     "store": {
       "path" : "data"
     }
   },
   "docker": {
+    "api": {
+      "cert": "dockerCLI-cert.pem",
+      "key": "dockerCLI-key.pem",
+      "password": "mibonbonantimonyglockenspiel"
+    },
+    "bindings": {
+      "backups": {
+        "filter": ".bak",
+        "mount": {
+          "Target": "/var/opt/anonym/backup",
+          "Source": "backups",
+          "Type": "bind",
+          "Propagation": "shared"
+        }
+      },
+      "private": {
+        "filter": ".pem",
+        "mount": {
+          "Target": "/var/opt/anonym/private",
+          "Source": "private",
+          "Type": "bind",
+          "Mode": "ro", 
+          "ReadOnly": true,
+          "Propagation": "shared"
+        }
+      },  
+      "staging": {
+        "mount": {
+          "Target": "/var/opt/anonym/staging",
+          "Source": "staging",
+          "Type": "bind",
+          "Propagation": "shared"
+        }
+      }
+    },
+    "daemon" : {
+      "tls": true,
+      "cert": "docker-cert.pem",
+      "key": "docker-key.pem",
+      "password": "W!sh!h@dArANd0mSecretGener@tor...MAB?l^1I-checkIN2tHaT",
+      "tlsverify": true
+    },  
     "pull": {
       "repo": "microsoft/mssql-server-linux",
       "tag": "2017-latest"
     },
-    "mssql": {
+    "sql": {
       "path": "/var/opt/mssql"
-    },
-    "socket": "/var/run/docker.sock",
-    "tailSeconds": 10
-  },
+    }
+},
   "mssql": {
     "env": {
       "ACCEPT_EULA": "Y",
@@ -54,17 +93,18 @@
       "MSSQL_AGENT_ENABLED": "false",
       "MSSQL_MASTER_DATA_FILE": "",
       "MSSQL_MASTER_LOG_FILE": "",
-      "MSSQL_SA_PASSWORD": "<YourStrong!Passw0rd>`",
+      "MSSQL_SA_PASSWORD": "YourStrong!Passw0rd",
       "MSSQL_PID": "Developer",
-      "MSSQL_BACKUP_DIR": "/var/opt/mssql/backup",
+      "MSSQL_BACKUP_DIR": "/var/opt/anonym/backup",
       "MSSQL_BIN_DIR": "/opt/mssql/bin",
       "MSSQL_DATA_DIR": "/var/opt/mssql/data",
       "MSSQL_ERRORLOG_DIR": "/var/opt/mssql/log",
       "MSSQL_LOG_DIR": "/var/opt/mssql/data",
-      "MSSQL_PRIVATE_DIR": "/var/opt/mssql/private",
-      "MSSQL_DUMP_DIR": "/var/opt/mssql/log"
+      "MSSQL_DUMP_DIR": "/var/opt/mssql/log",
+      "PRIVATE_DIR": "/var/opt/anonym/private",
+      "STAGING_DIR": "/var/opt/anonym/staging"
     },
-    "pkey-passphrase": "mssql-pkey-passphrase",
+    "pkey-passphrase": "zist.d;m$$q1-pke_pazfrace",
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "pool":  {
       "connectionTimeout": 15000,
@@ -84,36 +124,8 @@
     }
   },
   "sqlpad": {
-    "enabledAtStartup": false,
-    "ip": "127.0.0.1",
-    "debug": false,
-    "dir": "sqlpaddata",
-    "port": 8754,
-    "https-port": 8755,
-    "baseUrl": "",
-    "passphrase": "yet-aN0ther_pA$$werd",
-    "cert-passphrase": "sagebrush",
-    "key-path": "sqlpad-key.pem",
-    "cert-path": "sqlpad-cert.pem",
-    "admin": "bwunder@yahoo.com",
-    "google-client-id": "",
-    "google-client-secret": "",
-    "disable-userpass-auth": false,
-    "allow-csv-download": true,
-    "editor-word-wrap": false,
-    "query-result-max-rows": 50000,
-    "slack-webhook": "",
-    "show-schema-copy-button": false,
-    "table-chart-links-require-auth": true,
-    "public-url": "",
-    "smtp-from": "",
-    "smtp-host": "",
-    "smtp-port": "",
-    "smtp-secure": true,
-    "smtp-user": "",
-    "smtp-password": "",
-    "whitelisted-domains": ""
-  },
+    "runAtStartup": false
+  },  
   "sqlcmd": {
     "prebatch": [
       "SET STATISTICS IO ON;",
@@ -130,23 +142,5 @@
       "I": "I",
       "h": -1
     }
-  },
-  "volume": {
-    "sqlBackups": {
-      "filter": ".bak",
-      "containerPath": "/var/opt/mssql/backup",
-      "hostPath": "/var/lib/docker/volumes/sqlBackups/",
-      "appLink": "sqlBackups"
-    },
-    "private": {
-      "filter": ".pem",
-      "containerPath": "/var/opt/mssql/private",
-      "hostPath": "/var/lib/docker/volumes/private",
-      "appLink": "private"
-    }
-  },
-  "vorpal": {
-    "loglevel": 20,
-    "port": 8753
   }
 }
