@@ -111,7 +111,7 @@ is used may be possible - I have not adequately tested this.)
     > npm start
 
 
-#### Other Package Documents
+#### Other Package Document
 
     [sqlcmd cheatsheet](./docs/cheatsheet.md)
     [vim cheatsheet](./docs/vimCheatSheet.md)

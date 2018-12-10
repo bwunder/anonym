@@ -2,6 +2,7 @@
 .directory
 .eslint
 *.*~
+.vscode
 
 # Logs
 logs
