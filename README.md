@@ -53,12 +53,12 @@ Architect, Develop, Test & otherwise evaluate Private & Autonomous Virtual Data 
     all can share the SQL Server Containers. Each user will generate a personal 
     activity history stored in a personal nedb document database.
 
-    > mkdir sqlpal
-    > cd sqlpal
+    > mkdir anonym
+    > cd anonym
 
-#### move the reviewed source from the sqlpal github project into this folder
+#### move the reviewed source from the anonym github project into this folder
 
-    > https://www.github.com/bwunder/sqlpal
+    > https://www.github.com/bwunder/anonym
 
 #### Initialize the query store 
 
@@ -80,7 +80,7 @@ Architect, Develop, Test & otherwise evaluate Private & Autonomous Virtual Data 
 
     Individual query expressions of a few lins are better inclused in templates.db. Scripts with more than one
     query are probably better stored as script files. Scripts can be added, changed or removed from the
-    folder at any time like any other file or from the sqlpal CLI (**script <file-name> --edit**). Changes
+    folder at any time like any other file or from the anonym CLI (**script <file-name> --edit**). Changes
     take effect immediately beginning with the next script execution after the save.
 
     Only Scripts using the *.sql* extension are recognized by the **script** command. Scripts can be added,
@@ -101,7 +101,7 @@ see [sqlpad config document](https://github.com/rickbergfalk/sqlpad/blob/master/
 for details on sqlpad configuration. Note that sqlpad is used as a dependent process. It is
 not necessary to also install a global instance. You can if wish, however the global instance
 will not use configuration values from config.json. (There will likely be another 'sqlpaddata'
-folder elsewhere on the machine shared among users of the global instance.  The sqlpal configured
+folder elsewhere on the machine shared among users of the global instance.  The anonym configured
 sqlpad.dir will be private to the dependency (caution: collisions when the same fully qualified path  
 is used may be possible - I have not adequately tested this.)
 
@@ -111,10 +111,10 @@ is used may be possible - I have not adequately tested this.)
     > npm start
 
 
-#### Other Local Resources
+#### Other Package Documents
 
-[sqlcmd cheatsheet](./docs/cheatsheet.md)
-[vim cheatsheet](./docs/vimCheatSheet.md)
-[docker daemon](./docs/daemon.md)
-[test extension](./docs/test.md)
+    [sqlcmd cheatsheet](./docs/cheatsheet.md)
+    [vim cheatsheet](./docs/vimCheatSheet.md)
+    [docker daemon](./docs/daemon.md)
+    [test extension](./docs/test.md)
 
