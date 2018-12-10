@@ -14,7 +14,11 @@ private
 *.pem
 *.srl
 
-#sqlBackups
+# sample scripts
+scripts/sample-scripts
+
+# sqlBackups
+backups
 sqlBackups
 
 # sqlpad nedb store
