@@ -134,11 +134,11 @@ is used may be possible - I have not adequately tested this.)
 
 #### Other Package Document
 
-    [sqlcmd cheatsheet](./docs/cheatsheet.md)
+    [sqlcmd cheatsheet](docs/cheatsheet.md)
 
-    [vim cheatsheet](./docs/vimCheatSheet.md)
+    [vim cheatsheet](docs/vimCheatSheet.md)
     
-    [docker daemon](./docs/daemon.md)
+    [docker daemon](docs/daemon.md)
     
-    [test extension](./docs/test.md)
+    [test extension](docs/test.md)
 
