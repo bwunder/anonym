@@ -5,7 +5,7 @@
     }
   },
   "cli": {
-    "alwaysCheckSyntax": true,
+    "checkSyntax": true,
     "bash": {
       "path": "bash"
     },
@@ -19,6 +19,10 @@
     },
     "editor": "emacs",
     "ide": "code",
+    "log": {
+      "elevations": false,
+      "debug": false
+    },
     "odbc": {
       "path": "/opt/mssql-tools/bin"
     },
@@ -74,7 +78,8 @@
       "tlsverify": true
     },  
     "pull": {
-      "repo": "microsoft/mssql-server-linux",
+      "repo": "mcr.microsoft.com/mssql/server",
+      "oldrepo": "microsoft/mssql-server-linux",
       "tag": "2017-latest"
     },
     "sql": {
@@ -128,19 +133,15 @@
   },  
   "sqlcmd": {
     "prebatch": [
-      "SET STATISTICS IO ON;",
-      "SET STATISTICS TIME ON;"
+      "SET STATISTICS PROFILE ON;"
     ],
     "prefix": [
-      "SET QUOTED_IDENTIFIER OFF;",
-      "SET ANSI NULLS ON;"
+      "SET ANSI_DEFAULTS ON;"
     ],
     "switch": {
       "U": "sa",
       "P": "$MSSQL_SA_PASSWORD",
-      "r": "r",
-      "I": "I",
-      "h": -1
+      "r": "r"
     }
   }
 }

@@ -5,9 +5,9 @@
 	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title></title>
-	<meta name="generator" content="LibreOffice 5.2.3.3 (Linux)"/>
+	<meta name="generator" content="LibreOffice 6.1.3.2 (Linux)"/>
 	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="2017-03-27T11:41:33.160220324"/>
+	<meta name="changed" content="2018-12-22T11:56:49.509817080"/>
 	
 	<style type="text/css">
 		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Liberation Sans"; font-size:x-small }
@@ -25,8 +25,6 @@
 		<A HREF="#table0">sqlcmd</A><br>
 		<A HREF="#table1">bcp</A><br>
 		<A HREF="#table2">SET</A><br>
-		<A HREF="#table3">mssql-conf</A><br>
-		<A HREF="#table4">docker</A><br>
 		
 	</center></p>
 <hr>
@@ -73,8 +71,8 @@
 	<tr>
 		<td height="17" align="center"><font face="Liberation Mono">switch</font></td>
 		<td align="center" bgcolor="#EEEEEE"><font face="Liberation Mono">Descr – (grey background = boolean)</font></td>
-		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" align="center" bgcolor="#CC0000" sdval="2016" sdnum="1033;"><font face="Liberation Mono">2016</font></td>
-		<td style="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #ffffff" align="center" bgcolor="#FF3333"><font face="Liberation Mono">Linux</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" align="center" bgcolor="#CC0000" sdval="2016" sdnum="1033;"><s><font face="Liberation Mono">2016</font></s></td>
+		<td style="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #ffffff" align="center" bgcolor="#FF3333"><s><font face="Liberation Mono">Linux</font></s></td>
 		<td style="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff" align="center" bgcolor="#FF9999"><font face="Liberation Mono">ENV var</font></td>
 		<td style="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #ffffff" align="center" bgcolor="#FF9999"><font face="Liberation Mono">modes</font></td>
 		<td style="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #ffffff" align="center" bgcolor="#FF9999"><font face="Liberation Mono">default</font></td>
@@ -771,18 +769,20 @@
 <hr>
 <A NAME="table2"><h1>Sheet 3: <em>SET</em></h1></A>
 <table cellspacing="0" border="0">
-	<colgroup width="259"></colgroup>
-	<colgroup width="518"></colgroup>
-	<colgroup width="374"></colgroup>
-	<colgroup width="85"></colgroup>
+	<colgroup width="266"></colgroup>
+	<colgroup width="433"></colgroup>
+	<colgroup width="404"></colgroup>
+	<colgroup span="2" width="85"></colgroup>
 	<tr>
 		<td height="17" align="left"><br></td>
 		<td rowspan=2 align="center"><font face="Liberation Mono" size=4>SET statements</font></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><font color="#FFCC99">Date and time statements</font></td>
+		<td height="17" align="left"><font color="#FFCC99"><br></font></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 	</tr>
@@ -791,11 +791,6 @@
 		<td align="left">arguments can be passed to SET statements as variables</td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
@@ -803,45 +798,62 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>statement</b></td>
-		<td align="left"><b>usage</b></td>
+		<td align="left"><b>Usage { ON|OFF } unless indicated</b></td>
 		<td align="left"><b>descr</b></td>
-		<td align="left"><b>defaut</b></td>
+		<td align="left"><b>default</b></td>
+		<td align="left"><a class="comment-indicator"></a>
+	<comment> (parse-compile-execution)</comment>
+	<b>When</b></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><font color="#000000">Date and time statements</font></td>
 		<td align="left"><b><br></b></td>
 		<td align="left"><b><br></b></td>
 		<td align="left"><b><br></b></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET DATEFIRST</b></td>
 		<td align="left">SET DATEFIRST { [1-7] } </td>
 		<td align="left">first day of week (1=Monday)</td>
 		<td align="right" sdval="1" sdnum="1033;">1</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET DATEFORMAT</b></td>
 		<td align="left">SET DATEFORMAT {  mdy |  dmy | ymd | ydm | myd | dym }</td>
 		<td align="left"><font face="Liberation Serif">order of the month, day, and year date parts</font></td>
 		<td align="left">myd</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -851,21 +863,25 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET DEADLOCK_PRIORITY</b></td>
 		<td align="left">SET DEADLOCK_PRIORITY { LOW | NORMAL | HIGH | [-10–10] }  </td>
 		<td align="left">relative importance of current session</td>
 		<td align="left">NORMAL | 0</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET LOCK_TIMEOUT</b></td>
 		<td align="left">SET LOCK_TIMEOUT timeout_period</td>
 		<td align="left">milliseconds to wait for other’s locks to clear</td>
 		<td align="left">-1 (none)</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -875,53 +891,44 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><a class="comment-indicator"></a>
 		<comment>In a future version of SQL Server CONCAT_NULL_YIELDS_NULL will always be ON</comment>
-		<b><font color="#FF0000">SET CONCAT_NULL_YIELDS_NULL</font></b></td>
-		<td align="left">SET CONCAT_NULL_YIELDS_NULL { ON | OFF }</td>
-		<td align="left"><font face="Liberation Serif">Treat no result as null or empty string value</font></td>
-		<td align="left">ON (null)</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><b>SET CURSOR_CLOSE_ON_COMMIT</b></td>
-		<td align="left">SET CURSOR_CLOSE_ON_COMMIT { ON | OFF }</td>
+		<b><font color="#FF3333">SET CONCAT_NULL_YIELDS_NULL</font></b></td>
 		<td align="left"><br></td>
-		<td align="left">OFF</td>
+		<td align="left"><font face="Liberation Serif">result as null or empty string value</font></td>
+		<td align="left">ON (null)</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET FIPS_FLAGGER</b></td>
 		<td align="left">SET FIPS_FLAGGER ( 'ENTRY' | ‘FULL’ | ‘INTERMEDIATE’ |  OFF )</td>
 		<td align="left"><font face="Liberation Serif">&nbsp;FIPS 127-2 compliance level</font></td>
 		<td align="left">OFF</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><b>SET IDENTITY_INSERT</b></td>
-		<td align="left">SET IDENTITY_INSERT [ database_name . [ schema_name ] . ] table { ON | OFF }</td>
-		<td align="left"><font face="Liberation Serif">Allow explicit identity column value inserts (limit: 1table /session)</font></td>
-		<td align="left">OFF</td>
+		<td align="left">parse</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET LANGUAGE</b></td>
 		<td align="left">SET LANGUAGE { [ N ] 'language' } </td>
 		<td align="left"><font face="Liberation Serif">specify language – (overrides any prev  SET  DATEFORMAT)</font></td>
 		<td align="left">english</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="23" align="left"><b>SET OFFSETS</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="23" align="left"><a class="comment-indicator"></a>
+		<comment>Depricated
+</comment>
+		<b><font color="#FF3333">SET OFFSETS</font></b></td>
+		<td align="left"><font face="Liberation Serif">SET OFFSETS keyword_list { ON | OFF } </font></td>
+		<td align="left">DBLib only – keyword offset from start of statement</td>
 		<td align="left"><font face="Liberation Mono" size=4><br></font></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><b>SET QUOTED_IDENTIFIER</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">parse</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -931,71 +938,89 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ARITHABORT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><a class="comment-indicator"></a>
+		<comment>ANSI Warnings setting will affect behavior of ARITHABORT</comment>
+		<b>SET ARITHABORT</b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">terminate query on overflow or divide by zero</td>
+		<td align="left">ON</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET ARITHIGNORE</b></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">determines whether to return a message on ARITHABORT</td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><a class="comment-indicator"></a>
-		<comment>Depricated</comment>
-		<b><font color="#FF3300">SET FMTONLY Note: will be removed</font></b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<comment>Do not use this feature. This feature has been replaced by sp_describe_first_result_set (Transact-SQL), sp_describe_undeclared_parameters (Transact-SQL), sys.dm_exec_describe_first_result_set (Transact-SQL), and sys.dm_exec_describe_first_result_set_for_object (Transact-SQL).</comment>
+		<b><font color="#FF3300">SET FMTONLY</font></b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">returns metadata only</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET NOCOUNT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">return rows affected </td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET NOEXEC</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Parse &amp; compile but no execution and returns any messages</td>
+		<td align="left">OFF</td>
+		<td align="left">parse+compile</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET NUMERIC_ROUNDABORT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Return a failure message if loss of precision would occur</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET PARSEONLY</b></td>
 		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">Parse but no compile or execute and return any messages</td>
+		<td align="left">OFF</td>
+		<td align="left">parse</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET QUERY_GOVERNOR_COST_LIMIT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif">SET QUERY_GOVERNOR_COST_LIMIT value </font></td>
+		<td align="left">longest time in seconds a query can execute 0=no limit</td>
+		<td align="right" sdval="0" sdnum="1033;">0</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ROWCOUNT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><a class="comment-indicator"></a>
+		<comment>Using SET ROWCOUNT will not affect DELETE, INSERT, and UPDATE statements in a future release of SQL Server.</comment>
+		<b>SET ROWCOUNT</b></td>
+		<td align="left"><font face="Liberation Serif">SET ROWCOUNT { number | @number_var } </font></td>
+		<td align="left">Stop execution after the set number of rows is returned 0=no limit</td>
+		<td align="right" sdval="0" sdnum="1033;">0</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET TEXTSIZE</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><a class="comment-indicator"></a>
+		<comment>ntext, text, and image data types will be removed in a future version of Microsoft SQL Server.</comment>
+		<b>SET TEXTSIZE</b></td>
+		<td align="left"><font face="Liberation Serif">SET TEXTSIZE { number } </font></td>
+		<td align="left">Establish the largest BLOB size returned by SELECT -1=no limit</td>
+		<td align="right" sdval="-1" sdnum="1033;">-1</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -1005,45 +1030,77 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET ANSI_DEFAULTS</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Set ISO settings (all inset statements below) ON or OFF</td>
+		<td align="left">ALL ON</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET ANSI_NULL_DFLT_OFF</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Applies for session when db ANSI_NULLS ON or OFF</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ANSI_NULL_DFLT_ON</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><b>  SET ANSI_NULL_DFLT_ON</b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Applies for session when db ANSI_NULLS OFF</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ANSI_NULLS</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><a class="comment-indicator"></a>
+		<comment>In a future version of SQL Server, ANSI_NULLS will always be ON and any applications that explicitly set the option to OFF will generate an error.
+</comment>
+		<b><font color="#FF3333">  SET ANSI_NULLS</font></b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">If On null equality is undefined, if OFF, null equalencies return true</td>
+		<td align="left">ON</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ANSI_PADDING</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td height="17" align="left"><b>  SET ANSI_PADDING</b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">Pad fill char and binaryto left, don’t trim for varchar and varbinary</td>
+		<td align="left">ON</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
-		<td height="17" align="left"><b>SET ANSI_WARNINGS</b></td>
+		<td height="17" align="left"><b>  SET ANSI_WARNINGS</b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">ISO (inset) settings for several conditions</td>
+		<td align="left">ON</td>
+		<td align="left">execution</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>  SET CURSOR_CLOSE_ON_COMMIT</b></td>
 		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">close the cursor on commit</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>  SET IDENTITY_INSERT</b></td>
+		<td align="left">SET IDENTITY_INSERT  db.schema.table { ON | OFF }</td>
+		<td align="left"><font face="Liberation Serif">Allow explicit identity column value inserts (limit: 1table /session)</font></td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><b>  SET QUOTED_IDENTIFIER</b></td>
+		<td align="left"><font face="Liberation Serif"><br></font></td>
+		<td align="left">if ON double quotes wrap identifiers, single quotes for literals</td>
+		<td align="left">OFF</td>
+		<td align="left">parse</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -1053,57 +1110,67 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET FORCEPLAN</b></td>
 		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">ues table order in FROM in nested loop</td>
+		<td align="left">OFF</td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET SHOWPLAN_ALL</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">Must run before query parse as only thing in a batch</td>
+		<td align="left">parse, compile and return plan without execution</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET SHOWPLAN_TEXT</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">Must run before query parse as only thing in a batch</td>
+		<td align="left">parse, compile and return plan as tabular text without execution</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET SHOWPLAN_XML</b></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">can have other statements in batch – go figure</td>
+		<td align="left">parse, compile and return plan as XML without execution</td>
+		<td align="left">OFF</td>
+		<td align="left">execution</td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET STATISTICS IO</b></td>
 		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">Actual query disk activity – tabular output</td>
+		<td align="left">OFF</td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET STATISTICS XML</b></td>
 		<td align="left"><br></td>
-		<td align="left"><br></td>
+		<td align="left">Actual query disk activity – XML output</td>
+		<td align="left">OFF</td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET STATISTICS PROFILE</b></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left">OFF</td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET STATISTICS TIME</b></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left">OFF</td>
 		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><br></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -1113,9 +1180,11 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET IMPLICIT_TRANSACTIONS</b></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -1125,9 +1194,11 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
+		<td align="left"><br></td>
 	</tr>
 	<tr>
 		<td height="17" align="left"><b>SET TRANSACTION ISOLATION LEVEL</b></td>
+		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
@@ -1137,365 +1208,7 @@
 		<td align="left"><br></td>
 		<td align="left"><br></td>
 		<td align="left"><br></td>
-	</tr>
-</table>
-<!-- ************************************************************************** -->
-<hr>
-<A NAME="table3"><h1>Sheet 4: <em>mssql-conf</em></h1></A>
-<table cellspacing="0" border="0">
-	<colgroup span="2" width="85"></colgroup>
-	<tr>
-		<td colspan=5 rowspan=2 height="34" align="center"><font size=4>mssql-conf</font></td>
-		</tr>
-	<tr>
-		</tr>
-	<tr>
-		<td height="17" align="left">https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-mssql-conf</td>
 		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">Change TCP Port</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">set new port</td>
-		<td align="left">sudo /opt/mssql/bin/mssql-conf set tcpport &lt;new_tcp_port&gt;</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">restart sql server</td>
-		<td align="left">sudo systemctl restart mssql-server</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left">sqlcmd -S localhost,&lt;new_tcp_port&gt; -U test -P test</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">toggle trace flag</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo /opt/mssql/bin/mssql-conf traceflag 1234 on</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo /opt/mssql/bin/mssql-conf traceflag 2345 3456 on</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo /opt/mssql/bin/mssql-conf traceflag 1234 2345 3456 off</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo systemctl restart mssql-server</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">Change data and log directories</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo mkdir /tmp/data</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo chown mssql /tmp/data</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo chgrp mssql /tmp/data</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo /opt/mssql/bin/mssql-conf set defaultdatadir /tmp/data</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">usage: mssql-conf [-h]</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                  {set,unset,traceflag,set-sa-password,set-collation,validate,list,setup,start-service,stop-service,enable-service,disable-service}</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                  ...</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">positional arguments:</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  {set,unset,traceflag,set-sa-password,set-collation,validate,list,setup,start-service,stop-service,enable-service,disable-service}</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    set                 Sets the value of a SQL Server settings</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    unset               Unsets the value of a SQL Server setting, it resets</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                        the value to default</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    traceflag           Enables/disables the given trace flags.</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    set-sa-password     Interactive option to modify the system administrator</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                        password for SQL Server</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    set-collation       Interactive option to modify the collation of SQL</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                        Server instance</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    validate            Validates the configuration file and removes settings</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">                        that could not be validated</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    list                Lists the supported configurable settings</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    setup               Initialize and setup Microsoft(R) SQL Server(R).</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    start-service       Start the SQL Server service.</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    stop-service        Stops the SQL Server service.</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    enable-service      Enable SQL Server service to start at boot.</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    disable-service     Disable the SQL Server service from starting at boot.</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">optional arguments:</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  -h, --help            show this help message and exi</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">root@3f209baf97b2:/# /opt/mssql/bin/mssql-conf list   </td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">Supported settings using the 'set' option: </td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">network.tcpport</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">filelocation.defaultbackupdir</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">filelocation.defaultdumpdir</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">filelocation.defaultlogdir</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">filelocation.defaultdatadir</td>
-		<td align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">hadr.hadrenabled</td>
-		<td align="left"><br></td>
-	</tr>
-</table>
-<!-- ************************************************************************** -->
-<hr>
-<A NAME="table4"><h1>Sheet 5: <em>docker</em></h1></A>
-<table cellspacing="0" border="0">
-	<colgroup width="293"></colgroup>
-	<tr>
-		<td height="17" align="left">// docker has to be installed,  well configured with daemon active*</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo service docker status</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo service docker start</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">// network device: 'docker0' at 172.17.0.1 is added on the host</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">docker pull microsoft/mssql-server-linux:latest</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">docker images</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">docker run --name=mssql -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=&lt;YourStrong!Passw0rd&gt;' -p 1433:1433 -v /var/opt/mssql:/var/opt/mssql/ -d microsoft/mssql-server-linux</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">/*-------------</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  environment</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    -e 'ACCEPT_EULA=Y'</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    -e 'SA_PASSWORD=&lt;YourStrong!Passw0rd&gt;'</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  port ip:hostPort:containerPort</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    -p 1433:1433</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  mounts &lt;either absolute or relative to  ../docker/volumes host directory&gt;:&lt;as directory inside container&gt;</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    -v HOST-DIR:/var/opt/mssql/</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">     you need at least read permission on the log subdirectory to read errorlog</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">  image</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    -d microsoft/mssql-server-linux</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">-------------*/</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><font face="Liberation Serif">docker exec -it mssql bash</font></td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">// two ways to work with the sql data files and logs</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">// from the command line look in the host path set in docker run</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">bwunder@linux-niun:~&gt; ls -lb var/opt/mssql</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">// open shell in running container to get inside</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sudo docker exec -it &quot;name or UUID-short of running container&quot; bash</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">docker exec -it mssql bash</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    root@mssql:/# ls -lb var/opt/mssql</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    total 0</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    drwxr-xr-x 1 root root  276 Feb  2 18:05 data</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    drwxr-xr-x 1 root root    0 Jan 24 21:18 etc</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    drwxr-xr-x 1 root root 1010 Feb 11 13:56 log</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    drwxr-xr-x 1 root root   22 Jan 24 21:19 secrets</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">    cat var/opt/mssql/log/errorlog</td>
-	</tr>
-	<tr>
-		<td height="17" align="left">*/</td>
-	</tr>
-	<tr>
-		<td height="17" align="left"><br></td>
-	</tr>
-	<tr>
-		<td height="17" align="left">sqlcmd -Usa -P'&lt;YourStrong!Passw0rd&gt;' -S'172.17.0.1' -dtempdb</td>
 	</tr>
 </table>
 <!-- ************************************************************************** -->

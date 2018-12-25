@@ -1,6 +1,6 @@
 ////NPM
 const chalk = require('chalk')
-process.stdout.write(chalk`{rgb(153, 255, 51) Tester's are referrered to the 'test.md' doc} (via command: {bold.italic test doc})\n`)
+process.stdout.write(chalk`{rgb(153, 255, 51) Tester's are referrered to the 'test.md' doc} (via command: {bold.italic about test})\n`)
 module.exports = vorpal => { 
   ///LOCAL 
   const api = require('../lib/api')

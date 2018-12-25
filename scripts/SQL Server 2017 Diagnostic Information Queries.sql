@@ -194,7 +194,7 @@ DBCC TRACESTATUS (-1);
 --           https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
 
 -- The behavior of TF 1117, 1118 are enabled for tempdb in SQL Server 2016 by default
--- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
+-- SQL 2016 ï¿½ It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
 --           https://blogs.msdn.microsoft.com/psssql/2016/03/15/sql-2016-it-just-runs-faster-t1117-and-t1118-changes-for-tempdb-and-user-databases/
 
 -- The behavior of TF 2371 is enabled by default in SQL Server 2016 and newer (in compat level 130 and higher)
@@ -423,7 +423,7 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 
 -- You will see no results if your instance is not using AlwaysOn AGs
 
--- SQL Server 2016 – It Just Runs Faster: Always On Availability Groups Turbocharged
+-- SQL Server 2016 ï¿½ It Just Runs Faster: Always On Availability Groups Turbocharged
 -- https://blogs.msdn.microsoft.com/bobsql/2016/09/26/sql-server-2016-it-just-runs-faster-always-on-availability-groups-turbocharged/
 
 
@@ -787,11 +787,11 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 
 
 -- Get VLF Counts for all databases on the instance (Query 35) (VLF Counts)
-SELECT [name] AS [Database Name], [VLF Count] 
-FROM sys.databases AS db WITH (NOLOCK)
-CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count] 
+SELECT [name] AS [Database Name], [VLF Count] 
+FROM sys.databases AS db WITH (NOLOCK)
+CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count]
 			 FROM sys.dm_db_log_info(db.database_id) 
-             GROUP BY file_id) AS li
+		   GROUP BY file_id) AS li
 ORDER BY [VLF Count] DESC  OPTION (RECOMPILE);
 ------
 
@@ -1087,7 +1087,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy is not what you think
 -- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1886,13 +1886,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries ï¿½ Part 1 
 -- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
+-- SQL Server 2014 DMV Diagnostic Queries ï¿½ Part 2
 -- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
+-- SQL Server 2014 DMV Diagnostic Queries ï¿½ Part 3
 -- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
