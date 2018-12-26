@@ -1,21 +1,24 @@
 # Anonym 
-### 
+### SQL Server for Linux Container Automaton, CLI and Developer's Query Store
 
     Create, configure and restore data into a collection of running SQL Servers... 
-        each isolated in a Docker Container...
-            with Docker, Web and SQL Server enshrouded under TLS...
+        each in own Docker Container...
+            with Docker API, SQLPad HTTPS and SQL Server TDS enshrouded under TLS...
                 everything self contained on a single Linux compute instance... 
-                    done in a flash... 
-                        for zero cash!*  
+                    done in a flash for zero cash!*  
     
-    Nothing else is different, you still get to lead your ultra cool SQL Server architect, developer 
-    or tester life, but there will be much less killing time while you wait and much more flexibility 
-    in when and where you can with work and still have all the resources you need.
+    Relatively speaking, nothing is changed, same collection of SQL Servers, same Developers & Testers. 
+    Yet no person is so tightly bound to any physical "DEV Shop" location. Instantly, the person is able
+    to work where they are when the work is needed, regardless of access to a remote physical location, 
+    and yet have all the data resources needed to prepare changes to a mimicked live environment. 
 
-    *(Must be read extremely fast) A collection of SQL Servers could be one server or one or more 
-    networks, clouds, clusters, farms, federations, or availability groups of SQL Servers. "zero cash" 
-    offer assumes existing hardware is repurposed as the compute instance, if hardware is planned, and 
-    that the use will be appropriate to the freely distributed SQL Server Developer Image on Docker Hub. 
+<sub>*(Must be read extremely fast) A "collection of SQL Servers" could be one server or one or more 
+networks, clouds, clusters, farms, federations, or availability groups of SQL Servers. "zero cash" 
+assumes existing hardware is repurposed as the compute instance, if hardware is planned, and 
+that all use will be appropriate to the freely distributed SQL Server Image on Docker Hub running 
+with the Developer PID. And I am definitley Not responsible for any costs you may incur, incidental 
+to anything in this post or not, ever, for anything or any reason at any time, past, present or future, 
+under any circumstances. Even if I hit the Lotto. (and I never buy the tickets)</sub>  
 
 ![Image](./docs/catalog.png)
 
