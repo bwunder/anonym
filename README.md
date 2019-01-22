@@ -6,17 +6,10 @@
             ...Docker API, SQLPad HTTPS and SQL Server TDS exposed under a TLS shroud
                 ...Contained on a single Linux compute instance 
 
-    And then do it again and again, over and over, exactly the same every time, on each and every developer and tester's stand alone compute instance.
+Make and maintain any laptop as a conformed and universal DEV/TEST appliance. Distribute as dockerfiles for 
+images from [dockerhub](https://hub.docker.com), with or without user supplied data and config.
 
-    Oh, and it has to be easy for everybody to get it right every time. 
-    
-    System as a unit
-        Database images, clones from any modern data milieu taken from live SQL Servers else TSQL scripts of the physical database model are applied to containers built from "official" images from https://hub.docker.com (dockerhub). Other relational databases, document stores, graphs and key stores may be included along side the SQL Servers. Applications too, on a virtual private ethernet simulation of the cloned network(s) or use the Docker CLI to join the Docker Container Engine and database instances to the connected network(s) of the host.    
-
-    Make and maintain any laptop as a conformed and universal DEV/TEST appliance. Distribute to the team as dockerfiles buit upon images from [dockerhub](https://hub.docker.com).
-    Validate changes as is consistent with the organization defined Software Lifecycle Practices and accept them into the mainline as dockerfile layers. Team members can all use the same environment definitions and descriptors as are used in the live system without stepping on one another. All can apply change layers as they are validated and accepted by team leaders. And all can rebase their anonym to current state at any time.     
-    
-    Many valid non-production* scenarios: Availability Groups, Clouds, Clusters, Farms, Federations, Graphs, Networks
+Many valid non-production* scenarios: Availability Groups, Clouds, Clusters, Farms, Federations, Graphs, Networks
 
     Emulate any complex distributed SQL data resource (it) on one compute instance: 
             ⏺  Architects can mock it up   
@@ -33,9 +26,11 @@
             ⏺  Intruders that can tap into it still have to decipher it  
 
 <sub>Actual Data used can db file copies: for attachment, db backup: for restore, flat files: for import, 
-Docker Images: ready to start as appropriate to the circumstances and dockerfile layers for use in the development iteration context. The application exposes shared Docker Volume bindings to all SQL Server containers instantiated. These Volumes enable direct attached, system bus (USB) or network sources to get data in or out from under the anonym's shroud. Once populated, all resources needed to do the work are local to the compute Instance. And, after the work is completed, the compute instance is easily sequestered, archive, backed up and/or repurposed as appropriate.</sub>  
+Docker Images: readied to start as appropriate to a DEV iterations or TEST cycle. The application exposes 
+host Volumes for scripts, backups and ETL.</sub>  
 
-<sub>*Non-production use appropriate the the SQL Server "Development" PID is presumed. For uses that might not fall under "Developer"  licence model please </sub>
+<sub>*Non-production use appropriate the the SQL Server "Development" PID is presumed. For uses that might 
+not fall under Microsoft's "Developer" licence model please seek licensing guidance from Microsoft.</sub>
 
 ![Image](./docs/catalog.png)
 
