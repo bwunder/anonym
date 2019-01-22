@@ -25,9 +25,9 @@ Many valid non-production* simulation scenarios: Cloud, Cluster, Farm, Federatio
             ⏺  Trainers can provide clean student workspaces from it  
             ⏺  Intruders that discover it still have to decipher it  
 
-<sub>Actual Data used can db file copies: for attachment, db backup: for restore, flat files: for import, 
-Docker Images: readied to start as appropriate to a DEV iterations or TEST cycle. The application exposes 
-host Volumes for scripts, backups and ETL.</sub>  
+<sub>Actual Data used can be file copies for attachment, db backups for restore, flat files for import, 
+or Docker Images readied to start as appropriate to the DEV iteration or TEST cycle. Containers created
+with the app will bind 3 host Volumes: for scripts, backups and ETL. </sub>  
 
 <sub>*Non-production use appropriate the the SQL Server "Development" PID is presumed. For uses that might 
 not fall under Microsoft's "Developer" licence model please seek licensing guidance from Microsoft.</sub>
@@ -123,4 +123,6 @@ Container ENV vars & mssqlconf are exposed through the CLI <b>settings</b> comma
 #### [TLS](./docs/tls.md)
 
     Host self-signed TLS is available, configurable and applicable for the Docker Remote API, SQLPad's 
-    Express http server and SQL Server connection pools featuring Almost Perfect Forward Secrecy, eg. new certificate at each app start (<code>&lt npm start</code>) and or on demand. (<b>certificate</b> command)     
+    Express http server and SQL Server connection pools featuring Almost Perfect Forward Secrecy, eg. new certificate at each app start (<code>&lt npm start</code>) and or on demand. (certificate command)
+
+.
