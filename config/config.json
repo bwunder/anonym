@@ -1,11 +1,10 @@
 {
   "bcp": {
     "switch": {
-      "placeholder": "not baked in, use bcp in container shell or host shell when mssql-tools on host"
+      "placeholder": "use bcp in container shell or host shell if mssql-tools is installed on host"
     }
   },
   "cli": {
-    "checkSyntax": true,
     "bash": {
       "path": "bash"
     },
@@ -14,15 +13,22 @@
       "password": "!ge55a81e^but^p@SSaBle_ca-pkey-password",
       "cert": "CA-cert.pem"
     },
+    "checkSyntax": true,
     "docs": {
       "path": "docs"
     },
+    "editor2": "vi",
     "editor": "emacs",
     "ide": "code",
     "log": {
+      "debug": false,
       "elevations": false,
-      "debug": false
+      "inspect": {
+        "colors": true,
+        "depth": 3
+      }
     },
+    "numberStreamedLines": true, 
     "odbc": {
       "path": "/opt/mssql-tools/bin"
     },
@@ -72,20 +78,24 @@
     },
     "daemon" : {
       "tls": true,
+      "tlsverify": false,
       "cert": "docker-cert.pem",
       "key": "docker-key.pem",
-      "password": "W!sh!h@dArANd0mSecretGener@tor...MAB?l^1I-checkIN2tHaT",
-      "tlsverify": true
+      "password": "W!sh!h@dArANd0mSecretGener@tor...MAB?l^1I-checkIN2tHaT"
     },  
     "pull": {
+      "lastRepo": "microsoft/mssql-server-linux",
+      "lastTag": "2017-latest",
+      "nextRepo": "microsoft/mssql-server-linux",
+      "nextTag": "2019-CTP2.2-ubuntu",
       "repo": "mcr.microsoft.com/mssql/server",
-      "oldrepo": "microsoft/mssql-server-linux",
       "tag": "2017-latest"
     },
     "sql": {
+      "name": "SQL Server on Linux",
       "path": "/var/opt/mssql"
     }
-},
+  },
   "mssql": {
     "env": {
       "ACCEPT_EULA": "Y",
@@ -125,7 +135,8 @@
       },
       "requestTimeout": 15000,
       "server": "localhost",
-      "stream": false
+      "stream": false,
+      "user": "sa"
     }
   },
   "sqlpad": {

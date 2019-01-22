@@ -1,36 +1,47 @@
 ////local
 const api = require('./lib/api')
-const store = require('./lib/store')
+const catalog = require('./lib/catalog') 
 const cli = require('./lib/commands')
-const sqldb = require('./lib/sqldb')
+const { format, log } = require('./lib/log')
+const store = require('./lib/store')
+const tls = require('./lib/tls') 
 
-const sqlpad = require('./config/sqlpad.json')
+const config = require('./config/config.json')
 
 process.on('unhandledRejection', err => {
-
   store.errors.put(err)
-  process.stdout.write(`(process_unhandledRejection) \n${err.stack}\n`)
-
+  log('log', `\u274E (server) process_unhandledRejection\n${format(err)}\n`)
 })
 
 process.on('error', err => {
-
   store.errors.put(err)
-  process.stdout.write(`(process_error) \n${err.stack}\n`)
-
+  log('log', `(process_error) \n${format(err)}\n`)
 })
 
 process.on('exit', async code => {
-
   if (sqlpad.sqlpad) sqlpad.sqlpad.kill(1)
-  if (api.sqlCatalog.Pools && api.sqlCatalog.Pools.size > 0) {
-    for (let pool in api.sqlCatalog.Pools) {
-      process.stdout.write(`\u2718 close connection pool ${pool[0]}...\n`)
+  if (catalog.sql.Pools && catalog.sql.Pools.size > 0) {
+    for (let pool in catalog.sql.Pools) {
+      log('log', `\u2718 close connection pool ${pool[0]}...\n`)
       pool[1].close()
     }
   }
   await store.compactAll()
-  process.stdout.write(`\n\u2BA8  exit code: ${code}\n`)
-
+  log('log', `\n\u2BA8  exit code: ${code}\n`)
 })
 
+tls.genCA()
+  .then( async () => {
+    await api.attachDocker()
+      if (await catalog.intern()) {
+        await api.openInstance(catalog.sql.Instance)
+    }
+    if (config.sqlpad.runAtStartup) {
+      let sqlpad = require('./lib/sqlpad')
+      await sqlpad.start(path.resolve(config.docker.bindings.private.mount.Source))
+    }
+    cli.execSync('about version')
+  })
+  .catch( err => {
+    log('error', err)
+  })
