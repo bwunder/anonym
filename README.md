@@ -83,7 +83,7 @@ not fall under Microsoft's "Developer" licence model please seek licensing guida
 
 #### Review and edit the config.json and sqlpad.json files as needed
 
-    at the CLI prompt (>):
+    at the CLI prompt (> command [option] [arg]):
         > settings config
         > settings --environment
         > settings --mssqlconf
@@ -101,14 +101,14 @@ If unfamiliar with SQLPad, check out [SQLPad](https://rickbergfalk.github.io/sql
 and see this [SQLPad module source file](https://github.com/rickbergfalk/sqlpad/blob/master/server/lib/config/configItems.js)
 for details on all SQLPad settings. 
 
-Container ENV vars & mssqlconf are exposed through the CLI <b>settings</b> command.
+Container ENV vars & mssqlconf are exposed through (> settings).
 
 ### Run the CLI
 
         $ npm update
         $ npm start
 
-    Work interactively in bash on any running SQL Server container     
+    Work interactively in bash on any running SQL Server container (> container bash)    
 
 ### Include the [test CLI-command extension](./docs/test.md) extention (optional) 
 
@@ -116,13 +116,13 @@ Container ENV vars & mssqlconf are exposed through the CLI <b>settings</b> comma
     execute commands synchronously in javascript Promise chains we can rightly consider as recipes. Users 
     may define and execute automation recipes for the automaton in the 'tests.js' file. Resistance to 
     editing core atomaton modules until a revision is properly emulated through the test module is 
-    encouraged. <b>test [torial]</b> only rollbacks are nearly pain free. 
+    encouraged. (> test [torial]) only rollbacks are painless. 
 
         $ npm start test
 
 #### [TLS](./docs/tls.md)
 
     Host self-signed TLS is available, configurable and applicable for the Docker Remote API, SQLPad's 
-    Express http server and SQL Server connection pools featuring Almost Perfect Forward Secrecy, eg. new certificate at each app start (<code>&lt npm start</code>) and or on demand. (certificate command)
+    Express http server and SQL Server connection pools featuring Almost Perfect Forward Secrecy.
+    New service certificate at each app start (bash: $ npm start) and or on demand. (> certificate)
 
-.
