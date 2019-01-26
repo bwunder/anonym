@@ -6,28 +6,30 @@
             ...Docker API, SQLPad HTTPS and SQL Server TDS exposed under a TLS shroud
                 ...Contained on a single Linux compute instance 
 
-Make and maintain any laptop as a conformed and universal DEV/TEST appliance. Distribute as dockerfiles for 
-images from [dockerhub](https://hub.docker.com), with or without user supplied data and config.
+Make and maintain any laptop as a conformed and universal DEV/TEST appliance. 
+Share your dockerfiles or use images straight from the [dockerhub](https://hub.docker.com) website.
 
-Many valid non-production* simulation scenarios: Cloud, Cluster, Farm, Federation, Graphs, LANs & WANs
+Many valid simulation* scenarios: Clouds, Clusters, Farms, Federations, Graphs, LANs & WANs
 
-        Emulate any complex distributed SQL data resource (it) on one compute instance: 
-            ⏺  Architects can mock it up   
-            ⏺  Developers can make it work  
-            ⏺  Data Analysts can slice and dice it
-            ⏺  Data Miners can dig and delve it
-            ⏺  Engineers can measure it
-            ⏺  Forcasters can dig it
-            ⏺  Prognosticators can take a guess at it
-            ⏺  Procrastinators can hurry up and wait for it
-            ⏺  Remote Workers can do anything an in-office person can do with it
-            ⏺  Testers can recreate states on it
-            ⏺  Trainers can provide clean student workspaces from it  
-            ⏺  Intruders that discover it still have to decipher it  
+    Emulate any complex distributed SQL data resource (it) on one compute instance: 
 
-<sub>Actual Data used can be file copies for attachment, db backups for restore, flat files for import, 
-or Docker Images readied to start as appropriate to the DEV iteration or TEST cycle. Containers created
-with the app will bind 3 host Volumes: for scripts, backups and ETL. </sub>  
+        ⏺  Architects can mock it up   
+        ⏺  Developers can make it up  
+        ⏺  Data Analysts can cut it up
+        ⏺  Data Miners can dig it out
+        ⏺  Engineers can measure it up
+        ⏺  Forcasters can trend it out
+        ⏺  Prognosticators can take a stab at it
+        ⏺  Procrastinators can hurry up and wait for it
+        ⏺  Remote Workers can do anything an in-office person can do with it
+        ⏺  Testers can statefully replay it
+        ⏺  Trainers can teach with it  
+        ⏺  Intruders that hack into it will still have to crack it  
+
+Actual Data used can be file copies for attachment, db backups for restore, flat files for import, 
+or Docker Images readied to start as appropriate to the DEV iteration or TEST cycle. 
+
+Containers created with the app will bind 3 host Volumes: for scripts, backups and ETL.  
 
 <sub>*Non-production use appropriate the the SQL Server "Development" PID is presumed. For uses that might 
 not fall under Microsoft's "Developer" licence model please seek licensing guidance from Microsoft.</sub>
@@ -40,25 +42,19 @@ not fall under Microsoft's "Developer" licence model please seek licensing guida
 
 ### Prerequisites
 #### 64-bit Linux compute instance able to host the Docker CE Container Engine.
-#### When slightly loaded, a dozen or more SQL containers may be usable on budget commodity hardware. 
+#### When lightly loaded, a dozen or more SQL containers may be usable on budget commodity hardware. 
 
-    * Docker version 17 or later 
+    * Docker CE version 17 or later 
     * Node.js version 8 or later    
     * OpenSSL version 1.1l or later
-    * An IDE for Linux that parses javascript and TSQL (i.e., atom, bluefish, code, etc.)
+    * An IDE for Linux that parses javascript and SQL (atom, bluefish, code, eclipse, sublime, etc.) 
 
     Docker, node and OpenSSL are available through the main command-line package managers of most Linux 
-    Distro's and may already be installed. The Docker daemon may already be up and running?  
-
-### nice-to-haves 
-
-    * RAM
-    * text editor able to read-write app buffers - vi is always there, EMACs is much nicer
-    * mssql_tools (The anonym relies on the sqlcmd included in the official SQL Server Container)
+    Distro's.   
 
 ### Installation/Initialization 
 
-    at the bash prompt ($):  
+    at the bash prompt ($ [command] [--option] [args...]):  
         $ mkdir anonym
         $ cd anonym
         $ npm install anonym
@@ -83,11 +79,11 @@ not fall under Microsoft's "Developer" licence model please seek licensing guida
 
 #### Review and edit the config.json and sqlpad.json files as needed
 
-    at the CLI prompt (> command [option] [arg]):
+    at the CLI prompt (> command [--option] [args...]):
         > settings config
         > settings --environment
         > settings --mssqlconf
-        > settings ![sqlpad](https://github.com/rickbergfalk/sqlpad)
+        > settings sqlpad
 
     App Settings are found in config.json - The config object includes the dockerhub repo name, new
     container defaults, runtime defaults and host paths use by the CLI, the Docker API, new SQL 
