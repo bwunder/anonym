@@ -1,6 +1,6 @@
 ##Tests extension: 
 
-'./tests/tests.js': A Promising Extention for the App's the Vorpal CLI
+'./tests/tests.js': A Promising Extention for testing with the App's Vorpal CLI
 
 An optional module to automate multi-command work-flows. Out of the box it is useful to verify the CLI and, at the same time see what the app does and how it is used. Later, users can easily automate other custom test cycles and workflows.    
 

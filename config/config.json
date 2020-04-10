@@ -1,32 +1,56 @@
 {
-  "bcp": {
-    "switch": {
-      "placeholder": "use bcp in container shell or host shell if mssql-tools is installed on host"
+  "browser": {
+    "command": "chromium-browser --incognito --allow-file-access-from-files --add",
+    "style": "pojoaque"
+  },  
+  "ca": {
+    "name": "CA",
+    "password": "!ge55a81e^but^p@SSaBle_ca-pkey-password",
+    "hash": "SHA256",
+    "lifetime": 365,
+    "csr": {
+      "keyBitsize": 2048,
+      "country": "US",
+      "state": "CO",
+      "locality": "anonym"
     }
   },
   "cli": {
     "bash": {
       "path": "bash"
     },
-    "ca": {
-      "key": "CA-key.pem",
-      "password": "!ge55a81e^but^p@SSaBle_ca-pkey-password",
-      "cert": "CA-cert.pem"
-    },
+    "canElevate": true,
     "checkSyntax": true,
     "docs": {
       "path": "docs"
     },
-    "editor2": "vi",
-    "editor": "emacs",
-    "ide": "code",
     "log": {
-      "debug": false,
-      "elevations": false,
+      "debug": true,
       "inspect": {
         "colors": true,
         "depth": 3
       }
+    },
+    "ucons": {
+      "catalog": {"style": "bold.cyan", "codepoint": "0x1F5A7"},
+      "confirm": {"style": "bold.green", "codepoint":"0x1F5F8"},    
+      "containerIdle": {"style": "bold.red", "codepoint":"0x25CF"},    
+      "containerRunning": {"style": "bold.green", "codepoint":"0x25CF"},    
+      "debug": {"style": "bold.greenBright", "codepoint": "0x2370"},
+      "error": {"style": "bold.red", "codepoint": "0x274E"},
+      "exit": {"style": "bold.redBright", "codepoint": "0x2BA8"},
+      "info": {"style": "bold", "codepoint": "0x2755"},
+      "image": {"style": "bold.blueBright", "codepoint": "0x25CF"},
+      "log": {"style": "", "codepoint": ""},
+      "progress": {"style": "", "codepoint": ""},
+      "remark": {"style": "blue", "codepoint":"0x2505"},   
+      "sqldb": {"style": "bold.orange", "codepoint": "0x16DE"},
+      "sqlpad": {"style": "bold", "codepoint":"0x1F4C9"},
+      "sudo": {"style": "bold.yellowBright", "codepoint": "0x1F934"},
+      "tab": {"style": "bold.inverse", "codepoint": "0x1F892"},
+      "target": {"style": "bold", "codepoint": "0x1F9FF"},
+      "test": {"style": "rgb(153,255,51)", "codepoint": "0x1F50E"},
+      "warn": {"style": "bold.yellowBright", "codepoint": "0x2BC5"}
     },
     "numberStreamedLines": true, 
     "odbc": {
@@ -35,70 +59,79 @@
     "scripts": {
       "path": "scripts",
       "filter": ".sql"
-    },
-    "store": {
-      "path" : "data"
     }
   },
   "docker": {
     "api": {
-      "cert": "dockerCLI-cert.pem",
-      "key": "dockerCLI-key.pem",
+      "tlsverify": false,
+      "name": "dockerCLI",
+      "usage": "clientAuth",
       "password": "mibonbonantimonyglockenspiel"
     },
     "bindings": {
       "backups": {
         "filter": ".bak",
         "mount": {
-          "Target": "/var/opt/anonym/backup",
-          "Source": "backups",
           "Type": "bind",
           "Propagation": "shared"
-        }
+        },
+        "hostPath": "./backups"
       },
       "private": {
         "filter": ".pem",
         "mount": {
-          "Target": "/var/opt/anonym/private",
-          "Source": "private",
           "Type": "bind",
           "Mode": "ro", 
           "ReadOnly": true,
           "Propagation": "shared"
-        }
+        },
+        "hostPath": "./private"
       },  
       "staging": {
         "mount": {
-          "Target": "/var/opt/anonym/staging",
-          "Source": "staging",
           "Type": "bind",
           "Propagation": "shared"
-        }
-      }
+        },
+        "hostPath": "./staging"
+      },
+      "containerPath": "/var/opt"
+    },
+    "networkInterface": "docker0",
+    "tail": {
+      "settings": { 
+        "follow": true, 
+        "stdout": true, 
+        "stderr": true, 
+        "timestamps": false, 
+        "tail": "all"
+      },
+      "timeout": 30000
     },
     "daemon" : {
-      "tls": true,
-      "tlsverify": false,
-      "cert": "docker-cert.pem",
-      "key": "docker-key.pem",
-      "password": "W!sh!h@dArANd0mSecretGener@tor...MAB?l^1I-checkIN2tHaT"
-    },  
-    "pull": {
-      "lastRepo": "microsoft/mssql-server-linux",
-      "lastTag": "2017-latest",
-      "nextRepo": "microsoft/mssql-server-linux",
-      "nextTag": "2019-CTP2.2-ubuntu",
-      "repo": "mcr.microsoft.com/mssql/server",
-      "tag": "2017-latest"
-    },
-    "sql": {
-      "name": "SQL Server on Linux",
-      "path": "/var/opt/mssql"
+      "name": "docker",
+      "cfgPath": "/etc/docker/daemon.json",
+      "dftPort": 2375,
+      "socketPath": "/var/run/docker.sock",
+      "password": "W!sh!h@dArANd0mSecretGener@tor...MAB?l^1I-checkIN2tHaT",
+      "tls": false,
+      "tlsPort": 2376
     }
   },
+  "editorOFF4viTest": "emacs",
+  "git": {
+    "user": "bwunder",
+    "email": "bwunder@yahoo.com",
+    "origin": "https://github.com/bwunder/anonym.git"
+  },
+  "ide": "code",
   "mssql": {
+    "availabilityGroup": {
+      "port": "5022"
+    },
+    "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "env": {
       "ACCEPT_EULA": "Y",
+      "AVAILABILITY_GROUP_TCP_PORT": "5022",
       "MSSQL_MEMORY_LIMIT_MB": "",
       "MSSQL_LCID": "1033",
       "MSSQL_COLLATION": "",
@@ -119,12 +152,15 @@
       "PRIVATE_DIR": "/var/opt/anonym/private",
       "STAGING_DIR": "/var/opt/anonym/staging"
     },
-    "pkey-passphrase": "zist.d;m$$q1-pke_pazfrace",
-    "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
+    "path": "/var/opt/mssql",
+    "pkey": { 
+      "passphrase": "zist.d;m$$q1-pke_pazfrace"
+    },  
     "pool":  {
       "connectionTimeout": 15000,
       "options": {
-        "encrypt": false
+        "encrypt": false,
+        "enableArithAbort": true
       },
       "parseJSON": true,
       "pool": {
@@ -136,11 +172,89 @@
       "requestTimeout": 15000,
       "server": "localhost",
       "stream": false,
-      "user": "sa"
+      "user": "sa",
+      "database": "master"
+    },
+    "repo": {
+      "name": "Microsoft SQL Server on Linux",
+      "path": "mcr.microsoft.com/mssql/server",
+      "tag": "latest",
+      "availableTags": "https://hub.docker.com/_/microsoft-mssql-server"
+    },  
+    "sql": {
+      "name": "SQL Server on Linux",
+      "repo": "mcr.microsoft.com/mssql/server",
+      "tag": "latest"
     }
   },
   "sqlpad": {
-    "runAtStartup": false
+    "bindings": {
+      "sqlpaddata": {
+        "filter": ".db",
+        "mount": {
+          "Type": "bind",
+          "Mode": "rw", 
+          "Propagation": "shared"
+        }
+      },
+      "private": {
+        "filter": ".pem",
+        "mount": {
+          "Type": "bind",
+          "Mode": "ro", 
+          "ReadOnly": true,
+          "Propagation": "shared"
+        }
+      }
+    },  
+    "env": {
+      "SQLPAD_ADMIN": "bwunder@yahoo.com",
+      "SQLPAD_ADMIN_PASSWORD": "SQLPad-admin_p@ssword",
+      "SQLPAD_ALLOW_CSV_DOWNLOAD": true,
+      "SQLPAD_BASE_URL": "/sqlpad",
+      "CERT_PASSPHRASE": "SQLPad_cert-PASSWerd",
+      "CERT_PATH": "/var/opt/private",
+      "SQLPAD_COOKIE_NAME": "omit-key-to-use-default-sqlpad.sid for cookie name",
+      "SQLPAD_COOKIE_SECRET": "secret-used-to-sign-cookies-please-set-and-make-strong",
+      "SQLPAD_DB_PATH": "/var/opt/sqlpaddata",
+      "SQLPAD_DEBUG": false,
+      "DISABLE_USERPASS_AUTH": false,
+      "SQLPAD_EDITOR_WORD_WRAP": false,
+      "GOOGLE_CLIENT_ID": "",
+      "GOOGLE_CLIENT_SECRET": "",
+      "SQLPAD_HTTPS_PORT": 8754,
+      "SQLPAD_IP": "provide vnet ip for best privacy or 0.0.0.0 for all-comers",
+      "KEY_PATH": "absolute path, set in code if .tls is true",
+      "SQLPAD_PASSPHRASE": "A string used to encrypt secrets when stored on disk",
+      "SQLPAD_PORT": 8753,
+      "PUBLIC_URL": "",
+      "SQLPAD_QUERY_RESULT_MAX_ROWS": 50000,
+      "SAML_AUTH_CONTEXT": "",
+      "SAML_CALLBACK_URL": "",
+      "SAML_CERT": "",
+      "SAML_ENTRY_POINT": "",
+      "SAML_ISSUER": "",
+      "SQLPAD_SESSION_MINUTES": 60,
+      "SQLPAD_SLACK_WEBHOOK": "",
+      "SQLPAD_SMTP_FROM": "",
+      "SQLPAD_SMTP_HOST": "",
+      "SQLPAD_SMTP_PASSWORD": "",
+      "SQLPAD_SMTP_PORT": "",
+      "SQLPAD_SMTP_SECURE": true,
+      "SQLPAD_SMTP_USER": "",
+      "SQLPAD_SYSTEMD_SOCKET": "",
+      "SQLPAD_TABLE_CHART_LINKS_REQUIRE_AUTH": true,
+      "SQLPAD_TIMEOUT_SECONDS": 300,
+      "WHITELISTED_DOMAINS": "",
+      "SQLPAD_QUERY_HISTORY_RETENTION_PERIOD_IN_DAYS": 30,
+      "SQLPAD_QUERY_HISTORY_RESULT_MAX_ROWS": 1000
+    },
+    "repo": {
+      "path": "sqlpad/sqlpad",
+      "tag": "latest"
+    },     
+    "runAtStartup": false,
+    "tls": true
   },  
   "sqlcmd": {
     "prebatch": [
@@ -154,5 +268,9 @@
       "P": "$MSSQL_SA_PASSWORD",
       "r": "r"
     }
+  },
+  "store": {
+    "path" : "data"
   }
+
 }

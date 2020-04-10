@@ -1,48 +1,74 @@
 {
   "name": "anonym",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
-  "description": "Lifecycle Automaton for Locally Hosted SQL Server Containers",
-  "main": "server.js",
+  "description": "Javascript CLI and Query Store for SQL Server on Linux Containers",
+  "main": "anonym.js",
   "directories": {
     "data": "data",
     "doc": "docs",
     "private": "private",
     "scripts": "scripts"
   },
+  "scripts": {
+    "start": "node anonym.js"
+  },
   "dependencies": {
-    "chalk": "^2.4.1",
-    "dockerode": "^2.5.5",
-    "external-editor": "^3.0",
-    "get-port": "^4.1.0",
-    "inquirer": "^6.2.1",
-    "mssql": "^4.3.0",
-    "nedb": "^1.8.0",
-    "npm": "^6.7.0",
-    "pem": "^1.13.2",
-    "sqlpad": "^2.8.0",
-    "vorpal": "^1.12.0"
+    "chalk": "^3.0.0",
+    "chalk-pipe": "^3.0.0",
+    "dockerode": ">=2.5.5",
+    "external-editor": ">=3.0",
+    "get-port": ">=4.1.0",
+    "highlight.js": "^9.18.1",
+    "html-entities": "^1.2.1",
+    "inquirer": ">=6.2.1",
+    "marked": "^0.8.0",
+    "mssql": ">=4.3.0",
+    "nedb": ">=1.8.0",
+    "npm": ">=6.7.0",
+    "pem": ">=1.13.2",
+    "simple-git": ">=1.130.0",
+    "sqlpad": ">=2.8.0",
+    "vorpal": ">=1.12.0"
   },
   "devDependencies": {
-    "eslint": "^5.11.1",
-    "jshint": "^2.9.7",
-    "semver": "^5.6.0"
+    "eslint": ">=5.11.1",
+    "jshint": ">=2.9.7"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bwunder/anonym.git"
+    "url": "https://github.com/bwunder/anonym.git"
   },
   "keywords": [
-    "SQLServer",
-    "Docker",
+    "bash",
     "CLI",
-    "sqlpad",
-    "tls",
-    "tsql"
+    "columnstore",
+    "container",
+    "docker",
+    "encryption",
+    "javascript",
+    "node.js",
+    "mssql",
+    "sqlcmd",
+    "SQLPad",
+    "SQL Server",
+    "SQL-Graph",
+    "TDS",
+    "tedious.js",
+    "TLS",
+    "TSQL",
+    "V8"
   ],
-  "author": "Bill Wunder",
+  "author": {
+    "name": "Bill Wunder",
+    "email": "bwunder@yahoo.com",
+    "url": "https://bwunder.wordpress.com"
+  },  
   "license": "MIT",
-  "bugs": "https://github.com/bwunder/s/issues",
+  "bugs": {
+    "url": "https://github.com/bwunder/s/issues",
+    "email": "bwunder@yahoo.com"
+  },  
   "homepage": "https://github.com/bwunder/anonym#readme",
   "os": [
     "linux"

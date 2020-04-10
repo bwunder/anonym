@@ -5,27 +5,27 @@
 .vscode
 
 # Logs
-logs
+logs/
 *.log
 
 # Keys
-private
+private/
 *.csr
 *.pem
 *.srl
 
 # sample scripts
-scripts/sample-scripts
+scripts/sample-scripts/
 
 # sqlBackups
-backups
+backups/
 sqlBackups
 
 # sqlpad nedb store
-sqlpaddata
+sqlpaddata/
 
 # cli nedb store
-data
+data/
 
 # Runtime data
 pids
@@ -53,3 +53,13 @@ node_modules
 
 # vi swap file
 .swp
+
+
+machine/
+node_modules/
+private/
+staging/
+*.md.html
+*.js.html
+xxxDockerfile
+
