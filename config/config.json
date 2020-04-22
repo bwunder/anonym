@@ -119,25 +119,25 @@
   },
   "editorOFF4viTest": "emacs",
   "git": {
-    "user": "bwunder",
+    "user": "Bill Wunder",
     "email": "bwunder@yahoo.com",
     "origin": "https://github.com/bwunder/anonym.git"
   },
   "ide": "code",
   "mssql": {
     "availabilityGroup": {
-      "port": "5022"
+      "port": 5022
     },
     "conf": "/opt/mssql/lib/mssql-conf/mssql-conf.py",
     "env": {
       "ACCEPT_EULA": "Y",
-      "AVAILABILITY_GROUP_TCP_PORT": "5022",
+      "AVAILABILITY_GROUP_TCP_PORT": 5022,
       "MSSQL_MEMORY_LIMIT_MB": "",
-      "MSSQL_LCID": "1033",
+      "MSSQL_LCID": 1033,
       "MSSQL_COLLATION": "",
-      "MSSQL_TCP_PORT":" 1433",
+      "MSSQL_TCP_PORT": 1433,
       "MSSQL_IP_ADDRESS": "",
-      "MSSQL_ENABLE_HADR": "0",
+      "MSSQL_ENABLE_HADR": 0,
       "MSSQL_AGENT_ENABLED": "false",
       "MSSQL_MASTER_DATA_FILE": "",
       "MSSQL_MASTER_LOG_FILE": "",
