@@ -28,7 +28,6 @@
     "npm": ">=6.7.0",
     "pem": ">=1.13.2",
     "simple-git": ">=1.130.0",
-    "sqlpad": ">=2.8.0",
     "vorpal": ">=1.12.0"
   },
   "devDependencies": {
