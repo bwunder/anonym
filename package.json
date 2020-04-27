@@ -4,6 +4,7 @@
   "private": true,
   "description": "Javascript CLI and Query Store for SQL Server on Linux Containers",
   "main": "lib/anonym.js",
+  "type": "commonjs",
   "directories": {
     "data": "data",
     "doc": "docs",
