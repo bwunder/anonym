@@ -15,8 +15,10 @@
     "start": "node lib/anonym.js"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "chalk": "^3.0.0",
     "chalk-pipe": "^3.0.0",
+    "cryptr": "^6.0.2",
     "dockerode": ">=2.5.5",
     "external-editor": ">=3.0",
     "get-port": ">=4.1.0",
