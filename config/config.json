@@ -119,7 +119,7 @@
   },
   "editorOFF4viTest": "emacs",
   "git": {
-    "user": "Bill Wunder",
+    "user": "bwunder",
     "email": "bwunder@yahoo.com",
     "origin": "https://github.com/bwunder/anonym.git"
   },
@@ -270,7 +270,8 @@
     }
   },
   "store": {
-    "path" : "data"
+    "path" : "data",
+    "algorithm": "AES-256-CBC-HMAC-SHA256"
   }
 
 }
