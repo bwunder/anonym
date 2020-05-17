@@ -1,18 +1,18 @@
-# anonym.js <span style="font-size: small;">v0.1.4</span>  
-### Javascript CLI and Query Store for SQL Server on Linux Containers
+﻿# anonym.js <span style="font-size: small;">v0.1.4</span>  
+### JavaScript CLI and Query Store for SQL Server on Linux Containers
 
-A Free and open source TSQL via Javascript CLI for the near-line Docker host. 
+A Free and open source T-SQL via JavaScript CLI for the near-line Docker host. 
 
-Create a virtual, private & self-contained replica of any multi-data-sourced, SQL Server rich live systems useful for near-line modeling, coding, testing, analytics and other manipulations of the networked data environment. Made expressly for developers and other SQL power users. 
+Create a virtual, private & self-contained replica of any multi-data-sourced, SQL Server rich live systems useful for near-line modeling, coding, testing, analysis and other manipulations of the networked data environment. Made expressly for developers and other SQL power users. 
 
-Emulate, imitate, demonstrate or simulate clouds, clusters, farms, federations, LANs, WANs, qraphs, distributed partitions, Availability Groups, shards, replicas and many other multi-store network data environments, all on one Linux host.
+Emulate, imitate, demonstrate or simulate clouds, clusters, farms, federations, LANs, WANs, graphs, distributed partitions, Availability Groups, shards, replicas and many other multi-store and/or heterogeneous network data environments, all on one Linux host.
 
 - Design or model any Microsoft SQL Server rich TCP/IP network data environment
 - Pull Docker Images from [Docker Hub](https://hub.docker.com)         
 - Manage a catalog of local MS SQL Server Containers
 - Write, edit and run _ad hoc_ and client stored T-SQL queries and a Library of T-SQL script files 
-- Run bash one-off commands from the CLI prompt without losing the TSQL in the CLI's Batch cache  
-- Recall previously used TSQL from client side data history and/or git source control system
+- Run bash one-off commands from the CLI prompt without losing the T-SQL in the CLI's Batch cache  
+- Recall previously used T-SQL from client side data history and/or git source control system
 - Enable a private __SQLPad__ server to add a browser GUI and charts to the tool set (requires V8) 
 - Set-up TLS on the Docker API, any of the SQL Server Query Engines and/or SQLPad's Express server     
 - Simultaneously access the vNET of SQL Containers and admin them as local resources on the host
@@ -21,14 +21,14 @@ Emulate, imitate, demonstrate or simulate clouds, clusters, farms, federations, 
 ### OK... so what's an anonym good for?
 -  Architects can model with it   
 -  Developers can code, debug and test on it 
--  Data Analysts can build slicers & dicers with it
+-  Data Analysts can slice it & dice it
 -  Data Miners can obsess and regress over it
 -  Forcasters can discover trends on it
 -  Network Engineers won't have to route around it
--  QA Testers can reset it to replay it, over and over and over... 
+-  Testers can reset it to replay it, over and over and over... 
 -  Trainers can teach with it, and then take it home and grade from it*  
--  Everyone can work remotely with it to get stuff done... with or without the Internet...
-<sub>*If unsure the use case falls under Microsoft's "Developer" licence model, seek licensing guidance from Microsoft.</sub>
+-  Anyone can work remotely with it to get stuff done... with or without the Internet...
+<sub>*If uncertain your use case falls under Microsoft's "Developer" license model, please do seek licensing guidance from Microsoft.</sub>
 
 ## Prerequisites
     -  64-bit Linux compute instance 
@@ -37,15 +37,15 @@ Emulate, imitate, demonstrate or simulate clouds, clusters, farms, federations, 
     -  Node.js - v. 8.10.0+     
     -  OpenSSL - v.1.1.1+
     -  IDE (e.g., atom, bluefish, code, sublime, etc.) - file path as argument
-    -  text editor (e.g., vi, emacs, nano (aka pico), kwrite, etc.) - buffer text as argument
-    -  browser - SQLPad, if used, needs a browser with the V8 javascript engine 
-Choosing a Linux distro for the host is out of our scope. Suffice it to say, the "official" SQL Server image is currently composed upon an "official" Ubuntu image. Linux.org offers ["the 25 most popular"](https://www.linux.org/pages/download/) distro's - all I can guarantee is the over half the links on the linux.org page will work. One finds many differing opinions on the Internet about which distro is best to use with containers, but the proofs are thin and can be biased, often nothing more than advertisements. Regardless which host distro is chosen, prerequisites are best installed through the command-line package manager recommended by the distro's maker. If a prerequisite above did not come with the host linux instance, it will invariably be available from one of that package managers configured repoitories. 
+    -  text editor (e.g., vi, Emacs, nano (aka pico), kwrite, etc.) - buffer text as argument
+    -  browser - SQLPad, if used, needs a browser with the V8 JavaScript engine 
+Choosing a Linux distro for the host is out of our scope. Suffice it to say, the "official" SQL Server image is currently composed upon an "official" Ubuntu image. Linux.org offers ["the 25 most popular"](https://www.linux.org/pages/download/) distro's - all I can guarantee is the over half the links on the linux.org page will work. One finds many differing opinions on the Internet about which distro is best to use with containers, but the proofs are thin and can be biased, often nothing more than advertisements. Regardless which host distro is chosen, prerequisites are best installed through the command-line package manager recommended by the distro's maker. If a prerequisite above did not come with the host linux instance, it will invariably be available from one of that package managers configured repositories. 
 
-Choosing an IDE and an editor are also beyond scope. It is anticipated that the IDE already in use will work just fine. All the CLI does with the IDE is asynchronously launch it with a file path argument. The editor can be used to do this as well, but won't be as pleasant of an experience as reviewing or working with javascript, JSON, HTML or TSQL as it is in one of todays better open source IDEs that work with Linux.  
+Choosing an IDE and an editor are also beyond scope. It is anticipated that the IDE already in use will work just fine. All the CLI does with the IDE is asynchronously launch it with a file path argument. The editor can be used to do this as well, but won't be as pleasant of an experience as reviewing or working with JavaScript, JSON, HTML or T-SQL as it is a modern open source IDE that runs on Linux.  
 
-As to the editor, a Linux distro that ships without vi and does not also includes one or more other text editors is a hard to find. I personally prefer EMACs ove vi. EMACs will surely be in the package manager's repository, however it is rarely installed by default. The base requirement for full CLI functionality is that the editor accept text from stdin (buffered data) as the first positional argument and the IDE must accept a file path as the first positional arg. Thus the need to specify both an editor and an IDE in the './config/config.json' file.        
+As to the editor, a Linux distro that ships without vi and does not also includes one or more other text editors is hard to find. I personally prefer Emacs over vi. Emacs will surely be in the package manager's repository, however it is usually not installed by default. The base requirement for full CLI functionality is that the editor accept text from stdin (buffered data) as the first positional argument and the IDE must accept a file path as the first positional arg. Thus, the preferred option is to specify both an editor and an IDE in the './config/config.json' file.        
 
-Matters not to the CLI which browser is used. However, SQLPad will only work with the V8 javascript engine. This limits the choices to browser based on the open source Chromium project (e.g., Blisk, Brave, Chrome, Opera, Vivaldi, etc.) if you plan to use the private SQLPad.   
+Matters not to the CLI which browser is used. However, SQLPad will only work with the V8 JavaScript engine. This limits the choices to browser based on the open source Chromium project (e.g., Blisk, Brave, Chrome, Opera, Vivaldi, etc.) if you plan to use the private SQLPad.   
 
 ## Install
 At the bash terminal prompt:  
@@ -64,7 +64,7 @@ To open the config file and set the IDE and editor from the CLI use:
   <pre>anonym &gt; <span style="color: #00AAAA;">settings config</span></pre>  
 This will try to open the config file in the configured IDE. If the IDE is not present locally or not configured, the file will try to open in configured editor. If the editor is not present, the file will open in vi. If you don't know vi well enough to edit a text file or pull up the help documentation, have a peak at './docs/html/vimCheatSheet.html' in your browser. If the host Linux instance is configured to not open the GUI, consider one of the text only browsers that run in the terminal like Lynx. Much of the CLI documentation and source code can be viewed at the prompt or, especially to improve readability of larger documents, in a browser.  
 
-The defaults will get the Cli rolling and may be satisfactory as is as you evaluate the CLI, but the configuration is fully under the control of the user. 
+The defaults will get the CLI rolling and may be satisfactory as is as you evaluate the CLI, but the configuration is fully under the control of the user. 
 
 The config file includes default values for several secrets. However, on first use or on demand, the user is prompted for a different secret. Secrets are obfuscated and stored in the CLI's secret store for later recall. The values in config make for an interesting honeypot once other values are set for these secrets.    
 
@@ -79,17 +79,17 @@ The config file includes default values for several secrets. However, on first u
     <b>🧿</b>  <span style="color: #FFFF55;">No Local SQL Images found</span>
     <span style="color: 00AA00;">?</span> <b>Pull the latest SQL Image now? </b> (Y/n)  </pre>
 
-This mini dashboard is output each time the catalog of SQL Server Docker artifacts map is buffered. The first line, prefixed with a network ucon (i.e., unicode icon), extends as a series of large dots. First in line are blue dots for each local image. These are followed by a set of red or green dots for each local SQL Container: red if idle, green if running. There are several examples of the dashbord shown below.
+This mini dashboard is output each time the catalog of SQL Server Docker artifacts map is buffered. The first line, prefixed with a network ucon (i.e., unicode icon), extends as a series of large dots. First in line are blue dots for each local image. These are followed by a set of red or green dots for each local SQL Container: red if idle, green if running. There are several examples of the dashboard shown below.
 
-The second line, prefixed with the target like ucon (<b>🧿</b>), provides a status message regarding the SQL Container currently selected as the target of CLI originated TSQL queries. When the most recently targeted Container is found and is running, this line becomes a SQL connection status message and the ucon changes to the assigned to SQL Server messages (<span style="color: #FFA500;"><b>ᛞ</b></span>).      
+The second line, prefixed with the target like ucon (<b>🧿</b>), provides a status message regarding the SQL Container currently selected as the target of CLI originated T-SQL queries. When the most recently targeted Container is found and is running, this line becomes a SQL connection status message and the ucon changes to the assigned to SQL Server messages (<span style="color: #FFA500;"><b>ᛞ</b></span>).      
 
 A re-inventory and remapping of the catalog of SQL in Docker artifacts that underlies the dashboard occurs as the CLI is started. And again each time a container is stopped or started by the CLI, or an Image or Container is added or removed using the CLI, when a connection pool is opened or closed to by CLI, or when the CLI's Target SQL Server is changed. Remapping can also be invoked at any time by the user at the prompt:
   <pre>anonym &gt; <span style="color: #00AAAA;">catalog remap</span></pre>
 
 ## The Catalog
-The most vital of the CLI's innards is the Catalog of SQL Server on Linux Docker artifacts. This Javascript Object of Maps filters out any non-SQL Server Images and Containers, including the private SQLPad server if used, then snapshots the local Docker API SQL Server Image and Container objects. It also keeps track of the SQL Server the CLI is currently targeting when submitting TSQL and the CLI to SQL Server connection pools opened in the current CLI session. 
+The most vital of the CLI's innards is the Catalog of SQL Server on Linux Docker artifacts. This JavaScript Object of Maps filters out any non-SQL Server Images and Containers, including the private SQLPad server if used, then snapshots the local Docker API SQL Server Image and Container objects. It also keeps track of the SQL Server the CLI is currently targeting when submitting T-SQL and the CLI to SQL Server connection pools opened in the current CLI session. 
 
-Once one or more SQL Server Images have been pulled from the hub.docker.com: 
+Once one or more SQL Server Images have been pulled from https://hub.docker.com: 
   <pre>anonym &gt; <span style="color: #00AAAA;">image pull</span></pre>
 And the configuration has been adjusted as needed (described below), SQL Container Instances can be created from the user's choice among the local images: 
   <pre>
@@ -99,7 +99,7 @@ And the configuration has been adjusted as needed (described below), SQL Contain
       a8343d3ce21c 
       ba266fae5320 
       d273eadd9675 </pre>
-Then any SQL Container can be set as the current __Target__ for CLI originated TSQL queries:
+Then any SQL Container can be set as the current __Target__ for CLI originated T-SQL queries:
   <pre>
     anonym &gt; <span style="color: #00AAAA;">connection target</span>
     <span style="color: #00AAAA;">?</span> <b>Target for CLI originated SQL queries </b> (Use arrow keys)
@@ -151,7 +151,7 @@ More usable summary views are the is the default shown by the catalog command:
     cf030328e0aa using &apos;master&apos; as &apos;sa&apos; on port 38793
     <span style="color: #55FFFF;"><b>5004ba923fda</b></span> using &apos;undefined&apos; as &apos;sa&apos; on port 46769
     anonym &gt; </pre>
-Another view of the catalog, perhaps most interesting when defining database connections, shows both the virtual network IP address and the host port mapping of each running SQL Container. Data connections can be made to the IP address or ContainerId over the VNET to the well-known 1433 port or as local instances on the host using the port shown. By default, the CLI connects through the docker assigned local port of the host. This port mapping is pseudo-randomly generated by the CLI's <em>get-port</em> dependency and assigned at the time a container is created.   
+Another view of the catalog, perhaps most interesting when defining database connections, shows both the virtual network IP address and the host port mapping of each running SQL Container. Data connections can be made to the IP address or Container Id over the VNET to the well-known 1433 port or as local instances on the host using the port shown. By default, the CLI connects through the docker assigned local port of the host. This port mapping is pseudo-randomly generated by the CLI's <em>get-port</em> dependency and assigned at the time a container is created.   
   <pre>
     anonym &gt; <span style="color: #00AAAA;">catalog network </span>
     Map {
@@ -164,8 +164,8 @@ Another view of the catalog, perhaps most interesting when defining database con
 Useful information when defining SQL Connections in SQLPad and other apps being run in the anonym or when connecting remotely to the anonym. Beware, if you do open a path to connect remotely that you have created a backdoor. This will not necessarily lead to cross-talk between the anonym Instance and another data network, but it is, like any backdoor,  vulnerable to malice.  
 
 ## CLI Query Target
-The Target is the SQL Server Container chosen by the user to be the recipient of TSQL queries from
-the CLI. Any container can be set as the Target, however only one Target at a time is allowed. If a Target has been set previously, it is highlighted in the list of choices and has the focus. WHen no previous Target is detected by the code, the list appears with the first list item highlighted.
+The Target is the SQL Server Container chosen by the user to be the recipient of T-SQL queries from
+the CLI. Any container can be set as the Target, however only one Target at a time is allowed. If a Target has been set previously, it is highlighted in the list of choices and has the focus. When no previous Target is detected by the code, the list appears with the first list item highlighted.
   <pre>
     anonym &gt; <span style="color: #00AAAA;">connection target</span>
     <span style="color: #00AA00;">?</span> <b>Target for CLI originated SQL queries </b> (Use arrow keys)
@@ -197,7 +197,7 @@ CLI commands terminate the Batch (all lower case) once entered:
 There is also a pseudo-terminator, expose in __batch issql__ (aka __? issql__), that, from the console vantage, works just like the real terminators. The big difference is __batch issql__ submits the query wrapped between __SET NOEXEC ON__ and  __SET NOEXEC OFF__ , thus getting the same syntax checking as a query terminated for execution without actually risking a touch of the data. This pseudo-terminator can be enabled for all queries (recommended) by setting the value of config.cli.checkSyntax to true. When true, each terminated query is check for syntax errors and will return the first error with no risk of corrupting data by running a multi-statement batch with syntax errors that fails in the middle of a data manipulation.  
 
 ## CLI _ad hoc_ Queries
-TSQL entered at the command prompt accumulates each line entered into a Batch Cache. Consider an example. (And notice the missing comma after the database_id column in the select list, we will fix that in a moment.):
+T-SQL entered at the command prompt accumulates each line entered into a Batch Cache. Consider an example. (And notice the missing comma after the database_id column in the select list, we will fix that in a moment.):
   <pre>
     anonym &gt; <span style="color: #00AAAA;">SELECT name,</span>
     anonym &gt; <span style="color: #00AAAA;">database_id</span>
@@ -228,12 +228,12 @@ But the Batch cache is left as is when an error occurs. The user then determines
   <pre>anonym &gt; <span style="color: #00AAAA;">batch edit</span></pre>
 Alternately, the __batch__ command's alias (in this case, a shortcut) can be used:
   <pre>anonym &gt; <span style="color: #00AAAA;">? edit</span></pre>
-And, in either case, the CLI's TAB-key based autocomplete functionality may be invoked
+And, in either case, the CLI's TAB-key based auto-complete functionality may be invoked
   <pre>
     anonym &gt; <span style="color: #00AAAA;">b[TAB] e[TAB]</span>
     - or -
     anonym &gt; <span style="color: #00AAAA;">? e[TAB]</span></pre>
-When changes are 'saved' within the editor and the editor is exited, the node.js event loop resumes. To review the changes any time the event loop is active:
+When changes are 'saved' within the editor and the editor is exited, the Node.js event loop resumes. To review the changes any time the event loop is active:
   <pre>
     anonym &gt; <span style="color: #00AAAA;">?</span>
     SELECT top 1 name,
@@ -254,7 +254,7 @@ Successful query execution logs the query and rowsAffected to history then trunc
     anonym &gt;</pre>
 
 ## CLI Query Store 
-The './lib/queries.js' module contains only a javascript export object of named TSQL queries. Review, add, remove, and modify the queries in this file, then import the queries into the CLI's query store document database.
+The './lib/queries.js' module contains only a JavaScript export object of named T-SQL queries. Review, add, remove, and modify the queries in this file, then import the queries into the CLI's query store document database.
   <pre>anonym &gt; query import</pre>
 From this point, any query in the store can be quickly loaded into the CLI's Batch cache:
   <pre>
@@ -263,7 +263,7 @@ From this point, any query in the store can be quickly loaded into the CLI's Bat
     <span style="color: #00AAAA;">❯ advancedOptions</span> 
       badSyntax_invalidObject 
       badSyntax_misspelling 
-      badSyntax_notSQL 
+      badSyntax_noT-SQL 
       badSyntax_null 
       badSyntax_undefined 
       badSyntax_whitespace 
@@ -295,10 +295,10 @@ Or load the query to the Batch cache first, then edit only the copy of the query
 Keeping the './lib/queries.js' module and the store synchronized helps to assure that the store is accurately documented within source control.     
 
 ## CLI Script Library
-The user can copy and grow his or her collection of TSQL Scripts into the './scripts' subfolder. From here, scripts can me Developed, debugged, tested and run on any SQL Instance in the Catalog. While the query store is more convenient for brief queries, Multi-statement scripts are often easier to work with in files. Scripts with DDL, more than one query, deep join complexity, SQLCMD variables or multiple batches that may require changes between uses were meant to be in scripts or stored procedures. Scripts can be added, changed or removed from the folder, which is under source control, at any time and opened for edit on demand. Only Scripts having the '.sql' extension are recognized by the script command.
+The user can copy and grow his or her collection of T-SQL Scripts into the './scripts' sub-folder. From here, scripts can me Developed, debugged, tested and run on any SQL Instance in the Catalog. While the query store is more convenient for brief queries, Multi-statement scripts are often easier to work with in files. Scripts with DDL, more than one query, deep join complexity, SQLCMD variables or multiple batches that may require changes between uses were meant to be in scripts or stored procedures. Scripts can be added, changed or removed from the folder, which is under source control, at any time and opened for edit on demand. Only Scripts having the '.sql' extension are recognized by the script command.
 Edit a script in the configured IDE (config.ide) asynchronously:
   <pre>anonym &gt; script develop</pre>
-or edit a script in the configured editor (config.editor) - statefully blocking the event loop:
+or edit a script in the configured editor (config.editor) - state-fully blocking the event loop:
   <pre>anonym &gt; script edit</pre>
 or use your preferred tactics external to the CLI app. In all scenarios, changes are in effect once 
 saved - and source control will pick-up the changes.
