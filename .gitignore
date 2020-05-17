@@ -56,11 +56,10 @@ node_modules
 .swp
 
 package-lock.json
+
 machine/
 node_modules/
 private/
 staging/
-*.md.html
-*.js.html
 xxxDockerfile
 

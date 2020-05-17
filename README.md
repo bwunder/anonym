@@ -296,7 +296,7 @@ Keeping the './lib/queries.js' module and the store synchronized helps to assure
 
 ## CLI Script Library
 The user can copy and grow his or her collection of TSQL Scripts into the './scripts' subfolder. From here, scripts can me Developed, debugged, tested and run on any SQL Instance in the Catalog. While the query store is more convenient for brief queries, Multi-statement scripts are often easier to work with in files. Scripts with DDL, more than one query, deep join complexity, SQLCMD variables or multiple batches that may require changes between uses were meant to be in scripts or stored procedures. Scripts can be added, changed or removed from the folder, which is under source control, at any time and opened for edit on demand. Only Scripts having the '.sql' extension are recognized by the script command.
-Edit a script in the configured IDE (config.ide) asynchromously:
+Edit a script in the configured IDE (config.ide) asynchronously:
   <pre>anonym &gt; script develop</pre>
 or edit a script in the configured editor (config.editor) - statefully blocking the event loop:
   <pre>anonym &gt; script edit</pre>
