@@ -117,7 +117,7 @@
       "tlsPort": 2376
     }
   },
-  "editorOFF4viTest": "emacs",
+  "editor": "emacs",
   "git": {
     "user": "bwunder",
     "email": "bwunder@yahoo.com",
