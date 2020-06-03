@@ -1,3 +1,4 @@
+-- prolly copy/paste from Glenn's diq ?
 SELECT  f.name AS [File Name]
       , f.physical_name AS [Physical Name]
       , CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB]
