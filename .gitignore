@@ -55,11 +55,10 @@ node_modules
 # vi swap file
 .swp
 
-package-lock.json
-
-machine/
 node_modules/
+
+# dynamic and CLI instance-specific data 
+machine/
 private/
 staging/
-xxxDockerfile
 
