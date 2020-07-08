@@ -143,7 +143,7 @@
       "MSSQL_MASTER_LOG_FILE": "",
       "MSSQL_SA_PASSWORD": "YourStrong!Passw0rd",
       "MSSQL_PID": "Developer",
-      "MSSQL_BACKUP_DIR": "/var/opt/anonym/backup",
+      "MSSQL_BACKUP_DIR": "/var/opt/anonym/backups",
       "MSSQL_BIN_DIR": "/opt/mssql/bin",
       "MSSQL_DATA_DIR": "/var/opt/mssql/data",
       "MSSQL_ERRORLOG_DIR": "/var/opt/mssql/log",
