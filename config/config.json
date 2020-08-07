@@ -31,6 +31,25 @@
         "depth": 3
       }
     },
+    "connectionPool":  {
+      "connectionTimeout": 15000,
+      "options": {
+        "encrypt": false,
+        "enableArithAbort": true
+      },
+      "parseJSON": true,
+      "pool": {
+        "closeTimeoutMillis": 30000,
+        "idleTimeoutMillis": 30000,
+        "max": 10,
+        "min": 0
+      },
+      "requestTimeout": 15000,
+      "server": "localhost",
+      "stream": false,
+      "user": "sa",
+      "database": "master"
+    },
     "ucons": {
       "catalog": {"style": "bold.cyan", "codepoint": "0x1F5A7"},
       "confirm": {"style": "bold.green", "codepoint":"0x1F5F8"},    
@@ -156,25 +175,6 @@
     "pkey": { 
       "passphrase": "zist.d;m$$q1-pke_pazfrace"
     },  
-    "pool":  {
-      "connectionTimeout": 15000,
-      "options": {
-        "encrypt": false,
-        "enableArithAbort": true
-      },
-      "parseJSON": true,
-      "pool": {
-        "closeTimeoutMillis": 30000,
-        "idleTimeoutMillis": 30000,
-        "max": 10,
-        "min": 0
-      },
-      "requestTimeout": 15000,
-      "server": "localhost",
-      "stream": false,
-      "user": "sa",
-      "database": "master"
-    },
     "repo": {
       "name": "Microsoft SQL Server on Linux",
       "path": "mcr.microsoft.com/mssql/server",

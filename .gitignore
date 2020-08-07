@@ -57,8 +57,10 @@ node_modules
 
 node_modules/
 
-# dynamic and CLI instance-specific data 
+# instance-specific data 
+backups/
 machine/
 private/
+# scripts/ commented so tracks your tsql in local repo
 staging/
 
