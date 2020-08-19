@@ -1,21 +1,32 @@
-////NPM
-const chalk = require('chalk')
-///LOCAL 
-const { format, log } = require('../lib/log')
-const api = require('../lib/api')
-const config = require('../config/config.json')
 log('log', chalk`{rgb(153, 255, 51) Tester's are referrered to the 'test.md' doc} (via command: {bold.italic about test})\n`)
 
+//// NPM
+const chalk = require('chalk')
+//// CORE
+//// LOCAL
+const api = require('../lib/api')
+const { format, log } = require('../lib/log')
+const view = require('../../lib/viewer')
 
+const config = require('../../config/config.json')
 
-
-module.exports = vorpal => { 
-
-  let torials = ['catalog', 'engine', 'image', 'container', 'go', 'run', `sqlcmd`]
-  vorpal.command('test <torials>', chalk`Test extention (Torials - {bold.italic ${torials}}`)
-    .autocomplete(torials)
-    .option('-s, --syntax', 'pre-validate TSQL syntax by batch on target ')
-    .action(async (args, cb) => {  // extension returns no prompt when no callback in the command.action 
+module.exports = {
+  description: chalk`Test extention (Torials - {bold.italic ${torials}}`,
+  args: {
+    test: {
+      catalog: '', 
+      engine: '', 
+      image: '', 
+      container: '', 
+      go: '', 
+      run: '', 
+      sqlcmd: ''
+    },  
+    option: { 
+      syntax: 'pre-validate TSQL syntax by batch on target '
+    }
+  },
+  dispatch: async (args, cb) => {  // extension returns no prompt when no callback in the command.action 
       let saveForReset = config.cli.alwaysCheckSyntax 
       if (args.options.syntax) {
         config.cli.alwaysCheckSyntax = true     
@@ -23,7 +34,7 @@ module.exports = vorpal => {
         config.cli.alwaysCheckSyntax = false     
       }
       try {
-        switch (args.torials) {
+        switch (args.test) {
           case('catalog'):
             log('test', chalk`All objects to catalog\n{bold test} > {cyan.bold.italic catalog summary}`)
             vorpal.execSync(`catalog all`)

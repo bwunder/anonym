@@ -77,7 +77,7 @@
     },
     "scripts": {
       "path": "scripts",
-      "filter": ".sql"
+      "ext": ".sql"
     }
   },
   "docker": {
@@ -140,7 +140,9 @@
   "git": {
     "user": "bwunder",
     "email": "bwunder@yahoo.com",
-    "origin": "https://github.com/bwunder/anonym.git"
+    "origin": "https://github.com/bwunder/anonym.git",
+    "commitAtStartUp": true,
+    "commitAtExit": true
   },
   "ide": "code",
   "mssql": {
@@ -180,12 +182,7 @@
       "path": "mcr.microsoft.com/mssql/server",
       "tag": "latest",
       "availableTags": "https://hub.docker.com/_/microsoft-mssql-server"
-    },  
-    "sql": {
-      "name": "SQL Server on Linux",
-      "repo": "mcr.microsoft.com/mssql/server",
-      "tag": "latest"
-    }
+    } 
   },
   "sqlpad": {
     "bindings": {

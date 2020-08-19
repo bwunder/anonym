@@ -1,0 +1,64 @@
+1. push all user interactions back to anonym.js
+2. structure the command module export to include an args obj
+  A. each arg in obj names an autocomplete obj (array, function that returns an array) 
+
+
+
+//// NPM
+const chalk = require('chalk')
+//// CORE
+//// LOCAL
+const view = require('../../lib/viewer')
+
+const config = require('../../config/config.json')
+
+module.exports = {
+  description: chalk`first line should be command title\n
+    Mentions of default behaviors (command with no args or options) should be decorated with 
+    ${view.dft()}. Include help, usage details and explanations required for day-to-day use 
+  args: {
+    argName: { // singular if one choice can be taken, plural if more can be in one command-line
+      choice1:   `brief descriptions - use, purpose, resources touched, etc.`,
+      choice2:   mention internal data points in bold italics (e.g., chalk`{bold.italic config.editor}`),
+      choice3:   mention CLI command-lines in bold and swap fg/bg (e.g., chalk`{bold.inverse sqlcmd -?}`),
+      choice4:   mention file paths relative to the app root and in tics`'./docs/sqlcmdCheatSheet.html'`,
+      anyName:   each choice can have any alpha-numeric name
+      none:      ${view.dft()} best when a named choice corresponds to command's default
+        --or-- 
+                 ${view.dft()} defaults with no matching named choice are also shown
+    },  
+    option: { // '--' prefix used by convention - familiar 'command --option2 choice5' pattern
+      --option1:  `Open the documentation (as HTML) in a browser with '${config.browser.command}'`,
+      --option2: chalk`Use {italic italics} {red colors} {bold emphasis} and  to `,
+      --option3: `${view.dft()} Display documentation at the prompt`
+    }
+  },
+  dispatch: [async] () => {
+    // cli.js first prompts for args then calls this function to dispatch the command
+    // commands that don't mess with the batch must not mess with batch
+    // usually this function will be mainly a case statement for arg based execution
+    // and is ultimately responsible for result rendition 
+  }
+
+Stub:
+//// NPM
+const chalk = require('chalk')
+//// CORE
+//// LOCAL
+const view = require('../../lib/viewer')
+
+const config = require('../../config/config.json')
+
+module.exports = {
+  description: chalk` \n`
+  args: {
+    argName: {
+      choice: ``, 
+      ${view.dft()} 
+    },  
+    option: { 
+      --option:  ``
+    }
+  },
+  dispatch: [async] () => {
+  }
