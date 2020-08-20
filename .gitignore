@@ -57,10 +57,10 @@ node_modules
 
 node_modules/
 
-# instance-specific data 
-backups/
+# instance-specific data. Definitely back this stuff up, just not into source repo. 
+backups/ 
 machine/
 private/
-# scripts/ commented so tracks your tsql in local repo
+# scripts/ needed to track local tsql into local repo
 staging/
 
