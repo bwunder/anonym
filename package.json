@@ -32,7 +32,7 @@
     "mssql": "^6.2.1",
     "nedb": ">=1.8.0",
     "pem": ">=1.13.2",
-    "simple-git": "^2.18.0"
+    "simple-git": "^3.15.0"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
